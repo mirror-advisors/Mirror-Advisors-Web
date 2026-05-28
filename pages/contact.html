@@ -1,0 +1,89 @@
+<div class="page-wrap">
+  <div class="contact-left">
+    <div class="cl-grid"></div>
+    <div class="cl-glow"></div>
+    <div class="cl-inner">
+      <div class="badge">Let&#39;s Talk</div>
+      <h1 style="font-size:clamp(36px,4vw,54px);line-height:1.08;letter-spacing:-.03em">Start the<br><span style="color:var(--t)">Conversation.</span></h1>
+      <p class="cl-sub">No deck. No pitch. Just a real conversation about your situation &#8212; and an honest answer about whether we can help.</p>
+      <div class="expect-list">
+        <div class="exp-item"><div class="exp-num">1</div><div><div class="exp-title">We respond within 24 hours</div><div class="exp-desc">Every submission is read by a senior advisor &#8212; not routed through an SDR.</div></div></div>
+        <div class="exp-item"><div class="exp-num">2</div><div><div class="exp-title">30-minute intro call</div><div class="exp-desc">We ask about your goals, your current stack, and what&#39;s not working.</div></div></div>
+        <div class="exp-item"><div class="exp-num">3</div><div><div class="exp-title">Honest recommendation</div><div class="exp-desc">We&#39;ll tell you which model fits &#8212; or if you don&#39;t need us yet, we&#39;ll say that too.</div></div></div>
+      </div>
+      <div class="alt-contacts">
+        <div class="ac-item"><div class="ac-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ac-title">Email</div><div class="ac-val">hello@mirroradvisors.com</div></div></div>
+        <div class="ac-item"><div class="ac-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="ac-title">LinkedIn</div><div class="ac-val">linkedin.com/company/mirroradvisors</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <div class="cr-inner">
+      <div id="formWrap">
+        <div class="form-title">Tell Us About Your Project</div>
+        <p class="form-sub">Takes about 2 minutes. The more detail you share, the more useful our first conversation will be.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Alex" required></div>
+            <div class="fg"><label>Last Name *</label><input type="text" id="lname" placeholder="Johnson" required></div>
+          </div>
+          <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required></div>
+          <div class="fg"><label>Company</label><input type="text" id="company" placeholder="Acme Corp"></div>
+          <div class="fg">
+            <label>Company Size</label>
+            <select id="size">
+              <option value="">Select headcount...</option>
+              <option>1&#8211;10 employees</option>
+              <option>11&#8211;50 employees</option>
+              <option>51&#8211;200 employees</option>
+              <option>201&#8211;500 employees</option>
+              <option>500+ employees</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Which Service Are You Interested In?</label>
+            <div class="svc-chips" id="svcChips">
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">AI-Powered Apps</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">ERP Implementation</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">Systems Integration</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">Business Consulting</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">Infinity Mirror</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">Bank of Hours</button>
+              <button type="button" class="svc-chip" onclick="toggleChip(this)">Not Sure Yet</button>
+            </div>
+          </div>
+          <div class="fg">
+            <label>How Can We Help? *</label>
+            <textarea id="message" placeholder="Tell us what you&#39;re trying to solve, what you&#39;ve tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
+            <div class="char-count" id="charCount">0 / 1000</div>
+          </div>
+          <div class="fg">
+            <label>Timeline</label>
+            <select id="timeline">
+              <option value="">When are you looking to start?</option>
+              <option>As soon as possible</option>
+              <option>Within 1 month</option>
+              <option>1&#8211;3 months</option>
+              <option>3&#8211;6 months</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+          <div class="privacy-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Your information is never shared or sold. We use it only to prepare for our conversation with you.
+          </div>
+          <button type="submit" class="bp" id="submitBtn" style="width:100%;justify-content:center;margin-top:4px">
+            Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="success-state" id="successState" style="display:none">
+        <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Message Sent &#127881;</div>
+        <p class="success-sub">Thanks for reaching out. A senior advisor will review your submission and reach out within 24 hours to schedule a call.</p>
+        <div style="padding:14px 18px;border-radius:10px;background:rgba(236,169,52,.07);border:1px solid rgba(236,169,52,.2);font-size:13px;color:var(--mid)"><strong style="color:var(--t)">While you wait:</strong> Browse our <a href="#" onclick="go('cases')" style="color:var(--t)">case studies</a> to see what we&#39;ve built for similar businesses.</div>
+      </div>
+    </div>
+  </div>
+</div>
+${_FOOTER_HTML}

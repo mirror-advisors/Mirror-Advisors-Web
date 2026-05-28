@@ -1,0 +1,346 @@
+<!-- ============================================================
+     NAV
+============================================================ -->
+
+
+<!-- ============================================================
+     HERO  (centered, single-column — v2)
+============================================================ -->
+<section id="hero" class="hero-v2">
+  <div class="hero-v2-vignette"></div>
+
+  <div class="hero-v2-inner">
+    <div class="hero-v2-badge hero-v2-badge-left">
+      <span class="hero-v2-badge-dot"></span>
+      NOW ACCEPTING NEW CLIENTS
+    </div>
+
+    <h1 class="hero-v2-h1">
+      <span class="word">We</span> <span class="word">build</span> <span class="word">technology</span><br>
+      <span class="word">that</span> <span class="word word-accent">scales.</span>
+    </h1>
+
+    <p class="hero-v2-p">
+      Enterprise ERP deployments, custom Claude AI apps, Zoho consulting &amp; support, and deep systems integration &mdash; built for businesses that are serious about growth.
+    </p>
+
+    <div class="hero-v2-btns">
+      <button class="btn-primary hero-v2-cta" onclick="go('contact')">
+        Book a Strategy Session
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn-secondary" onclick="document.getElementById('cases').scrollIntoView({behavior:'smooth'})">
+        See Case Studies
+      </button>
+    </div>
+
+    <!-- =====================================================
+         INTEGRATION PUZZLE — interactive jigsaw
+    ===================================================== -->
+    <div class="hero-puzzle" id="heroPuzzle" aria-label="Interactive integration map">
+      <div class="hero-puzzle-header">
+        <div class="hero-puzzle-header-pill" id="heroPuzzleHeader">
+          <span class="hp-hint-dot"></span>
+          <span id="heroPuzzleHeaderText">Tap a piece to explore</span>
+          <span class="hp-cycle" id="heroPuzzleCycle" style="display:none;">
+            <span class="hp-cycle-current" id="hpCycleCurrent">1</span><span class="hp-cycle-sep">/</span><span class="hp-cycle-total" id="hpCycleTotal">1</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-puzzle-stage" id="heroPuzzleStage" aria-live="polite">
+        <div class="hero-puzzle-label" id="heroPuzzleLabel"></div>
+        <!-- Pieces injected by _INIT.home -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCREENS
+============================================================ -->
+<section id="screens">
+  <div class="section-wrap">
+    <div class="sec-label">Live in Production</div>
+    <div class="sec-h">Systems That Actually<br>Work in the Real World</div>
+    <p class="sec-sub">Real deployments running daily across sales, operations, and finance teams.</p>
+
+    <div class="screens-grid">
+      <!-- CRM Screen -->
+      <div class="screen-wrap">
+        <div class="screen-frame">
+          <div class="scan-overlay"></div>
+          <div class="screen-bar">
+            <div class="screen-dot" style="background:#ff5f57;"></div>
+            <div class="screen-dot" style="background:#ffbd2e;"></div>
+            <div class="screen-dot" style="background:#28c840;"></div>
+            <div class="url-pill">app.mirroradvisors.io/crm/pipeline</div>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="screen-body">
+            <div style="font-size:10px;font-family:'Montserrat',sans-serif;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">AI-Scored Pipeline — Q2 2025</div>
+            <div class="crm-table-head">
+              <span class="crm-th">Company</span>
+              <span class="crm-th">Value</span>
+              <span class="crm-th">Stage</span>
+              <span class="crm-th">Status</span>
+            </div>
+            <div class="crm-row">
+              <div class="crm-company">
+                <div class="crm-avatar" style="background:rgba(236,169,52,0.2);color:#ECA934;">NC</div>
+                <span class="crm-name-text">Nexus Corp</span>
+              </div>
+              <span class="crm-value">$124k</span>
+              <span class="crm-stage">Proposal</span>
+              <span class="crm-badge" style="background:rgba(236,169,52,0.15);color:#ECA934;">hot</span>
+            </div>
+            <div class="crm-row">
+              <div class="crm-company">
+                <div class="crm-avatar" style="background:rgba(236,169,52,0.2);color:#ECA934;">AD</div>
+                <span class="crm-name-text">Apex Dynamics</span>
+              </div>
+              <span class="crm-value">$87k</span>
+              <span class="crm-stage">Discovery</span>
+              <span class="crm-badge" style="background:rgba(236,169,52,0.15);color:#ECA934;">warm</span>
+            </div>
+            <div class="crm-row">
+              <div class="crm-company">
+                <div class="crm-avatar" style="background:rgba(107,159,212,0.2);color:#6B9FD4;">OS</div>
+                <span class="crm-name-text">Orbital Systems</span>
+              </div>
+              <span class="crm-value">$210k</span>
+              <span class="crm-stage">Contract</span>
+              <span class="crm-badge" style="background:rgba(107,159,212,0.15);color:#6B9FD4;">closing</span>
+            </div>
+            <div class="crm-row">
+              <div class="crm-company">
+                <div class="crm-avatar" style="background:rgba(139,159,212,0.2);color:#8B9FD4;">PM</div>
+                <span class="crm-name-text">Pulse Media</span>
+              </div>
+              <span class="crm-value">$45k</span>
+              <span class="crm-stage">Nurture</span>
+              <span class="crm-badge" style="background:rgba(139,159,212,0.15);color:#8B9FD4;">cool</span>
+            </div>
+            <div class="ai-insight">
+              <div class="ai-insight-label">⚡ AI Insight</div>
+              <div class="ai-insight-text">3 deals show engagement decay — follow-up recommended within 48h to prevent pipeline loss.</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">
+          <div class="screen-caption-title">AI-Augmented CRM</div>
+          <div class="screen-caption-text">Custom Claude agents that score leads, draft follow-ups, and flag pipeline risk — all inside your existing Zoho CRM.</div>
+        </div>
+      </div>
+
+      <!-- Analytics Screen -->
+      <div class="screen-wrap" style="animation-delay:-3s;">
+        <div class="screen-frame" style="animation-delay:-3s;">
+          <div class="screen-bar">
+            <div class="screen-dot" style="background:#ff5f57;"></div>
+            <div class="screen-dot" style="background:#ffbd2e;"></div>
+            <div class="screen-dot" style="background:#28c840;"></div>
+            <div class="url-pill">analytics.mirroradvisors.io/revenue</div>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(236,169,52,0.15);color:#ECA934;font-weight:700;font-family:'Montserrat',sans-serif;">LIVE</span>
+          </div>
+          <div class="screen-body">
+            <div class="analytics-kpis">
+              <div class="kpi-box">
+                <div class="kpi-label">Monthly Revenue</div>
+                <div class="kpi-value">$284k</div>
+                <div class="kpi-change" style="color:#ECA934;">↑ 18.4%</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-label">Open Pipeline</div>
+                <div class="kpi-value">$1.2M</div>
+                <div class="kpi-change" style="color:#6B9FD4;">+6 deals</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-label">Win Rate</div>
+                <div class="kpi-value">64%</div>
+                <div class="kpi-change" style="color:#8B9FD4;">↑ 7pts</div>
+              </div>
+            </div>
+            <div class="chart-area">
+              <div class="chart-label">12-Month Revenue Trend</div>
+              <div class="chart-bars" id="chartBars"></div>
+            </div>
+            <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="padding:8px 10px;border-radius:7px;background:rgba(236,169,52,0.05);border:1px solid rgba(236,169,52,0.15);">
+                <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:2px;">Zoho Books Sync</div>
+                <div style="font-size:11px;color:#ECA934;font-weight:600;font-family:'Montserrat',sans-serif;">● Real-time</div>
+              </div>
+              <div style="padding:8px 10px;border-radius:7px;background:rgba(107,159,212,0.05);border:1px solid rgba(107,159,212,0.15);">
+                <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:2px;">CRM Pipeline</div>
+                <div style="font-size:11px;color:#6B9FD4;font-weight:600;font-family:'Montserrat',sans-serif;">● Connected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">
+          <div class="screen-caption-title">Unified Analytics Layer</div>
+          <div class="screen-caption-text">Cross-system dashboards pulling from CRM, ERP, and third-party APIs into a single live intelligence view.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CAPABILITIES
+============================================================ -->
+<section id="capabilities">
+  <div class="section-wrap">
+    <div class="sec-label">What We Build</div>
+    <div class="sec-h">Four Disciplines.<br>One Practice.</div>
+    <p class="sec-sub">Every engagement draws from all four. We don't silo our expertise — your problem gets the full picture.</p>
+
+    <div class="cap-grid">
+      <!-- Card 1 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M7 17a5 5 0 0 1 10 0"/></svg>
+        </div>
+        <div class="cap-title">AI-Powered Apps</div>
+        <div class="cap-desc">We build AI agents that live inside your existing tools &mdash; scoring leads, drafting documents, answering internal questions, and flagging problems before you see them. No new software to learn. No humans in the loop.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#6B9FD4,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(107,159,212,0.09);border:1px solid rgba(107,159,212,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="1.7"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="cap-title">Business Consulting</div>
+        <div class="cap-desc">Before we build anything, we map what you actually have, what&rsquo;s broken, and what&rsquo;s costing you. Then we give you a technology plan that we&rsquo;re accountable for executing &mdash; not a deck that sits in a drawer.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#8B9FD4,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(139,159,212,0.09);border:1px solid rgba(139,159,212,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="1.7"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v3M8.5 15.5l6.5-3.5M7.4 17.5l-1.9-3.3M16.6 17.5l1.9-3.3"/></svg>
+        </div>
+        <div class="cap-title">Systems Integration</div>
+        <div class="cap-desc">Most businesses run 8&ndash;14 tools that don&rsquo;t share data. We build the connections that make your stack behave like one system &mdash; so a deal closed in CRM becomes an invoice in accounting without anyone touching a keyboard.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="cap-title">ERP Implementation</div>
+        <div class="cap-desc">ERP projects have a notorious failure rate. Ours don&rsquo;t miss. We handle the full cycle &mdash; blueprint, migration, configuration, training &mdash; and we don&rsquo;t hand you off to a support queue when it goes live.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CASE STUDIES
+============================================================ -->
+<section id="cases">
+  <div class="cases-header">
+    <div class="sec-label">Case Studies</div>
+    <div class="sec-h">Results That Compound</div>
+    <p class="sec-sub">Real work. Real numbers. Hover to pause.</p>
+  </div>
+  <div class="cases-track-wrap">
+    <div class="cases-track" id="casesTrack"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICE MODELS
+============================================================ -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="svc-header-row">
+      <div class="svc-header-left">
+        <div class="sec-label">Engagement Models</div>
+        <div class="sec-h">Five Ways to Work<br>With Us</div>
+      </div>
+      <p class="sec-sub svc-header-sub">Every client situation is different. We structured our engagements to match your risk tolerance and growth stage.</p>
+    </div>
+
+    <div class="services-layout">
+      <div class="svc-tab-list" id="svcTabList"></div>
+      <div class="svc-panel" id="svcPanel">
+        <div class="svc-panel-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ZOHO
+============================================================ -->
+<section id="zoho">
+  <div class="section-wrap">
+    <div class="zoho-grid">
+      <div>
+        <div class="sec-label">Foundation Layer</div>
+        <div class="sec-h">Deep Zoho Expertise.<br><span style="color:var(--bluegray);">Not Our Whole Story.</span></div>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.78;margin-bottom:24px;font-weight:300;">Zoho's platform is one of the most capable business operating systems available — and we've achieved expert-level depth across its entire suite. But Zoho is our instrument, not our identity.</p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.78;font-weight:300;">The real value comes when we extend it with custom Claude AI, bespoke integrations, and business logic the native platform alone can't handle.</p>
+        <div class="zoho-tags">
+          <span class="zoho-tag">Zoho One</span>
+          <span class="zoho-tag">Advanced CRM</span>
+          <span class="zoho-tag">Books + Finance</span>
+          <span class="zoho-tag">Custom Functions</span>
+          <span class="zoho-tag">Claude Extensions</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-family:'Montserrat',sans-serif;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Apps We Deploy — Hover Any</div>
+        <div class="zoho-app-grid" onclick="go('technology')" style="cursor:pointer">
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">CRM</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Books</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Projects</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Desk</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Analytics</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Sign</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Flow</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">People</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Inventory</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Recruit</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Expense</div></div>
+          <div class="zoho-chip"><div class="zoho-chip-prefix">Zoho</div><div class="zoho-chip-name">Creator</div></div>
+        </div>
+        <div class="zoho-note">
+          <div class="zoho-note-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="zoho-note-text">
+            <strong>The real power</strong> comes when we extend Zoho with custom Claude AI apps, automated workflows, and third-party integrations — building capabilities the native platform alone cannot deliver.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+${_FOOTER_HTML}
