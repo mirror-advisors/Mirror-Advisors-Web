@@ -1881,7 +1881,7 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,66px);font-weigh
 }
 .za:hover .za-desc-wrap{
   opacity:1;
-  transition-delay:1.4s;
+  transition-delay:1s;
 }
 
 .za-prefix{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;color:var(--dim)}
