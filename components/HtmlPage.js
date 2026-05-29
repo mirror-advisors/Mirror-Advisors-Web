@@ -29,12 +29,16 @@ export default function HtmlPage({ html }) {
               const page = m[1];
               const aliases = { capabilities: 'home', stack: 'technology' };
               const target = aliases[page] || page;
-              const path =
-                target === 'home'
-                  ? '/'
-                  : target.startsWith('zoho_')
-                    ? '/zoho/' + target.slice('zoho_'.length)
-                    : '/' + target;
+              let path;
+              if (target === 'home') {
+                path = '/';
+              } else if (/^case_\d+$/.test(target)) {
+                path = '/cases/' + target.slice('case_'.length);
+              } else if (target.startsWith('zoho_')) {
+                path = '/zoho/' + target.slice('zoho_'.length);
+              } else {
+                path = '/' + target;
+              }
               router.push(path);
               return;
             }
