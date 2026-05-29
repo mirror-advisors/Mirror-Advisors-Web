@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Legacy stylesheet from the original static site.
+   The full visual design lives in /public/legacy/styles.css.
+   Loaded via a <link> in the root layout — see app/layout.tsx.
+   New work should prefer Tailwind utilities; remove rules from
+   styles.css incrementally as components are refactored. */
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #080B1A;
+  color: #fff;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+body.menu-open {
+  overflow: hidden;
+}

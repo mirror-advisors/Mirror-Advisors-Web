@@ -2,4 +2,22 @@
 *.log
 .vscode/
 .idea/
+
+# dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build/
+dist/
+
+# environment
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
