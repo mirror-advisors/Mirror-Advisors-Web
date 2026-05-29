@@ -3298,7 +3298,7 @@ a.pft-contact-item:hover svg{color:var(--t);}
 
 /* ── STACK HERO ZOHO PARTNER BADGE ─────────────────────────── */
 .stack-hero-badge{position:absolute;right:7%;top:50%;transform:translateY(-50%);pointer-events:none;display:flex;align-items:center;justify-content:center;}
-.stack-hero-badge-img{width:320px;height:auto;display:block;animation:zhpFloat 5s ease-in-out infinite;filter:drop-shadow(0 6px 20px rgba(0,0,0,.55))}
+.stack-hero-badge-img{width:380px;height:auto;display:block;animation:zhpFloat 5s ease-in-out infinite;filter:drop-shadow(0 6px 20px rgba(0,0,0,.55))}
 @keyframes zhpFloat{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}
 
 
