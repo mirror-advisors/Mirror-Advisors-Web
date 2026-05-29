@@ -5593,4 +5593,58 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 720px) {
   .ab-thesis { padding: 20px 22px; font-size: 16px; }
   .ab-thesis span { font-size: 15px; }
+
+  /* Comparison table → card-stack on mobile. No horizontal scroll, no clipped columns. */
+  .ab-compare-wrap { overflow: visible; border: none; background: transparent; margin-top: 24px; }
+  .ab-compare { min-width: 0; width: 100%; }
+  .ab-compare, .ab-compare thead, .ab-compare tbody, .ab-compare tr, .ab-compare th, .ab-compare td { display: block; }
+  .ab-compare thead { display: none; }
+  .ab-compare tbody tr {
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .ab-compare tbody tr:hover td,
+  .ab-compare tbody tr:hover td.ab-ma-cell { background: transparent; }
+  .ab-compare tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    border-left: none;
+    border-right: none;
+    font-size: 13.5px;
+  }
+  .ab-compare tbody tr td:last-child { border-bottom: none; }
+  .ab-compare tbody td.ab-criterion {
+    display: block;
+    text-align: left;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.025);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  /* Label each comparison cell with its column header via pseudo-element. */
+  .ab-compare tbody td:nth-of-type(2)::before { content: "Offshore Freelancer"; }
+  .ab-compare tbody td:nth-of-type(3)::before { content: "Typical US Partner"; }
+  .ab-compare tbody td:nth-of-type(4)::before { content: "Zoho Direct Support"; }
+  .ab-compare tbody td:nth-of-type(5)::before { content: "Mirror Advisors"; }
+  .ab-compare tbody td:nth-of-type(n+2)::before {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-align: left;
+    flex: 1;
+  }
+  .ab-compare tbody td.ab-ma-cell { background: rgba(236,169,52,0.07); }
+  .ab-compare tbody td.ab-ma-cell::before { color: var(--teal); }
 }
