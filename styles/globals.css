@@ -5681,6 +5681,38 @@ body.menu-open { overflow: hidden; }
   .ab-ph .ph-in > .badge { max-width: none; }
 }
 
+/* Founder & CEO intro: text left, photo right (stacks on mobile). */
+.ab-intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.ab-intro-text { min-width: 0; }
+.ab-intro-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ab-intro-photo img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(236, 169, 52, 0.25);
+  background: #0f1424;
+}
+@media (max-width: 860px) {
+  .ab-intro-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .ab-intro-photo img { max-width: 260px; margin: 0 auto; }
+}
+
 @media (max-width: 720px) {
   .ab-thesis { padding: 20px 22px; font-size: 16px; }
   .ab-thesis span { font-size: 15px; }

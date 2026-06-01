@@ -459,9 +459,16 @@ export const pages = {
 
 <section class="ab-section">
   <div class="ab-inner">
-    <div class="sl">Founder &amp; CEO</div>
-    <div class="sh">The inside view of Zoho.<br><span style="color:var(--t)">Turned into a firm that works.</span></div>
-    <p class="ab-intro-p">Paul Trinidad spent nearly three years selling Zoho from inside the company before starting Mirror Advisors. He saw every pattern &mdash; the partners who churn and burn, the support tickets lost in transit, the implementations that stall because nobody owns the outcome. Mirror Advisors is the firm he wished existed when he was referring deals out.</p>
+    <div class="ab-intro-row">
+      <div class="ab-intro-text">
+        <div class="sl">Founder &amp; CEO</div>
+        <div class="sh">The inside view of Zoho.<br><span style="color:var(--t)">Turned into a firm that works.</span></div>
+        <p class="ab-intro-p">Paul Trinidad spent nearly three years selling Zoho from inside the company before starting Mirror Advisors. He saw every pattern &mdash; the partners who churn and burn, the support tickets lost in transit, the implementations that stall because nobody owns the outcome. Mirror Advisors is the firm he wished existed when he was referring deals out.</p>
+      </div>
+      <div class="ab-intro-photo">
+        <img src="/images/team/founder.png" alt="Paul Trinidad" loading="lazy">
+      </div>
+    </div>
 
     <div class="ab-leader">
       <div class="ab-leader-bio">
