@@ -5636,7 +5636,7 @@ body.menu-open { overflow: hidden; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 10px;
   z-index: 1;
 }
 .ab-hero-photo {
@@ -5657,10 +5657,6 @@ body.menu-open { overflow: hidden; }
   max-width: 90%;
   height: auto;
   display: block;
-  opacity: 0;
-  animation:
-    abLogoFadeIn 1s ease-out 0.2s forwards,
-    abLogoFloat 6s ease-in-out 1.2s infinite;
   filter: drop-shadow(0 6px 28px rgba(0,0,0,0.5));
 }
 @keyframes abLogoFadeIn {
