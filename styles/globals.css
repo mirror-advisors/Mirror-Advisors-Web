@@ -5401,16 +5401,16 @@ body.menu-open { overflow: hidden; }
   margin-top: -80px;
 }
 /* Also pull the entire section up so the previous section's bottom padding
-   doesn't leave a gap above the divider line. */
+   doesn't leave a gap above the divider line — leaving a small breathing room. */
 .ab-section:has(> .ab-inner > .ab-divider:first-child) {
-  margin-top: -80px;
+  margin-top: -48px;
 }
 @media (max-width: 720px) {
   .ab-section .ab-inner > .ab-divider:first-child {
     margin-top: -56px;
   }
   .ab-section:has(> .ab-inner > .ab-divider:first-child) {
-    margin-top: -56px;
+    margin-top: -32px;
   }
 }
 
