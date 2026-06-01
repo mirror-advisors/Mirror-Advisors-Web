@@ -5393,7 +5393,17 @@ body.menu-open { overflow: hidden; }
 .ab-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-teal), transparent);
-  margin: 8px 0 64px 0;
+  margin: 0 0 40px 0;
+}
+/* When a divider is the first thing in a section, pull it up into the
+   section's top padding so there's no awkward empty space above the line. */
+.ab-section .ab-inner > .ab-divider:first-child {
+  margin-top: -64px;
+}
+@media (max-width: 720px) {
+  .ab-section .ab-inner > .ab-divider:first-child {
+    margin-top: -44px;
+  }
 }
 
 /* Origin story strip */
