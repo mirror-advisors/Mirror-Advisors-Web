@@ -5400,8 +5400,16 @@ body.menu-open { overflow: hidden; }
 .ab-section .ab-inner > .ab-divider:first-child {
   margin-top: -80px;
 }
+/* Also pull the entire section up so the previous section's bottom padding
+   doesn't leave a gap above the divider line. */
+.ab-section:has(> .ab-inner > .ab-divider:first-child) {
+  margin-top: -80px;
+}
 @media (max-width: 720px) {
   .ab-section .ab-inner > .ab-divider:first-child {
+    margin-top: -56px;
+  }
+  .ab-section:has(> .ab-inner > .ab-divider:first-child) {
     margin-top: -56px;
   }
 }
