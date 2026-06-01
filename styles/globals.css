@@ -5624,7 +5624,8 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
 }
 
-/* About-page hero floating logo (uses the same wide logo as the footer). */
+/* About-page hero: founder headshot stacked above the floating logo
+   (uses the same wide logo as the footer). */
 .ab-hero-mark {
   position: absolute;
   right: 6%;
@@ -5632,9 +5633,24 @@ body.menu-open { overflow: hidden; }
   transform: translateY(-50%);
   pointer-events: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 28px;
   z-index: 1;
+}
+.ab-hero-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid rgba(236, 169, 52, 0.4);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  background: #0f1424;
+  display: block;
+  opacity: 0;
+  animation: abLogoFadeIn 1s ease-out 0.1s forwards;
 }
 .ab-hero-logo {
   width: 460px;
