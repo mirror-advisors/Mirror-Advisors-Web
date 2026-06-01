@@ -5774,3 +5774,32 @@ body.menu-open { overflow: hidden; }
   .ab-compare tbody td.ab-ma-cell { background: rgba(236,169,52,0.07); }
   .ab-compare tbody td.ab-ma-cell::before { color: var(--teal); }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   MOBILE OPTIMIZATION AUDIT (2026-06)
+   Collapses 3-column grids that previously had no mobile breakpoint,
+   hides decorative glow blobs that bled off small viewports, and enforces
+   a minimum 44px tap target on the nav CTA.
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  /* Case Studies grid: 3 → 2 cols on tablet */
+  .case-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+  /* Technology page: collapse stack categories + architecture rows */
+  .stack-cats { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
+  .arch-row   { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  /* Single column on phones */
+  .case-grid  { grid-template-columns: 1fr; gap: 16px; }
+  .stack-cats { grid-template-columns: 1fr; gap: 16px; }
+  .arch-row   { grid-template-columns: 1fr; }
+
+  /* Decorative glow blobs that don't fit small viewports */
+  .feat-glow,
+  .ctasg { display: none; }
+}
+
+/* Ensure nav CTA meets 44px minimum tap target on touch viewports */
+@media (max-width: 1023px) {
+  .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
+}
