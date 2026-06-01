@@ -3349,7 +3349,16 @@ a.pft-contact-item:hover svg{color:var(--t);}
   height:auto;
   display:block;
   animation:zhpFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 6px 20px rgba(0,0,0,.55)) drop-shadow(0 0 28px rgba(236,169,52,0.45));
+  /* sepia + hue-rotate + saturate gives the white card a warm gold tint
+     while keeping the dark "Zoho Authorized Partner" text legible.
+     drop-shadow stages run before the tint so the shadow stays neutral. */
+  filter:
+    drop-shadow(0 6px 20px rgba(0,0,0,.55))
+    drop-shadow(0 0 28px rgba(236,169,52,0.45))
+    sepia(0.55)
+    saturate(2)
+    hue-rotate(-12deg)
+    brightness(0.96);
 }
 @keyframes zhpFloat{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}
 @keyframes zhpHaloPulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
