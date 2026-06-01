@@ -5624,6 +5624,41 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
 }
 
+/* About-page hero floating logo (uses the same wide logo as the footer). */
+.ab-hero-mark {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.ab-hero-logo {
+  width: 380px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  animation:
+    abLogoFadeIn 1s ease-out 0.2s forwards,
+    abLogoFloat 6s ease-in-out 1.2s infinite;
+  filter: drop-shadow(0 6px 28px rgba(0,0,0,0.5));
+}
+@keyframes abLogoFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes abLogoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@media (max-width: 900px) {
+  .ab-hero-mark { display: none; }
+}
+
 @media (max-width: 720px) {
   .ab-thesis { padding: 20px 22px; font-size: 16px; }
   .ab-thesis span { font-size: 15px; }
