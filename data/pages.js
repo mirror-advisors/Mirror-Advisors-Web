@@ -550,9 +550,16 @@ export const pages = {
 <section class="ab-section alt">
   <div class="ab-inner">
     <div class="ab-divider"></div>
-    <div class="sl">Managing Partner &amp; CTO</div>
-    <div class="sh">Mirror Advisors brings something no other partner has:<br><span style="color:var(--t)">the enterprise buyer at the table.</span></div>
-    <p class="ab-intro-p">Most Zoho partners have never sat on the other side of the desk. Mark Alberto has &mdash; for 25+ years. SVP of Technology at a \$2B insurance brokerage through IPO prep. Two decades running IT at a top-tier Philadelphia brokerage. The exact CIO/CTO profile most enterprise software vendors are trying to reach. Now he&#39;s on your side of the table &mdash; architecting your Zoho deployment with the seniority and judgment most partners can&#39;t bring.</p>
+    <div class="ab-intro-row">
+      <div class="ab-intro-text">
+        <div class="sl">Managing Partner &amp; CTO</div>
+        <div class="sh">Mirror Advisors brings something no other partner has:<br><span style="color:var(--t)">the enterprise buyer at the table.</span></div>
+        <p class="ab-intro-p">Most Zoho partners have never sat on the other side of the desk. Mark Alberto has &mdash; for 25+ years. SVP of Technology at a \$2B insurance brokerage through IPO prep. Two decades running IT at a top-tier Philadelphia brokerage. The exact CIO/CTO profile most enterprise software vendors are trying to reach. Now he&#39;s on your side of the table &mdash; architecting your Zoho deployment with the seniority and judgment most partners can&#39;t bring.</p>
+      </div>
+      <div class="ab-intro-photo">
+        <img src="/images/team/managing-partner.png" alt="Mark Alberto" loading="lazy">
+      </div>
+    </div>
 
     <div class="ab-leader">
       <div class="ab-leader-bio">
