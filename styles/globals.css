@@ -5393,25 +5393,7 @@ body.menu-open { overflow: hidden; }
 .ab-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-teal), transparent);
-  margin: 0 0 40px 0;
-}
-/* When a divider is the first thing in a section, pull it up into the
-   section's top padding so there's no awkward empty space above the line. */
-.ab-section .ab-inner > .ab-divider:first-child {
-  margin-top: -80px;
-}
-/* Also pull the entire section up so the previous section's bottom padding
-   doesn't leave a gap above the divider line — leaving a small breathing room. */
-.ab-section:has(> .ab-inner > .ab-divider:first-child) {
-  margin-top: -48px;
-}
-@media (max-width: 720px) {
-  .ab-section .ab-inner > .ab-divider:first-child {
-    margin-top: -56px;
-  }
-  .ab-section:has(> .ab-inner > .ab-divider:first-child) {
-    margin-top: -32px;
-  }
+  margin: 8px 0 64px 0;
 }
 
 /* Origin story strip */
