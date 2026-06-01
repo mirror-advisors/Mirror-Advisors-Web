@@ -5698,11 +5698,14 @@ body.menu-open { overflow: hidden; }
 .ab-intro-photo img {
   width: 100%;
   max-width: 320px;
+  aspect-ratio: 1 / 1;
   height: auto;
-  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
   display: block;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(236, 169, 52, 0.25);
+  border: 3px solid rgba(236, 169, 52, 0.4);
   background: #0f1424;
 }
 @media (max-width: 860px) {
