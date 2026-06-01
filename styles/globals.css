@@ -5637,7 +5637,7 @@ body.menu-open { overflow: hidden; }
   z-index: 1;
 }
 .ab-hero-logo {
-  width: 380px;
+  width: 300px;
   max-width: 90%;
   height: auto;
   display: block;
@@ -5655,8 +5655,18 @@ body.menu-open { overflow: hidden; }
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-10px); }
 }
-@media (max-width: 900px) {
+/* When the floating logo is shown, cap the hero text width so the headline
+   doesn't extend underneath it. */
+.ab-ph .ph-in > h1,
+.ab-ph .ph-in > .ph-sub,
+.ab-ph .ph-in > .badge {
+  max-width: 62%;
+}
+@media (max-width: 1024px) {
   .ab-hero-mark { display: none; }
+  .ab-ph .ph-in > h1,
+  .ab-ph .ph-in > .ph-sub,
+  .ab-ph .ph-in > .badge { max-width: none; }
 }
 
 @media (max-width: 720px) {
