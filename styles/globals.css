@@ -3332,36 +3332,20 @@ a.pft-contact-item:hover svg{color:var(--t);}
 
 /* ── STACK HERO ZOHO PARTNER BADGE ─────────────────────────── */
 .stack-hero-badge{position:absolute;right:7%;top:50%;transform:translateY(-50%);pointer-events:none;display:flex;align-items:center;justify-content:center;}
-/* Soft gold halo behind the badge — gives the partner mark the brand accent
-   instead of sitting on a flat dark background. */
-.stack-hero-badge::before{
-  content:'';
-  position:absolute;
-  inset:-22%;
-  background:radial-gradient(circle, rgba(236,169,52,0.32), rgba(236,169,52,0.10) 45%, transparent 70%);
-  filter:blur(24px);
-  z-index:-1;
-  pointer-events:none;
-  animation:zhpHaloPulse 5s ease-in-out infinite;
-}
 .stack-hero-badge-img{
   width:380px;
   height:auto;
   display:block;
   animation:zhpFloat 5s ease-in-out infinite;
-  /* sepia + hue-rotate + saturate gives the white card a warm gold tint
-     while keeping the dark "Zoho Authorized Partner" text legible.
-     drop-shadow stages run before the tint so the shadow stays neutral. */
+  /* Gold tint stays on the badge card itself. No glow/halo around it. */
   filter:
     drop-shadow(0 6px 20px rgba(0,0,0,.55))
-    drop-shadow(0 0 28px rgba(236,169,52,0.45))
     sepia(0.55)
     saturate(2)
     hue-rotate(-12deg)
     brightness(0.96);
 }
 @keyframes zhpFloat{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}
-@keyframes zhpHaloPulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
 @media(max-width:900px){.stack-hero-badge{display:none;}}
 
 
