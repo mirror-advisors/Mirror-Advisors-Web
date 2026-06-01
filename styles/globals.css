@@ -5629,7 +5629,7 @@ body.menu-open { overflow: hidden; }
 .ab-hero-mark {
   position: absolute;
   right: 6%;
-  top: 58%;
+  top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
   display: flex;

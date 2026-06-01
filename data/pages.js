@@ -355,7 +355,6 @@ export const pages = {
   <div class="ph-grid"></div>
   <div class="ph-glow" style="bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse at 80% 80%,rgba(236,169,52,.06),transparent 65%)"></div>
   <div class="ab-hero-mark" aria-hidden="true">
-    <img src="/images/team/founder.png" alt="" class="ab-hero-photo" loading="lazy">
     <img src="/images/logo-wide.png" alt="" class="ab-hero-logo" loading="lazy">
   </div>
   <div class="ph-in">
