@@ -131,6 +131,13 @@ export const pages = {
                 </div>
                 <span style="font-size:7px;padding:2px 5px;border:1px solid rgba(255,255,255,0.1);border-radius:3px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.5);letter-spacing:0.05em;font-weight:700;">FEB 3</span>
               </div>
+              <div style="padding:7px 10px;border-radius:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:#fff;">Pipeline &amp; reporting review</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px;">3 tasks captured</div>
+                </div>
+                <span style="font-size:7px;padding:2px 5px;border:1px solid rgba(255,255,255,0.1);border-radius:3px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.5);letter-spacing:0.05em;font-weight:700;">FEB 20</span>
+              </div>
             </div>
 
             <!-- Objectives -->
@@ -170,6 +177,18 @@ export const pages = {
                 </div>
                 <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
                   <div style="height:100%;width:30%;background:#60A5FA;border-radius:2px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+                  <div style="display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:10px;color:#fff;font-weight:500;">Books &amp; finance integration</span>
+                    <span style="font-size:7px;padding:1px 5px;border-radius:3px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-weight:800;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">LOW</span>
+                  </div>
+                  <span style="font-size:10px;color:#60A5FA;font-weight:800;font-family:'Montserrat',sans-serif;opacity:0.75;">12%</span>
+                </div>
+                <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                  <div style="height:100%;width:12%;background:#60A5FA;opacity:0.55;border-radius:2px;"></div>
                 </div>
               </div>
             </div>
