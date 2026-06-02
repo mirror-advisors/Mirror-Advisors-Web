@@ -72,7 +72,7 @@ export const pages = {
     <p class="sec-sub">Real deployments running daily across sales, operations, and finance teams.</p>
 
     <div class="screens-grid">
-      <!-- CRM Screen -->
+      <!-- Infinity Mirror — My Project Screen -->
       <div class="screen-wrap">
         <div class="screen-frame">
           <div class="scan-overlay"></div>
@@ -80,62 +80,104 @@ export const pages = {
             <div class="screen-dot" style="background:#ff5f57;"></div>
             <div class="screen-dot" style="background:#ffbd2e;"></div>
             <div class="screen-dot" style="background:#28c840;"></div>
-            <div class="url-pill">app.mirroradvisors.io/crm/pipeline</div>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div class="url-pill">app.mirroradvisors.com/my-project</div>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(167,139,250,0.18);color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">LIVE</span>
           </div>
           <div class="screen-body">
-            <div style="font-size:10px;font-family:'Montserrat',sans-serif;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">AI-Scored Pipeline — Q2 2025</div>
-            <div class="crm-table-head">
-              <span class="crm-th">Company</span>
-              <span class="crm-th">Value</span>
-              <span class="crm-th">Stage</span>
-              <span class="crm-th">Status</span>
+            <!-- Top tab nav -->
+            <div style="display:flex;gap:14px;align-items:center;font-size:9px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span>My Queue</span>
+              <span>My Submissions</span>
+              <span style="color:#A78BFA;font-weight:800;position:relative;">My Project<span style="position:absolute;left:0;right:0;bottom:-9px;height:2px;background:#A78BFA;border-radius:2px;"></span></span>
+              <span>Action Required <sup style="color:#EF4444;font-size:7px;font-weight:800;margin-left:1px;">2</sup></span>
             </div>
-            <div class="crm-row">
-              <div class="crm-company">
-                <div class="crm-avatar" style="background:rgba(236,169,52,0.2);color:#ECA934;">NC</div>
-                <span class="crm-name-text">Nexus Corp</span>
+
+            <!-- Welcome -->
+            <div style="margin-bottom:12px;">
+              <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:2px;">Welcome back, Alex</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">Northwind Industries · Zoho CRM + Desk + Projects</div>
+            </div>
+
+            <!-- 3 stat cards -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+              <div style="padding:8px 10px;border-radius:7px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#4ADE80;line-height:1;">11</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:3px;text-transform:uppercase;letter-spacing:0.04em;">Tasks Done</div>
               </div>
-              <span class="crm-value">\$124k</span>
-              <span class="crm-stage">Proposal</span>
-              <span class="crm-badge" style="background:rgba(236,169,52,0.15);color:#ECA934;">hot</span>
-            </div>
-            <div class="crm-row">
-              <div class="crm-company">
-                <div class="crm-avatar" style="background:rgba(236,169,52,0.2);color:#ECA934;">AD</div>
-                <span class="crm-name-text">Apex Dynamics</span>
+              <div style="padding:8px 10px;border-radius:7px;background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#A78BFA;line-height:1;">86h</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:3px;text-transform:uppercase;letter-spacing:0.04em;">Hours Delivered</div>
               </div>
-              <span class="crm-value">\$87k</span>
-              <span class="crm-stage">Discovery</span>
-              <span class="crm-badge" style="background:rgba(236,169,52,0.15);color:#ECA934;">warm</span>
-            </div>
-            <div class="crm-row">
-              <div class="crm-company">
-                <div class="crm-avatar" style="background:rgba(107,159,212,0.2);color:#6B9FD4;">OS</div>
-                <span class="crm-name-text">Orbital Systems</span>
+              <div style="padding:8px 10px;border-radius:7px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#60A5FA;line-height:1;">64%</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:3px;text-transform:uppercase;letter-spacing:0.04em;">Avg Progress</div>
               </div>
-              <span class="crm-value">\$210k</span>
-              <span class="crm-stage">Contract</span>
-              <span class="crm-badge" style="background:rgba(107,159,212,0.15);color:#6B9FD4;">closing</span>
             </div>
-            <div class="crm-row">
-              <div class="crm-company">
-                <div class="crm-avatar" style="background:rgba(139,159,212,0.2);color:#8B9FD4;">PM</div>
-                <span class="crm-name-text">Pulse Media</span>
+
+            <!-- Meetings list -->
+            <div style="font-size:8px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;font-weight:700;">Meetings</div>
+            <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+              <div style="padding:7px 10px;border-radius:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:#fff;">Kickoff &amp; CRM discovery</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px;">5 tasks captured · 2 action items</div>
+                </div>
+                <span style="font-size:7px;padding:2px 5px;border:1px solid rgba(255,255,255,0.1);border-radius:3px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.5);letter-spacing:0.05em;font-weight:700;">JAN 16</span>
               </div>
-              <span class="crm-value">\$45k</span>
-              <span class="crm-stage">Nurture</span>
-              <span class="crm-badge" style="background:rgba(139,159,212,0.15);color:#8B9FD4;">cool</span>
+              <div style="padding:7px 10px;border-radius:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:#fff;">Desk configuration walkthrough</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px;">4 tasks captured · 1 action item</div>
+                </div>
+                <span style="font-size:7px;padding:2px 5px;border:1px solid rgba(255,255,255,0.1);border-radius:3px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.5);letter-spacing:0.05em;font-weight:700;">FEB 3</span>
+              </div>
             </div>
-            <div class="ai-insight">
-              <div class="ai-insight-label">⚡ AI Insight</div>
-              <div class="ai-insight-text">3 deals show engagement decay — follow-up recommended within 48h to prevent pipeline loss.</div>
+
+            <!-- Objectives -->
+            <div style="font-size:8px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;font-weight:700;">Objectives</div>
+            <div style="display:flex;flex-direction:column;gap:7px;">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+                  <div style="display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:10px;color:#fff;font-weight:500;">CRM foundation &amp; data migration</span>
+                    <span style="font-size:7px;padding:1px 5px;border-radius:3px;background:rgba(236,169,52,0.15);color:#ECA934;font-weight:800;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">HIGH</span>
+                  </div>
+                  <span style="font-size:10px;color:#4ADE80;font-weight:800;font-family:'Montserrat',sans-serif;">82%</span>
+                </div>
+                <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                  <div style="height:100%;width:82%;background:#4ADE80;border-radius:2px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+                  <div style="display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:10px;color:#fff;font-weight:500;">Desk support rollout</span>
+                    <span style="font-size:7px;padding:1px 5px;border-radius:3px;background:rgba(167,139,250,0.18);color:#A78BFA;font-weight:800;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">MEDIUM</span>
+                  </div>
+                  <span style="font-size:10px;color:#A78BFA;font-weight:800;font-family:'Montserrat',sans-serif;">55%</span>
+                </div>
+                <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                  <div style="height:100%;width:55%;background:#A78BFA;border-radius:2px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+                  <div style="display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:10px;color:#fff;font-weight:500;">Reporting &amp; analytics</span>
+                    <span style="font-size:7px;padding:1px 5px;border-radius:3px;background:rgba(96,165,250,0.18);color:#60A5FA;font-weight:800;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">MEDIUM</span>
+                  </div>
+                  <span style="font-size:10px;color:#60A5FA;font-weight:800;font-family:'Montserrat',sans-serif;">30%</span>
+                </div>
+                <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                  <div style="height:100%;width:30%;background:#60A5FA;border-radius:2px;"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="screen-caption">
-          <div class="screen-caption-title">AI-Augmented CRM</div>
-          <div class="screen-caption-text">Custom Claude agents that score leads, draft follow-ups, and flag pipeline risk — all inside your existing Zoho CRM.</div>
+          <div class="screen-caption-title">Infinity Mirror — My Project</div>
+          <div class="screen-caption-text">The live client portal we built for every Mirror Advisors engagement &mdash; meetings, objectives, hours delivered, and progress, all in one place.</div>
         </div>
       </div>
 
