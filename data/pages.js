@@ -1044,8 +1044,8 @@ export const pages = {
                   <div style="font-size:6px;color:#6B7488;margin-top:2px;">5 agents</div>
                 </div>
               </div>
-              <!-- Recent activity -->
-              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+              <!-- Recent activity (2 rows) -->
+              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;margin-bottom:6px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
                   <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#0F1424;">Recent Activity</span>
                   <span style="font-size:7px;color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;">View All</span>
@@ -1065,12 +1065,32 @@ export const pages = {
                       <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
                     </div>
                   </div>
-                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                </div>
+              </div>
+              <!-- Agent performance (3 rows) -->
+              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#0F1424;">Agent Performance</span>
+                  <span style="font-size:6px;color:#6B7488;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">YTD</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Daniel Malicad</span>
+                    <span style="font-size:6px;color:#6B7488;">8L · 5L · 2C</span>
+                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$142.5k</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;">
                     <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Elena Adeyemi</strong> uploaded Inspection Report <span style="color:#A78BFA;">2310 Riverside Dr</span></div>
-                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
-                    </div>
+                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Elena Adeyemi</span>
+                    <span style="font-size:6px;color:#6B7488;">7L · 2L · 1C</span>
+                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$95.8k</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Priya Calderon</span>
+                    <span style="font-size:6px;color:#6B7488;">6L · 3L · 1C</span>
+                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$87.3k</span>
                   </div>
                 </div>
               </div>
