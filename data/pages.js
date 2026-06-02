@@ -200,53 +200,125 @@ export const pages = {
         </div>
       </div>
 
-      <!-- Analytics Screen -->
+      <!-- Infinity Mirror — My Queue Screen -->
       <div class="screen-wrap" style="animation-delay:-3s;">
         <div class="screen-frame" style="animation-delay:-3s;">
           <div class="screen-bar">
             <div class="screen-dot" style="background:#ff5f57;"></div>
             <div class="screen-dot" style="background:#ffbd2e;"></div>
             <div class="screen-dot" style="background:#28c840;"></div>
-            <div class="url-pill">analytics.mirroradvisors.io/revenue</div>
-            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(236,169,52,0.15);color:#ECA934;font-weight:700;font-family:'Montserrat',sans-serif;">LIVE</span>
+            <div class="url-pill">app.mirroradvisors.com/my-queue</div>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(167,139,250,0.18);color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">LIVE</span>
           </div>
           <div class="screen-body">
-            <div class="analytics-kpis">
-              <div class="kpi-box">
-                <div class="kpi-label">Monthly Revenue</div>
-                <div class="kpi-value">\$284k</div>
-                <div class="kpi-change" style="color:#ECA934;">↑ 18.4%</div>
+            <!-- Top tab nav -->
+            <div style="display:flex;gap:14px;align-items:center;font-size:9px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:#A78BFA;font-weight:800;position:relative;">My Queue<span style="position:absolute;left:0;right:0;bottom:-9px;height:2px;background:#A78BFA;border-radius:2px;"></span></span>
+              <span>My Submissions</span>
+              <span>My Project</span>
+              <span>Action Required <sup style="color:#EF4444;font-size:7px;font-weight:800;margin-left:1px;">2</sup></span>
+            </div>
+
+            <!-- Welcome -->
+            <div style="margin-bottom:12px;">
+              <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:2px;">Welcome back, Alex</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">Northwind Industries · Zoho CRM + Desk + Projects</div>
+            </div>
+
+            <!-- Project Progress card -->
+            <div style="padding:10px 12px;border-radius:8px;background:rgba(167,139,250,0.04);border:1px solid rgba(167,139,250,0.15);margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:8px;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Project Progress</span>
+                <span style="font-size:10px;font-family:'Montserrat',sans-serif;color:#A78BFA;font-weight:800;">64% overall</span>
               </div>
-              <div class="kpi-box">
-                <div class="kpi-label">Open Pipeline</div>
-                <div class="kpi-value">\$1.2M</div>
-                <div class="kpi-change" style="color:#6B9FD4;">+6 deals</div>
-              </div>
-              <div class="kpi-box">
-                <div class="kpi-label">Win Rate</div>
-                <div class="kpi-value">64%</div>
-                <div class="kpi-change" style="color:#8B9FD4;">↑ 7pts</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;">
+                <div>
+                  <div style="font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px;line-height:1.3;">CRM foundation</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;margin-bottom:2px;"><div style="height:100%;width:82%;background:#4ADE80;border-radius:2px;"></div></div>
+                  <div style="font-size:8px;color:#4ADE80;font-weight:800;font-family:'Montserrat',sans-serif;text-align:right;">82%</div>
+                </div>
+                <div>
+                  <div style="font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px;line-height:1.3;">Desk rollout</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;margin-bottom:2px;"><div style="height:100%;width:55%;background:#A78BFA;border-radius:2px;"></div></div>
+                  <div style="font-size:8px;color:#A78BFA;font-weight:800;font-family:'Montserrat',sans-serif;text-align:right;">55%</div>
+                </div>
+                <div>
+                  <div style="font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px;line-height:1.3;">Reporting</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;margin-bottom:2px;"><div style="height:100%;width:30%;background:#60A5FA;border-radius:2px;"></div></div>
+                  <div style="font-size:8px;color:#60A5FA;font-weight:800;font-family:'Montserrat',sans-serif;text-align:right;">30%</div>
+                </div>
+                <div>
+                  <div style="font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px;line-height:1.3;">Books &amp; finance</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;margin-bottom:2px;"><div style="height:100%;width:12%;background:#60A5FA;opacity:0.5;border-radius:2px;"></div></div>
+                  <div style="font-size:8px;color:#60A5FA;opacity:0.7;font-weight:800;font-family:'Montserrat',sans-serif;text-align:right;">12%</div>
+                </div>
               </div>
             </div>
-            <div class="chart-area">
-              <div class="chart-label">12-Month Revenue Trend</div>
-              <div class="chart-bars" id="chartBars"></div>
-            </div>
-            <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <div style="padding:8px 10px;border-radius:7px;background:rgba(236,169,52,0.05);border:1px solid rgba(236,169,52,0.15);">
-                <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:2px;">Zoho Books Sync</div>
-                <div style="font-size:11px;color:#ECA934;font-weight:600;font-family:'Montserrat',sans-serif;">● Real-time</div>
+
+            <!-- Action callout -->
+            <div style="display:flex;gap:9px;align-items:center;padding:10px 12px;border-radius:8px;background:linear-gradient(90deg,rgba(236,169,52,0.10),rgba(236,169,52,0.04));border:1px solid rgba(236,169,52,0.28);margin-bottom:12px;">
+              <div style="width:24px;height:24px;border-radius:6px;background:#ECA934;display:flex;align-items:center;justify-content:center;color:#0F0F1A;font-size:13px;font-weight:900;flex-shrink:0;">⚡</div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:11px;font-weight:700;color:#fff;margin-bottom:1px;">2 items need your input</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.5);">The team is waiting on you — tap to review and respond</div>
               </div>
-              <div style="padding:8px 10px;border-radius:7px;background:rgba(107,159,212,0.05);border:1px solid rgba(107,159,212,0.15);">
-                <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:2px;">CRM Pipeline</div>
-                <div style="font-size:11px;color:#6B9FD4;font-weight:600;font-family:'Montserrat',sans-serif;">● Connected</div>
+              <div style="color:#ECA934;font-size:14px;font-weight:700;">→</div>
+            </div>
+
+            <!-- 4 stat tiles -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;margin-bottom:12px;">
+              <div style="padding:8px 8px;border-radius:6px;background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#A78BFA;line-height:1;">4</div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">In Flight</div>
+              </div>
+              <div style="padding:8px 8px;border-radius:6px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#60A5FA;line-height:1;">3</div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Up Next</div>
+              </div>
+              <div style="padding:8px 8px;border-radius:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:rgba(255,255,255,0.85);line-height:1;">2</div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">In Review</div>
+              </div>
+              <div style="padding:8px 8px;border-radius:6px;background:rgba(236,169,52,0.06);border:1px solid rgba(236,169,52,0.22);">
+                <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#ECA934;line-height:1;">2</div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Waiting On You</div>
+              </div>
+            </div>
+
+            <!-- In flight + Recently delivered (2-col) -->
+            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:8px;">
+              <div>
+                <div style="font-size:8px;font-family:'Montserrat',sans-serif;color:#A78BFA;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;font-weight:800;">▶ In Flight Right Now</div>
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  <div style="padding:6px 8px;border-radius:5px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);border-left:2px solid #A78BFA;">
+                    <div style="font-size:9px;font-weight:700;color:#fff;line-height:1.2;">Migrate legacy contacts into Zoho CRM</div>
+                    <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:2px;">Marcus Lee · 4h / 6h</div>
+                  </div>
+                  <div style="padding:6px 8px;border-radius:5px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);border-left:2px solid #A78BFA;">
+                    <div style="font-size:9px;font-weight:700;color:#fff;line-height:1.2;">Build deal-stage automation workflow</div>
+                    <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:2px;">Priya Sharma · 1h / 4h</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:8px;font-family:'Montserrat',sans-serif;color:#4ADE80;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;font-weight:800;">✓ Recently Delivered</div>
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  <div style="padding:6px 8px;border-radius:5px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);">
+                    <div style="font-size:9px;font-weight:700;color:#fff;line-height:1.2;">Set up Projects task templates</div>
+                    <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:2px;">delivered 3d ago · 6h</div>
+                  </div>
+                  <div style="padding:6px 8px;border-radius:5px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);">
+                    <div style="font-size:9px;font-weight:700;color:#fff;line-height:1.2;">Import historical support tickets</div>
+                    <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:2px;">delivered 9d ago · 9h</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="screen-caption">
-          <div class="screen-caption-title">Unified Analytics Layer</div>
-          <div class="screen-caption-text">Cross-system dashboards pulling from CRM, ERP, and third-party APIs into a single live intelligence view.</div>
+          <div class="screen-caption-title">Infinity Mirror — My Queue</div>
+          <div class="screen-caption-text">Live work tracking for every Mirror Advisors engagement &mdash; in-flight tasks, queued work, items waiting on you, and a 30-day delivery log.</div>
         </div>
       </div>
     </div>
