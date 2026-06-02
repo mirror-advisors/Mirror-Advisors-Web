@@ -970,14 +970,111 @@ export const pages = {
         <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px">Add AI to Your Business <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       </div>
       <div class="cap-d-right">
-        <div class="vis-panel">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422;">
           <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
-          <div class="vis-title">Claude CRM Agent &mdash; Live</div>
-          <div class="ai-chat">
-            <div class="msg user">Summarize the Nexus Corp deal and draft a follow-up email for tomorrow.</div>
-            <div class="msg ai"><strong>Nexus Corp &mdash; \$124k Proposal</strong><br><br>Last contact: 5 days ago. Engagement score dropped 18% this week. They opened your proposal 3 times but haven&#39;t replied.<br><br>&#128231; Draft follow-up ready &mdash; references their Q3 go-live goal and the specific integration they asked about. Want me to send it or adjust tone?</div>
-            <div class="msg user">Send it, and flag any other deals with similar decay patterns.</div>
-            <div class="ai-typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>
+          <!-- Custom browser-frame chrome -->
+          <div style="display:flex;align-items:center;gap:6px;padding:9px 12px;background:#080B16;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840;"></span>
+            <span style="margin-left:8px;font-size:9px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.04);padding:3px 9px;border-radius:6px;">malicads-agency.app/dashboard</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(236,169,52,0.18);color:#ECA934;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">DEPLOYED</span>
+          </div>
+          <!-- Dashboard body: dark sidebar + light main -->
+          <div style="display:grid;grid-template-columns:78px 1fr;min-height:340px;">
+            <!-- Sidebar -->
+            <div style="background:#0E1422;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:12px;border-right:1px solid rgba(255,255,255,0.05);">
+              <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;color:#fff;letter-spacing:-0.02em;line-height:1;text-align:center;">MA<div style="font-size:5px;font-weight:700;color:#ECA934;letter-spacing:0.15em;margin-top:2px;">AGENCY</div></div>
+              <div style="display:flex;flex-direction:column;gap:4px;width:100%;margin-top:6px;">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;border-radius:6px;background:rgba(255,255,255,0.06);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                  <span style="font-size:7px;color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;">Dashboard</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Leads</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Transact.</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Properties</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Docs</span>
+                </div>
+              </div>
+            </div>
+            <!-- Main content (light theme) -->
+            <div style="background:#F7F8FA;padding:14px 16px;color:#1A2238;font-family:'DM Sans',sans-serif;">
+              <!-- Header row -->
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1A2238;">Dashboard</div>
+                <div style="display:flex;gap:6px;align-items:center;">
+                  <div style="width:18px;height:18px;border-radius:50%;background:#E8EBF0;display:flex;align-items:center;justify-content:center;color:#5B6478;font-size:9px;">🔔</div>
+                  <div style="width:18px;height:18px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;">DM</div>
+                </div>
+              </div>
+              <!-- Welcome -->
+              <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#0F1424;margin-bottom:1px;line-height:1.1;">Good evening, Daniel</div>
+              <div style="font-size:8px;color:#6B7488;margin-bottom:10px;">Tuesday, June 2, 2026</div>
+              <!-- 4 stat cards -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;margin-bottom:11px;">
+                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Active Leads</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">12</div>
+                  <div style="font-size:6px;color:#10B981;margin-top:2px;font-weight:700;">+4 this week</div>
+                </div>
+                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Listings</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">7</div>
+                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">properties</div>
+                </div>
+                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Closings</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">4</div>
+                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">converted</div>
+                </div>
+                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Revenue YTD</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#0F1424;line-height:1;">\$460k</div>
+                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">5 agents</div>
+                </div>
+              </div>
+              <!-- Recent activity -->
+              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+                  <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#0F1424;">Recent Activity</span>
+                  <span style="font-size:7px;color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;">View All</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Daniel Malicad</strong> moved lead to Showing Scheduled <span style="color:#A78BFA;">Howard Zhao</span></div>
+                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Priya Calderon</strong> added new lead <span style="color:#A78BFA;">Trevor Ferraro</span></div>
+                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Elena Adeyemi</strong> uploaded Inspection Report <span style="color:#A78BFA;">2310 Riverside Dr</span></div>
+                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
