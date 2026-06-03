@@ -1116,16 +1116,16 @@ export const pages = {
                       </div>
                     </div>
                     <div style="display:flex;gap:6px;align-items:flex-start;">
-                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CQ</div>
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CA</div>
                       <div style="flex:1;min-width:0;">
-                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Caleb Quintero</strong> moved lead to Under Contract <span style="color:#A78BFA;">Eric Salgado</span></div>
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Caleb Atienza</strong> moved lead to Under Contract <span style="color:#A78BFA;">Eric Salgado</span></div>
                         <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
                       </div>
                     </div>
                     <div style="display:flex;gap:6px;align-items:flex-start;">
-                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OB</div>
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OL</div>
                       <div style="flex:1;min-width:0;">
-                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Omar Beckett</strong> scheduled showing for <span style="color:#A78BFA;">Imani Okeke</span> — 1015 Bate Ave</div>
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Omar Lucena</strong> scheduled showing for <span style="color:#A78BFA;">Imani Okeke</span> — 1015 Bate Ave</div>
                         <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
                       </div>
                     </div>
@@ -1149,8 +1149,8 @@ export const pages = {
                       <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$87,300</span>
                     </div>
                     <div style="display:flex;align-items:center;gap:5px;">
-                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OB</div>
-                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Omar<br><span style="font-size:7px;font-weight:500;">Beckett</span></span>
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OL</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Omar<br><span style="font-size:7px;font-weight:500;">Lucena</span></span>
                       <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$63,200</span>
                     </div>
                     <div style="display:flex;align-items:center;gap:5px;">
@@ -1159,8 +1159,8 @@ export const pages = {
                       <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$95,800</span>
                     </div>
                     <div style="display:flex;align-items:center;gap:5px;">
-                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CQ</div>
-                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Caleb<br><span style="font-size:7px;font-weight:500;">Quintero</span></span>
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CA</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Caleb<br><span style="font-size:7px;font-weight:500;">Atienza</span></span>
                       <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$71,400</span>
                     </div>
                   </div>
