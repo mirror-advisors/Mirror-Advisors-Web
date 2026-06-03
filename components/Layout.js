@@ -5,20 +5,66 @@ import Head from 'next/head';
 import { FOOTER_HTML } from '../lib/footer';
 import { ADMIN_CHAT_HTML } from '../lib/admin-chat-html';
 import { initSiteRuntime } from '../lib/site-runtime';
+import { fetchAllConfig } from '../lib/site-config';
 
 export default function Layout({ children }) {
   const router = useRouter();
   const initialized = useRef(false);
 
-  // Mount the original site JS runtime once on first render.
+  // Mount the original site JS runtime once on first render, then overlay
+  // any admin-edited config from Supabase on top of the hardcoded defaults.
   useEffect(() => {
     if (initialized.current) return;
     initialized.current = true;
+
+    // 1. Run init synchronously — populates window._CASES, _NAV_PAGES, etc.
+    //    with the hardcoded defaults. Site renders correctly even if Supabase
+    //    is unreachable.
     try {
       initSiteRuntime(router);
     } catch (e) {
       console.error('Site runtime init failed:', e);
     }
+
+    // 2. Then fetch any admin-saved overrides from Supabase and apply them.
+    (async () => {
+      const cfg = await fetchAllConfig();
+      if (!cfg) return; // Supabase unreachable / network error — use defaults.
+
+      // Cases — replace whole array if a non-empty one was saved.
+      if (Array.isArray(cfg.cases) && cfg.cases.length > 0) {
+        window._CASES = cfg.cases;
+        if (typeof window.renderCases === 'function') window.renderCases('All');
+        if (typeof window._refreshHomeScroll === 'function') window._refreshHomeScroll();
+      }
+
+      // Navigation pages
+      if (Array.isArray(cfg.nav_pages) && cfg.nav_pages.length > 0) {
+        window._NAV_PAGES = cfg.nav_pages;
+        if (typeof window._renderNav === 'function') window._renderNav();
+        if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
+      }
+
+      // Social links — object keyed by platform.
+      if (cfg.social_links && typeof cfg.social_links === 'object' && Object.keys(cfg.social_links).length > 0) {
+        window._SOCIAL_LINKS = cfg.social_links;
+        if (typeof window._renderSocialIcons === 'function') window._renderSocialIcons();
+      }
+
+      // Per-page background overrides
+      if (cfg.page_backgrounds && typeof cfg.page_backgrounds === 'object' && Object.keys(cfg.page_backgrounds).length > 0) {
+        window._PAGE_BACKGROUNDS = Object.assign(window._PAGE_BACKGROUNDS || {}, cfg.page_backgrounds);
+        if (typeof window._applyPageBackground === 'function') {
+          // Re-apply for the currently-rendered page.
+          try { window._applyPageBackground(pathToInitKey(router.pathname, router.query) || 'home'); } catch (e) {}
+        }
+      }
+
+      // Chat tree (chat widget script)
+      if (cfg.chat_tree && typeof cfg.chat_tree === 'object' && Object.keys(cfg.chat_tree).length > 0) {
+        window._CHAT_TREE = cfg.chat_tree;
+      }
+    })();
   }, [router]);
 
   // Re-run page _INIT function on route change.
