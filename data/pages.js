@@ -948,6 +948,15 @@ export const pages = {
   </div>
 </section>
 
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">How We Engage</div>
+    <div class="sh">Your Four Paths Forward</div>
+    <p class="sp">Once Scope is complete, we will know exactly which of these fits your situation.</p>
+    <div class="paths-grid" id="pathsGrid"></div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="si">
     <div class="sl">What We Build</div>
@@ -1280,14 +1289,6 @@ export const pages = {
   </div>
 </section>
 
-<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
-  <div class="si">
-    <div class="sl">How We Engage</div>
-    <div class="sh">Your Four Paths Forward</div>
-    <p class="sp">Once Scope is complete, we will know exactly which of these fits your situation.</p>
-    <div class="paths-grid" id="pathsGrid"></div>
-  </div>
-</section>
 <section class="sec">
   <div class="si">
     <div class="sl">The Full Journey</div>
