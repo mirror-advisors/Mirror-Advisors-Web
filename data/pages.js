@@ -1289,6 +1289,8 @@ export const pages = {
   </div>
 </section>
 
+<div class="fade-divider"></div>
+
 <section class="sec">
   <div class="si">
     <div class="sl">The Full Journey</div>

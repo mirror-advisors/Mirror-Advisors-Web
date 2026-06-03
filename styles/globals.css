@@ -5803,3 +5803,16 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 1023px) {
   .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
 }
+
+/* Reusable horizontal divider that fades to transparent on both ends —
+   for use between major sections that need a soft visual break. */
+.fade-divider {
+  height: 1px;
+  max-width: 1180px;
+  margin: 48px auto;
+  background: linear-gradient(90deg, transparent, rgba(236,169,52,0.4), transparent);
+  border: none;
+}
+@media (max-width: 720px) {
+  .fade-divider { margin: 32px auto; }
+}
