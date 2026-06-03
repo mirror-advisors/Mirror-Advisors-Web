@@ -44,9 +44,9 @@ export default function AdminLogin() {
         return;
       }
       if (data && data.user) {
-        // Redirect to home; admin panel can be opened from there via the
-        // existing keyboard shortcut, now writing through to Supabase.
-        router.push('/');
+        // Land on home with ?admin=open so Layout auto-opens the admin overlay
+        // (handled in components/Layout.js).
+        router.push('/?admin=open');
         return;
       }
       setError('Login failed. Please try again.');

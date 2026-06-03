@@ -26,6 +26,21 @@ export default function Layout({ children }) {
       console.error('Site runtime init failed:', e);
     }
 
+    // 2a. If we arrived from /admin/login with ?admin=open, auto-open the
+    //     admin overlay once the runtime has registered window.openAdmin.
+    if (router.query && router.query.admin === 'open') {
+      const tryOpen = (tries) => {
+        if (typeof window !== 'undefined' && typeof window.openAdmin === 'function') {
+          try { window.openAdmin(); } catch (e) { console.warn('openAdmin failed:', e); }
+          // Clean up the query param so refreshes don't keep re-opening.
+          router.replace('/', undefined, { shallow: true });
+          return;
+        }
+        if (tries < 40) setTimeout(() => tryOpen(tries + 1), 50);
+      };
+      tryOpen(0);
+    }
+
     // 2. Then fetch any admin-saved overrides from Supabase and apply them.
     (async () => {
       const cfg = await fetchAllConfig();
