@@ -955,7 +955,7 @@ export const pages = {
     <p class="sp">We don&#39;t silo our expertise. Every engagement draws from all four disciplines &mdash; AI, consulting, integration, and ERP &mdash; to solve your actual problem.</p>
 
     <!-- AI Apps -->
-    <div class="cap-detail">
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
       <div class="cap-d-left">
         <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; AI-Powered Apps</div>
         <div class="cap-d-h">Your Business Generates Data All Day. Most of It Never Gets Used.</div>
@@ -981,116 +981,188 @@ export const pages = {
             <span style="margin-left:auto;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(236,169,52,0.18);color:#ECA934;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">DEPLOYED</span>
           </div>
           <!-- Dashboard body: dark sidebar + light main -->
-          <div style="display:grid;grid-template-columns:78px 1fr;min-height:340px;">
+          <div style="display:grid;grid-template-columns:96px 1fr;min-height:480px;">
             <!-- Sidebar -->
-            <div style="background:#0E1422;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:12px;border-right:1px solid rgba(255,255,255,0.05);">
-              <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;color:#fff;letter-spacing:-0.02em;line-height:1;text-align:center;">MA<div style="font-size:5px;font-weight:700;color:#ECA934;letter-spacing:0.15em;margin-top:2px;">AGENCY</div></div>
-              <div style="display:flex;flex-direction:column;gap:4px;width:100%;margin-top:6px;">
-                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;border-radius:6px;background:rgba(255,255,255,0.06);">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-                  <span style="font-size:7px;color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;">Dashboard</span>
+            <div style="background:#0E1422;padding:14px 0;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,0.05);">
+              <!-- MA logo + agency name -->
+              <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px 14px;border-bottom:1px solid rgba(255,255,255,0.05);">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:#ECA934;letter-spacing:-0.04em;line-height:1;">MA</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:800;color:#ECA934;letter-spacing:0.18em;margin-top:3px;text-align:center;">MALICAD'S</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:5px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.22em;margin-top:1px;">AGENCY</div>
+              </div>
+              <!-- Nav items -->
+              <div style="display:flex;flex-direction:column;gap:1px;padding:10px 6px;flex:1;">
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:6px;background:rgba(255,255,255,0.06);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                  <span style="font-size:8px;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;">Dashboard</span>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Leads</span>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Leads</span>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Transact.</span>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Transactions</span>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Properties</span>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87M4 21v-2a4 4 0 0 1 4-4h4M16 3.13a4 4 0 0 1 0 7.75M12 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Contacts</span>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;color:rgba(255,255,255,0.5);">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  <span style="font-size:7px;font-family:'DM Sans',sans-serif;">Docs</span>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Properties</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Documents</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Campaigns</span>
+                </div>
+              </div>
+              <!-- User info at bottom -->
+              <div style="display:flex;align-items:center;gap:6px;padding:9px 10px;border-top:1px solid rgba(255,255,255,0.05);">
+                <div style="width:16px;height:16px;border-radius:50%;background:#ECA934;color:#0F1424;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                <div style="min-width:0;">
+                  <div style="font-size:7px;color:#fff;font-weight:700;font-family:'Montserrat',sans-serif;line-height:1.1;">Daniel Malicad</div>
+                  <div style="font-size:6px;color:rgba(255,255,255,0.45);">Broker</div>
                 </div>
               </div>
             </div>
             <!-- Main content (light theme) -->
             <div style="background:#F7F8FA;padding:14px 16px;color:#1A2238;font-family:'DM Sans',sans-serif;">
               <!-- Header row -->
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#1A2238;">Dashboard</div>
-                <div style="display:flex;gap:6px;align-items:center;">
-                  <div style="width:18px;height:18px;border-radius:50%;background:#E8EBF0;display:flex;align-items:center;justify-content:center;color:#5B6478;font-size:9px;">🔔</div>
-                  <div style="width:18px;height:18px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;">DM</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid #E8EBF0;margin-bottom:12px;">
+                <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:#1A2238;">Dashboard</div>
+                <div style="display:flex;gap:7px;align-items:center;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#E8EBF0;display:flex;align-items:center;justify-content:center;position:relative;color:#5B6478;font-size:9px;">🔔<span style="position:absolute;top:2px;right:3px;width:5px;height:5px;border-radius:50%;background:#EF4444;"></span></div>
+                  <div style="width:20px;height:20px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;">DM</div>
                 </div>
               </div>
               <!-- Welcome -->
-              <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#0F1424;margin-bottom:1px;line-height:1.1;">Good evening, Daniel</div>
-              <div style="font-size:8px;color:#6B7488;margin-bottom:10px;">Tuesday, June 2, 2026</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#0F1424;margin-bottom:2px;line-height:1.1;letter-spacing:-0.01em;">Good evening, Daniel</div>
+              <div style="font-size:9px;color:#6B7488;margin-bottom:12px;">Tuesday, June 2, 2026</div>
               <!-- 4 stat cards -->
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;margin-bottom:11px;">
-                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
-                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Active Leads</div>
-                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">12</div>
-                  <div style="font-size:6px;color:#10B981;margin-top:2px;font-weight:700;">+4 this week</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;margin-bottom:12px;">
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Active Leads</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">12</div>
+                  <div style="font-size:7px;color:#10B981;margin-top:4px;font-weight:700;">+4 this week</div>
                 </div>
-                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
-                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Listings</div>
-                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">7</div>
-                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">properties</div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Active Listings</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">7</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">7 properties</div>
                 </div>
-                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
-                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Closings</div>
-                  <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#0F1424;line-height:1;">4</div>
-                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">converted</div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Pending Closings</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="9 11 12 14 22 4"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">4</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">4 converted</div>
                 </div>
-                <div style="padding:7px 8px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
-                  <div style="font-size:7px;color:#6B7488;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-bottom:3px;">Revenue YTD</div>
-                  <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#0F1424;line-height:1;">\$460k</div>
-                  <div style="font-size:6px;color:#6B7488;margin-top:2px;">5 agents</div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Revenue YTD</div>
+                    <span style="font-size:9px;color:#6B7488;">\$</span>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#0F1424;line-height:1;">\$460,200</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">5 agents</div>
                 </div>
               </div>
-              <!-- Recent activity (2 rows) -->
-              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;margin-bottom:6px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
-                  <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#0F1424;">Recent Activity</span>
-                  <span style="font-size:7px;color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;">View All</span>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:6px;">
-                  <div style="display:flex;gap:6px;align-items:flex-start;">
-                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Daniel Malicad</strong> moved lead to Showing Scheduled <span style="color:#A78BFA;">Howard Zhao</span></div>
-                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
+              <!-- 2-col: Recent Activity + Agent Performance -->
+              <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:7px;">
+                <!-- Recent activity (6 rows) -->
+                <div style="padding:10px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#0F1424;">Recent Activity</span>
+                    <span style="font-size:7px;color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;">View All</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:7px;">
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Daniel Malicad</strong> moved lead to Showing Scheduled <span style="color:#A78BFA;">Howard Zhao</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Priya Calderon</strong> added new lead <span style="color:#A78BFA;">Trevor Ferraro</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Elena Adeyemi</strong> uploaded Inspection Report <span style="color:#A78BFA;">2310 Riverside Dr</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Priya Calderon</strong> submitted offer for <span style="color:#A78BFA;">Philip Fujimoto</span> — \$510,000</div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CQ</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Caleb Quintero</strong> moved lead to Under Contract <span style="color:#A78BFA;">Eric Salgado</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OB</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Omar Beckett</strong> scheduled showing for <span style="color:#A78BFA;">Imani Okeke</span> — 1015 Bate Ave</div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
                     </div>
                   </div>
-                  <div style="display:flex;gap:6px;align-items:flex-start;">
-                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="font-size:8px;color:#1A2238;line-height:1.3;"><strong>Priya Calderon</strong> added new lead <span style="color:#A78BFA;">Trevor Ferraro</span></div>
-                      <div style="font-size:6px;color:#9AA3B5;margin-top:1px;">9w ago</div>
+                </div>
+                <!-- Agent performance (5 rows) -->
+                <div style="padding:10px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#0F1424;">Agent Performance</span>
+                    <span style="font-size:6px;color:#6B7488;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Commission YTD</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:6px;">
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Daniel<br><span style="font-size:7px;font-weight:500;">Malicad</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$142,500</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Agent performance (3 rows) -->
-              <div style="padding:9px 10px;border-radius:6px;background:#fff;border:1px solid #E8EBF0;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-                  <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#0F1424;">Agent Performance</span>
-                  <span style="font-size:6px;color:#6B7488;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">YTD</span>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:5px;">
-                  <div style="display:flex;align-items:center;gap:6px;">
-                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
-                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Daniel Malicad</span>
-                    <span style="font-size:6px;color:#6B7488;">8L · 5L · 2C</span>
-                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$142.5k</span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;">
-                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
-                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Elena Adeyemi</span>
-                    <span style="font-size:6px;color:#6B7488;">7L · 2L · 1C</span>
-                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$95.8k</span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;">
-                    <div style="width:14px;height:14px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
-                    <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;">Priya Calderon</span>
-                    <span style="font-size:6px;color:#6B7488;">6L · 3L · 1C</span>
-                    <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$87.3k</span>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Priya<br><span style="font-size:7px;font-weight:500;">Calderon</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$87,300</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OB</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Omar<br><span style="font-size:7px;font-weight:500;">Beckett</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$63,200</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Elena<br><span style="font-size:7px;font-weight:500;">Adeyemi</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$95,800</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CQ</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Caleb<br><span style="font-size:7px;font-weight:500;">Quintero</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$71,400</span>
+                    </div>
                   </div>
                 </div>
               </div>
