@@ -51,6 +51,7 @@ export default function Layout({ children }) {
         window._CASES = cfg.cases;
         if (typeof window.renderCases === 'function') window.renderCases('All');
         if (typeof window._refreshHomeScroll === 'function') window._refreshHomeScroll();
+        if (typeof window._renderFeaturedCase === 'function') window._renderFeaturedCase();
       }
 
       // Navigation pages

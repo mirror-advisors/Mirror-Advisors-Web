@@ -1717,29 +1717,9 @@ export const pages = {
 <section class="sec">
   <div class="si">
     <div class="sl">Featured</div>
-    <div class="featured">
-      <div class="feat-glow"></div>
-      <div style="position:relative;z-index:1">
-        <div class="feat-label">Featured Case Study</div>
-        <div class="feat-h">Multi-entity Zoho One Deployment Across 7 PE Portfolio Companies</div>
-        <p class="feat-p">A private equity firm needed to replace three fragmented ERPs across seven subsidiaries with a single unified platform — without disrupting operations. We delivered a phased Zoho One rollout in 6 months with zero data loss and full team adoption.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
-          <span style="font-size:11px;padding:4px 10px;border-radius:100px;background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:var(--t);font-family:'Montserrat',sans-serif;font-weight:700">ERP Deployment</span>
-          <span style="font-size:11px;padding:4px 10px;border-radius:100px;background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4;font-family:'Montserrat',sans-serif;font-weight:700">Data Migration</span>
-          <span style="font-size:11px;padding:4px 10px;border-radius:100px;background:rgba(139,159,212,.1);border:1px solid rgba(139,159,212,.2);color:#8B9FD4;font-family:'Montserrat',sans-serif;font-weight:700">Multi-entity</span>
-        </div>
-        <a href="#" onclick="go('contact')"><button class="bp" style="font-size:13px;padding:11px 22px">Discuss a Similar Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
-      </div>
-      <div style="position:relative;z-index:1">
-        <div class="feat-metrics">
-          <div class="fm"><div class="fm-val">7</div><div class="fm-lbl">Entities Unified</div></div>
-          <div class="fm"><div class="fm-val">6mo</div><div class="fm-lbl">To Go-Live</div></div>
-          <div class="fm"><div class="fm-val">0</div><div class="fm-lbl">Data Loss</div></div>
-          <div class="fm"><div class="fm-val">3</div><div class="fm-lbl">ERPs Replaced</div></div>
-          <div class="fm"><div class="fm-val">94%</div><div class="fm-lbl">User Adoption</div></div>
-          <div class="fm"><div class="fm-val">\$180k</div><div class="fm-lbl">Annual Saving</div></div>
-        </div>
-      </div>
+    <div class="featured" id="featuredCase">
+      <!-- Populated dynamically by window._renderFeaturedCase() from site-runtime.js,
+           which reads window._CASES and picks the case with `featured: true`. -->
     </div>
 
     <div class="sl">All Work</div>
