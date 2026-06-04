@@ -43,42 +43,69 @@ export default function Layout({ children }) {
 
     // 2. Then fetch any admin-saved overrides from Supabase and apply them.
     (async () => {
-      const cfg = await fetchAllConfig();
-      if (!cfg) return; // Supabase unreachable / network error — use defaults.
-
-      // Cases — replace whole array if a non-empty one was saved.
-      if (Array.isArray(cfg.cases) && cfg.cases.length > 0) {
-        window._CASES = cfg.cases;
-        if (typeof window.renderCases === 'function') window.renderCases('All');
-        if (typeof window._refreshHomeScroll === 'function') window._refreshHomeScroll();
-        if (typeof window._renderFeaturedCase === 'function') window._renderFeaturedCase();
+      let cfg = null;
+      try {
+        cfg = await fetchAllConfig();
+      } catch (e) {
+        console.warn('[Layout] fetchAllConfig threw:', e);
       }
 
-      // Navigation pages
-      if (Array.isArray(cfg.nav_pages) && cfg.nav_pages.length > 0) {
-        window._NAV_PAGES = cfg.nav_pages;
-        if (typeof window._renderNav === 'function') window._renderNav();
-        if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
-      }
+      if (cfg) {
+        // Cases — replace whole array WHENEVER the row exists (even when
+        // empty). If the admin intentionally deleted every case we want
+        // public pages to reflect that, not silently fall back to the
+        // hardcoded defaults.
+        if (Array.isArray(cfg.cases)) {
+          window._CASES = cfg.cases;
+          if (typeof window.renderCases === 'function') window.renderCases('All');
+          if (typeof window._refreshHomeScroll === 'function') window._refreshHomeScroll();
+          if (typeof window._renderFeaturedCase === 'function') window._renderFeaturedCase();
+        }
 
-      // Social links — object keyed by platform.
-      if (cfg.social_links && typeof cfg.social_links === 'object' && Object.keys(cfg.social_links).length > 0) {
-        window._SOCIAL_LINKS = cfg.social_links;
-        if (typeof window._renderSocialIcons === 'function') window._renderSocialIcons();
-      }
+        // Navigation pages
+        if (Array.isArray(cfg.nav_pages) && cfg.nav_pages.length > 0) {
+          window._NAV_PAGES = cfg.nav_pages;
+          if (typeof window._renderNav === 'function') window._renderNav();
+          if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
+        }
 
-      // Per-page background overrides
-      if (cfg.page_backgrounds && typeof cfg.page_backgrounds === 'object' && Object.keys(cfg.page_backgrounds).length > 0) {
-        window._PAGE_BACKGROUNDS = Object.assign(window._PAGE_BACKGROUNDS || {}, cfg.page_backgrounds);
-        if (typeof window._applyPageBackground === 'function') {
-          // Re-apply for the currently-rendered page.
-          try { window._applyPageBackground(pathToInitKey(router.pathname, router.query) || 'home'); } catch (e) {}
+        // Social links — object keyed by platform.
+        if (cfg.social_links && typeof cfg.social_links === 'object' && Object.keys(cfg.social_links).length > 0) {
+          window._SOCIAL_LINKS = cfg.social_links;
+          if (typeof window._renderSocialIcons === 'function') window._renderSocialIcons();
+        }
+
+        // Per-page background overrides
+        if (cfg.page_backgrounds && typeof cfg.page_backgrounds === 'object' && Object.keys(cfg.page_backgrounds).length > 0) {
+          window._PAGE_BACKGROUNDS = Object.assign(window._PAGE_BACKGROUNDS || {}, cfg.page_backgrounds);
+          if (typeof window._applyPageBackground === 'function') {
+            // Re-apply for the currently-rendered page.
+            try { window._applyPageBackground(pathToInitKey(router.pathname, router.query) || 'home'); } catch (e) {}
+          }
+        }
+
+        // Chat tree (chat widget script)
+        if (cfg.chat_tree && typeof cfg.chat_tree === 'object' && Object.keys(cfg.chat_tree).length > 0) {
+          window._CHAT_TREE = cfg.chat_tree;
         }
       }
 
-      // Chat tree (chat widget script)
-      if (cfg.chat_tree && typeof cfg.chat_tree === 'object' && Object.keys(cfg.chat_tree).length > 0) {
-        window._CHAT_TREE = cfg.chat_tree;
+      // ── Hydration complete — broadcast to listeners ────────────────────────
+      // Components that render directly from window._CASES (e.g. the
+      // /cases/[idx] detail page) need to know the async Supabase fetch is
+      // done so they don't render stale hardcoded defaults. Set a flag for
+      // mounts that arrive AFTER hydration, and fire an event for mounts
+      // already waiting.
+      window._casesHydrated = true;
+      try {
+        window.dispatchEvent(new CustomEvent('cases:hydrated', { detail: { cfg: !!cfg } }));
+      } catch (e) {
+        // IE/old browser fallback
+        try {
+          const evt = document.createEvent('Event');
+          evt.initEvent('cases:hydrated', true, true);
+          window.dispatchEvent(evt);
+        } catch (_) {}
       }
     })();
   }, [router]);

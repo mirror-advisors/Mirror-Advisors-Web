@@ -8,8 +8,16 @@ import HtmlPage from '../../components/HtmlPage';
 // `_buildCasePage(idx)` — both are exposed by `lib/site-runtime.js` once
 // `initSiteRuntime()` runs (called from Layout's useEffect).
 //
-// Because Layout's useEffect runs *after* this page's useEffect on a fresh
-// load, we poll briefly until the runtime hooks are available, then render.
+// Two-stage hydration:
+//   1. Layout's initSiteRuntime sets window._CASES to HARDCODED defaults
+//      synchronously.
+//   2. Layout's fetchAllConfig() async-overrides window._CASES with the
+//      latest admin-saved data from Supabase, then fires `cases:hydrated`.
+//
+// If this page renders between stages 1 and 2 it will show stale defaults
+// and never pick up the admin edits. So we wait for hydration before doing
+// the first build, and also re-render on the `cases:hydrated` event for
+// any subsequent updates.
 export default function CaseDetailPage() {
   const router = useRouter();
   const idx = router.query.idx;
@@ -21,30 +29,58 @@ export default function CaseDetailPage() {
 
     let cancelled = false;
     let tries = 0;
+    // Safety net: if Supabase is unreachable / extremely slow, fall back to
+    // whatever's already in window._CASES after ~3 s so the page isn't blank
+    // forever.
+    const HARD_FALLBACK_MS = 3000;
+    const hardFallbackAt = Date.now() + HARD_FALLBACK_MS;
 
-    function tryRender() {
+    function build() {
       if (cancelled) return;
       const cases = window._CASES;
-      const build = window._buildCasePage;
-      if (!cases || typeof build !== 'function') {
-        // Runtime not initialized yet (Layout's useEffect hasn't fired).
-        // Retry a handful of times before giving up.
-        if (tries++ < 40) {
-          setTimeout(tryRender, 50);
-        }
-        return;
-      }
+      const buildFn = window._buildCasePage;
+      if (!cases || typeof buildFn !== 'function') return;
       const i = parseInt(idx, 10);
       if (Number.isNaN(i) || i < 0 || i >= cases.length) {
         setNotFound(true);
         return;
       }
-      setHtml(build(i));
+      setHtml(buildFn(i));
+    }
+
+    function tryRender() {
+      if (cancelled) return;
+      const cases = window._CASES;
+      const buildFn = window._buildCasePage;
+      // Stage 0: runtime not initialised yet — Layout's useEffect hasn't
+      // populated window._CASES / _buildCasePage.
+      if (!cases || typeof buildFn !== 'function') {
+        if (tries++ < 80) setTimeout(tryRender, 50);
+        return;
+      }
+      // Stage 1: runtime ready but Supabase fetch hasn't returned yet.
+      // Wait for hydration (or the hard-fallback timeout) so we don't paint
+      // stale hardcoded defaults.
+      if (!window._casesHydrated && Date.now() < hardFallbackAt) {
+        if (tries++ < 200) setTimeout(tryRender, 50);
+        return;
+      }
+      build();
+    }
+
+    function onHydrated() {
+      // Re-render whenever hydration fires. Resets the not-found flag in
+      // case the saved data restored a previously-missing case.
+      if (cancelled) return;
+      setNotFound(false);
+      build();
     }
 
     tryRender();
+    window.addEventListener('cases:hydrated', onHydrated);
     return () => {
       cancelled = true;
+      window.removeEventListener('cases:hydrated', onHydrated);
     };
   }, [idx]);
 
