@@ -1719,7 +1719,7 @@ export const pages = {
     <div class="sl">Featured</div>
     <div class="featured" id="featuredCase">
       <!-- Populated dynamically by window._renderFeaturedCase() from site-runtime.js,
-           which reads window._CASES and picks the case with `featured: true`. -->
+           which reads window._CASES and picks the case with featured set to true. -->
     </div>
 
     <div class="sl">All Work</div>
