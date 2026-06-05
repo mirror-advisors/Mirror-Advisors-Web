@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Mirror Advisors — Business & Technology Consulting</title>
+        <title>Mirror Advisors</title>
       </Head>
       <HtmlPage html={pages['home']} />
     </>
