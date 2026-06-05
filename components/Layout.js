@@ -67,6 +67,11 @@ export default function Layout({ children }) {
           window._NAV_PAGES = cfg.nav_pages;
           if (typeof window._renderNav === 'function') window._renderNav();
           if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
+          // _renderNav already triggers _applyNavVisibility, but call it
+          // explicitly here too so the mobile menu + footer reflect the
+          // hidden flag even on cold loads where _renderNav might no-op
+          // (e.g. when the desktop nav is hidden under a mobile breakpoint).
+          if (typeof window._applyNavVisibility === 'function') window._applyNavVisibility();
         }
 
         // Social links — object keyed by platform.
@@ -195,12 +200,16 @@ export default function Layout({ children }) {
         aria-hidden="true"
       />
       <aside className="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site navigation">
+        {/* Home is never togglable in the admin nav dashboard — keep it always-visible. */}
         <Link href="/" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Home</Link>
-        <Link href="/services" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Services</Link>
-        <Link href="/cases" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Case Studies</Link>
-        <Link href="/technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Technology</Link>
-        <Link href="/about" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">About</Link>
-        <Link href="/contact" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Contact</Link>
+        {/* The data-page-key attributes let site-runtime.js's _applyNavVisibility()
+            toggle these items based on window._NAV_PAGES[key].enabled, so the
+            admin's hide toggle hides them here too. */}
+        <Link href="/services"   data-page-key="services"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Services</Link>
+        <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Case Studies</Link>
+        <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Technology</Link>
+        <Link href="/about"      data-page-key="about"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">About</Link>
+        <Link href="/contact"    data-page-key="contact"    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Contact</Link>
         <div className="mm-cta-wrap">
           <a
             href="https://app.mirroradvisors.com"
