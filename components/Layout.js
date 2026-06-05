@@ -139,8 +139,11 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Mirror Advisors — Business &amp; Technology Consulting</title>
+        <title>Mirror Advisors</title>
         <meta name="description" content="Texas-based Zoho premium partner and Anthropic Claude AI consulting. We build the technology infrastructure that lets ambitious businesses move faster." />
+        {/* Browser tab icon. Drop the file at public/mirror.svg. */}
+        <link rel="icon" type="image/svg+xml" href="/mirror.svg" />
+        <link rel="apple-touch-icon" href="/mirror.svg" />
       </Head>
 
       <nav id="nav">
