@@ -5101,6 +5101,32 @@ body.menu-open { overflow: hidden; }
   .vis-panel { padding: 20px !important; border-radius: 14px !important; animation: none !important; }
   .vis-title { font-size: 11px !important; margin-bottom: 14px !important; }
 
+  /* "What We Build" mockups (browser-frame dashboards in .cap-d-right) have
+     inline-styled internal grids with explicit pixel columns — they were sized
+     for desktop and spill past the iPhone viewport. Force the whole right
+     column + its descendants to never exceed the available width, and clip
+     anything that still tries. Without min-width:0 the grid items refuse to
+     shrink below their content's intrinsic size. */
+  .cap-d-right          { min-width: 0 !important; max-width: 100% !important; overflow: hidden !important; }
+  .cap-d-right .vis-panel,
+  .cap-d-right .vis-panel > * { max-width: 100% !important; }
+  /* Inline `display:grid; grid-template-columns: 96px 1fr` becomes too wide
+     on phones. Collapse the narrow nav-rail (96px sidebar) and let the body
+     fill. We do this with a generic selector since the markup is inline. */
+  .cap-d-right [style*="grid-template-columns:96px 1fr"],
+  .cap-d-right [style*="grid-template-columns: 96px 1fr"] {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+  .cap-d-right [style*="grid-template-columns:96px 1fr"] > :first-child,
+  .cap-d-right [style*="grid-template-columns: 96px 1fr"] > :first-child {
+    display: none !important; /* hide the cramped sidebar — body alone tells the story */
+  }
+  /* Tech tags / use-case rows need min-width:0 too so long text wraps
+     instead of pushing the flex parent wider than the screen. */
+  .uc, .uc-text, .tt { min-width: 0 !important; word-break: break-word; }
+  .use-cases, .tech-tags { max-width: 100%; overflow-wrap: anywhere; }
+
   /* Engagement Models (home page) — phone-specific tightening on top of
      the tablet rules. The horizontal tab list (svc-tab-list) stays scrollable
      and the panel content stacks naturally. */
