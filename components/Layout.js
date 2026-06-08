@@ -74,9 +74,13 @@ export default function Layout({ children }) {
           if (typeof window._applyNavVisibility === 'function') window._applyNavVisibility();
         }
 
-        // Social links — object keyed by platform.
+        // Social links — object keyed by platform. MERGE with the defaults
+        // (instead of overwriting) so platforms added in code AFTER the last
+        // Supabase save still have their default entry. Without this, a new
+        // key like `skool` would be undefined after hydration, and the admin
+        // dashboard's order.map would throw on s.label.
         if (cfg.social_links && typeof cfg.social_links === 'object' && Object.keys(cfg.social_links).length > 0) {
-          window._SOCIAL_LINKS = cfg.social_links;
+          window._SOCIAL_LINKS = Object.assign({}, window._SOCIAL_LINKS || {}, cfg.social_links);
           if (typeof window._renderSocialIcons === 'function') window._renderSocialIcons();
         }
 
