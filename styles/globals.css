@@ -3219,7 +3219,26 @@ a.pft-contact-item:hover svg{color:var(--t);}
 }
 .bg-none-text{font-size:11px;color:var(--dim);}
 
-#adminTrigger{position:fixed;bottom:24px;right:24px;width:28px;height:28px;background:transparent;border:none;cursor:pointer;z-index:9999;opacity:.01;border-radius:50%;}
+/* Hidden admin trigger — sits on top of the © glyph in the footer copyright
+   line. Lives at the start of .foot-copy and overlays just the © character so
+   clicking on it opens the admin panel. Almost-invisible (opacity:0.01) so
+   only someone who knows where to click will find it. */
+.foot-copy { position: relative; }
+#adminTrigger {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.01;
+  border-radius: 50%;
+  z-index: 1;
+}
 
 /* ── ADMIN OVERLAY ──────────────────────────────────────────── */
 .admin-overlay{display:none;position:fixed;inset:0;z-index:2147483000 !important;flex-direction:column;background:#080B1A;isolation:isolate;}
