@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
+import Script from 'next/script';
 import { FOOTER_HTML } from '../lib/footer';
 import { ADMIN_CHAT_HTML } from '../lib/admin-chat-html';
 import { initSiteRuntime } from '../lib/site-runtime';
@@ -268,8 +269,23 @@ export default function Layout({ children }) {
         </div>
       </div>
 
-      {/* Admin overlay + chat widget — preserved from source as-is */}
+      {/* Admin overlay (chat widget removed — replaced by Zoho SalesIQ below) */}
       <div dangerouslySetInnerHTML={{ __html: ADMIN_CHAT_HTML }} />
+
+      {/* Zoho SalesIQ — injected once at the layout root so it stays mounted
+          across SPA route changes (NOT inside a page template; that would
+          re-inject on every navigation). Renders its own floating bubble in
+          the bottom-right corner. */}
+      <Script id="zsiq-bootstrap" strategy="afterInteractive">{`
+        window.$zoho = window.$zoho || {};
+        $zoho.salesiq = $zoho.salesiq || { ready: function(){} };
+      `}</Script>
+      <Script
+        id="zsiqscript"
+        src="https://salesiq.zohopublic.com/widget?wc=siqd869c5ba59474c621275f137f5bd3edb99a0bdfe6447d4437c6e4a9acd4c99a9"
+        strategy="afterInteractive"
+        defer
+      />
     </>
   );
 }
