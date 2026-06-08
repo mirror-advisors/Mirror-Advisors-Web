@@ -598,7 +598,7 @@ export const pages = {
         <p class="ab-intro-p">Paul Trinidad spent nearly three years selling Zoho from inside the company before starting Mirror Advisors. He saw every pattern &mdash; the partners who churn and burn, the support tickets lost in transit, the implementations that stall because nobody owns the outcome. Mirror Advisors is the firm he wished existed when he was referring deals out.</p>
       </div>
       <div class="ab-intro-photo">
-        <img src="/images/team/founder.png" alt="Paul Trinidad" loading="lazy">
+        <img src="/images/team/founder.jpg" alt="Paul Trinidad" width="800" height="800" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -689,7 +689,7 @@ export const pages = {
         <p class="ab-intro-p">Most Zoho partners have never sat on the other side of the desk. Mark Alberto has &mdash; for 25+ years. SVP of Technology at a \$2B insurance brokerage through IPO prep. Two decades running IT at a top-tier Philadelphia brokerage. The exact CIO/CTO profile most enterprise software vendors are trying to reach. Now he&#39;s on your side of the table &mdash; architecting your Zoho deployment with the seniority and judgment most partners can&#39;t bring.</p>
       </div>
       <div class="ab-intro-photo">
-        <img src="/images/team/managing-partner.png" alt="Mark Alberto" loading="lazy">
+        <img src="/images/team/managing-partner.jpg" alt="Mark Alberto" width="800" height="800" loading="lazy" decoding="async">
       </div>
     </div>
 
