@@ -2102,44 +2102,56 @@ textarea{resize:vertical;min-height:100px}
   transform: translateY(0);
   pointer-events: auto;
 }
+/* Each option is a tappable row. The actual <input type="checkbox"> holds
+   state but is visually hidden — selection is communicated by highlighting
+   the entire row in amber instead. The :has() selector lets us style the
+   parent .ms-option based on whether its descendant input is :checked
+   (supported in all modern browsers; the keyboard-focus rule below is the
+   fallback for older browsers). */
 .ms-option {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  border-radius: 7px;
+  padding: 10px 14px;
+  border-radius: 8px;
   font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
   color: var(--mid);
   cursor: pointer;
-  transition: background .15s, color .15s;
+  transition: background .15s, color .15s, border-color .15s;
+  border: 1px solid transparent;
+  user-select: none;
 }
-.ms-option:hover { background: rgba(255,255,255,.05); color: var(--tx); }
+.ms-option:hover { background: rgba(255,255,255,.04); color: var(--tx); }
+
+/* Visually hide the checkbox without removing it from the accessibility
+   tree — the row itself remains the click target. */
 .ms-option input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 16px; height: 16px;
-  flex-shrink: 0;
-  border: 1.5px solid rgba(255,255,255,.25);
-  border-radius: 4px;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  transition: border-color .15s, background .15s;
-}
-.ms-option input[type="checkbox"]:checked {
-  background: var(--t);
-  border-color: var(--t);
-}
-.ms-option input[type="checkbox"]:checked::after {
-  content: '';
   position: absolute;
-  left: 4px; top: 1px;
-  width: 4px; height: 8px;
-  border: solid #0D1232;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
-.ms-option input[type="checkbox"]:checked + span { color: var(--tx); }
+
+/* Highlighted (selected) row. Works in browsers that support :has() (~96%
+   coverage as of late 2025). */
+.ms-option:has(input[type="checkbox"]:checked) {
+  background: rgba(236,169,52,.12);
+  border-color: rgba(236,169,52,.4);
+  color: var(--t);
+  font-weight: 600;
+}
+.ms-option:has(input[type="checkbox"]:checked):hover {
+  background: rgba(236,169,52,.18);
+}
+
+/* Keyboard focus ring on the hidden checkbox surfaces via its parent label. */
+.ms-option:focus-within {
+  outline: 2px solid rgba(236,169,52,.45);
+  outline-offset: 2px;
+}
 
 /* Custom thin scrollbar inside the panel — matches the dark theme. */
 .ms-panel::-webkit-scrollbar { width: 4px; }
