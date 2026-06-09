@@ -1862,15 +1862,32 @@ export const pages = {
             <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off">
           </div>
           <div class="fg">
-            <label>Which Service Are You Interested In?</label>
-            <div class="svc-chips" id="svcChips">
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">AI-Powered Apps</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">ERP Implementation</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">Systems Integration</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">Business Consulting</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">Infinity Mirror</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">Bank of Hours</button>
-              <button type="button" class="svc-chip" onclick="toggleChip(this)">Not Sure Yet</button>
+            <label for="svcTrigger">Which Services Are You Interested In? <span style="opacity:.55;font-weight:400">(pick any that apply)</span></label>
+            <!-- Multi-select dropdown. The visible trigger looks like the
+                 other form fields; clicking it opens a panel of checkboxes
+                 (kept inside #svcChips so submitForm and any older readers
+                 that targeted that id still find the selected values). -->
+            <div class="ms-dropdown" id="svcChips">
+              <button
+                type="button"
+                id="svcTrigger"
+                class="ms-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="svcPanel"
+              >
+                <span class="ms-trigger-text" id="svcTriggerText">Select services&hellip;</span>
+                <svg class="ms-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="ms-panel" id="svcPanel" role="listbox" aria-multiselectable="true">
+                <label class="ms-option"><input type="checkbox" data-svc value="AI-Powered Apps"><span>AI-Powered Apps</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="ERP Implementation"><span>ERP Implementation</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Systems Integration"><span>Systems Integration</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Business Consulting"><span>Business Consulting</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Infinity Mirror"><span>Infinity Mirror</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Bank of Hours"><span>Bank of Hours</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Not Sure Yet"><span>Not Sure Yet</span></label>
+              </div>
             </div>
           </div>
           <div class="fg">
