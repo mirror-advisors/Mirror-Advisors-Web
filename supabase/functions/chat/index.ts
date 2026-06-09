@@ -1,17 +1,23 @@
 // Supabase Edge Function: POST /functions/v1/chat
 //
-// Replaces the previous Vercel Next.js API route at /api/chat. The widget
-// (lib/site-runtime.js) now POSTs questions here. This function holds the
-// Gemini API key as a Supabase secret, builds a grounded prompt from the
-// bundled SITE_KNOWLEDGE string, calls Gemini server-side, and returns the
-// answer as JSON.
+// The widget (lib/site-runtime.js) POSTs questions here. This function holds
+// the OpenAI API key as a Supabase secret, builds a grounded prompt from the
+// bundled SITE_KNOWLEDGE string, calls OpenAI Chat Completions server-side,
+// and returns the answer as JSON.
+//
+// Backend history:
+//   1. Started as a Next.js API route on Vercel calling Gemini.
+//   2. Moved to this Supabase Edge Function (still Gemini).
+//   3. Now: same Edge Function, swapped Gemini → OpenAI Chat Completions.
+// The widget's request/response shape ({ question, history? } → { answer })
+// has NOT changed across any of these migrations — only the upstream LLM has.
 //
 // Deploy:
-//     supabase secrets set GEMINI_API_KEY=AIza...
+//     supabase secrets set OPENAI_API_KEY=sk-...
 //     supabase functions deploy chat
 //
 // Optional secret:
-//     supabase secrets set GEMINI_MODEL=gemini-2.5-flash    # default: gemini-2.0-flash
+//     supabase secrets set OPENAI_MODEL=gpt-4o    # default: gpt-4o-mini
 //
 // Local dev:
 //     supabase start
@@ -24,8 +30,8 @@
 import { SITE_KNOWLEDGE } from './knowledge.ts';
 
 // ── Configuration ───────────────────────────────────────────────────────────
-const GEMINI_MODEL    = Deno.env.get('GEMINI_MODEL') ?? 'gemini-2.0-flash';
-const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+const OPENAI_MODEL = Deno.env.get('OPENAI_MODEL') ?? 'gpt-4o-mini';
+const OPENAI_URL   = 'https://api.openai.com/v1/chat/completions';
 
 // Hard caps so a malicious or runaway client can't blow our quota.
 const MAX_QUESTION_CHARS  = 4000;
@@ -68,6 +74,7 @@ function systemInstruction(): string {
 }
 
 // ── Types ───────────────────────────────────────────────────────────────────
+// Inbound shape from the widget. Unchanged from the previous Gemini version.
 type HistoryMessage = { role: 'user' | 'model'; text: string };
 
 interface RequestBody {
@@ -75,15 +82,21 @@ interface RequestBody {
   history?:  HistoryMessage[];
 }
 
-interface GeminiPart    { text?: string }
-interface GeminiContent { role?: string; parts?: GeminiPart[] }
-interface GeminiCandidate {
-  content?:      GeminiContent;
-  finishReason?: string;
+// OpenAI Chat Completions message shape. NOTE the role mapping:
+//   widget 'user'  → openai 'user'
+//   widget 'model' → openai 'assistant'
+type OpenAIRole = 'system' | 'user' | 'assistant';
+interface OpenAIMessage { role: OpenAIRole; content: string }
+
+// Just the slices of the response we care about. The full schema has a lot
+// more (logprobs, usage, etc.) we don't need.
+interface OpenAIChoice {
+  message?:       { role?: string; content?: string | null };
+  finish_reason?: string;
 }
-interface GeminiResponse {
-  candidates?: GeminiCandidate[];
-  error?:      { message?: string };
+interface OpenAIResponse {
+  choices?: OpenAIChoice[];
+  error?:   { message?: string; type?: string; code?: string };
 }
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -94,29 +107,46 @@ function json(status: number, body: unknown): Response {
   });
 }
 
-function buildContents(history: HistoryMessage[] | undefined, question: string): GeminiContent[] {
+// Build the OpenAI messages[] from the system instruction + history + new
+// question. The widget's 'model' role maps to OpenAI's 'assistant'; same
+// trimming + per-message length caps as the previous Gemini version.
+function buildMessages(history: HistoryMessage[] | undefined, question: string): OpenAIMessage[] {
+  const messages: OpenAIMessage[] = [
+    { role: 'system', content: systemInstruction() },
+  ];
+
   const trimmed = Array.isArray(history) ? history.slice(-MAX_HISTORY_TURNS) : [];
-  const contents: GeminiContent[] = trimmed
-    .filter(m => m && m.text && (m.role === 'user' || m.role === 'model'))
-    .map(m => ({ role: m.role, parts: [{ text: String(m.text).slice(0, 4000) }] }));
-  contents.push({ role: 'user', parts: [{ text: question }] });
-  return contents;
+  for (const m of trimmed) {
+    if (!m || !m.text) continue;
+    if (m.role !== 'user' && m.role !== 'model') continue;
+    messages.push({
+      role:    m.role === 'model' ? 'assistant' : 'user',
+      content: String(m.text).slice(0, 4000),
+    });
+  }
+
+  messages.push({ role: 'user', content: question });
+  return messages;
 }
 
-// Extract text safely from Gemini's response. Several things can go wrong
-// (safety block, no candidates, malformed payload). Wrap every path so an
+// Extract reply text safely. OpenAI's choices[].message.content is normally a
+// string; for some models / refusals it may be null. Wrap every path so an
 // unexpected shape produces our friendly fallback, not a stack.
-function extractAnswer(json: GeminiResponse): string | null {
+function extractAnswer(json: OpenAIResponse): string | null {
   try {
-    const cand = json.candidates?.[0];
-    if (!cand) return null;
-    if (cand.finishReason === 'SAFETY' || cand.finishReason === 'PROHIBITED_CONTENT') {
+    const choice = json.choices?.[0];
+    if (!choice) return null;
+    const content = choice.message?.content;
+    if (typeof content !== 'string') return null;
+    const text = content.trim();
+    if (!text) return null;
+    // OpenAI's content-policy refusal: model returned a polite decline. Pass
+    // through directly so the visitor sees it (the system instruction tells
+    // the model how to decline, so this is normally not hit).
+    if (choice.finish_reason === 'content_filter') {
       return "I can't answer that one. If you have a Mirror Advisors question I'd be happy to help — otherwise email info@mirroradvisors.com.";
     }
-    const parts = cand.content?.parts;
-    if (!Array.isArray(parts) || parts.length === 0) return null;
-    const text = parts.map(p => p?.text ?? '').join('').trim();
-    return text || null;
+    return text;
   } catch (_) {
     return null;
   }
@@ -135,9 +165,9 @@ Deno.serve(async (req: Request) => {
   }
 
   // Env gate.
-  const apiKey = Deno.env.get('GEMINI_API_KEY');
+  const apiKey = Deno.env.get('OPENAI_API_KEY');
   if (!apiKey) {
-    console.error('[chat] GEMINI_API_KEY is not set. Run: supabase secrets set GEMINI_API_KEY=...');
+    console.error('[chat] OPENAI_API_KEY is not set. Run: supabase secrets set OPENAI_API_KEY=sk-...');
     return json(500, { error: 'missing_api_key', friendly: FRIENDLY_FALLBACK });
   }
 
@@ -159,35 +189,35 @@ Deno.serve(async (req: Request) => {
     });
   }
 
-  // Build the Gemini request.
+  // Build the OpenAI request.
   const reqBody = {
-    systemInstruction: { parts: [{ text: systemInstruction() }] },
-    contents:          buildContents(body.history, question),
-    generationConfig: {
-      temperature:      0.4,
-      topP:             0.9,
-      maxOutputTokens:  800,
-    },
+    model:       OPENAI_MODEL,
+    messages:    buildMessages(body.history, question),
+    temperature: 0.4,
+    top_p:       0.9,
+    max_tokens:  800,
   };
 
-  // Call Gemini with a hard timeout.
+  // Call OpenAI with a hard timeout.
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-  let geminiJson: GeminiResponse;
+  let openaiJson: OpenAIResponse;
   try {
-    const url = `${GEMINI_BASE_URL}/${encodeURIComponent(GEMINI_MODEL)}:generateContent?key=${encodeURIComponent(apiKey)}`;
-    const r = await fetch(url, {
+    const r = await fetch(OPENAI_URL, {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(reqBody),
-      signal:  controller.signal,
+      headers: {
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body:   JSON.stringify(reqBody),
+      signal: controller.signal,
     });
     if (!r.ok) {
       const errText = await r.text().catch(() => '');
-      console.error(`[chat] Gemini HTTP ${r.status}: ${errText.slice(0, 500)}`);
-      return json(502, { error: `gemini_http_${r.status}`, friendly: FRIENDLY_FALLBACK });
+      console.error(`[chat] OpenAI HTTP ${r.status}: ${errText.slice(0, 500)}`);
+      return json(502, { error: `openai_http_${r.status}`, friendly: FRIENDLY_FALLBACK });
     }
-    geminiJson = await r.json() as GeminiResponse;
+    openaiJson = await r.json() as OpenAIResponse;
   } catch (e: unknown) {
     const err = e as Error;
     const aborted = err?.name === 'AbortError';
@@ -200,9 +230,16 @@ Deno.serve(async (req: Request) => {
     clearTimeout(timer);
   }
 
-  const answer = extractAnswer(geminiJson);
+  // Surface OpenAI's structured error (rate-limit, model-not-found, etc.) if
+  // it slipped through with a 200 status — rare, but worth handling.
+  if (openaiJson.error) {
+    console.error(`[chat] OpenAI returned error payload: ${openaiJson.error.message ?? '(no message)'}`);
+    return json(502, { error: 'openai_payload_error', friendly: FRIENDLY_FALLBACK });
+  }
+
+  const answer = extractAnswer(openaiJson);
   if (!answer) {
-    console.error('[chat] Empty/malformed Gemini response:', JSON.stringify(geminiJson).slice(0, 500));
+    console.error('[chat] Empty/malformed OpenAI response:', JSON.stringify(openaiJson).slice(0, 500));
     return json(502, { error: 'empty_answer', friendly: FRIENDLY_FALLBACK });
   }
 
