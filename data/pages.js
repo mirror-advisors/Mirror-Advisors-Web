@@ -1850,63 +1850,16 @@ export const pages = {
       <div id="formWrap">
         <div class="form-title">Tell Us About Your Project</div>
         <p class="form-sub">Takes about 2 minutes. The more detail you share, the more useful our first conversation will be.</p>
-        <!--
-          Native HTML form. POSTs straight to Zoho Forms via a hidden iframe so
-          the SPA never navigates. Field NAMES (Name_First, Name_Last, Email,
-          PhoneNumber_countrycode, MultiLine) must stay EXACTLY as written —
-          they map to the Zoho Forms schema and the server-side email template.
-          IDs are independent and used by _INIT.contact bindings.
-          The optional Company / Company Size / Service / Timeline inputs are
-          UI-only — _INIT.contact merges them into the MultiLine field before
-          submit so they reach Zoho as structured detail without breaking the
-          schema.
-        -->
-        <form
-          id="contactForm"
-          action="https://forms.zohopublic.com/mirroradvisors/form/ContactUs/formperma/G9JXv_MlP0JAapZcOhdggz8YY8CwbVxID13bkcXfxuQ/htmlRecords/submit"
-          method="POST"
-          enctype="multipart/form-data"
-          accept-charset="UTF-8"
-          target="zohoFormFrame"
-          novalidate
-        >
-          <!-- Zoho-required hidden inputs -->
-          <input type="hidden" name="zf_referrer_name" value="">
-          <input type="hidden" name="zf_redirect_url" value="">
-          <input type="hidden" name="zc_gad" value="">
-
+        <form id="contactForm" onsubmit="submitForm(event)">
           <div class="form-grid">
-            <div class="fg">
-              <label for="cf-fname">First Name *</label>
-              <input type="text" id="cf-fname" name="Name_First" placeholder="Alex" required autocomplete="given-name">
-              <div class="cf-err" data-for="cf-fname"></div>
-            </div>
-            <div class="fg">
-              <label for="cf-lname">Last Name</label>
-              <input type="text" id="cf-lname" name="Name_Last" placeholder="Johnson" autocomplete="family-name">
-            </div>
+            <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Alex" required></div>
+            <div class="fg"><label>Last Name *</label><input type="text" id="lname" placeholder="Johnson" required></div>
           </div>
-
+          <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required></div>
+          <div class="fg"><label>Company</label><input type="text" id="company" placeholder="Acme Corp"></div>
           <div class="fg">
-            <label for="cf-email">Work Email *</label>
-            <input type="email" id="cf-email" name="Email" placeholder="alex@company.com" required autocomplete="email">
-            <div class="cf-err" data-for="cf-email"></div>
-          </div>
-
-          <div class="fg">
-            <label for="cf-phone">Phone <span style="opacity:.55;font-weight:400">(optional)</span></label>
-            <input type="tel" id="cf-phone" name="PhoneNumber_countrycode" placeholder="+1 555 123 4567" autocomplete="tel">
-          </div>
-
-          <!-- UI-only inputs (merged into MultiLine on submit) -->
-          <div class="fg">
-            <label for="cf-company">Company <span style="opacity:.55;font-weight:400">(optional)</span></label>
-            <input type="text" id="cf-company" placeholder="Acme Corp" autocomplete="organization">
-          </div>
-
-          <div class="fg">
-            <label for="cf-size">Company Size <span style="opacity:.55;font-weight:400">(optional)</span></label>
-            <select id="cf-size">
+            <label>Company Size</label>
+            <select id="size">
               <option value="">Select headcount...</option>
               <option>1&#8211;10 employees</option>
               <option>11&#8211;50 employees</option>
@@ -1915,9 +1868,8 @@ export const pages = {
               <option>500+ employees</option>
             </select>
           </div>
-
           <div class="fg">
-            <label>Which Service Are You Interested In? <span style="opacity:.55;font-weight:400">(optional)</span></label>
+            <label>Which Service Are You Interested In?</label>
             <div class="svc-chips" id="svcChips">
               <button type="button" class="svc-chip" onclick="toggleChip(this)">AI-Powered Apps</button>
               <button type="button" class="svc-chip" onclick="toggleChip(this)">ERP Implementation</button>
@@ -1928,17 +1880,14 @@ export const pages = {
               <button type="button" class="svc-chip" onclick="toggleChip(this)">Not Sure Yet</button>
             </div>
           </div>
-
           <div class="fg">
-            <label for="cf-message">How Can We Help? *</label>
-            <textarea id="cf-message" name="MultiLine" placeholder="Tell us what you&#39;re trying to solve, what you&#39;ve tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
+            <label>How Can We Help? *</label>
+            <textarea id="message" placeholder="Tell us what you&#39;re trying to solve, what you&#39;ve tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
             <div class="char-count" id="charCount">0 / 1000</div>
-            <div class="cf-err" data-for="cf-message"></div>
           </div>
-
           <div class="fg">
-            <label for="cf-timeline">Timeline <span style="opacity:.55;font-weight:400">(optional)</span></label>
-            <select id="cf-timeline">
+            <label>Timeline</label>
+            <select id="timeline">
               <option value="">When are you looking to start?</option>
               <option>As soon as possible</option>
               <option>Within 1 month</option>
@@ -1947,21 +1896,14 @@ export const pages = {
               <option>Just exploring</option>
             </select>
           </div>
-
           <div class="privacy-note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Your information is never shared or sold. We use it only to prepare for our conversation with you.
           </div>
-
           <button type="submit" class="bp" id="submitBtn" style="width:100%;justify-content:center;margin-top:4px">
             Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
-
-        <!-- Hidden iframe — form's submit lands here so the page never navigates.
-             _INIT.contact listens for its load event (after the first blank
-             load) to swap to the success state. -->
-        <iframe name="zohoFormFrame" id="zohoFormFrame" style="display:none;width:0;height:0;border:0" aria-hidden="true" tabindex="-1"></iframe>
       </div>
       <div class="success-state" id="successState" style="display:none">
         <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
