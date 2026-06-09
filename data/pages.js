@@ -1858,15 +1858,8 @@ export const pages = {
           <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required></div>
           <div class="fg"><label>Company</label><input type="text" id="company" placeholder="Acme Corp"></div>
           <div class="fg">
-            <label>Company Size</label>
-            <select id="size">
-              <option value="">Select headcount...</option>
-              <option>1&#8211;10 employees</option>
-              <option>11&#8211;50 employees</option>
-              <option>51&#8211;200 employees</option>
-              <option>201&#8211;500 employees</option>
-              <option>500+ employees</option>
-            </select>
+            <label for="size">Company Size <span style="opacity:.55;font-weight:400">(approximate headcount)</span></label>
+            <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off">
           </div>
           <div class="fg">
             <label>Which Service Are You Interested In?</label>
