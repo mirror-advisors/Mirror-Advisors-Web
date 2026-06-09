@@ -1,0 +1,13 @@
+# Minimal Supabase project config for managing Edge Functions in this repo.
+# Generated to support `supabase functions deploy chat` from this directory.
+# Full config docs: https://supabase.com/docs/guides/cli/config
+
+project_id = "vytrclwxvbhlxrvssiod"
+
+# ── Edge Functions ──────────────────────────────────────────────────────────
+# The chat function is the public-facing chatbot proxy. JWT verification stays
+# ON (the default) so callers must include the Supabase anon key as the
+# Authorization bearer — same anon key the widget already uses for everything
+# else on the site. This gives Supabase a per-project rate limiter for free.
+[functions.chat]
+verify_jwt = true
