@@ -3354,6 +3354,54 @@ a.pft-contact-item:hover svg{color:var(--t);}
 @keyframes chatDot{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1);opacity:1}}
 .chat-footer{padding:10px 14px;border-top:1px solid rgba(255,255,255,.06);font-size:10px;color:var(--dim);text-align:center;flex-shrink:0;font-family:'Montserrat',sans-serif;}
 
+/* User-side message bubble — amber-tinted, right-aligned (the original widget
+   didn't have user messages because it was menu-driven; AI mode adds typed
+   questions, so we need this companion to .chat-msg-bot). */
+.chat-msg-user{align-self:flex-end;}
+.chat-msg-user .chat-bubble{background:rgba(236,169,52,.12);border:1px solid rgba(236,169,52,.28);color:var(--tx);border-radius:14px 4px 14px 14px;}
+
+/* Bullet lists inside bot replies. Tight spacing — chat bubbles are narrow. */
+.chat-list{margin:6px 0 2px;padding-left:18px;}
+.chat-list li{margin:2px 0;line-height:1.55;}
+
+/* Input row at the bottom of the panel. Sits above the footer. */
+.chat-input-row{
+  display:flex;
+  gap:8px;
+  padding:10px 12px;
+  border-top:1px solid rgba(255,255,255,.07);
+  background:#0A0E1F;
+  flex-shrink:0;
+}
+.chat-input{
+  flex:1;min-width:0;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;
+  padding:9px 12px;
+  font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  color:var(--tx);
+  outline:none;
+  transition:border-color .18s, background .18s;
+}
+.chat-input::placeholder{color:rgba(255,255,255,.32);}
+.chat-input:focus{border-color:rgba(236,169,52,.5);background:rgba(255,255,255,.07);}
+.chat-input:disabled{opacity:.55;cursor:not-allowed;}
+.chat-send-btn{
+  flex-shrink:0;
+  width:36px;height:36px;
+  border-radius:8px;
+  border:none;
+  background:var(--t);color:#0D1232;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .18s, transform .12s, opacity .18s;
+}
+.chat-send-btn:hover:not(:disabled){background:#F5C842;transform:translateY(-1px);}
+.chat-send-btn:active:not(:disabled){transform:translateY(0);}
+.chat-send-btn:disabled{opacity:.4;cursor:not-allowed;}
+
 /* ── ADMIN MODE SELECT ────────────────────────────────────────── */
 .admin-mode-select{display:flex;flex-direction:column;gap:12px;margin-top:8px;}
 .admin-mode-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);cursor:pointer;transition:all .2s;text-align:left;width:100%;}
