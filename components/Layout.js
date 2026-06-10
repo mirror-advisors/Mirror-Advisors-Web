@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
+import Script from 'next/script';
 import { FOOTER_HTML } from '../lib/footer';
 import { ADMIN_CHAT_HTML } from '../lib/admin-chat-html';
 import { initSiteRuntime } from '../lib/site-runtime';
@@ -270,6 +271,18 @@ export default function Layout({ children }) {
 
       {/* Admin overlay + chat widget — preserved from source as-is */}
       <div dangerouslySetInnerHTML={{ __html: ADMIN_CHAT_HTML }} />
+
+      {/* Zoho SalesIQ — visitor tracking script, embedded site-wide just
+          before the rendered body close. Chat bubble visibility is managed
+          in the SalesIQ dashboard, NOT here. Two scripts, in this order:
+            1. zsiq-init  — inline init that primes window.$zoho.salesiq
+            2. zsiqscript — the SalesIQ widget bundle (defer)
+          Pages Router note: strategy="beforeInteractive" is only allowed
+          inside pages/_document.js; both tags use "afterInteractive" here,
+          and next/script preserves source order within the same strategy,
+          so the inline init still runs before the external bundle. */}
+      <Script id="zsiq-init" strategy="afterInteractive">{`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}</Script>
+      <Script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqd869c5ba59474c621275f137f5bd3edb99a0bdfe6447d4437c6e4a9acd4c99a9" defer strategy="afterInteractive" />
     </>
   );
 }
