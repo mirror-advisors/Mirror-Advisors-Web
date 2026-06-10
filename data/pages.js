@@ -1852,17 +1852,19 @@ export const pages = {
         <p class="form-sub">Takes about 2 minutes. The more detail you share, the more useful our first conversation will be.</p>
         <form id="contactForm" onsubmit="submitForm(event)">
           <div class="form-grid">
-            <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Alex" required></div>
-            <div class="fg"><label>Last Name *</label><input type="text" id="lname" placeholder="Johnson" required></div>
+            <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Alex" required><div class="fg-err" data-for="fname"></div></div>
+            <div class="fg"><label>Last Name *</label><input type="text" id="lname" placeholder="Johnson" required><div class="fg-err" data-for="lname"></div></div>
           </div>
-          <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required></div>
-          <div class="fg"><label>Company</label><input type="text" id="company" placeholder="Acme Corp"></div>
+          <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required><div class="fg-err" data-for="email"></div></div>
+          <div class="fg"><label>Phone *</label><input type="tel" id="phone" placeholder="555-123-4567" autocomplete="tel" required><div class="fg-err" data-for="phone"></div></div>
+          <div class="fg"><label>Company *</label><input type="text" id="company" placeholder="Acme Corp" required><div class="fg-err" data-for="company"></div></div>
           <div class="fg">
-            <label for="size">Company Size <span style="opacity:.55;font-weight:400">(approximate headcount)</span></label>
-            <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off">
+            <label for="size">Company Size * <span style="opacity:.55;font-weight:400">(approximate headcount)</span></label>
+            <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off" required>
+            <div class="fg-err" data-for="size"></div>
           </div>
           <div class="fg">
-            <label for="svcTrigger">Which Services Are You Interested In? <span style="opacity:.55;font-weight:400">(pick any that apply)</span></label>
+            <label for="svcTrigger">Which Services Are You Interested In? * <span style="opacity:.55;font-weight:400">(pick any that apply)</span></label>
             <!-- Multi-select dropdown. The visible trigger looks like the
                  other form fields; clicking it opens a panel of checkboxes
                  (kept inside #svcChips so submitForm and any older readers
@@ -1889,15 +1891,17 @@ export const pages = {
                 <label class="ms-option"><input type="checkbox" data-svc value="Not Sure Yet"><span>Not Sure Yet</span></label>
               </div>
             </div>
+            <div class="fg-err" data-for="svcChips"></div>
           </div>
           <div class="fg">
             <label>How Can We Help? *</label>
             <textarea id="message" placeholder="Tell us what you&#39;re trying to solve, what you&#39;ve tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
             <div class="char-count" id="charCount">0 / 1000</div>
+            <div class="fg-err" data-for="message"></div>
           </div>
           <div class="fg">
-            <label>Timeline</label>
-            <select id="timeline">
+            <label>Timeline *</label>
+            <select id="timeline" required>
               <option value="">When are you looking to start?</option>
               <option>As soon as possible</option>
               <option>Within 1 month</option>
@@ -1905,11 +1909,15 @@ export const pages = {
               <option>3&#8211;6 months</option>
               <option>Just exploring</option>
             </select>
+            <div class="fg-err" data-for="timeline"></div>
           </div>
           <div class="privacy-note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Your information is never shared or sold. We use it only to prepare for our conversation with you.
           </div>
+          <!-- Top-level submit status — shown on send failure (server error or
+               Zoho rejection). Hidden by default; populated by submitForm. -->
+          <div class="form-error" id="formErr" role="alert" aria-live="polite" style="display:none"></div>
           <button type="submit" class="bp" id="submitBtn" style="width:100%;justify-content:center;margin-top:4px">
             Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
