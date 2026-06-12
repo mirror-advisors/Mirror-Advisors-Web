@@ -8,9 +8,20 @@ import { ADMIN_CHAT_HTML } from '../lib/admin-chat-html';
 import { initSiteRuntime } from '../lib/site-runtime';
 import { fetchAllConfig } from '../lib/site-config';
 
+// Map the current Next.js pathname to the nav key it should highlight.
+// First path segment wins:  /             → 'home'
+//                           /services     → 'services'
+//                           /cases/0      → 'cases'
+//                           /zoho/crm     → 'zoho'  (no nav match → no highlight)
+function pathToNavKey(pathname) {
+  if (!pathname || pathname === '/') return 'home';
+  return pathname.replace(/^\//, '').split('/')[0];
+}
+
 export default function Layout({ children }) {
   const router = useRouter();
   const initialized = useRef(false);
+  const currentNavKey = pathToNavKey(router.pathname);
 
   // Mount the original site JS runtime once on first render, then overlay
   // any admin-edited config from Supabase on top of the hardcoded defaults.
@@ -146,6 +157,21 @@ export default function Layout({ children }) {
     }
   }, [router.asPath]);
 
+  // Keep window._currentPage in sync with the route AND re-highlight the
+  // JS-rendered nav. The React JSX nav is class-driven (see the Link
+  // className props above) and updates automatically with React renders.
+  // BUT after Supabase hydration, site-runtime.js's _renderNav() replaces
+  // #navLinks with plain <a onclick="go(...)"> elements that React no
+  // longer manages — those need _highlightNav called manually on every
+  // route change.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    window._currentPage = currentNavKey;
+    if (typeof window._highlightNav === 'function') {
+      window._highlightNav(currentNavKey);
+    }
+  }, [currentNavKey]);
+
   return (
     <>
       <Head>
@@ -166,11 +192,15 @@ export default function Layout({ children }) {
             </a>
           </Link>
           <div className="nl" id="navLinks">
-            <Link href="/services">Services</Link>
-            <Link href="/cases">Case Studies</Link>
-            <Link href="/technology">Technology</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
+            {/* Active page gets the existing .on class (amber accent). The
+                same class is applied by site-runtime.js's _highlightNav for
+                the JS-rendered nav (post-Supabase-hydration replacement),
+                so visually the two stay in sync. */}
+            <Link href="/services"   className={currentNavKey === 'services'   ? 'on' : ''}>Services</Link>
+            <Link href="/cases"      className={currentNavKey === 'cases'      ? 'on' : ''}>Case Studies</Link>
+            <Link href="/technology" className={currentNavKey === 'technology' ? 'on' : ''}>Technology</Link>
+            <Link href="/about"      className={currentNavKey === 'about'      ? 'on' : ''}>About</Link>
+            <Link href="/contact"    className={currentNavKey === 'contact'    ? 'on' : ''}>Contact</Link>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <a href="https://app.mirroradvisors.com" target="_blank" rel="noopener noreferrer" className="portal-btn">
@@ -205,16 +235,17 @@ export default function Layout({ children }) {
         aria-hidden="true"
       />
       <aside className="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site navigation">
-        {/* Home is never togglable in the admin nav dashboard — keep it always-visible. */}
-        <Link href="/" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Home</Link>
+        {/* Home is never togglable in the admin nav dashboard — keep it always-visible.
+            Active page gets the .on class (same amber accent treatment as the desktop nav). */}
+        <Link href="/" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'home' ? ' on' : '')}>Home</Link>
         {/* The data-page-key attributes let site-runtime.js's _applyNavVisibility()
             toggle these items based on window._NAV_PAGES[key].enabled, so the
             admin's hide toggle hides them here too. */}
-        <Link href="/services"   data-page-key="services"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Services</Link>
-        <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Case Studies</Link>
-        <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Technology</Link>
-        <Link href="/about"      data-page-key="about"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">About</Link>
-        <Link href="/contact"    data-page-key="contact"    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className="mm-link">Contact</Link>
+        <Link href="/services"   data-page-key="services"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'services'   ? ' on' : '')}>Services</Link>
+        <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
+        <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'technology' ? ' on' : '')}>Technology</Link>
+        <Link href="/about"      data-page-key="about"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'about'      ? ' on' : '')}>About</Link>
+        <Link href="/contact"    data-page-key="contact"    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'contact'    ? ' on' : '')}>Contact</Link>
         <div className="mm-cta-wrap">
           <a
             href="https://app.mirroradvisors.com"
