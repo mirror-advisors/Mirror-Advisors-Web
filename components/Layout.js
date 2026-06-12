@@ -314,6 +314,61 @@ export default function Layout({ children }) {
           so the inline init still runs before the external bundle. */}
       <Script id="zsiq-init" strategy="afterInteractive">{`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}</Script>
       <Script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqd869c5ba59474c621275f137f5bd3edb99a0bdfe6447d4437c6e4a9acd4c99a9" defer strategy="afterInteractive" />
+
+      {/* SalesIQ visitor identification — pushes the lead data captured by
+          the chat widget into the tracked visitor session every time SalesIQ
+          finishes initializing. Uses the documented $zoho.salesiq.ready
+          hook with the object form of visitor.name({firstname, lastname}).
+
+          Data source: localStorage._ma_lead_v1, which the chat widget writes
+          whenever a visitor completes the End-conversation / Leave-a-message
+          flow (see _chatHandleLeadPayload in lib/site-runtime.js). On the
+          first visit the key is empty and this handler is a no-op; on every
+          subsequent page load the same visitor is re-identified against
+          their SalesIQ siqid so the dashboard shows ONE linked record. */}
+      <Script id="zsiq-identify" strategy="afterInteractive">{`
+        (function(){
+          if (!window.$zoho || !window.$zoho.salesiq) return;
+          var lead = null;
+          try {
+            var raw = window.localStorage && window.localStorage.getItem('_ma_lead_v1');
+            if (raw) lead = JSON.parse(raw);
+          } catch (e) { console.warn('[salesiq-identify] localStorage read failed:', e); }
+          if (!lead || (!lead.email && !lead.name && !lead.phone)) {
+            console.log('[salesiq-identify] no persisted lead — handler installed but will be a no-op until the chat captures one.');
+            return;
+          }
+          var userEmail = String(lead.email || '').trim();
+          var fullName  = String(lead.name  || '').trim();
+          var userPhone = String(lead.phone || '').trim();
+          var sp = fullName.indexOf(' ');
+          var userFirstName = sp === -1 ? fullName : fullName.slice(0, sp);
+          var userLastName  = sp === -1 ? ''       : fullName.slice(sp + 1).trim();
+
+          $zoho.salesiq.ready = function() {
+            try {
+              if (userEmail && $zoho.salesiq.visitor && typeof $zoho.salesiq.visitor.email === 'function') {
+                $zoho.salesiq.visitor.email(userEmail);
+                console.log('[salesiq-identify] ✓ visitor.email("' + userEmail + '")');
+              }
+              if ((userFirstName || userLastName) && $zoho.salesiq.visitor && typeof $zoho.salesiq.visitor.name === 'function') {
+                $zoho.salesiq.visitor.name({
+                  firstname: userFirstName,
+                  lastname:  userLastName
+                });
+                console.log('[salesiq-identify] ✓ visitor.name({firstname:"' + userFirstName + '", lastname:"' + userLastName + '"})');
+              }
+              if (userPhone && $zoho.salesiq.visitor && typeof $zoho.salesiq.visitor.contactnumber === 'function') {
+                $zoho.salesiq.visitor.contactnumber(userPhone);
+                console.log('[salesiq-identify] ✓ visitor.contactnumber("' + userPhone + '")');
+              }
+            } catch (e) {
+              console.warn('[salesiq-identify] ready() handler threw:', e);
+            }
+          };
+          console.log('[salesiq-identify] $zoho.salesiq.ready handler installed for', { userEmail: userEmail, userFirstName: userFirstName, userLastName: userLastName, userPhone: userPhone });
+        })();
+      `}</Script>
     </>
   );
 }
