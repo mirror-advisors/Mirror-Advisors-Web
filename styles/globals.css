@@ -1452,18 +1452,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,12,12,.92
 
 .nl a:hover{color:#fff}
 
-/* Active nav page — amber colour + slight weight bump + a subtle 2px
-   underline indicator so the current page is unmistakable in the header. */
-.nl a.on{color:var(--t);font-weight:600;position:relative}
-.nl a.on::after{
-  content:'';
-  position:absolute;
-  left:0;right:0;
-  bottom:-6px;
-  height:2px;
-  background:var(--t);
-  border-radius:2px;
-}
+/* Active nav page — amber colour + slight weight bump.
+   (Underline indicator removed; the colour + weight alone signal "current page".) */
+.nl a.on{color:var(--t);font-weight:600}
 
 .ncta{background:var(--t);color:#111;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;padding:9px 20px;border-radius:6px;border:none;animation:pulseRing 2.5s infinite}
 
