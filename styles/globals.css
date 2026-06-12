@@ -5459,9 +5459,8 @@ body.menu-open { overflow: hidden; }
   .cookie-banner-actions { width: 100%; }
   .cookie-btn { flex: 1; }
 
-  /* Chat + admin trigger nudge */
-  #chatBtn { bottom: 18px; left: 18px; width: 50px; height: 50px; }
-  #chatPanel { width: calc(100vw - 32px) !important; right: 16px !important; left: 16px !important; max-width: 380px; }
+  /* (Chat widget mobile tuning lives in the ≤767px block further below —
+     tablets get the desktop chat sizing, which fits comfortably.) */
 }
 
 /* ============================================================
@@ -5626,14 +5625,89 @@ body.menu-open { overflow: hidden; }
   input, textarea, select { font-size: 16px !important; /* prevents iOS zoom */ }
   .admin-field-row { grid-template-columns: 1fr !important; gap: 12px !important; }
 
-  /* Chat panel full width minus margin */
-  #chatPanel {
-    width: calc(100vw - 24px) !important;
-    height: calc(100vh - 100px) !important;
-    max-height: 600px;
-    right: 12px !important;
-    bottom: 80px !important;
+  /* ───────────────────────────────────────────────────────────────
+     CHAT WIDGET — MOBILE OPTIMIZATIONS
+     Desktop styles (≥768px) are completely untouched. Every rule
+     below only fires on phone-class widths. The widget switches
+     from a 340 px floating card to a near-full-width bottom sheet
+     with bigger touch targets and iOS-safe spacing.
+     ─────────────────────────────────────────────────────────────── */
+
+  /* Launcher — same diameter as desktop, but hug the corner tighter
+     and respect the iOS gesture bar. Stays left-anchored so it never
+     collides with the SalesIQ bubble (which lives bottom-right). */
+  #chatBtn {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: 16px;
+    width: 52px;
+    height: 52px;
   }
+
+  /* Panel — full-width sheet pinned to the bottom, anchored by both
+     left+right so width auto-fills. Overrides the desktop fixed-width
+     (340px) and the desktop bottom (88px). Uses dvh so the iOS URL bar
+     collapsing/expanding doesn't clip the bottom of the panel. */
+  #chatPanel {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+    max-height: min(560px, calc(100dvh - 110px));
+    border-radius: 16px;
+  }
+
+  /* Header — slightly tighter horizontal padding; larger touch targets
+     for the New / History icons and the close button. */
+  .chat-header { padding: 14px 14px; gap: 8px; }
+  .chat-header-title { font-size: 14px; }
+  .chat-header-sub { font-size: 11px; }
+  .chat-header-icon { width: 36px; height: 36px; }
+  .chat-header-close {
+    font-size: 22px;
+    padding: 6px 10px;
+    line-height: 1;
+  }
+
+  /* Messages — a touch more breathing room; bubbles wider + larger
+     text for phone reading distance. */
+  .chat-messages { padding: 14px; gap: 10px; }
+  .chat-msg { max-width: 88%; }
+  .chat-bubble { font-size: 14px; padding: 11px 14px; line-height: 1.55; }
+
+  /* Choice chips inside bot replies — bigger tap area. */
+  .chat-choice { padding: 11px 14px; font-size: 13px; }
+
+  /* Lead-capture action row (End conversation / Leave a message) —
+     larger pills, easier to tap one-handed. */
+  .chat-actions { padding: 10px 12px 6px; gap: 10px; }
+  .chat-action-btn {
+    font-size: 12px;
+    padding: 11px 12px;
+    border-radius: 10px;
+  }
+
+  /* Input row — the global form rule already bumps inputs to 16 px so
+     iOS doesn't auto-zoom. Give the row + send button more space so
+     they're comfortable touch targets (≥44×44 per Apple HIG). */
+  .chat-input-row { padding: 12px; gap: 10px; }
+  .chat-input { padding: 11px 14px; border-radius: 10px; }
+  .chat-send-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  /* Conversations list — taller rows, bigger delete affordance so the
+     two controls are unambiguous on touch. */
+  .chat-conversations-list { padding: 12px 10px; gap: 8px; }
+  .chat-conv-open { padding: 12px 14px; }
+  .chat-conv-title { font-size: 14px; }
+  .chat-conv-meta { font-size: 11px; }
+  .chat-conv-del { padding: 0 16px; font-size: 22px; }
+
+  /* Footer disclaimer — keep compact but readable. */
+  .chat-footer { padding: 10px 12px; font-size: 10px; }
 
   /* Cookie banner stacked */
   .cookie-banner { flex-direction: column; align-items: stretch; }
