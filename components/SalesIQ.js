@@ -40,6 +40,47 @@ export default function SalesIQ() {
           window.__maSalesIQQueue = window.__maSalesIQQueue || [];
           window.__maSalesIQReady = false;
 
+          // RE-IDENTIFY a returning visitor. If the chat widget has
+          // previously persisted a lead to localStorage._ma_lead_v1
+          // (see _chatHandleLeadPayload in lib/site-runtime.js), queue
+          // up a visitor.* push so SalesIQ links THIS session to the
+          // same identified record once it boots. Without this block,
+          // identification only lands on the page where the chat
+          // happened — refreshes / new tabs / return visits would
+          // appear as anonymous.
+          try {
+            var raw = window.localStorage && window.localStorage.getItem('_ma_lead_v1');
+            if (raw) {
+              var lead  = JSON.parse(raw) || {};
+              var rName = String(lead.name  || '').trim();
+              var rMail = String(lead.email || '').trim();
+              var rPhon = String(lead.phone || '').trim();
+              if (rName || rMail || rPhon) {
+                var sp = rName.indexOf(' ');
+                var rFirst = sp === -1 ? rName : rName.slice(0, sp);
+                var rLast  = sp === -1 ? ''    : rName.slice(sp + 1).trim();
+                window.__maSalesIQQueue.push({
+                  label: 'restore-from-localStorage',
+                  fn: function (v) {
+                    var bulk = {};
+                    if (rName) bulk.name = rName;
+                    if (rMail) bulk.email = rMail;
+                    if (rPhon) bulk.contactnumber = rPhon;
+                    if (typeof v.info === 'function' && Object.keys(bulk).length) v.info(bulk);
+                    if ((rFirst || rLast) && typeof v.name === 'function') v.name({ firstname: rFirst, lastname: rLast });
+                    if (rMail && typeof v.email === 'function') v.email(rMail);
+                    if (rPhon && typeof v.contactnumber === 'function') v.contactnumber(rPhon);
+                  }
+                });
+                console.log('[salesiq] queued re-identification from localStorage._ma_lead_v1 for', { name: rName, email: rMail, phone: rPhon });
+              } else {
+                console.log('[salesiq] localStorage._ma_lead_v1 present but empty — skip re-identification.');
+              }
+            } else {
+              console.log('[salesiq] no persisted lead in localStorage — first-time visitor or never chatted.');
+            }
+          } catch (e) { console.warn('[salesiq] localStorage restore failed:', e); }
+
           // SalesIQ INVOKES this function during widget init. The assignment
           // form (not callback registration) is the documented pattern —
           // calling $zoho.salesiq.ready(fn) would invoke the stub with fn
