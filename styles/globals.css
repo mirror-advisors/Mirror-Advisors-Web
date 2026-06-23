@@ -6440,13 +6440,20 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Detail grid — expanded view of each of the four services, anchored
-   from the highlight cards above. scroll-margin-top keeps the card
-   clear of any sticky header when the anchor jumps. */
+   from the highlight cards above. Strict 2-column layout so the four
+   cards balance as a 2×2 grid (auto-fit would orphan the 4th card on
+   typical desktop widths since the cards have a lot of content).
+   Collapses to one column on phones via the @media block below.
+   scroll-margin-top keeps the card clear of any sticky header when
+   the anchor jumps. */
 .svc-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 36px;
+}
+@media (max-width: 720px) {
+  .svc-detail-grid { grid-template-columns: 1fr; }
 }
 .svc-detail-card {
   background: #0C0F22;
