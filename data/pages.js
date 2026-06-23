@@ -909,6 +909,53 @@ export const pages = {
     </div>
   </div>
 </div>
+
+<!-- Core Capabilities — four headline services. Sits between the hero and
+     the Scope engagement so visitors see the menu of what we do before the
+     "every engagement starts with Scope" funnel. Each card anchors to its
+     expanded detail card further down the page (#svc-detail-*). -->
+<section class="sec" style="background:#080B16;border-bottom:1px solid rgba(255,255,255,.08);padding-top:64px;padding-bottom:64px">
+  <div class="si">
+    <div class="sl">Core Capabilities</div>
+    <div class="sh">Four Services. One Practice.</div>
+    <p class="sp">The disciplines we deploy on every engagement. Start with Scope — we'll recommend the right mix for your situation.</p>
+
+    <div class="svc-hi-grid">
+      <a href="#svc-detail-zoho" class="svc-hi-card">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="svc-hi-title">Zoho Implementation</div>
+        <p class="svc-hi-desc">Full-stack Zoho deployments — CRM, Books, Creator, SalesIQ, Desk. Certified partner expertise from Scope to launch.</p>
+      </a>
+
+      <a href="#svc-detail-custom" class="svc-hi-card">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="svc-hi-title">Custom Applications</div>
+        <p class="svc-hi-desc">Bespoke web apps, dashboards, and internal tools — built around your workflow, not someone else's template.</p>
+      </a>
+
+      <a href="#svc-detail-ai" class="svc-hi-card">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 5 5 1.5-5 1.5L12 15l-1.5-5-5-1.5 5-1.5z"/><path d="M19 16l.6 1.9 1.9.6-1.9.6L19 21l-.6-1.9L16.5 18.5l1.9-.6z"/></svg>
+        </div>
+        <div class="svc-hi-title">Claude AI Solutions</div>
+        <p class="svc-hi-desc">Claude-powered agents and assistants that work inside your stack — not standalone demos. Real work, no humans in the loop.</p>
+      </a>
+
+      <a href="#svc-detail-marketing" class="svc-hi-card">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="svc-hi-title">Digital Marketing</div>
+        <p class="svc-hi-desc">Campaigns, automation, and pipeline measurement that tie marketing spend to real revenue — not vanity metrics.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="si">
     <div class="sl">Step One — Always</div>
@@ -954,6 +1001,89 @@ export const pages = {
     <div class="sh">Your Four Paths Forward</div>
     <p class="sp">Once Scope is complete, we will know exactly which of these fits your situation.</p>
     <div class="paths-grid" id="pathsGrid"></div>
+  </div>
+</section>
+
+<!-- Service Detail — expanded view of the four headline services from the
+     top of the page. Each card has an id matching the highlight cards'
+     anchor (svc-detail-zoho, etc.) so a click up there scrolls here. -->
+<section class="sec" id="svc-detail" style="background:#0E1422">
+  <div class="si">
+    <div class="sl">Service Detail</div>
+    <div class="sh">What Each Service Delivers</div>
+    <p class="sp">A closer look at the four disciplines — the work we do and what you walk away with.</p>
+
+    <div class="svc-detail-grid">
+
+      <article class="svc-detail-card" id="svc-detail-zoho">
+        <div class="svc-detail-head">
+          <div class="svc-detail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="svc-detail-title">Zoho Implementation</h3>
+        </div>
+        <p class="svc-detail-lead">Full-stack Zoho deployments — from licensing audit to live in production. We design the data model, automate the workflows, integrate the third-party tools, and train your team.</p>
+        <ul class="svc-detail-list">
+          <li>CRM, Books, Creator, SalesIQ, Desk, Campaigns — configured to your processes</li>
+          <li>Custom Deluge automation, Flow blueprints, and scheduled jobs</li>
+          <li>Data migration from legacy systems with full audit trail</li>
+          <li>End-user training plus handover documentation</li>
+        </ul>
+        <a href="#" onclick="go('contact')" class="svc-detail-cta">Deploy with us →</a>
+      </article>
+
+      <article class="svc-detail-card" id="svc-detail-custom">
+        <div class="svc-detail-head">
+          <div class="svc-detail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="svc-detail-title">Custom Applications</h3>
+        </div>
+        <p class="svc-detail-lead">Bespoke applications built around your workflow. When off-the-shelf doesn't fit and a Zoho deployment isn't the right shape, we build the missing piece.</p>
+        <ul class="svc-detail-list">
+          <li>Client portals, partner extranets, and internal dashboards</li>
+          <li>Next.js + Supabase or Zoho Creator, chosen for the job</li>
+          <li>Integrated with your Zoho stack, your CRM, or your data warehouse</li>
+          <li>Owned by you — full source-code handover at the end</li>
+        </ul>
+        <a href="#" onclick="go('contact')" class="svc-detail-cta">Scope an app →</a>
+      </article>
+
+      <article class="svc-detail-card" id="svc-detail-ai">
+        <div class="svc-detail-head">
+          <div class="svc-detail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 5 5 1.5-5 1.5L12 15l-1.5-5-5-1.5 5-1.5z"/><path d="M19 16l.6 1.9 1.9.6-1.9.6L19 21l-.6-1.9L16.5 18.5l1.9-.6z"/></svg>
+          </div>
+          <h3 class="svc-detail-title">Claude AI Solutions</h3>
+        </div>
+        <p class="svc-detail-lead">Claude-powered agents that live inside your existing tools — your CRM, your docs, your data. We design the agent, build the integration, and tune the prompts for production use.</p>
+        <ul class="svc-detail-list">
+          <li>Lead scoring + qualification agents wired into your pipeline</li>
+          <li>Document generation — proposals, contracts, SOWs — from your templates</li>
+          <li>Knowledge-base Q&amp;A bots backed by custom RAG or MCP servers</li>
+          <li>Automated reporting that narrates your data in plain English</li>
+        </ul>
+        <a href="#" onclick="go('contact')" class="svc-detail-cta">Add AI to your stack →</a>
+      </article>
+
+      <article class="svc-detail-card" id="svc-detail-marketing">
+        <div class="svc-detail-head">
+          <div class="svc-detail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="svc-detail-title">Digital Marketing</h3>
+        </div>
+        <p class="svc-detail-lead">Marketing wired to the rest of your stack. Campaigns that capture intent, automation that nurtures it, and reporting that ties spend to revenue — all flowing through your CRM.</p>
+        <ul class="svc-detail-list">
+          <li>Zoho Campaigns + Marketing Automation deployments end-to-end</li>
+          <li>Landing pages, lead capture, and SalesIQ chat — wired to CRM ownership</li>
+          <li>Multi-channel attribution and pipeline-to-revenue dashboards</li>
+          <li>Paid-campaign measurement with first-party data, not just clicks</li>
+        </ul>
+        <a href="#" onclick="go('contact')" class="svc-detail-cta">Talk strategy →</a>
+      </article>
+
+    </div>
   </div>
 </section>
 
