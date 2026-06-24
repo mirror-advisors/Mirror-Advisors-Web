@@ -26,14 +26,14 @@
 const ZOHO_ENDPOINT =
   'https://forms.zohopublic.com/mirroradvisors/form/ContactUs/formperma/G9JXv_MlP0JAapZcOhdggz8YY8CwbVxID13bkcXfxuQ/htmlRecords/submit';
 
+// Service options. Values MUST match the option list on the Zoho form
+// (forms.zohopublic.com/.../ContactUs) — Zoho's htmlRecords endpoint
+// validates MultipleChoice against the exact value strings.
 const ALLOWED_SERVICES = new Set([
-  'AI-Powered Apps',
-  'ERP Implementation',
-  'Systems Integration',
-  'Business Consulting',
-  'Infinity Mirror',
-  'Bank of Hours',
-  'Not Sure Yet',
+  'Zoho implementation',
+  'Custom apps',
+  'Claude AI solutions',
+  'Digital marketing',
 ]);
 
 const ALLOWED_TIMELINES = new Set([
@@ -86,7 +86,9 @@ export default async function handler(req, res) {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))     errors.email = 'A valid email is required.';
   if (!phone || phone.replace(/\D/g, '').length < 7)           errors.phone = 'A valid phone number is required.';
   if (!company)                                                errors.company = 'Company is required.';
-  if (!size || !/^\d+$/.test(size) || Number(size) < 1)        errors.size = 'Company size must be a number.';
+  // Company size is OPTIONAL. If the visitor leaves it blank we accept that.
+  // If they provide a value it must be a positive integer.
+  if (size && (!/^\d+$/.test(size) || Number(size) < 1))       errors.size = 'Company size must be a positive number.';
   if (!message)                                                errors.message = 'Please tell us how we can help.';
   if (!timeline || !ALLOWED_TIMELINES.has(timeline))           errors.timeline = 'Please pick a timeline.';
   if (!services.length || !services.every(s => ALLOWED_SERVICES.has(s)))
@@ -105,7 +107,11 @@ export default async function handler(req, res) {
   form.append('PhoneNumber_countrycode', phone);
   form.append('Email',                   email);
   form.append('SingleLine',              company);
-  form.append('Number',                  size);
+  // Note: the Number (Company Size) field was removed from the Zoho form
+  // in Jun 2026 — Zoho's htmlRecords validator now rejects unknown fields.
+  // We still capture `size` client-side into Supabase for our own records,
+  // but do NOT forward it to Zoho. Keep this block omitted unless / until
+  // the Zoho form is reconfigured with a Number field again.
   form.append('MultiLine',               message);
   form.append('Dropdown1',               timeline);
   // MultipleChoice gets one entry per selected service — required by Zoho.
