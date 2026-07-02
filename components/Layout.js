@@ -198,7 +198,7 @@ export default function Layout({ children }) {
           <Link href="/" className="logo" legacyBehavior>
             <a className="logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/logo.jpg" alt="Mirror Advisors" className="logo-img" />
+              <img src="/images/mirror.svg" alt="Mirror Advisors" className="logo-img" />
               <span className="logo-n">Mirror Advisors</span>
             </a>
           </Link>
