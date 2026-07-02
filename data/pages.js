@@ -2221,14 +2221,24 @@ export const pages = {
   'zoho-implementation': `
 <div class="ph">
   <div class="ph-grid"></div>
-  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
-  <div class="ph-in">
-    <div class="badge">Zoho Implementation</div>
-    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Your Zoho Stack.<br><span style="color:var(--t)">Deployed, Configured, and Actually Used.</span></h1>
-    <p class="ph-sub">Full-suite Zoho One deployments &mdash; CRM, Books, Creator, SalesIQ, Desk, Campaigns. Certified partner expertise, from licensing audit to live in production and beyond.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-      <a href="#" onclick="go('contact')"><button class="bp">Deploy Zoho With Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
-      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+  <div class="ph-glow" style="top:30%;right:10%;width:500px;height:400px;background:radial-gradient(ellipse,rgba(236,169,52,.07),transparent 65%)"></div>
+  <div class="ph-in ph-in-split">
+    <div>
+      <div class="badge">Zoho Implementation</div>
+      <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Your Zoho Stack.<br><span style="color:var(--t)">Deployed, Configured, and Actually Used.</span></h1>
+      <p class="ph-sub">Full-suite Zoho One deployments &mdash; CRM, Books, Creator, SalesIQ, Desk, Campaigns. Certified partner expertise, from licensing audit to live in production and beyond.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a href="#" onclick="go('contact')"><button class="bp">Deploy Zoho With Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+      </div>
+    </div>
+    <div class="svc-hero-right">
+      <div class="inf3d-wrap">
+        <div class="inf3d-glow"></div>
+        <div class="inf3d-ring"></div>
+        <div class="inf3d-ring"></div>
+<svg class="inf3d-svg" width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M110 55 C110 55 90 10 55 10 C25 10 5 30 5 55 C5 80 25 100 55 100 C90 100 110 55 110 55 C110 55 130 10 165 10 C195 10 215 30 215 55 C215 80 195 100 165 100 C130 100 110 55 110 55 Z" stroke="#ECA934" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 55 C110 55 94 26 68 20 C50 16 32 26 22 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 126 26 152 20 C170 16 188 26 198 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 91 84 65 90 C47 94 28 84 18 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 129 84 155 90 C173 94 192 84 202 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
     </div>
   </div>
 </div>
@@ -2245,6 +2255,45 @@ export const pages = {
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SalesIQ</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Live chat, visitor tracking, chatbot routing rules &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p></div>
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Desk</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p></div>
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Campaigns &amp; Marketing</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">Step One &mdash; Always</div>
+    <div class="sh">The Scope Engagement</div>
+    <p class="sp">Every project starts here. No exceptions.</p>
+    <div class="scope-gateway">
+      <div class="scope-card-main">
+        <div class="scope-card-inner">
+          <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
+          <div class="scope-title">Scope <span class="scope-sub-title">/ Blueprinting</span></div>
+          <p class="scope-desc">A fixed-fee discovery engagement. We audit your systems, interview stakeholders, map your business logic, and deliver a comprehensive technical blueprint &mdash; before a single line of code is written.</p>
+          <div class="scope-meta-row">
+            <div><div class="scope-meta-lbl">Duration</div><div class="scope-meta-val">2&ndash;4 weeks</div></div>
+            <div><div class="scope-meta-lbl">Pricing</div><div class="scope-meta-val">Fixed Fee</div></div>
+            <div><div class="scope-meta-lbl">Best for</div><div class="scope-meta-val">Every new client</div></div>
+          </div>
+          <div class="scope-delivers">
+            <div class="scope-delivers-label">What you get</div>
+            <div class="scope-delivers-grid">
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> System &amp; process audit</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Stakeholder interviews</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Technical blueprint doc</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Automation opportunity map</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended service path</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per item</div>
+            </div>
+          </div>
+          <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        </div>
+      </div>
+      <div class="scope-arrow-col">
+        <div class="scope-arrow-line"></div>
+        <div class="scope-arrow-label">Scope reveals the right path</div>
+        <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2298,14 +2347,24 @@ export const pages = {
   'digital-marketing': `
 <div class="ph">
   <div class="ph-grid"></div>
-  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
-  <div class="ph-in">
-    <div class="badge">Digital Marketing</div>
-    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Marketing That&#39;s<br><span style="color:var(--t)">Wired to Your Revenue.</span></h1>
-    <p class="ph-sub">Campaigns that capture intent, automation that nurtures it, and reporting that ties spend to real revenue &mdash; not vanity metrics. All flowing through your CRM.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-      <a href="#" onclick="go('contact')"><button class="bp">Talk Marketing Strategy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
-      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+  <div class="ph-glow" style="top:30%;right:10%;width:500px;height:400px;background:radial-gradient(ellipse,rgba(236,169,52,.07),transparent 65%)"></div>
+  <div class="ph-in ph-in-split">
+    <div>
+      <div class="badge">Digital Marketing</div>
+      <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Marketing That&#39;s<br><span style="color:var(--t)">Wired to Your Revenue.</span></h1>
+      <p class="ph-sub">Campaigns that capture intent, automation that nurtures it, and reporting that ties spend to real revenue &mdash; not vanity metrics. All flowing through your CRM.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a href="#" onclick="go('contact')"><button class="bp">Talk Marketing Strategy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+      </div>
+    </div>
+    <div class="svc-hero-right">
+      <div class="inf3d-wrap">
+        <div class="inf3d-glow"></div>
+        <div class="inf3d-ring"></div>
+        <div class="inf3d-ring"></div>
+<svg class="inf3d-svg" width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M110 55 C110 55 90 10 55 10 C25 10 5 30 5 55 C5 80 25 100 55 100 C90 100 110 55 110 55 C110 55 130 10 165 10 C195 10 215 30 215 55 C215 80 195 100 165 100 C130 100 110 55 110 55 Z" stroke="#ECA934" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 55 C110 55 94 26 68 20 C50 16 32 26 22 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 126 26 152 20 C170 16 188 26 198 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 91 84 65 90 C47 94 28 84 18 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 129 84 155 90 C173 94 192 84 202 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
     </div>
   </div>
 </div>
@@ -2322,6 +2381,45 @@ export const pages = {
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SEO &amp; Content</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Technical SEO, on-page optimization, content strategy, and search-intent-mapped article production.</p></div>
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Paid Media Coordination</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Google Ads, LinkedIn Ads, Meta Ads &mdash; campaign setup, tracking wiring, and first-party attribution.</p></div>
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Attribution &amp; Reporting</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Multi-channel attribution dashboards, pipeline-to-revenue reporting, and monthly board-ready recaps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">Step One &mdash; Always</div>
+    <div class="sh">The Scope Engagement</div>
+    <p class="sp">Every project starts here. No exceptions.</p>
+    <div class="scope-gateway">
+      <div class="scope-card-main">
+        <div class="scope-card-inner">
+          <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
+          <div class="scope-title">Scope <span class="scope-sub-title">/ Blueprinting</span></div>
+          <p class="scope-desc">A fixed-fee discovery engagement. We audit your systems, interview stakeholders, map your business logic, and deliver a comprehensive technical blueprint &mdash; before a single line of code is written.</p>
+          <div class="scope-meta-row">
+            <div><div class="scope-meta-lbl">Duration</div><div class="scope-meta-val">2&ndash;4 weeks</div></div>
+            <div><div class="scope-meta-lbl">Pricing</div><div class="scope-meta-val">Fixed Fee</div></div>
+            <div><div class="scope-meta-lbl">Best for</div><div class="scope-meta-val">Every new client</div></div>
+          </div>
+          <div class="scope-delivers">
+            <div class="scope-delivers-label">What you get</div>
+            <div class="scope-delivers-grid">
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> System &amp; process audit</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Stakeholder interviews</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Technical blueprint doc</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Automation opportunity map</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended service path</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per item</div>
+            </div>
+          </div>
+          <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        </div>
+      </div>
+      <div class="scope-arrow-col">
+        <div class="scope-arrow-line"></div>
+        <div class="scope-arrow-label">Scope reveals the right path</div>
+        <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2375,14 +2473,24 @@ export const pages = {
   'custom-ai-application': `
 <div class="ph">
   <div class="ph-grid"></div>
-  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
-  <div class="ph-in">
-    <div class="badge">Custom AI Application</div>
-    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Claude-Powered Apps<br><span style="color:var(--t)">That Live Inside Your Stack.</span></h1>
-    <p class="ph-sub">Bespoke web apps and AI agents built around your workflow &mdash; not standalone demos. Claude API + your CRM + your data + your logic. Real work, no humans in the loop.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-      <a href="#" onclick="go('contact')"><button class="bp">Scope an AI Build <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
-      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+  <div class="ph-glow" style="top:30%;right:10%;width:500px;height:400px;background:radial-gradient(ellipse,rgba(236,169,52,.07),transparent 65%)"></div>
+  <div class="ph-in ph-in-split">
+    <div>
+      <div class="badge">Custom AI Application</div>
+      <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Claude-Powered Apps<br><span style="color:var(--t)">That Live Inside Your Stack.</span></h1>
+      <p class="ph-sub">Bespoke web apps and AI agents built around your workflow &mdash; not standalone demos. Claude API + your CRM + your data + your logic. Real work, no humans in the loop.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a href="#" onclick="go('contact')"><button class="bp">Scope an AI Build <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+      </div>
+    </div>
+    <div class="svc-hero-right">
+      <div class="inf3d-wrap">
+        <div class="inf3d-glow"></div>
+        <div class="inf3d-ring"></div>
+        <div class="inf3d-ring"></div>
+<svg class="inf3d-svg" width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M110 55 C110 55 90 10 55 10 C25 10 5 30 5 55 C5 80 25 100 55 100 C90 100 110 55 110 55 C110 55 130 10 165 10 C195 10 215 30 215 55 C215 80 195 100 165 100 C130 100 110 55 110 55 Z" stroke="#ECA934" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 55 C110 55 94 26 68 20 C50 16 32 26 22 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 126 26 152 20 C170 16 188 26 198 40" stroke="rgba(255,220,120,.5)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 91 84 65 90 C47 94 28 84 18 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/><path d="M110 55 C110 55 129 84 155 90 C173 94 192 84 202 70" stroke="rgba(180,110,0,.4)" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
     </div>
   </div>
 </div>
@@ -2410,6 +2518,45 @@ export const pages = {
           <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Document generation from your templates</div>
           <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Knowledge-base Q&amp;A bots (RAG + MCP)</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">Step One &mdash; Always</div>
+    <div class="sh">The Scope Engagement</div>
+    <p class="sp">Every project starts here. No exceptions.</p>
+    <div class="scope-gateway">
+      <div class="scope-card-main">
+        <div class="scope-card-inner">
+          <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
+          <div class="scope-title">Scope <span class="scope-sub-title">/ Blueprinting</span></div>
+          <p class="scope-desc">A fixed-fee discovery engagement. We audit your systems, interview stakeholders, map your business logic, and deliver a comprehensive technical blueprint &mdash; before a single line of code is written.</p>
+          <div class="scope-meta-row">
+            <div><div class="scope-meta-lbl">Duration</div><div class="scope-meta-val">2&ndash;4 weeks</div></div>
+            <div><div class="scope-meta-lbl">Pricing</div><div class="scope-meta-val">Fixed Fee</div></div>
+            <div><div class="scope-meta-lbl">Best for</div><div class="scope-meta-val">Every new client</div></div>
+          </div>
+          <div class="scope-delivers">
+            <div class="scope-delivers-label">What you get</div>
+            <div class="scope-delivers-grid">
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> System &amp; process audit</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Stakeholder interviews</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Technical blueprint doc</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Automation opportunity map</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended service path</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per item</div>
+            </div>
+          </div>
+          <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        </div>
+      </div>
+      <div class="scope-arrow-col">
+        <div class="scope-arrow-line"></div>
+        <div class="scope-arrow-label">Scope reveals the right path</div>
+        <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
       </div>
     </div>
   </div>
