@@ -277,7 +277,7 @@ img { max-width: 100%; }
    shape doesn't fill the bounding box), so gap alone can't close the
    optical gap between the mark and the wordmark. A small negative
    margin pulls the text into the visual edge of the door. */
-.logo .logo-n { margin-left: -8px; }
+.logo .logo-n { margin-left: -4px; }
 
 .logo-mark {
   width: 30px;
