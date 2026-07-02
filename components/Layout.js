@@ -75,9 +75,19 @@ export default function Layout({ children }) {
           if (typeof window._renderFeaturedCase === 'function') window._renderFeaturedCase();
         }
 
-        // Navigation pages
+        // Navigation pages — MERGE stored config with the current defaults
+        // so newly-added entries (e.g. the /services sub-pages introduced
+        // in a041143) surface for existing users whose stored config
+        // predates them. Any key present in the defaults but absent from
+        // the stored config gets appended at the end with its default
+        // enabled state.
         if (Array.isArray(cfg.nav_pages) && cfg.nav_pages.length > 0) {
-          window._NAV_PAGES = cfg.nav_pages;
+          var stored   = cfg.nav_pages;
+          var storedKeys = {};
+          stored.forEach(function (p) { if (p && p.key) storedKeys[p.key] = true; });
+          var defaults = window._NAV_PAGES || [];
+          var missing  = defaults.filter(function (p) { return p && p.key && !storedKeys[p.key]; });
+          window._NAV_PAGES = stored.concat(missing);
           if (typeof window._renderNav === 'function') window._renderNav();
           if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
           // _renderNav already triggers _applyNavVisibility, but call it
@@ -261,10 +271,10 @@ export default function Layout({ children }) {
             services is disabled. */}
         <div className="mm-svc-group" data-page-key="services">
           <div className="mm-svc-header">Services</div>
-          <Link href="/services"                       onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
-          <Link href="/services/zoho-implementation"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho-implementation' ? ' on' : '')}>Zoho Implementation</Link>
-          <Link href="/services/digital-marketing"     onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/digital-marketing' ? ' on' : '')}>Digital Marketing</Link>
-          <Link href="/services/custom-ai-application" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-ai-application' ? ' on' : '')}>Custom AI Application</Link>
+          <Link href="/services"                                                                      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
+          <Link href="/services/zoho-implementation"   data-page-key="zoho-implementation"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho-implementation' ? ' on' : '')}>Zoho Implementation</Link>
+          <Link href="/services/digital-marketing"     data-page-key="digital-marketing"             onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/digital-marketing' ? ' on' : '')}>Digital Marketing</Link>
+          <Link href="/services/custom-ai-application" data-page-key="custom-ai-application"         onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-ai-application' ? ' on' : '')}>Custom AI Application</Link>
         </div>
         <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
         <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'technology' ? ' on' : '')}>Technology</Link>

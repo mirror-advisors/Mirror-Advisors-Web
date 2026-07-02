@@ -4320,6 +4320,20 @@ a.pft-contact-item:hover svg{color:var(--t);}
 .nav-page-row.dragging { opacity: .3; border-style: dashed; }
 .nav-page-row.drag-over { border-color: rgba(236,169,52,.5); background: rgba(236,169,52,.05); }
 
+/* Sub-page rows in the admin nav dashboard — small indent + softer
+   background so the parent/child relationship is visible at a glance.
+   The .nav-page-num for these renders as the "↳" glyph instead of a
+   number (set in _navRenderRows). */
+.nav-page-row.nav-page-row-sub {
+  margin-left: 28px;
+  background: rgba(236,169,52,.03);
+  border-color: rgba(255,255,255,.06);
+}
+.nav-page-row.nav-page-row-sub .nav-page-num {
+  color: rgba(236,169,52,.7);
+  font-weight: 400;
+}
+
 
 /* ── NAV ADMIN DASHBOARD ─────────────────────────────────────── */
 .nav-page-row {
@@ -4378,6 +4392,20 @@ a.pft-contact-item:hover svg{color:var(--t);}
 }
 .nav-page-row.dragging { opacity: .3; border-style: dashed; }
 .nav-page-row.drag-over { border-color: rgba(236,169,52,.5); background: rgba(236,169,52,.05); }
+
+/* Sub-page rows in the admin nav dashboard — small indent + softer
+   background so the parent/child relationship is visible at a glance.
+   The .nav-page-num for these renders as the "↳" glyph instead of a
+   number (set in _navRenderRows). */
+.nav-page-row.nav-page-row-sub {
+  margin-left: 28px;
+  background: rgba(236,169,52,.03);
+  border-color: rgba(255,255,255,.06);
+}
+.nav-page-row.nav-page-row-sub .nav-page-num {
+  color: rgba(236,169,52,.7);
+  font-weight: 400;
+}
 
 
 /* ── SUBMISSIONS DASHBOARD ───────────────────────────────────── */
