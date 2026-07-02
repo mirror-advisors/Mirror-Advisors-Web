@@ -6570,21 +6570,8 @@ body.menu-open { overflow: hidden; }
   position: relative;
   z-index: 2;
 }
-/* Add a small chevron affordance to Services (::after so we don't
-   touch the JSX). */
-.nav-drop > a::after {
-  content: '';
-  display: inline-block;
-  width: 0; height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid currentColor;
-  margin-left: 6px;
-  vertical-align: middle;
-  opacity: .55;
-  transition: transform .2s, opacity .2s;
-}
-.nav-drop:hover > a::after { opacity: 1; transform: rotate(180deg); }
+/* (Chevron affordance was removed per user request — the hover
+   dropdown appearing on hover is enough of an affordance on its own.) */
 
 /* The dropdown panel. Hidden until the wrapper is hovered / focused.
    pointer-events:none while hidden so mouse dragging out doesn't get
@@ -6643,7 +6630,6 @@ body.menu-open { overflow: hidden; }
    below shows the same items expanded instead. */
 @media (max-width: 900px) {
   .nav-drop-menu { display: none !important; }
-  .nav-drop > a::after { display: none; }
 }
 
 /* Mobile-drawer Services group (indented sub-links under a header). */
