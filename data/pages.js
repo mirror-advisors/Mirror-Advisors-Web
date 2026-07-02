@@ -2208,4 +2208,256 @@ export const pages = {
 `,
   'capabilities': `<div style="display:flex;align-items:center;justify-content:center;min-height:60vh;color:var(--mid);font-family:Montserrat,sans-serif">Redirecting&hellip;</div>`,
   'stack': `<div style="display:flex;align-items:center;justify-content:center;min-height:60vh;color:var(--mid);font-family:Montserrat,sans-serif">Redirecting&hellip;</div>`,
+
+  // ─────────────────────────────────────────────────────────────────────
+  // SERVICES SUB-PAGES
+  // Rendered from pages/services/{zoho-implementation,digital-marketing,
+  // custom-ai-application}.js. The Services dropdown in the top nav links
+  // each of these plus "Overview" (= this file's 'services' key). Each
+  // page follows the same structure: hero → capabilities grid → deep-dive
+  // use-case list → FAQ accordion → service-specific CTA.
+  // ─────────────────────────────────────────────────────────────────────
+
+  'zoho-implementation': `
+<div class="ph">
+  <div class="ph-grid"></div>
+  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
+  <div class="ph-in">
+    <div class="badge">Zoho Implementation</div>
+    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Your Zoho Stack.<br><span style="color:var(--t)">Deployed, Configured, and Actually Used.</span></h1>
+    <p class="ph-sub">Full-suite Zoho One deployments &mdash; CRM, Books, Creator, SalesIQ, Desk, Campaigns. Certified partner expertise, from licensing audit to live in production and beyond.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+      <a href="#" onclick="go('contact')"><button class="bp">Deploy Zoho With Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">What We Deploy</div>
+    <div class="sh">The Full Zoho One Stack.</div>
+    <p class="sp">We deploy the entire Zoho One suite &mdash; not just CRM. Every product is configured to how your team actually works, integrated across modules, and automated end-to-end.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">CRM</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Pipeline stages, deal workflows, workflow rules, custom modules, and cross-module automations tied to your sales process.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Books &amp; Invoice</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Revenue recognition, multi-currency, chart of accounts, tax localization, and CRM &harr; finance sync.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Creator</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Custom apps that extend standard modules with your unique business logic &mdash; no waiting for feature parity.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SalesIQ</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Live chat, visitor tracking, chatbot routing rules &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Desk</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Campaigns &amp; Marketing</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0E1422">
+  <div class="si">
+    <div class="sl">Implementation Approach</div>
+    <div class="sh">Deployments That Don&#39;t Miss.</div>
+    <p class="sp">ERP implementations have a notorious failure rate. Ours don&#39;t. We&#39;ve deployed Zoho One across complex multi-entity organizations, migrated from legacy ERPs, and trained teams to actually use what we build.</p>
+    <div class="use-cases" style="margin-top:36px">
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Zoho One full-suite rollouts for companies with 20&ndash;500 employees across multiple entities</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Legacy CRM/ERP migrations &mdash; data extraction, cleansing, transformation, and import with full audit trail</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Custom Zoho Creator apps that extend standard modules with your unique business logic</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Deluge scripts, Flow blueprints, and scheduled jobs for the automation the standard product doesn&#39;t cover</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Third-party integrations &mdash; Zoho &harr; Shopify, Zoho &harr; Slack, Zoho &harr; HubSpot, Zoho &harr; QuickBooks, and dozens more</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">User training, documentation, and a dedicated post-go-live support window so your team is confident on day one</div></div>
+    </div>
+    <div class="tech-tags" style="margin-top:28px"><span class="tt">Zoho One</span><span class="tt">Zoho Creator</span><span class="tt">Deluge</span><span class="tt">Flow</span><span class="tt">CRM</span><span class="tt">Books</span><span class="tt">SalesIQ</span><span class="tt">Data Migration</span><span class="tt">Change Mgmt</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="si">
+    <div class="sl">FAQ</div>
+    <div class="sh">Zoho Implementation &mdash; What Clients Ask.</div>
+    <div class="faq-block" style="margin-top:32px">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Are you a certified Zoho partner?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. We are a Premium Zoho Partner and Zoho Certified Consultants. That gets you priority Zoho support escalation, direct product-team access, and licensing at partner rates.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How long does a typical Zoho implementation take?</span><span class="faq-chev">+</span></div><div class="faq-a">Depends on scope. A CRM-only rollout for a smaller team is 4&ndash;8 weeks. A full Zoho One deployment across multi-entity finance + operations is 3&ndash;6 months. Scope determines the exact number &mdash; that&#39;s why every engagement starts there.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you handle Zoho licensing and procurement?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. We can procure licenses at partner rates and consolidate billing with your engagement, or you can procure directly and we implement &mdash; your choice.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Can you migrate from Salesforce, HubSpot, or another legacy system?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. We&#39;ve done Salesforce &rarr; Zoho, HubSpot &rarr; Zoho, Microsoft Dynamics &rarr; Zoho, and dozens of ad-hoc spreadsheet-based data sources &rarr; Zoho. Full extraction, cleansing, deduplication, and load with pre/post reconciliation.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you train our team?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes &mdash; training is a standard deliverable, not an add-on. Role-based sessions, written playbooks, screen-recording walkthroughs, and a dedicated support window post-go-live so your team ramps up on the real system, not on generic Zoho documentation.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>What happens after go-live? Are we on our own?</span><span class="faq-chev">+</span></div><div class="faq-a">No. Every deployment includes a hypercare window &mdash; 30 to 90 days of dedicated support depending on scope. After that you can move onto our Infinity Mirror (ongoing partnership) or Bank of Hours (as-needed) models.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Can Zoho be extended with custom logic?</span><span class="faq-chev">+</span></div><div class="faq-a">Absolutely. Zoho Creator lets us build custom modules with their own data, workflows, and permissions inside your Zoho One stack. Deluge scripts add automation to standard modules. Flow orchestrates cross-app workflows. If the standard product doesn&#39;t cover it, we build the piece that does.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you integrate Zoho with third-party tools?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. Shopify, Slack, HubSpot, QuickBooks, Stripe, Twilio, Xero, Google Workspace, Microsoft 365, PandaDoc, Docusign &mdash; anything with an API is fair game. Where a pre-built connector exists we use it; where it doesn&#39;t, we build one.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08)">
+  <div class="si" style="text-align:center">
+    <div class="sh" style="max-width:820px;margin:0 auto 16px">Ready to Deploy Your Zoho Stack?</div>
+    <p class="sp" style="max-width:680px;margin:0 auto 32px">Every deployment starts with a fixed-fee Scope engagement &mdash; audit, blueprint, and roadmap. Book a call and we&#39;ll walk you through exactly what your rollout would look like.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" onclick="go('contact')"><button class="bp" style="padding:14px 30px;font-size:14px">Deploy Zoho With Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('cases')"><button class="bs" style="padding:13px 24px;font-size:13px">See Case Studies</button></a>
+    </div>
+  </div>
+</section>
+`,
+
+  'digital-marketing': `
+<div class="ph">
+  <div class="ph-grid"></div>
+  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
+  <div class="ph-in">
+    <div class="badge">Digital Marketing</div>
+    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Marketing That&#39;s<br><span style="color:var(--t)">Wired to Your Revenue.</span></h1>
+    <p class="ph-sub">Campaigns that capture intent, automation that nurtures it, and reporting that ties spend to real revenue &mdash; not vanity metrics. All flowing through your CRM.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+      <a href="#" onclick="go('contact')"><button class="bp">Talk Marketing Strategy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">What We Offer</div>
+    <div class="sh">Full-Funnel Marketing, Wired to Your CRM.</div>
+    <p class="sp">Six services, one integrated funnel. Each piece talks to the others &mdash; and to your CRM &mdash; so lead-to-revenue is one traceable path, not five disconnected reports.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Strategy &amp; Funnel Design</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Audit of existing acquisition sources, target-persona mapping, funnel-stage definition, and quarterly plan.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Marketing Automation</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Zoho Campaigns / Marketing Automation setup, email nurture flows, journey builders, and lead scoring.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Landing Pages &amp; Lead Capture</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">High-conversion landing pages, form design, SalesIQ chat integration, and CRM ownership routing.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SEO &amp; Content</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Technical SEO, on-page optimization, content strategy, and search-intent-mapped article production.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Paid Media Coordination</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Google Ads, LinkedIn Ads, Meta Ads &mdash; campaign setup, tracking wiring, and first-party attribution.</p></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Attribution &amp; Reporting</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Multi-channel attribution dashboards, pipeline-to-revenue reporting, and monthly board-ready recaps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0E1422">
+  <div class="si">
+    <div class="sl">How We Deliver</div>
+    <div class="sh">Everything Ties Back to Pipeline.</div>
+    <p class="sp">Most marketing teams optimize for clicks, opens, and impressions. We optimize for what actually matters: qualified pipeline, revenue attribution, and a marketing budget your CFO doesn&#39;t have to guess about.</p>
+    <div class="use-cases" style="margin-top:36px">
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Zoho Campaigns + Marketing Automation deployments end-to-end &mdash; email templates, journeys, triggers, list segmentation</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Landing pages built to convert &mdash; A/B tested, mobile-first, wired to your CRM with owner-routing rules</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">SalesIQ live-chat + AI chatbot deployment tied to lead capture (this site uses the same setup)</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">First-party data collection &mdash; server-side tracking, UTM discipline, and CRM contact enrichment so attribution survives ad-blockers</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Pipeline-to-revenue dashboards in Zoho Analytics or Looker Studio &mdash; monthly recaps sent to the exec team automatically</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Paid campaign coordination &mdash; we manage the strategy, tracking, and reporting; your existing ad agency (or ours) executes the buy</div></div>
+    </div>
+    <div class="tech-tags" style="margin-top:28px"><span class="tt">Zoho Campaigns</span><span class="tt">Zoho Marketing Automation</span><span class="tt">Zoho Social</span><span class="tt">Zoho Analytics</span><span class="tt">Google Ads</span><span class="tt">LinkedIn Ads</span><span class="tt">SEO</span><span class="tt">Attribution</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="si">
+    <div class="sl">FAQ</div>
+    <div class="sh">Digital Marketing &mdash; What Clients Ask.</div>
+    <div class="faq-block" style="margin-top:32px">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you run our paid ads directly, or coordinate with an existing agency?</span><span class="faq-chev">+</span></div><div class="faq-a">Both are fine. Where you already have a paid agency, we handle strategy, tracking, and attribution so they can execute cleaner. Where you don&#39;t, we can run campaigns directly across Google Ads, LinkedIn, and Meta.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>What platforms do you cover?</span><span class="faq-chev">+</span></div><div class="faq-a">Zoho Campaigns, Zoho Marketing Automation, Zoho Social, Zoho Analytics; Google Ads and LinkedIn Ads on paid; Google Search Console + Ahrefs / Semrush on SEO; plus custom stacks where the client has an existing HubSpot / Marketo / Mailchimp footprint.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How do you actually measure results?</span><span class="faq-chev">+</span></div><div class="faq-a">Every campaign is wired to your CRM. We tag inbound sources, track pipeline stage progression, and produce monthly dashboards that show marketing spend &rarr; qualified pipeline &rarr; closed revenue. Not just clicks and opens.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Is there a minimum marketing spend?</span><span class="faq-chev">+</span></div><div class="faq-a">Not for our engagement itself. But we usually recommend a paid budget floor of about $5K/month to have enough data to draw statistically meaningful conclusions from A/B tests and campaign performance.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you produce the creative &mdash; copy, images, video?</span><span class="faq-chev">+</span></div><div class="faq-a">Copy, yes &mdash; email nurture flows, landing-page copy, ad copy, blog articles. Visual creative is either handled by our design partner or coordinated with your existing team. Video we recommend a dedicated production partner unless it&#39;s simple loom-style walkthroughs.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How does attribution work?</span><span class="faq-chev">+</span></div><div class="faq-a">First-party data through UTMs, CRM contact tagging, and server-side event tracking. We use last-touch as the default, with linear or time-decay models for longer sales cycles. Every lead that lands in your CRM has a traceable source chain &mdash; no guessing where deals came from.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Can you handle SEO too, or is that separate?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. Technical SEO audit (site speed, crawlability, schema markup), on-page optimization (title tags, meta descriptions, internal linking), and content strategy tied to search-intent research. Rankings alone don&#39;t move revenue &mdash; pipeline attribution does.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How long until we see results?</span><span class="faq-chev">+</span></div><div class="faq-a">Paid campaigns show pipeline impact in 30&ndash;60 days. Marketing automation flows take a full sales-cycle length to prove out &mdash; usually 60&ndash;90 days. SEO is 4&ndash;6 months for meaningful movement. That timeline is honest &mdash; anyone promising 30-day SEO wins is selling you something else.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08)">
+  <div class="si" style="text-align:center">
+    <div class="sh" style="max-width:820px;margin:0 auto 16px">Ready to Wire Marketing to Revenue?</div>
+    <p class="sp" style="max-width:680px;margin:0 auto 32px">Every engagement starts with a fixed-fee Scope &mdash; where we audit your current funnel, define the attribution model, and lay out the campaign roadmap. Book a call to walk through it.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" onclick="go('contact')"><button class="bp" style="padding:14px 30px;font-size:14px">Talk Marketing Strategy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('cases')"><button class="bs" style="padding:13px 24px;font-size:13px">See Case Studies</button></a>
+    </div>
+  </div>
+</section>
+`,
+
+  'custom-ai-application': `
+<div class="ph">
+  <div class="ph-grid"></div>
+  <div class="ph-glow" style="top:20%;right:8%;width:520px;height:420px;background:radial-gradient(ellipse,rgba(236,169,52,.08),transparent 65%)"></div>
+  <div class="ph-in">
+    <div class="badge">Custom AI Application</div>
+    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Claude-Powered Apps<br><span style="color:var(--t)">That Live Inside Your Stack.</span></h1>
+    <p class="ph-sub">Bespoke web apps and AI agents built around your workflow &mdash; not standalone demos. Claude API + your CRM + your data + your logic. Real work, no humans in the loop.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+      <a href="#" onclick="go('contact')"><button class="bp">Scope an AI Build <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div class="sl">Two Practices, One Discipline</div>
+    <div class="sh">Custom Applications + AI Agents.</div>
+    <p class="sp">When off-the-shelf doesn&#39;t fit and a Zoho deployment isn&#39;t the right shape, we build the missing piece. Where Claude-level intelligence would replace a person or a spreadsheet, we build the agent to do it. Often both, in the same engagement.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:36px">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(236,169,52,.18);border-radius:14px;padding:26px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--t);margin-bottom:12px;letter-spacing:.02em">CUSTOM APPLICATIONS</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.65;margin:0 0 14px">Web apps, dashboards, and internal tools when the standard product doesn&#39;t fit.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Client portals, partner extranets, internal dashboards</div>
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Next.js + Supabase or Zoho Creator, chosen for the job</div>
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Full source-code handover &mdash; owned by you</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(236,169,52,.18);border-radius:14px;padding:26px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--t);margin-bottom:12px;letter-spacing:.02em">CLAUDE AI SOLUTIONS</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.65;margin:0 0 14px">Claude-powered agents wired into your existing tools &mdash; no humans in the loop.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Lead scoring + qualification agents</div>
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Document generation from your templates</div>
+          <div style="font-size:12.5px;color:var(--dim);line-height:1.55"><span style="color:#ECA934;font-weight:800">&#10003;</span> Knowledge-base Q&amp;A bots (RAG + MCP)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0E1422">
+  <div class="si">
+    <div class="sl">Deep Dive</div>
+    <div class="sh">Your Business Generates Data All Day.<br>Most of It Never Gets Used.</div>
+    <p class="sp">We build AI systems that actually work inside your existing tools &mdash; not standalone demos. Claude-powered agents connected to your CRM, your docs, your data, doing real work without needing a human in the loop.</p>
+    <div class="use-cases" style="margin-top:36px">
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Lead scoring &amp; qualification agents that analyze engagement signals and rank pipeline automatically</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Document generation bots &mdash; proposals, contracts, SOWs &mdash; trained on your templates</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Internal Q&amp;A assistants that answer questions from your knowledge base via custom RAG</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Automated reporting that narrates your data in plain English every week</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Client portals + partner extranets tied to your CRM, with role-based access and full audit trail</div></div>
+      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">MCP (Model Context Protocol) servers exposing your internal tools to Claude directly &mdash; agents that can act, not just chat</div></div>
+    </div>
+    <div class="tech-tags" style="margin-top:28px"><span class="tt">Claude API</span><span class="tt">MCP Servers</span><span class="tt">Custom RAG</span><span class="tt">Next.js</span><span class="tt">Supabase</span><span class="tt">Zoho Deluge</span><span class="tt">Webhooks</span><span class="tt">Zoho Creator</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="si">
+    <div class="sl">FAQ</div>
+    <div class="sh">Custom AI Application &mdash; What Clients Ask.</div>
+    <div class="faq-block" style="margin-top:32px">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>When should we build custom vs. use an off-the-shelf tool?</span><span class="faq-chev">+</span></div><div class="faq-a">Off-the-shelf first. Every time. If Zoho or an existing SaaS covers 80% of what you need, deploy that. Custom is for the cases where your workflow is your competitive edge and no product does it &mdash; or where AI can automate work that&#39;s currently done manually. Scope tells us which it is.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Who owns the code we pay you to build?</span><span class="faq-chev">+</span></div><div class="faq-a">You do. Full source-code handover at the end of every engagement &mdash; hosted on your GitHub, deployed to your cloud accounts, secrets in your vault. We keep no proprietary lock-in. If you switch vendors five years from now, everything works exactly the same.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Which AI models do you use?</span><span class="faq-chev">+</span></div><div class="faq-a">Primarily Claude (Anthropic) &mdash; Sonnet or Opus depending on the task. GPT and Gemini when the customer has a strong preference or when a model is specifically better for their use case. Model choice is part of the Scope engagement; we run head-to-head evals for each build.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How do you handle data privacy? Does our data train the AI?</span><span class="faq-chev">+</span></div><div class="faq-a">No. We use API-tier access with the Anthropic Zero-Data-Retention agreement (or equivalent for other providers). Your data is never used for model training. We can also run open-weight models on your own infrastructure when the compliance bar demands it.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Can the AI agent integrate with our existing Zoho stack?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes &mdash; that&#39;s often the whole point. Agents read from and write to CRM records, trigger workflows via Deluge or Flow, populate Creator forms, and post to SalesIQ. If it has an API, the agent can call it.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>How long does an AI project take?</span><span class="faq-chev">+</span></div><div class="faq-a">A tightly-scoped agent (single workflow, single integration) is 3&ndash;6 weeks. A full custom application with multiple AI features and integrations is 3&ndash;6 months. Scope defines the exact number and what &ldquo;done&rdquo; looks like.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>What if the AI gets something wrong?</span><span class="faq-chev">+</span></div><div class="faq-a">Every agent is designed with the right level of human oversight for the task. High-stakes actions (send email, close deal, refund payment) require confirmation. Low-stakes classifications (route lead, tag document) run autonomously with a review dashboard. We calibrate the loop during Scope.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')"><span>Do you handle hosting and ongoing maintenance?</span><span class="faq-chev">+</span></div><div class="faq-a">Yes. Vercel, Supabase, AWS, or your existing cloud &mdash; we deploy to whichever platform you&#39;re already on. Ongoing maintenance either through Infinity Mirror (fixed-fee ongoing partnership) or Bank of Hours (as-needed) after go-live.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08)">
+  <div class="si" style="text-align:center">
+    <div class="sh" style="max-width:820px;margin:0 auto 16px">Ready to Build the AI Piece?</div>
+    <p class="sp" style="max-width:680px;margin:0 auto 32px">Every AI project starts with a fixed-fee Scope engagement &mdash; we identify the workflow to automate, define what &ldquo;done&rdquo; looks like, and run a model eval before any code is written.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" onclick="go('contact')"><button class="bp" style="padding:14px 30px;font-size:14px">Scope an AI Build <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go('cases')"><button class="bs" style="padding:13px 24px;font-size:13px">See Case Studies</button></a>
+    </div>
+  </div>
+</section>
+`,
 };

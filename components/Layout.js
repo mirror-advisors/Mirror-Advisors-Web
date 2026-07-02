@@ -197,7 +197,19 @@ export default function Layout({ children }) {
                 same class is applied by site-runtime.js's _highlightNav for
                 the JS-rendered nav (post-Supabase-hydration replacement),
                 so visually the two stay in sync. */}
-            <Link href="/services"   className={currentNavKey === 'services'   ? 'on' : ''}>Services</Link>
+            {/* Services is a hover-dropdown. The parent link still routes
+                to /services (Overview) on click; the dropdown appears on
+                hover and holds Overview + the three sub-pages. Mobile
+                menu below expands all four as indented sub-items. */}
+            <div className="nav-drop">
+              <Link href="/services" className={currentNavKey === 'services' ? 'on' : ''}>Services</Link>
+              <div className="nav-drop-menu" role="menu" aria-label="Services">
+                <Link href="/services"                        className="nav-drop-link" role="menuitem">Overview</Link>
+                <Link href="/services/zoho-implementation"    className="nav-drop-link" role="menuitem">Zoho Implementation</Link>
+                <Link href="/services/digital-marketing"      className="nav-drop-link" role="menuitem">Digital Marketing</Link>
+                <Link href="/services/custom-ai-application"  className="nav-drop-link" role="menuitem">Custom AI Application</Link>
+              </div>
+            </div>
             <Link href="/cases"      className={currentNavKey === 'cases'      ? 'on' : ''}>Case Studies</Link>
             <Link href="/technology" className={currentNavKey === 'technology' ? 'on' : ''}>Technology</Link>
             <Link href="/about"      className={currentNavKey === 'about'      ? 'on' : ''}>About</Link>
@@ -242,7 +254,18 @@ export default function Layout({ children }) {
         {/* The data-page-key attributes let site-runtime.js's _applyNavVisibility()
             toggle these items based on window._NAV_PAGES[key].enabled, so the
             admin's hide toggle hides them here too. */}
-        <Link href="/services"   data-page-key="services"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'services'   ? ' on' : '')}>Services</Link>
+        {/* Services renders as a section header + four indented sub-links
+            so mobile visitors see the full sub-navigation without needing a
+            hover target. The data-page-key stays on the Overview link so
+            the admin's visibility toggle still hides the whole group when
+            services is disabled. */}
+        <div className="mm-svc-group" data-page-key="services">
+          <div className="mm-svc-header">Services</div>
+          <Link href="/services"                       onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
+          <Link href="/services/zoho-implementation"   onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho-implementation' ? ' on' : '')}>Zoho Implementation</Link>
+          <Link href="/services/digital-marketing"     onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/digital-marketing' ? ' on' : '')}>Digital Marketing</Link>
+          <Link href="/services/custom-ai-application" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-ai-application' ? ' on' : '')}>Custom AI Application</Link>
+        </div>
         <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
         <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'technology' ? ' on' : '')}>Technology</Link>
         <Link href="/about"      data-page-key="about"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'about'      ? ' on' : '')}>About</Link>
