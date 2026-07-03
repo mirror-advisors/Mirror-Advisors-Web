@@ -6722,7 +6722,12 @@ body.menu-open { overflow: hidden; }
   background: rgba(236,169,52,.22);
 }
 .faq-a {
-  padding: 0 22px 20px;
+  /* Padding-top and padding-bottom are 0 when collapsed. Otherwise the
+     max-height:0 + 20px padding-bottom combination leaked the top of the
+     answer content into view — a thin strip of text was visible above the
+     bottom edge of the collapsed item. Full padding is applied only when
+     .faq-item.open kicks in, and the padding transition animates smoothly. */
+  padding: 0 22px;
   font-family: 'DM Sans', sans-serif;
   font-size: 13.5px;
   color: var(--mid);
@@ -6733,7 +6738,7 @@ body.menu-open { overflow: hidden; }
 }
 .faq-item.open .faq-a {
   max-height: 500px;
-  padding-bottom: 22px;
+  padding: 4px 22px 22px;
 }
 
 /* ─────────────────────────────────────────────────────────────────
