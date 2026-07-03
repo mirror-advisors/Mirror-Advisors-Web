@@ -3493,6 +3493,387 @@ export const pages = {
 
 <section class="sec">
   <div class="si">
+    <div class="sl">What We Build</div>
+    <div class="sh">Four Layers of the AI Build</div>
+    <p class="sp">Every custom AI engagement draws from all four layers &mdash; apps, consulting, capabilities, and end-to-end delivery &mdash; to solve your actual problem, not to demo a model.</p>
+
+    <!-- AI Apps -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; AI-Powered Apps</div>
+        <div class="cap-d-h">Your Business Generates Data All Day. Most of It Never Gets Used.</div>
+        <p class="cap-d-p">We build AI systems that actually work inside your existing tools &mdash; not standalone demos. Claude-powered agents connected to your CRM, your docs, your data, doing real work without needing a human in the loop.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Lead scoring &amp; qualification agents that analyze engagement signals and rank pipeline automatically</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Document generation bots &mdash; proposals, contracts, SOWs &mdash; trained on your templates</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Internal Q&amp;A assistants that answer questions from your knowledge base</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Automated reporting that narrates your data in plain language every week</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Claude API</span><span class="tt">Zoho Deluge</span><span class="tt">Webhooks</span><span class="tt">Custom RAG</span><span class="tt">MCP Servers</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px">Add AI to Your Business <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422;">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <!-- Custom browser-frame chrome -->
+          <div style="display:flex;align-items:center;gap:6px;padding:9px 12px;background:#080B16;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840;"></span>
+            <span style="margin-left:8px;font-size:9px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.04);padding:3px 9px;border-radius:6px;">malicads-agency.app/dashboard</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(236,169,52,0.18);color:#ECA934;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">DEPLOYED</span>
+          </div>
+          <!-- Dashboard body: dark sidebar + light main -->
+          <div style="display:grid;grid-template-columns:96px 1fr;min-height:480px;">
+            <!-- Sidebar -->
+            <div style="background:#0E1422;padding:14px 0;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,0.05);">
+              <!-- MA logo + agency name -->
+              <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px 14px;border-bottom:1px solid rgba(255,255,255,0.05);">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:#ECA934;letter-spacing:-0.04em;line-height:1;">MA</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:800;color:#ECA934;letter-spacing:0.18em;margin-top:3px;text-align:center;">MALICAD'S</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:5px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.22em;margin-top:1px;">AGENCY</div>
+              </div>
+              <!-- Nav items -->
+              <div style="display:flex;flex-direction:column;gap:1px;padding:10px 6px;flex:1;">
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:6px;background:rgba(255,255,255,0.06);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                  <span style="font-size:8px;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;">Dashboard</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Leads</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Transactions</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87M4 21v-2a4 4 0 0 1 4-4h4M16 3.13a4 4 0 0 1 0 7.75M12 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Contacts</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Properties</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Documents</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(255,255,255,0.55);">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span style="font-size:8px;font-family:'DM Sans',sans-serif;">Campaigns</span>
+                </div>
+              </div>
+              <!-- User info at bottom -->
+              <div style="display:flex;align-items:center;gap:6px;padding:9px 10px;border-top:1px solid rgba(255,255,255,0.05);">
+                <div style="width:16px;height:16px;border-radius:50%;background:#ECA934;color:#0F1424;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                <div style="min-width:0;">
+                  <div style="font-size:7px;color:#fff;font-weight:700;font-family:'Montserrat',sans-serif;line-height:1.1;">Daniel Malicad</div>
+                  <div style="font-size:6px;color:rgba(255,255,255,0.45);">Broker</div>
+                </div>
+              </div>
+            </div>
+            <!-- Main content (light theme) -->
+            <div style="background:#F7F8FA;padding:14px 16px;color:#1A2238;font-family:'DM Sans',sans-serif;">
+              <!-- Header row -->
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid #E8EBF0;margin-bottom:12px;">
+                <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:#1A2238;">Dashboard</div>
+                <div style="display:flex;gap:7px;align-items:center;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#E8EBF0;display:flex;align-items:center;justify-content:center;position:relative;color:#5B6478;font-size:9px;">🔔<span style="position:absolute;top:2px;right:3px;width:5px;height:5px;border-radius:50%;background:#EF4444;"></span></div>
+                  <div style="width:20px;height:20px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;font-family:'Montserrat',sans-serif;">DM</div>
+                </div>
+              </div>
+              <!-- Welcome -->
+              <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#0F1424;margin-bottom:2px;line-height:1.1;letter-spacing:-0.01em;">Good evening, Daniel</div>
+              <div style="font-size:9px;color:#6B7488;margin-bottom:12px;">Tuesday, June 2, 2026</div>
+              <!-- 4 stat cards -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;margin-bottom:12px;">
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Active Leads</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">12</div>
+                  <div style="font-size:7px;color:#10B981;margin-top:4px;font-weight:700;">+4 this week</div>
+                </div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Active Listings</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">7</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">7 properties</div>
+                </div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Pending Closings</div>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7488" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="9 11 12 14 22 4"/></svg>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#0F1424;line-height:1;">4</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">4 converted</div>
+                </div>
+                <div style="padding:9px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <div style="font-size:8px;color:#6B7488;font-weight:700;">Revenue YTD</div>
+                    <span style="font-size:9px;color:#6B7488;">\$</span>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#0F1424;line-height:1;">\$460,200</div>
+                  <div style="font-size:7px;color:#6B7488;margin-top:4px;">5 agents</div>
+                </div>
+              </div>
+              <!-- 2-col: Recent Activity + Agent Performance -->
+              <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:7px;">
+                <!-- Recent activity (6 rows) -->
+                <div style="padding:10px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#0F1424;">Recent Activity</span>
+                    <span style="font-size:7px;color:#A78BFA;font-weight:700;font-family:'Montserrat',sans-serif;">View All</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:7px;">
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Daniel Malicad</strong> moved lead to Showing Scheduled <span style="color:#A78BFA;">Howard Zhao</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Priya Calderon</strong> added new lead <span style="color:#A78BFA;">Trevor Ferraro</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Elena Adeyemi</strong> uploaded Inspection Report <span style="color:#A78BFA;">2310 Riverside Dr</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Priya Calderon</strong> submitted offer for <span style="color:#A78BFA;">Philip Fujimoto</span> — \$510,000</div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CA</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Caleb Atienza</strong> moved lead to Under Contract <span style="color:#A78BFA;">Eric Salgado</span></div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:flex-start;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OL</div>
+                      <div style="flex:1;min-width:0;">
+                        <div style="font-size:8px;color:#1A2238;line-height:1.35;"><strong>Omar Lucena</strong> scheduled showing for <span style="color:#A78BFA;">Imani Okeke</span> — 1015 Bate Ave</div>
+                        <div style="font-size:6px;color:#9AA3B5;margin-top:2px;">9w ago</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Agent performance (5 rows) -->
+                <div style="padding:10px 11px;border-radius:7px;background:#fff;border:1px solid #E8EBF0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#0F1424;">Agent Performance</span>
+                    <span style="font-size:6px;color:#6B7488;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Commission YTD</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:6px;">
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">DM</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Daniel<br><span style="font-size:7px;font-weight:500;">Malicad</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$142,500</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">PC</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Priya<br><span style="font-size:7px;font-weight:500;">Calderon</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$87,300</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">OL</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Omar<br><span style="font-size:7px;font-weight:500;">Lucena</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$63,200</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">EA</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Elena<br><span style="font-size:7px;font-weight:500;">Adeyemi</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$95,800</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:5px;">
+                      <div style="width:15px;height:15px;border-radius:50%;background:#0E1422;color:#fff;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;font-family:'Montserrat',sans-serif;flex-shrink:0;">CA</div>
+                      <span style="font-size:8px;color:#1A2238;font-weight:600;flex:1;line-height:1.2;">Caleb<br><span style="font-size:7px;font-weight:500;">Atienza</span></span>
+                      <span style="font-size:8px;color:#0F1424;font-weight:800;font-family:'Montserrat',sans-serif;">\$71,400</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consulting -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4">02 &mdash; Business Consulting</div>
+        <div class="cap-d-h">Most Technology Problems Are Actually Process Problems in Disguise.</div>
+        <p class="cap-d-p">We map your processes, challenge your assumptions, and build a technology roadmap you&#39;ll actually execute. Strategy without implementation is just a document. We do both.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Full technology audits &mdash; what you have, what you&#39;re paying, what&#39;s redundant, what&#39;s missing</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Automation opportunity mapping with ROI estimates for each identified workflow</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Pre-ERP blueprinting to avoid the most common implementation failure modes</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Vendor selection &mdash; independent advice on the right tools for your actual use case</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Process Mapping</span><span class="tt">ROI Analysis</span><span class="tt">Tech Audit</span><span class="tt">Gap Analysis</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px;background:#6B9FD4">Start with a Scope <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="animation-delay:-3s">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
+          <div class="vis-title">Scope Deliverable &mdash; Sample</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="padding:12px 14px;border-radius:9px;background:rgba(107,159,212,.07);border:1px solid rgba(107,159,212,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#6B9FD4;margin-bottom:4px">AUTOMATION OPPORTUNITY #1</div>
+              <div style="font-size:12px;color:var(--tx);font-weight:500;margin-bottom:3px">Invoice &rarr; CRM &rarr; Project Creation</div>
+              <div style="font-size:11px;color:var(--dim)">Currently: 45 min manual. Automatable in: 3 days. Est. annual saving: \$18,400</div>
+            </div>
+            <div style="padding:12px 14px;border-radius:9px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.15)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--t);margin-bottom:4px">AUTOMATION OPPORTUNITY #2</div>
+              <div style="font-size:12px;color:var(--tx);font-weight:500;margin-bottom:3px">Support Ticket &rarr; AI Triage &rarr; Assign</div>
+              <div style="font-size:11px;color:var(--dim)">Currently: 2-4h SLA breach risk. Automatable in: 5 days. Est. saving: \$31,200</div>
+            </div>
+            <div style="padding:12px 14px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.15)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#8B9FD4;margin-bottom:4px">AUTOMATION OPPORTUNITY #3</div>
+              <div style="font-size:12px;color:var(--tx);font-weight:500;margin-bottom:3px">Contract Generation from Deal Close</div>
+              <div style="font-size:11px;color:var(--dim)">Currently: 90 min legal review. Automatable in: 2 weeks. Est. saving: \$54,000</div>
+            </div>
+            <div style="text-align:right;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--t)">Total identified: \$103,600/yr &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Integration -->
+
+    <!-- 03 Core AI Capabilities (violet, normal layout) -->
+    <div class="cap-detail">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(139,159,212,.1);border:1px solid rgba(139,159,212,.2);color:#8B9FD4">03 &mdash; Core AI Capabilities</div>
+        <div class="cap-d-h">Beyond Text Generation. Systems That Actually Do the Work.</div>
+        <p class="cap-d-p">AI is not one technology &mdash; it&#39;s four different domains, each with its own tooling. We build the specialist system for the domain that fits your problem, instead of forcing every problem into a chatbot.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Generative AI &amp; multi-agent systems &mdash; autonomous agents that track material delays and coordinate with logistics to adjust schedules</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Intelligent automation &amp; document processing &mdash; custom NLP pipelines for extraction, semantic search, contract analysis</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Predictive &amp; prescriptive analytics &mdash; demand forecasting, predictive maintenance, dynamic pricing</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Computer vision &mdash; medical imaging, manufacturing defect detection, retail security video</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Claude</span><span class="tt">LangChain</span><span class="tt">Qdrant</span><span class="tt">PyTorch</span><span class="tt">YOLO</span></div>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:24px">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(139,159,212,.08),transparent 70%)"></div>
+          <div class="vis-title">The Four Domains We Build For</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+
+            <!-- Generative / Multi-agent -->
+            <div style="padding:16px 14px;border-radius:10px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2);position:relative;overflow:hidden">
+              <div style="position:absolute;top:-20px;right:-20px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(236,169,52,.22),transparent 60%)"></div>
+              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,rgba(236,169,52,.22),rgba(236,169,52,.06));border:1px solid rgba(236,169,52,.35);color:#ECA934;display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx);letter-spacing:-.01em;margin-bottom:3px">Generative AI</div>
+              <div style="font-size:9.5px;color:var(--dim);line-height:1.4;font-family:'DM Sans',sans-serif">Multi-agent systems that plan &amp; act</div>
+            </div>
+
+            <!-- Doc processing -->
+            <div style="padding:16px 14px;border-radius:10px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2);position:relative;overflow:hidden">
+              <div style="position:absolute;top:-20px;right:-20px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(139,159,212,.22),transparent 60%)"></div>
+              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,rgba(139,159,212,.22),rgba(139,159,212,.06));border:1px solid rgba(139,159,212,.35);color:#8B9FD4;display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx);letter-spacing:-.01em;margin-bottom:3px">Doc Processing</div>
+              <div style="font-size:9.5px;color:var(--dim);line-height:1.4;font-family:'DM Sans',sans-serif">NLP for extraction &amp; search</div>
+            </div>
+
+            <!-- Analytics -->
+            <div style="padding:16px 14px;border-radius:10px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);position:relative;overflow:hidden">
+              <div style="position:absolute;top:-20px;right:-20px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(107,159,212,.22),transparent 60%)"></div>
+              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,rgba(107,159,212,.22),rgba(107,159,212,.06));border:1px solid rgba(107,159,212,.35);color:#6B9FD4;display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx);letter-spacing:-.01em;margin-bottom:3px">Predictive Analytics</div>
+              <div style="font-size:9.5px;color:var(--dim);line-height:1.4;font-family:'DM Sans',sans-serif">Forecasting, maintenance, pricing</div>
+            </div>
+
+            <!-- Computer vision -->
+            <div style="padding:16px 14px;border-radius:10px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);position:relative;overflow:hidden">
+              <div style="position:absolute;top:-20px;right:-20px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.22),transparent 60%)"></div>
+              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(16,185,129,.06));border:1px solid rgba(16,185,129,.35);color:#10B981;display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx);letter-spacing:-.01em;margin-bottom:3px">Computer Vision</div>
+              <div style="font-size:9.5px;color:var(--dim);line-height:1.4;font-family:'DM Sans',sans-serif">Imaging, defect detection, video</div>
+            </div>
+
+          </div>
+          <div style="margin-top:14px;padding:11px 14px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2);border-radius:8px;font-size:11px;color:#8B9FD4;font-family:'Montserrat',sans-serif;font-weight:700;text-align:center;letter-spacing:.02em">One brief &rarr; the domain that actually fits &rarr; the specialist build</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 End-to-End Service Offerings (amber, reversed layout) -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">04 &mdash; End-to-End Service Offerings</div>
+        <div class="cap-d-h">A Four-Phase Pipeline. Not a Weekend Hackathon.</div>
+        <p class="cap-d-p">Building custom AI is vastly different from building traditional software. Our engagement follows a proven four-phase pipeline that de-risks each stage before the next one starts &mdash; strategy first, data second, model third, deployment last.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Phase 1 &mdash; Strategy, feasibility &amp; governance: AI readiness assessment, ROI + data-availability study, responsible-AI guardrails (GDPR / HIPAA / EU AI Act)</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Phase 2 &mdash; Data engineering &amp; pipeline development: preparation, annotation &amp; labeling, vector database architecture (pgvector / Qdrant)</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Phase 3 &mdash; Model development, tuning &amp; integration: fine-tuning + RAG, explainable AI (XAI), custom interface engineering (dashboards, APIs, voice)</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Phase 4 &mdash; Deployment &amp; MLOps: edge/cloud deployment, drift &amp; performance tracking, infrastructure cost optimization</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">RAG</span><span class="tt">Fine-Tuning</span><span class="tt">XAI</span><span class="tt">MLOps</span><span class="tt">Edge</span><span class="tt">Cloud</span></div>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="animation-delay:-5s;padding:24px">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div class="vis-title">AI Build Pipeline &mdash; Live Sample</div>
+          <div class="phase-list" style="margin-top:14px">
+            <div class="phase-row"><div class="phase-label">1 &middot; Strategy &amp; Feasibility</div><div class="phase-bar-track"><div class="phase-bar-fill" style="--w:100%;width:100%;background:#ECA934"></div></div><div class="phase-pct">100%</div></div>
+            <div class="phase-row"><div class="phase-label">2 &middot; Data Engineering</div><div class="phase-bar-track"><div class="phase-bar-fill" style="--w:100%;width:100%;background:#ECA934"></div></div><div class="phase-pct">100%</div></div>
+            <div class="phase-row"><div class="phase-label">3 &middot; Model Dev + RAG</div><div class="phase-bar-track"><div class="phase-bar-fill" style="--w:72%;width:72%;background:#6B9FD4"></div></div><div class="phase-pct">72%</div></div>
+            <div class="phase-row"><div class="phase-label">4 &middot; MLOps + Drift</div><div class="phase-bar-track"><div class="phase-bar-fill" style="--w:18%;width:18%;background:#8B9FD4"></div></div><div class="phase-pct">18%</div></div>
+          </div>
+          <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="padding:10px 12px;border-radius:8px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#ECA934;letter-spacing:.09em;margin-bottom:2px">MODEL</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx)">Claude Sonnet 4</div>
+              <div style="font-size:9px;color:var(--dim);font-family:'Montserrat',sans-serif;margin-top:2px">Fine-tuned + RAG</div>
+            </div>
+            <div style="padding:10px 12px;border-radius:8px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#10B981;letter-spacing:.09em;margin-bottom:2px">STATUS</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--tx)">On Track</div>
+              <div style="font-size:9px;color:var(--dim);font-family:'Montserrat',sans-serif;margin-top:2px">Go-live: Week 11</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(236,169,52,.1);color:var(--t);font-family:'Montserrat',sans-serif;font-weight:700">SOC 2 Ready</span>
+            <span style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(255,255,255,.06);color:var(--mid);font-family:'Montserrat',sans-serif;font-weight:700">Zero data retention</span>
+            <span style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(255,255,255,.06);color:var(--mid);font-family:'Montserrat',sans-serif;font-weight:700">Explainable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec">
+  <div class="si">
     <div class="sl">FAQ</div>
     <div class="sh">Custom AI Application &mdash; What Clients Ask.</div>
     <div class="faq-block" style="margin-top:32px">
