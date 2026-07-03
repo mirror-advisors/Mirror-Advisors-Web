@@ -3242,8 +3242,40 @@ export const pages = {
               <div style="padding:8px 14px;background:var(--t);color:#0D1232;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800">Book a Call &rarr;</div>
               <div style="padding:8px 14px;background:rgba(255,255,255,.06);color:var(--tx);border:1px solid rgba(255,255,255,.12);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700">See Pricing</div>
             </div>
-            <!-- Fake product image placeholder -->
-            <div style="margin-top:18px;height:70px;border-radius:9px;background:linear-gradient(135deg,rgba(236,169,52,.15),rgba(236,169,52,.02));border:1px solid rgba(236,169,52,.15);display:flex;align-items:center;justify-content:center;color:rgba(236,169,52,.3)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <!-- Mock pricing grid — matches acme.co/pricing URL in the browser chrome above -->
+            <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+              <!-- Starter tier -->
+              <div style="padding:9px 9px 10px;border-radius:7px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+                <div style="font-family:'Montserrat',sans-serif;font-size:7px;font-weight:800;color:var(--dim);letter-spacing:.09em;margin-bottom:3px">STARTER</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--tx);line-height:1;margin-bottom:6px">$49<span style="font-size:7px;color:var(--dim);font-weight:600">/mo</span></div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> 3 seats</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> 10K events/mo</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> Email support</div>
+                </div>
+              </div>
+              <!-- Growth tier (highlighted) -->
+              <div style="padding:9px 9px 10px;border-radius:7px;background:rgba(236,169,52,.08);border:1px solid rgba(236,169,52,.4);position:relative">
+                <span style="position:absolute;top:-6px;right:6px;font-size:6px;padding:2px 5px;border-radius:100px;background:var(--t);color:#0D1232;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.06em">POPULAR</span>
+                <div style="font-family:'Montserrat',sans-serif;font-size:7px;font-weight:800;color:var(--t);letter-spacing:.09em;margin-bottom:3px">GROWTH</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--tx);line-height:1;margin-bottom:6px">$149<span style="font-size:7px;color:var(--dim);font-weight:600">/mo</span></div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:var(--t);font-weight:800;font-size:7px">&#10003;</span> 15 seats</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:var(--t);font-weight:800;font-size:7px">&#10003;</span> 100K events/mo</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:var(--t);font-weight:800;font-size:7px">&#10003;</span> Priority support</div>
+                </div>
+              </div>
+              <!-- Scale tier -->
+              <div style="padding:9px 9px 10px;border-radius:7px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+                <div style="font-family:'Montserrat',sans-serif;font-size:7px;font-weight:800;color:var(--dim);letter-spacing:.09em;margin-bottom:3px">SCALE</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--tx);line-height:1;margin-bottom:6px">$499<span style="font-size:7px;color:var(--dim);font-weight:600">/mo</span></div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> Unlimited seats</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> Custom events</div>
+                  <div style="display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:1.3"><span style="color:#10B981;font-weight:800;font-size:7px">&#10003;</span> Dedicated CSM</div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- Performance stats footer -->
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.06);background:#080B16">
