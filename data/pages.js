@@ -4063,6 +4063,74 @@ export const pages = {
   </div>
 </section>
 
+<!-- ────────────────────────────────────────────────────────────────
+     POC LAB — experimental interactive section. Users enter company
+     info + choose Website / Custom CRM → mockup renders inline on the
+     right, and a fire-and-forget POST to /api/poc-notify emails
+     Mirror Advisors what was generated. Nothing persists; refresh
+     wipes everything.
+     ──────────────────────────────────────────────────────────────── -->
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div class="si">
+    <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:8px">
+      <span class="poc-pulse-dot"></span>
+      <div class="sl" style="margin:0">Experimental &middot; PoC Lab</div>
+    </div>
+    <div class="sh">Try It Right Now.</div>
+    <p class="sp">Give us your company name, a short description, and (optionally) a logo &mdash; we&#39;ll render a live proof-of-concept preview on this page in about a second. No signup, nothing saved. Refresh the page and it&#39;s gone.</p>
+
+    <div class="poc-lab-grid">
+      <!-- ────── FORM ────── -->
+      <form id="pocFormElement" class="poc-form" onsubmit="event.preventDefault(); pocGenerate(); return false;" novalidate>
+        <div class="poc-form-title">Configure Your PoC</div>
+
+        <div class="poc-form-row">
+          <label for="pocCompanyName">Company Name</label>
+          <input type="text" id="pocCompanyName" placeholder="Acme Corp" maxlength="200" autocomplete="organization" required>
+        </div>
+
+        <div class="poc-form-row">
+          <label>PoC Type</label>
+          <div class="poc-radio-row">
+            <label class="poc-radio"><input type="radio" name="pocType" value="Website"> <span>Website</span></label>
+            <label class="poc-radio"><input type="radio" name="pocType" value="Custom CRM"> <span>Custom CRM</span></label>
+          </div>
+        </div>
+
+        <div class="poc-form-row">
+          <label for="pocLogo">Logo (optional)</label>
+          <label for="pocLogo" class="poc-file-label">
+            <span class="poc-file-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></span>
+            <span>Upload logo &middot; PNG, JPG, SVG, WebP &middot; max 1 MB</span>
+          </label>
+          <input type="file" id="pocLogo" accept="image/*" onchange="pocLogoUpload(this)" style="display:none">
+          <img id="pocLogoPreview" class="poc-logo-preview" alt="Logo preview">
+        </div>
+
+        <div class="poc-form-row">
+          <label for="pocDetails">Your Business</label>
+          <textarea id="pocDetails" placeholder="What does your company do? Who&#39;s the customer? What would this PoC demonstrate?" maxlength="4000" rows="4" required></textarea>
+        </div>
+
+        <div class="poc-form-actions">
+          <button type="submit" class="poc-submit">Generate PoC &rarr;</button>
+          <button type="button" class="poc-reset" onclick="pocReset()">Reset</button>
+        </div>
+
+        <div class="poc-form-note">Nothing is saved. On refresh, everything disappears.</div>
+      </form>
+
+      <!-- ────── LIVE PREVIEW ────── -->
+      <div class="poc-preview" id="pocPreview">
+        <div class="poc-preview-empty">
+          <div class="poc-preview-empty-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <div>Fill in the form and click <strong>Generate PoC</strong> to see a live preview.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="si">
     <div class="sl">FAQ</div>
