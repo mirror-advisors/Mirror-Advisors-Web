@@ -2903,7 +2903,7 @@ export const pages = {
     <div class="sl">Step One &mdash; Always</div>
     <div class="sh">The Scope Engagement</div>
     <p class="sp">Every project starts here. No exceptions.</p>
-    <div class="scope-gateway">
+    <div class="scope-gateway" style="grid-template-columns:1.1fr 1fr;gap:20px">
       <div class="scope-card-main">
         <div class="scope-card-inner">
           <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
@@ -2928,11 +2928,66 @@ export const pages = {
           <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
         </div>
       </div>
-      <div class="scope-arrow-col">
-        <div class="scope-arrow-line"></div>
-        <div class="scope-arrow-label">Scope reveals the right channels</div>
-        <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
-      </div>
+
+      <!-- Right panel: sample scope deliverable preview -->
+      <div style="background:#080B16;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px 26px;position:relative;overflow:hidden;display:flex;flex-direction:column">
+        <div style="position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(236,169,52,.15),transparent 60%);pointer-events:none"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative">
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.1em;margin-bottom:4px">SAMPLE BLUEPRINT PREVIEW</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--tx);letter-spacing:-.01em">Marketing Scope &mdash; Q4 Findings</div>
+          </div>
+          <div style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#10B981;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.06em;white-space:nowrap">DELIVERED</div>
+        </div>
+
+        <!-- Finding 1: Funnel Audit -->
+        <div style="padding:14px 16px;border-radius:11px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.22);margin-bottom:10px;position:relative">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:var(--t);letter-spacing:.09em">FUNNEL AUDIT</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:#EF4444">62% LEAK</div>
+          </div>
+          <div style="font-size:12px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.5;font-weight:500">Leads drop off between MQL &rarr; SQL. Stage-transition automation is missing.</div>
+        </div>
+
+        <!-- Finding 2: Attribution Gap -->
+        <div style="padding:14px 16px;border-radius:11px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.22);margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#6B9FD4;letter-spacing:.09em">ATTRIBUTION GAP</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:#F59E0B">3 CHANNELS</div>
+          </div>
+          <div style="font-size:12px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.5;font-weight:500">LinkedIn, referral, and podcast traffic have no UTM discipline &mdash; source unknown.</div>
+        </div>
+
+        <!-- Finding 3: Channel Opportunity -->
+        <div style="padding:14px 16px;border-radius:11px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.22);margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#8B9FD4;letter-spacing:.09em">CHANNEL OPPORTUNITY</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:#10B981">+$103K/yr</div>
+          </div>
+          <div style="font-size:12px;color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.5;font-weight:500">Reallocate 22% of paid spend from broad-match to intent-based LinkedIn.</div>
+        </div>
+
+        <!-- Recommended channel mix mini-bar -->
+        <div style="padding:14px 16px;border-radius:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);margin-top:auto">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:var(--dim);letter-spacing:.09em">RECOMMENDED CHANNEL MIX</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;color:var(--t)">Q1 2026</div>
+          </div>
+          <div style="display:flex;height:10px;border-radius:5px;overflow:hidden;background:rgba(255,255,255,.04);margin-bottom:8px">
+            <div style="width:38%;background:#ECA934" title="Paid"></div>
+            <div style="width:26%;background:#6B9FD4" title="SEO"></div>
+            <div style="width:20%;background:#8B9FD4" title="Content"></div>
+            <div style="width:16%;background:#10B981" title="Email"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:9.5px;font-family:'Montserrat',sans-serif;font-weight:700">
+            <span style="color:var(--t)">Paid 38%</span>
+            <span style="color:#6B9FD4">SEO 26%</span>
+            <span style="color:#8B9FD4">Content 20%</span>
+            <span style="color:#10B981">Email 16%</span>
+          </div>
+        </div>
+
+        <div style="text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--dim);letter-spacing:.05em;margin-top:14px">Delivered as PDF + Notion doc &middot; approx 24 pages</div>
       </div>
     </div>
   </div>
@@ -3440,7 +3495,7 @@ export const pages = {
     <div class="sl">Step One &mdash; Always</div>
     <div class="sh">The Scope Engagement</div>
     <p class="sp">Every project starts here. No exceptions.</p>
-    <div class="scope-gateway">
+    <div class="scope-gateway" style="grid-template-columns:1.1fr 1fr;gap:20px">
       <div class="scope-card-main">
         <div class="scope-card-inner">
           <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
@@ -3465,10 +3520,88 @@ export const pages = {
           <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
         </div>
       </div>
-      <div class="scope-arrow-col">
-        <div class="scope-arrow-line"></div>
-        <div class="scope-arrow-label">Scope reveals the right build</div>
-        <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <!-- Right panel: sample AI readiness snapshot -->
+      <div style="background:#080B16;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px 26px;position:relative;overflow:hidden;display:flex;flex-direction:column">
+        <div style="position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(139,159,212,.18),transparent 60%);pointer-events:none"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative">
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.1em;margin-bottom:4px">SAMPLE READINESS ASSESSMENT</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--tx);letter-spacing:-.01em">AI Feasibility &mdash; Q4 Scope</div>
+          </div>
+          <div style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#10B981;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.06em;white-space:nowrap">GO</div>
+        </div>
+
+        <!-- Big score with ring -->
+        <div style="display:flex;align-items:center;gap:20px;padding:18px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(139,159,212,.12),rgba(236,169,52,.05));border:1px solid rgba(139,159,212,.25);margin-bottom:14px;position:relative">
+          <div style="position:relative;width:64px;height:64px;flex-shrink:0">
+            <svg width="64" height="64" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="27" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+              <circle cx="32" cy="32" r="27" fill="none" stroke="url(#aiScopeGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="169.65" stroke-dashoffset="37.32" transform="rotate(-90 32 32)"/>
+              <defs>
+                <linearGradient id="aiScopeGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ECA934"/>
+                  <stop offset="100%" stop-color="#8B9FD4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--tx);line-height:1;letter-spacing:-.02em">78</span>
+              <span style="font-size:7px;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--dim);letter-spacing:.06em">SCORE</span>
+            </div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--t);letter-spacing:.08em;margin-bottom:4px">READY TO BUILD</div>
+            <div style="font-size:12px;color:var(--mid);line-height:1.5;font-family:'DM Sans',sans-serif">Data volume + workflow clarity are strong. One integration blocker to solve first.</div>
+          </div>
+        </div>
+
+        <!-- 4 dimension bars -->
+        <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:12px">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--mid)">Data Readiness</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#10B981">88%</span>
+            </div>
+            <div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="width:88%;height:100%;background:#10B981;border-radius:3px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--mid)">Use-Case Clarity</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#10B981">92%</span>
+            </div>
+            <div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="width:92%;height:100%;background:#10B981;border-radius:3px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--mid)">ROI Viability</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--t)">72%</span>
+            </div>
+            <div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="width:72%;height:100%;background:#ECA934;border-radius:3px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--mid)">Integration Complexity</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#F59E0B">58%</span>
+            </div>
+            <div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="width:58%;height:100%;background:#F59E0B;border-radius:3px"></div></div>
+          </div>
+        </div>
+
+        <!-- Recommended stack -->
+        <div style="padding:12px 14px;border-radius:11px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.22);margin-top:auto">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:var(--t);letter-spacing:.09em">RECOMMENDED STACK</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;color:var(--dim)">from 3 evaluated</div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="font-size:10px;padding:3px 9px;border-radius:100px;background:rgba(236,169,52,.14);color:var(--t);font-family:'Montserrat',sans-serif;font-weight:800">Claude Sonnet 4</span>
+            <span style="font-size:10px;padding:3px 9px;border-radius:100px;background:rgba(139,159,212,.14);color:#8B9FD4;font-family:'Montserrat',sans-serif;font-weight:800">Custom RAG</span>
+            <span style="font-size:10px;padding:3px 9px;border-radius:100px;background:rgba(107,159,212,.14);color:#6B9FD4;font-family:'Montserrat',sans-serif;font-weight:800">MCP</span>
+          </div>
+        </div>
+
+        <div style="text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--dim);letter-spacing:.05em;margin-top:14px">Delivered as blueprint doc + go/no-go recommendation</div>
       </div>
     </div>
   </div>
