@@ -7369,10 +7369,8 @@ body.menu-open { overflow: hidden; }
 }
 .poc-status.failed .poc-status-dot { background: #EF4444; animation: none; }
 
-/* Interactive elements inside the PoC mockup preview. Every button,
-   nav item, and card in the generated mockup carries this class so
-   the visitor can "explore" the mockup and every click routes to
-   Mirror Advisors' /contact page (the point of the whole feature). */
+/* Interactive elements inside the PoC mockup preview. Cards, CTAs,
+   sidebar user tile, table rows — anything the visitor can click. */
 .poc-interactive {
   cursor: pointer;
   transition: transform .18s ease, filter .18s ease, background-color .18s ease;
@@ -7383,6 +7381,27 @@ body.menu-open { overflow: hidden; }
 }
 .poc-interactive:active {
   transform: translateY(0);
+}
+
+/* Nav items — same interactivity but also carry a data-active state
+   for the "currently on this view" highlight. Website nav items use
+   the default inline color (charcoal), CRM sidebar items use their
+   own inline padding+radius. Both light up in forest ink when
+   [data-active="true"] flips on via pocSwitchView. */
+.poc-nav-item {
+  cursor: pointer;
+  transition: color .18s ease, background-color .18s ease, font-weight .18s ease;
+  color: #222;
+}
+.poc-nav-item:hover { color: #0f3e17; }
+.poc-nav-item[data-active="true"] {
+  color: #0f3e17;
+  font-weight: 600;
+}
+/* CRM sidebar variant — active row gets the keylime highlight fill
+   in addition to the forest-ink text. */
+.poc-crm-nav[data-active="true"] {
+  background: #e1f4df;
 }
 
 /* Floating "Book a Call" chat bubble that sits in the bottom-right
