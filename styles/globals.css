@@ -7137,6 +7137,16 @@ body.menu-open { overflow: hidden; }
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
+/* FIFTH rewrite. Root cause of the last 3 broken attempts finally
+   identified: globals.css line 2039 has a global rule
+     input,select,textarea{...width:100%}
+   that applies to every input on the site — including radios. My
+   <input type="radio"> was rendering at 100% of the pill width,
+   pushing the label span off-screen to the right, and then the
+   text-overflow:ellipsis on the pill truncated the visible area
+   to just "...". Global label rule at line 2037 also imposed
+   text-transform:uppercase / letter-spacing that fought my rules.
+   Both are now explicitly reset in the .poc-radio scope below. */
 .poc-radio {
   display: block;
   padding: 12px 16px;
@@ -7145,22 +7155,31 @@ body.menu-open { overflow: hidden; }
   border: 1px solid rgba(255,255,255,.12);
   cursor: pointer;
   transition: background .18s, border-color .18s, color .18s;
+  /* Override global label rule (line 2037) */
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: var(--mid);
+  text-transform: none;
+  letter-spacing: 0;
   user-select: none;
   text-align: left;
-  text-transform: none;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .poc-radio input[type="radio"] {
-  accent-color: #ECA934;
-  cursor: pointer;
+  /* Override global input rule (line 2039) — the width:100% was the
+     bug that hid every previous fix. Reset back to native radio
+     rendering with just an amber accent. */
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
   margin: 0 10px 0 0;
   vertical-align: middle;
+  accent-color: #ECA934;
+  cursor: pointer;
+  box-shadow: none;
 }
 .poc-radio > span {
   vertical-align: middle;
