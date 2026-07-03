@@ -2243,18 +2243,54 @@ export const pages = {
   </div>
 </div>
 
-<section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
+<section class="sec" style="background:#080B16;border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="si">
     <div class="sl">What We Deploy</div>
     <div class="sh">The Full Zoho One Stack.</div>
     <p class="sp">We deploy the entire Zoho One suite &mdash; not just CRM. Every product is configured to how your team actually works, integrated across modules, and automated end-to-end.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px">
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">CRM</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Pipeline stages, deal workflows, workflow rules, custom modules, and cross-module automations tied to your sales process.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Books &amp; Invoice</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Revenue recognition, multi-currency, chart of accounts, tax localization, and CRM &harr; finance sync.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Creator</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Custom apps that extend standard modules with your unique business logic &mdash; no waiting for feature parity.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SalesIQ</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Live chat, visitor tracking, chatbot routing rules &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Desk</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Campaigns &amp; Marketing</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p></div>
+    <div class="svc-hi-grid">
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="svc-hi-title">CRM</div>
+        <p class="svc-hi-desc">Pipeline stages, deal workflows, workflow rules, custom modules, and cross-module automations tied to your sales process.</p>
+      </div>
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="svc-hi-title">Books &amp; Invoice</div>
+        <p class="svc-hi-desc">Revenue recognition, multi-currency, chart of accounts, tax localization, and CRM &harr; finance sync.</p>
+      </div>
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="svc-hi-title">Creator</div>
+        <p class="svc-hi-desc">Custom apps that extend standard modules with your unique business logic &mdash; no waiting for feature parity.</p>
+      </div>
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="svc-hi-title">SalesIQ</div>
+        <p class="svc-hi-desc">Live chat, visitor tracking, chatbot routing rules &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p>
+      </div>
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
+        </div>
+        <div class="svc-hi-title">Desk</div>
+        <p class="svc-hi-desc">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p>
+      </div>
+      <div class="svc-hi-card" style="cursor:default">
+        <div class="svc-hi-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        </div>
+        <div class="svc-hi-title">Campaigns &amp; Marketing</div>
+        <p class="svc-hi-desc">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p>
+      </div>
     </div>
   </div>
 </section>
