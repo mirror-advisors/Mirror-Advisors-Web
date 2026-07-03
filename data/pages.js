@@ -4064,17 +4064,16 @@ export const pages = {
 </section>
 
 <!-- ────────────────────────────────────────────────────────────────
-     POC LAB — experimental interactive section. Users enter company
-     info + choose Website / Custom CRM → mockup renders inline on the
-     right, and a fire-and-forget POST to /api/poc-notify emails
-     Mirror Advisors what was generated. Nothing persists; refresh
-     wipes everything.
+     POC LAB — interactive section. Users enter company info + choose
+     Website / Custom CRM → mockup renders inline on the right, and a
+     fire-and-forget POST to /api/poc-notify emails Mirror Advisors
+     what was generated. Nothing persists; refresh wipes everything.
      ──────────────────────────────────────────────────────────────── -->
 <section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="si">
     <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:8px">
       <span class="poc-pulse-dot"></span>
-      <div class="sl" style="margin:0">Experimental &middot; PoC Lab</div>
+      <div class="sl" style="margin:0">PoC Lab</div>
     </div>
     <div class="sh">Try It Right Now.</div>
     <p class="sp">Give us your company name, a short description, and (optionally) a logo &mdash; we&#39;ll render a live proof-of-concept preview on this page in about a second. No signup, nothing saved. Refresh the page and it&#39;s gone.</p>

@@ -7130,24 +7130,29 @@ body.menu-open { overflow: hidden; }
 .poc-radio-row { display: flex; gap: 8px; }
 .poc-radio {
   flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 8px;
+  padding: 12px;
   border-radius: 10px;
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.12);
   cursor: pointer;
   transition: background .18s, border-color .18s, color .18s;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--mid);
   user-select: none;
 }
+/* Prevent the "Custom CRM" label wrapping to two lines inside the button
+   when the form column narrows — nowrap forces a single line. */
+.poc-radio > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .poc-radio input[type="radio"] {
   accent-color: #ECA934;
   cursor: pointer;
+  flex-shrink: 0;
 }
 .poc-radio:hover { border-color: rgba(236,169,52,.28); color: var(--tx); }
 .poc-radio:has(input:checked) {
