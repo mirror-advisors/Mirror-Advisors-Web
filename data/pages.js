@@ -2945,71 +2945,69 @@ export const pages = {
     <p class="sp">Most marketing teams optimize for clicks, opens, and impressions. We optimize for what actually matters: qualified pipeline, revenue attribution, and a marketing budget your CFO doesn&#39;t have to guess about.</p>
 
     <div class="flow-grid">
-      <!-- 01 Marketing Automation → Nurture -->
+      <!-- 01 Discover -->
       <div class="flow-card">
         <div class="flow-num">01</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="flow-title">Marketing Automation</div>
-        <p class="flow-desc">End-to-end Zoho Campaigns + Marketing Automation. Email templates, journeys, triggers, list segmentation.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Nurture</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="flow-title">Discover</div>
+        <p class="flow-desc">Audit your funnel, interview stakeholders, map acquisition sources. We surface what&#39;s working and what&#39;s leaking pipeline.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Week 1</span></div>
       </div>
 
-      <!-- 02 Landing Pages → Capture -->
+      <!-- 02 Design -->
       <div class="flow-card">
         <div class="flow-num">02</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div class="flow-title">Landing Pages</div>
-        <p class="flow-desc">Built to convert. A/B tested, mobile-first, wired to your CRM with owner-routing rules.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Capture</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <div class="flow-title">Design</div>
+        <p class="flow-desc">Translate the audit into a marketing blueprint &mdash; funnel strategy, channel mix, creative brief, and message hierarchy.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Weeks 2&ndash;3</span></div>
       </div>
 
-      <!-- 03 SalesIQ + Chatbot → Convert -->
+      <!-- 03 Build -->
       <div class="flow-card">
         <div class="flow-num">03</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="flow-title">SalesIQ + AI Chatbot</div>
-        <p class="flow-desc">Live chat and AI chatbot tied to lead capture. This site uses the same setup.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Convert</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="flow-title">Build</div>
+        <p class="flow-desc">Automation flows, landing pages, and CRM wiring. Tracking goes in first so nothing launches un-instrumented.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Weeks 4&ndash;6</span></div>
       </div>
 
-      <!-- 04 First-Party Data → Attribution -->
+      <!-- 04 Launch -->
       <div class="flow-card">
         <div class="flow-num">04</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="flow-title">First-Party Data</div>
-        <p class="flow-desc">Server-side tracking, UTM discipline, and CRM contact enrichment so attribution survives ad-blockers.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Attribution</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+        <div class="flow-title">Launch</div>
+        <p class="flow-desc">Coordinated go-live across channels. First-party attribution is running before a single dollar of ad spend hits.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Week 7</span></div>
       </div>
 
-      <!-- 05 Pipeline Dashboards → Revenue -->
+      <!-- 05 Measure -->
       <div class="flow-card">
         <div class="flow-num">05</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
-        <div class="flow-title">Pipeline Dashboards</div>
-        <p class="flow-desc">Zoho Analytics or Looker Studio dashboards. Monthly exec recap sent automatically.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Revenue</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="flow-title">Measure</div>
+        <p class="flow-desc">Weekly performance readouts plus monthly exec recap. We report on pipeline stage progression, not clicks and opens.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Ongoing</span></div>
       </div>
 
-      <!-- 06 Paid Media → Awareness -->
+      <!-- 06 Optimize -->
       <div class="flow-card">
         <div class="flow-num">06</div>
-        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
-        <div class="flow-title">Paid Media Coordination</div>
-        <p class="flow-desc">We manage the strategy, tracking, and reporting; your existing ad agency (or ours) executes the buy.</p>
-        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Awareness</span></div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <div class="flow-title">Optimize</div>
+        <p class="flow-desc">A/B tests, journey tuning, budget reallocation. Every dollar spent has a hypothesis and a next-decision date.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Timing</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Ongoing</span></div>
       </div>
     </div>
 
     <div class="flow-summary">
       <div class="flow-summary-inner">
-        <div class="flow-summary-label">All six flows converge on</div>
-        <div class="flow-summary-target">YOUR PIPELINE</div>
+        <div class="flow-summary-label">Setup runs</div>
+        <div class="flow-summary-target">7 WEEKS</div>
         <div class="flow-summary-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="flow-summary-target flow-summary-target-t">REVENUE</div>
+        <div class="flow-summary-target flow-summary-target-t">MEASURE &amp; OPTIMIZE ON REPEAT</div>
       </div>
     </div>
-
-    <div class="tech-tags" style="margin-top:28px;justify-content:center"><span class="tt">Zoho Campaigns</span><span class="tt">Zoho Marketing Automation</span><span class="tt">Zoho Social</span><span class="tt">Zoho Analytics</span><span class="tt">Google Ads</span><span class="tt">LinkedIn Ads</span><span class="tt">SEO</span><span class="tt">Attribution</span></div>
   </div>
 </section>
 
