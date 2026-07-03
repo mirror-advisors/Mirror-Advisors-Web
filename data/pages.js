@@ -3042,44 +3042,105 @@ export const pages = {
         <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px;background:#6B9FD4">Build Content With Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       </div>
       <div class="cap-d-right">
-        <div class="vis-panel" style="padding:24px;animation-delay:-3s">
+        <div class="vis-panel" style="padding:20px;animation-delay:-3s">
           <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
           <div class="vis-title">Content Pipeline &mdash; This Week</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
-            <div style="padding:12px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);position:relative;overflow:hidden">
-              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(107,159,212,.15),rgba(107,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(107,159,212,.7)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">REEL</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+
+            <!-- REEL — Instagram-style vertical video mockup -->
+            <div style="padding:10px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);overflow:hidden">
+              <div style="aspect-ratio:4/5;background:linear-gradient(160deg,#833AB4 0%,#C13584 40%,#E1306C 65%,#F56040 85%,#FCAF45 100%);border-radius:6px;position:relative;overflow:hidden;margin-bottom:8px">
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.5);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;z-index:2">REEL</span>
+                <span style="position:absolute;top:6px;left:6px;font-size:7px;padding:2px 5px;border-radius:100px;background:rgba(0,0,0,.5);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;z-index:2">0:30</span>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                  <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#000" style="margin-left:2px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+                <div style="position:absolute;bottom:6px;left:6px;right:6px;color:#fff">
+                  <div style="font-family:'Montserrat',sans-serif;font-size:8px;font-weight:800;line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,.6);letter-spacing:-.01em">Ship faster.<br>Convert better.</div>
+                  <div style="display:flex;gap:6px;margin-top:4px;font-size:7px;font-weight:700;font-family:'Montserrat',sans-serif;text-shadow:0 1px 2px rgba(0,0,0,.6)">
+                    <span>&#9829; 2.1K</span><span>&#128172; 87</span>
+                  </div>
+                </div>
               </div>
-              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Product Demo — 30s</div>
-              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">12.4K views &middot; 2 days ago</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;color:var(--tx);margin-bottom:2px">Product Demo &mdash; 30s</div>
+              <div style="font-size:9.5px;color:var(--dim);font-family:'Montserrat',sans-serif">12.4K views &middot; 2d ago</div>
             </div>
-            <div style="padding:12px;border-radius:9px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2);position:relative;overflow:hidden">
-              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(236,169,52,.15),rgba(236,169,52,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.9)" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">GRAPHIC</span>
+
+            <!-- GRAPHIC — Case study card mockup with real content -->
+            <div style="padding:10px;border-radius:9px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2);overflow:hidden">
+              <div style="aspect-ratio:4/5;background:#0E1422;border-radius:6px;position:relative;overflow:hidden;margin-bottom:8px;border:1px solid rgba(236,169,52,.15)">
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.55);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;z-index:2">GRAPHIC</span>
+                <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(236,169,52,.25),transparent 60%)"></div>
+                <div style="padding:12px 10px;position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between">
+                  <div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:800;color:#ECA934;letter-spacing:.12em;margin-bottom:6px">CASE STUDY</div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.02em">$460K in new pipeline</div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:6.5px;font-weight:600;color:rgba(255,255,255,.55);margin-top:3px;line-height:1.3">in Q3 with one campaign shift</div>
+                  </div>
+                  <div>
+                    <div style="height:1px;background:rgba(255,255,255,.1);margin-bottom:6px"></div>
+                    <div style="display:flex;align-items:center;gap:5px">
+                      <div style="width:12px;height:12px;border-radius:3px;background:#ECA934;display:flex;align-items:center;justify-content:center;color:#0D1232;font-family:'Montserrat',sans-serif;font-size:6px;font-weight:900">MA</div>
+                      <div style="font-family:'Montserrat',sans-serif;font-size:6.5px;font-weight:700;color:#fff;letter-spacing:.04em">MIRROR ADVISORS</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Case Study Card</div>
-              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">8.1K impressions &middot; today</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;color:var(--tx);margin-bottom:2px">Case Study Card</div>
+              <div style="font-size:9.5px;color:var(--dim);font-family:'Montserrat',sans-serif">8.1K impressions &middot; today</div>
             </div>
-            <div style="padding:12px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2);position:relative;overflow:hidden">
-              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(139,159,212,.15),rgba(139,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(139,159,212,.9)" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
-                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">BLOG</span>
+
+            <!-- BLOG — Article header mockup -->
+            <div style="padding:10px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2);overflow:hidden">
+              <div style="aspect-ratio:4/5;background:#F7F8FA;border-radius:6px;position:relative;overflow:hidden;margin-bottom:8px;padding:11px 10px">
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.55);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;z-index:2">BLOG</span>
+                <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:800;color:#8B9FD4;letter-spacing:.14em;margin-bottom:6px;margin-top:2px">MARKETING &middot; 5 MIN</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;color:#0F1424;line-height:1.15;margin-bottom:5px;letter-spacing:-.01em">Why your CRM is your best marketing channel</div>
+                <div style="font-size:6.5px;color:#5B6478;line-height:1.4;font-family:'DM Sans',sans-serif">Most teams spend on ads while ignoring the highest-intent leads already inside their pipeline. Here&#39;s how to fix that in a week.</div>
+                <div style="position:absolute;bottom:6px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="display:flex;align-items:center;gap:4px">
+                    <div style="width:10px;height:10px;border-radius:50%;background:#0F1424"></div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:700;color:#0F1424">by Zack Sythe</div>
+                  </div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:6px;font-weight:700;color:#8B9FD4">Read &rarr;</div>
+                </div>
               </div>
-              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Long-form Article</div>
-              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">1.2K reads &middot; 4 days ago</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;color:var(--tx);margin-bottom:2px">Long-form Article</div>
+              <div style="font-size:9.5px;color:var(--dim);font-family:'Montserrat',sans-serif">1.2K reads &middot; 4d ago</div>
             </div>
-            <div style="padding:12px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);position:relative;overflow:hidden">
-              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(107,159,212,.15),rgba(107,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(107,159,212,.7)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">TIKTOK</span>
+
+            <!-- TIKTOK — Short-form video mockup with caption -->
+            <div style="padding:10px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);overflow:hidden">
+              <div style="aspect-ratio:4/5;background:linear-gradient(180deg,#111 0%,#1a1a1a 50%,#0a0a0a 100%);border-radius:6px;position:relative;overflow:hidden;margin-bottom:8px">
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(255,255,255,.9);color:#000;font-family:'Montserrat',sans-serif;font-weight:800;z-index:2">TIKTOK</span>
+                <span style="position:absolute;top:6px;left:6px;font-size:7px;padding:2px 5px;border-radius:100px;background:rgba(0,0,0,.55);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;z-index:2">0:15</span>
+                <!-- Ambient light behind figure -->
+                <div style="position:absolute;top:15%;left:50%;transform:translateX(-50%);width:70%;height:60%;border-radius:50%;background:radial-gradient(circle,rgba(236,169,52,.25),transparent 60%)"></div>
+                <!-- Center play affordance -->
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                  <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#000" style="margin-left:2px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+                <!-- Right-side action rail -->
+                <div style="position:absolute;right:5px;bottom:14px;display:flex;flex-direction:column;gap:6px;align-items:center;color:#fff;font-family:'Montserrat',sans-serif;font-size:6px;font-weight:700">
+                  <div style="text-align:center"><div style="font-size:12px">&#9829;</div><div>28K</div></div>
+                  <div style="text-align:center"><div style="font-size:12px">&#128172;</div><div>412</div></div>
+                  <div style="text-align:center"><div style="font-size:12px">&#8631;</div><div>89</div></div>
+                </div>
+                <!-- Bottom caption -->
+                <div style="position:absolute;bottom:6px;left:6px;right:32px;color:#fff">
+                  <div style="font-family:'Montserrat',sans-serif;font-size:7px;font-weight:800;line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,.6)">@mirroradvisors</div>
+                  <div style="font-family:'DM Sans',sans-serif;font-size:6.5px;font-weight:600;line-height:1.3;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,.6);opacity:.85">The one Zoho trick nobody talks about &#127919;</div>
+                </div>
               </div>
-              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Founder POV — 15s</div>
-              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">28.7K views &middot; today</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;color:var(--tx);margin-bottom:2px">Founder POV &mdash; 15s</div>
+              <div style="font-size:9.5px;color:var(--dim);font-family:'Montserrat',sans-serif">28.7K views &middot; today</div>
             </div>
           </div>
-          <div style="margin-top:14px;display:flex;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px">
+          <div style="margin-top:12px;display:flex;justify-content:space-between;padding:9px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px">
             <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em">WEEKLY OUTPUT</span>
             <span style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:#6B9FD4">12 pieces</span>
           </div>
