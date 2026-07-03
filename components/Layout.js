@@ -352,6 +352,11 @@ export default function Layout({ children }) {
 function pathToInitKey(pathname, query) {
   if (pathname === '/') return 'home';
   if (pathname.startsWith('/zoho/')) return 'zoho_' + (query.product || '');
+  // Services sub-pages share the same _INIT as the Overview — they can
+  // include #pathsGrid and #faqList (populated by _INIT.services). The
+  // populators are guarded by if(el) so pages without those elements
+  // simply skip.
+  if (pathname.startsWith('/services/')) return 'services';
   // strip leading slash, dashes to underscores
   return pathname.replace(/^\//, '').replace(/-/g, '_');
 }
