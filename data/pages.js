@@ -4073,7 +4073,7 @@ export const pages = {
   <div class="si">
     <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:8px">
       <span class="poc-pulse-dot"></span>
-      <div class="sl" style="margin:0">PoC Lab</div>
+      <div class="sl" style="margin:0">Proof of Concept Lab</div>
     </div>
     <div class="sh">Try It Right Now.</div>
     <p class="sp">Give us your company name, a short description, and (optionally) a logo &mdash; we&#39;ll render a live proof-of-concept preview on this page in about a second. No signup, nothing saved. Refresh the page and it&#39;s gone.</p>
