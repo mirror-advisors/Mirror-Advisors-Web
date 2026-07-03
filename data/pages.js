@@ -2799,18 +2799,101 @@ export const pages = {
   </div>
 </div>
 
-<section class="sec" style="background:#0C0F22;border-bottom:1px solid rgba(255,255,255,.08)">
+<section class="sec" style="background:#080B16;border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="si">
     <div class="sl">What We Offer</div>
     <div class="sh">Full-Funnel Marketing, Wired to Your CRM.</div>
     <p class="sp">Six services, one integrated funnel. Each piece talks to the others &mdash; and to your CRM &mdash; so lead-to-revenue is one traceable path, not five disconnected reports.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px">
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Strategy &amp; Funnel Design</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Audit of existing acquisition sources, target-persona mapping, funnel-stage definition, and quarterly plan.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Marketing Automation</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Zoho Campaigns / Marketing Automation setup, email nurture flows, journey builders, and lead scoring.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Landing Pages &amp; Lead Capture</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">High-conversion landing pages, form design, SalesIQ chat integration, and CRM ownership routing.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">SEO &amp; Content</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Technical SEO, on-page optimization, content strategy, and search-intent-mapped article production.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Paid Media Coordination</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Google Ads, LinkedIn Ads, Meta Ads &mdash; campaign setup, tracking wiring, and first-party attribution.</p></div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px"><div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--t);margin-bottom:8px">Attribution &amp; Reporting</div><p style="font-size:12.5px;color:var(--dim);line-height:1.6;margin:0">Multi-channel attribution dashboards, pipeline-to-revenue reporting, and monthly board-ready recaps.</p></div>
+    <div class="zh-stack-grid">
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="zh-stack-name">Strategy &amp; Funnel Design</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">Audit of existing acquisition sources, target-persona mapping, and funnel-stage definition tied to a quarterly plan.</p>
+        <ul class="zh-stack-list">
+          <li>ICP + persona definition</li>
+          <li>Funnel-stage KPIs</li>
+          <li>Quarterly growth roadmap</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">ICP</span><span class="tt">Positioning</span><span class="tt">Roadmap</span></div>
+      </div>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="zh-stack-name">Marketing Automation</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">Zoho Campaigns and Marketing Automation deployed end-to-end &mdash; nurture flows, journey builders, and lead scoring.</p>
+        <ul class="zh-stack-list">
+          <li>Email nurture journeys</li>
+          <li>Behavior-based lead scoring</li>
+          <li>Trigger-driven segmentation</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Zoho Campaigns</span><span class="tt">Journeys</span><span class="tt">Scoring</span></div>
+      </div>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="zh-stack-name">Landing Pages &amp; Lead Capture</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">High-conversion landing pages, form design, and SalesIQ chat &mdash; wired to CRM ownership routing.</p>
+        <ul class="zh-stack-list">
+          <li>A/B tested landing pages</li>
+          <li>Progressive form design</li>
+          <li>CRM auto-owner routing</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">A/B Testing</span><span class="tt">Forms</span><span class="tt">SalesIQ</span></div>
+      </div>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="zh-stack-name">SEO &amp; Content</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">Technical SEO, on-page optimization, and search-intent-mapped content production that ties rankings to revenue.</p>
+        <ul class="zh-stack-list">
+          <li>Technical SEO audit</li>
+          <li>On-page + schema optimization</li>
+          <li>Intent-mapped article production</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Technical SEO</span><span class="tt">Content</span><span class="tt">Schema</span></div>
+      </div>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
+          <div class="zh-stack-name">Paid Media Coordination</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">Google Ads, LinkedIn Ads, and Meta Ads &mdash; campaign setup, tracking wiring, and first-party attribution.</p>
+        <ul class="zh-stack-list">
+          <li>Campaign setup + creative brief</li>
+          <li>Server-side conversion tracking</li>
+          <li>First-party attribution</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Google Ads</span><span class="tt">LinkedIn</span><span class="tt">Meta</span></div>
+      </div>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 12 10 9 13 12 17 8"/></svg></div>
+          <div class="zh-stack-name">Attribution &amp; Reporting</div>
+          <div class="zh-stack-pill">MA Certified</div>
+        </div>
+        <p class="zh-stack-desc">Multi-channel attribution dashboards, pipeline-to-revenue reporting, and monthly board-ready recaps.</p>
+        <ul class="zh-stack-list">
+          <li>Multi-channel attribution</li>
+          <li>Pipeline-to-revenue dashboards</li>
+          <li>Monthly executive recap</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Zoho Analytics</span><span class="tt">Attribution</span><span class="tt">Reporting</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2825,7 +2908,7 @@ export const pages = {
         <div class="scope-card-inner">
           <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
           <div class="scope-title">Scope <span class="scope-sub-title">/ Blueprinting</span></div>
-          <p class="scope-desc">A fixed-fee discovery engagement. We audit your systems, interview stakeholders, map your business logic, and deliver a comprehensive technical blueprint &mdash; before a single line of code is written.</p>
+          <p class="scope-desc">A fixed-fee discovery engagement. We audit your current funnel, interview stakeholders, map your acquisition sources, and deliver a comprehensive marketing blueprint &mdash; before a single campaign runs.</p>
           <div class="scope-meta-row">
             <div><div class="scope-meta-lbl">Duration</div><div class="scope-meta-val">2&ndash;4 weeks</div></div>
             <div><div class="scope-meta-lbl">Pricing</div><div class="scope-meta-val">Fixed Fee</div></div>
@@ -2834,12 +2917,12 @@ export const pages = {
           <div class="scope-delivers">
             <div class="scope-delivers-label">What you get</div>
             <div class="scope-delivers-grid">
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> System &amp; process audit</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Funnel &amp; attribution audit</div>
               <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Stakeholder interviews</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Technical blueprint doc</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Automation opportunity map</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended service path</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per item</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Marketing blueprint doc</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Campaign opportunity map</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended channel mix</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per channel</div>
             </div>
           </div>
           <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
@@ -2847,8 +2930,9 @@ export const pages = {
       </div>
       <div class="scope-arrow-col">
         <div class="scope-arrow-line"></div>
-        <div class="scope-arrow-label">Scope reveals the right path</div>
+        <div class="scope-arrow-label">Scope reveals the right channels</div>
         <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+      </div>
       </div>
     </div>
   </div>
