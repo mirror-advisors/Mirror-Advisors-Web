@@ -3445,7 +3445,7 @@ export const pages = {
         <div class="scope-card-inner">
           <div class="scope-top"><div class="scope-badge-pill">Starting Point</div></div>
           <div class="scope-title">Scope <span class="scope-sub-title">/ Blueprinting</span></div>
-          <p class="scope-desc">A fixed-fee discovery engagement. We audit your systems, interview stakeholders, map your business logic, and deliver a comprehensive technical blueprint &mdash; before a single line of code is written.</p>
+          <p class="scope-desc">A fixed-fee discovery engagement. We audit the workflow you want to automate, interview the humans doing it today, map the data + integrations required, and deliver a comprehensive AI build blueprint &mdash; before a single line of code is written.</p>
           <div class="scope-meta-row">
             <div><div class="scope-meta-lbl">Duration</div><div class="scope-meta-val">2&ndash;4 weeks</div></div>
             <div><div class="scope-meta-lbl">Pricing</div><div class="scope-meta-val">Fixed Fee</div></div>
@@ -3454,12 +3454,12 @@ export const pages = {
           <div class="scope-delivers">
             <div class="scope-delivers-label">What you get</div>
             <div class="scope-delivers-grid">
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> System &amp; process audit</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Workflow &amp; data audit</div>
               <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Stakeholder interviews</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Technical blueprint doc</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Automation opportunity map</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Recommended service path</div>
-              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per item</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> AI build blueprint doc</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Model + integration selection</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> Human-in-the-loop plan</div>
+              <div class="scope-deliver-item"><span class="scope-check">&#10003;</span> ROI estimates per use case</div>
             </div>
           </div>
           <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp">Start With Scope <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
@@ -3467,7 +3467,7 @@ export const pages = {
       </div>
       <div class="scope-arrow-col">
         <div class="scope-arrow-line"></div>
-        <div class="scope-arrow-label">Scope reveals the right path</div>
+        <div class="scope-arrow-label">Scope reveals the right build</div>
         <div style="color:rgba(255,255,255,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
       </div>
     </div>
