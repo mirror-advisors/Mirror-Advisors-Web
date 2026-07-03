@@ -7124,38 +7124,50 @@ body.menu-open { overflow: hidden; }
 .poc-form textarea { resize: vertical; min-height: 96px; line-height: 1.55; }
 .poc-form input::placeholder, .poc-form textarea::placeholder { color: rgba(255,255,255,.28); }
 
-/* Radio pair — two side-by-side selectable pills */
+/* Radio pair — two side-by-side selectable pills.
+   Third rewrite. Two prior attempts got the label either wrapping
+   to two lines OR collapsed to zero width. Root cause of the drift
+   was flex layout on the label span — it stretched or collapsed
+   depending on other rules. Fix: don't put the span in a flex row
+   with the radio input. Keep the pill as a normal block with the
+   radio + span rendered as an inline-flex GROUP left-aligned inside
+   the pill. Padding stays the same; nothing about the visual
+   changes other than the label sitting next to the dot again. */
 .poc-radio-row { display: flex; gap: 8px; }
 .poc-radio {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
+  padding: 12px 16px;
   border-radius: 10px;
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.12);
   cursor: pointer;
   transition: background .18s, border-color .18s, color .18s;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--mid);
   user-select: none;
+  /* Inline-flex the radio + span at the left of the pill */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+  text-transform: none;
 }
-/* Label span: just prevent wrapping. The previous version added
-   overflow:hidden + text-overflow:ellipsis, which in combination with
-   the flex layout collapsed the span to zero width and hid the label
-   entirely — visually blank pills with just the radio dot. Simple
-   nowrap keeps the labels visible; if the button is ever genuinely
-   too narrow (extreme mobile), the text will overflow the pill
-   slightly, which is noticeable and fixable rather than invisible. */
-.poc-radio > span { white-space: nowrap; flex: 1; }
 .poc-radio input[type="radio"] {
   accent-color: #ECA934;
   cursor: pointer;
   flex-shrink: 0;
+  margin: 0;
+}
+.poc-radio > span {
+  /* Content-sized, single line, no flex growth. If the pill is ever
+     truly too narrow, the text overflows visibly (obvious to catch)
+     instead of collapsing to nothing. */
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 .poc-radio:hover { border-color: rgba(236,169,52,.28); color: var(--tx); }
 .poc-radio:has(input:checked) {
