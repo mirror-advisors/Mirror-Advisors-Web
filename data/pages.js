@@ -2957,6 +2957,257 @@ export const pages = {
 
 <section class="sec">
   <div class="si">
+    <div class="sl">What We Build</div>
+    <div class="sh">Four Marketing Disciplines, One Practice</div>
+    <p class="sp">We don&#39;t silo our expertise. Every marketing engagement draws from all four disciplines &mdash; social, content, email, and web &mdash; to move real pipeline, not vanity metrics.</p>
+
+    <!-- 01 SMM -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; Social Media Marketing</div>
+        <div class="cap-d-h">Presence That Actually Compounds Into Pipeline.</div>
+        <p class="cap-d-p">We build multi-platform social programs that stop treating each channel as a vanity-metric silo. Every post, story, and reel wires back to your CRM so social ROI stops being a guessing game.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Multi-platform content strategy across LinkedIn, Instagram, Facebook, X, and TikTok</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Community management + inbox response SLAs so intent doesn&#39;t die in a DM</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Paid + organic amplification tied to campaign objectives, not follower counts</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Audience-listening reports fed back into content, product, and sales-motion decisions</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">LinkedIn</span><span class="tt">Instagram</span><span class="tt">TikTok</span><span class="tt">Meta Business</span><span class="tt">Zoho Social</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px">Grow With Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:24px">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div class="vis-title">Social Reach &mdash; Last 30 Days</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px">
+              <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+              <div style="flex:1;min-width:0"><div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--tx)">Instagram</div><div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif;letter-spacing:.04em">Followers &middot; Engagement</div></div>
+              <div style="text-align:right"><div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--tx);line-height:1">35.2K</div><div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:3px">&#9650; 12.4%</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px">
+              <div style="width:32px;height:32px;border-radius:8px;background:#0A66C2;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div style="flex:1;min-width:0"><div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--tx)">LinkedIn</div><div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif;letter-spacing:.04em">Followers &middot; Engagement</div></div>
+              <div style="text-align:right"><div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--tx);line-height:1">18.7K</div><div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:3px">&#9650; 8.2%</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px">
+              <div style="width:32px;height:32px;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.85a8.16 8.16 0 0 0 4.76 1.52v-3.4a4.83 4.83 0 0 1-1.83-.28z"/></svg></div>
+              <div style="flex:1;min-width:0"><div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--tx)">TikTok</div><div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif;letter-spacing:.04em">Followers &middot; Views</div></div>
+              <div style="text-align:right"><div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--tx);line-height:1">12.4K</div><div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:3px">&#9650; 24.1%</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px">
+              <div style="width:32px;height:32px;border-radius:8px;background:#1877F2;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
+              <div style="flex:1;min-width:0"><div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--tx)">Facebook</div><div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif;letter-spacing:.04em">Followers &middot; Engagement</div></div>
+              <div style="text-align:right"><div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--tx);line-height:1">22.1K</div><div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:3px">&#9650; 3.1%</div></div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px 14px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.18);border-radius:9px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--t);letter-spacing:.08em">30-DAY ENGAGEMENT</span>
+              <span style="font-size:11px;color:var(--t);font-weight:700;font-family:'Montserrat',sans-serif">&#9650; 18.3%</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:3px;height:32px">
+              <div style="flex:1;height:35%;background:rgba(236,169,52,.35);border-radius:2px"></div>
+              <div style="flex:1;height:45%;background:rgba(236,169,52,.4);border-radius:2px"></div>
+              <div style="flex:1;height:32%;background:rgba(236,169,52,.35);border-radius:2px"></div>
+              <div style="flex:1;height:60%;background:rgba(236,169,52,.5);border-radius:2px"></div>
+              <div style="flex:1;height:55%;background:rgba(236,169,52,.5);border-radius:2px"></div>
+              <div style="flex:1;height:75%;background:rgba(236,169,52,.65);border-radius:2px"></div>
+              <div style="flex:1;height:50%;background:rgba(236,169,52,.45);border-radius:2px"></div>
+              <div style="flex:1;height:82%;background:rgba(236,169,52,.75);border-radius:2px"></div>
+              <div style="flex:1;height:68%;background:rgba(236,169,52,.6);border-radius:2px"></div>
+              <div style="flex:1;height:90%;background:rgba(236,169,52,.85);border-radius:2px"></div>
+              <div style="flex:1;height:78%;background:rgba(236,169,52,.7);border-radius:2px"></div>
+              <div style="flex:1;height:100%;background:#ECA934;border-radius:2px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Content Marketing -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4">02 &mdash; Content Marketing</div>
+        <div class="cap-d-h">Graphics and Short-Form Videos That Do the Selling For You.</div>
+        <p class="cap-d-p">Content is your 24/7 sales team. We produce graphic design and short-form video that stops viewers, communicates value in seconds, and routes them into your funnel. Not for likes &mdash; for pipeline.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Brand-consistent graphic design system (templates, palette, type, motion tokens)</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Short-form video production (Reels, TikTok, Shorts) at 8&ndash;15 pieces per month</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Motion graphics and animated explainers for product features + case studies</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Every asset tagged for CRM attribution so you know which piece closed the deal</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Figma</span><span class="tt">Adobe CC</span><span class="tt">CapCut</span><span class="tt">Descript</span><span class="tt">Motion</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px;background:#6B9FD4">Build Content With Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:24px;animation-delay:-3s">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
+          <div class="vis-title">Content Pipeline &mdash; This Week</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+            <div style="padding:12px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);position:relative;overflow:hidden">
+              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(107,159,212,.15),rgba(107,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(107,159,212,.7)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">REEL</span>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Product Demo — 30s</div>
+              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">12.4K views &middot; 2 days ago</div>
+            </div>
+            <div style="padding:12px;border-radius:9px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2);position:relative;overflow:hidden">
+              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(236,169,52,.15),rgba(236,169,52,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.9)" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">GRAPHIC</span>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Case Study Card</div>
+              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">8.1K impressions &middot; today</div>
+            </div>
+            <div style="padding:12px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2);position:relative;overflow:hidden">
+              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(139,159,212,.15),rgba(139,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(139,159,212,.9)" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">BLOG</span>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Long-form Article</div>
+              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">1.2K reads &middot; 4 days ago</div>
+            </div>
+            <div style="padding:12px;border-radius:9px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);position:relative;overflow:hidden">
+              <div style="aspect-ratio:9/16;background:linear-gradient(135deg,rgba(107,159,212,.15),rgba(107,159,212,.05));border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(107,159,212,.7)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span style="position:absolute;top:6px;right:6px;font-size:8px;padding:2px 6px;border-radius:100px;background:rgba(0,0,0,.6);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700">TIKTOK</span>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px">Founder POV — 15s</div>
+              <div style="font-size:10px;color:var(--dim);font-family:'Montserrat',sans-serif">28.7K views &middot; today</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;display:flex;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px">
+            <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em">WEEKLY OUTPUT</span>
+            <span style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:#6B9FD4">12 pieces</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Email Marketing -->
+    <div class="cap-detail">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(139,159,212,.1);border:1px solid rgba(139,159,212,.2);color:#8B9FD4">03 &mdash; Email Marketing</div>
+        <div class="cap-d-h">Emails Your Subscribers Actually Open. And Click. And Buy From.</div>
+        <p class="cap-d-p">We design and build email programs that go beyond broadcast &mdash; nurture flows that respond to reader behavior, transactional emails that upsell, and campaign sequences tied to real revenue outcomes.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Nurture journeys with behavior-based branching (opens, clicks, page visits, deal-stage triggers)</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Transactional email design (order, receipt, activation) that quietly upsells</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Broadcast campaign strategy + creative + send, with A/B tested subject lines</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Deliverability audits &mdash; DMARC / DKIM / SPF configuration + inbox placement testing</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Zoho Campaigns</span><span class="tt">HubSpot</span><span class="tt">Mailchimp</span><span class="tt">Klaviyo</span><span class="tt">Postmark</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px;background:#8B9FD4">Improve Your Emails <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:24px">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(139,159,212,.08),transparent 70%)"></div>
+          <div class="vis-title">Campaign Performance &mdash; Q3</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+            <div style="padding:14px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#8B9FD4;letter-spacing:.08em;margin-bottom:6px">OPEN RATE</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--tx);line-height:1">42.3%</div>
+              <div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:6px">&#9650; 5.1% vs Q2</div>
+            </div>
+            <div style="padding:14px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#8B9FD4;letter-spacing:.08em;margin-bottom:6px">CLICK RATE</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--tx);line-height:1">8.3%</div>
+              <div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:6px">&#9650; 1.2% vs Q2</div>
+            </div>
+            <div style="padding:14px;border-radius:9px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--t);letter-spacing:.08em;margin-bottom:6px">CONVERSIONS</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--tx);line-height:1">127</div>
+              <div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:6px">&#9650; 22 vs Q2</div>
+            </div>
+            <div style="padding:14px;border-radius:9px;background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.2)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:#8B9FD4;letter-spacing:.08em;margin-bottom:6px">SUBSCRIBERS</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--tx);line-height:1">8.4K</div>
+              <div style="font-size:10px;color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:6px">&#9650; 640 vs Q2</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:9px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em">SUBSCRIBER GROWTH</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:#8B9FD4">Q3 &rarr;</span>
+            </div>
+            <svg width="100%" height="46" viewBox="0 0 240 46" preserveAspectRatio="none" style="display:block">
+              <defs>
+                <linearGradient id="emailGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8B9FD4" stop-opacity=".4"/><stop offset="100%" stop-color="#8B9FD4" stop-opacity="0"/></linearGradient>
+              </defs>
+              <path d="M0,40 L20,36 L40,32 L60,30 L80,22 L100,25 L120,18 L140,14 L160,16 L180,10 L200,8 L220,5 L240,3 L240,46 L0,46 Z" fill="url(#emailGrad)"/>
+              <path d="M0,40 L20,36 L40,32 L60,30 L80,22 L100,25 L120,18 L140,14 L160,16 L180,10 L200,8 L220,5 L240,3" stroke="#8B9FD4" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Web Design & Development -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">04 &mdash; Website Design &amp; Development</div>
+        <div class="cap-d-h">Your Website Is Your Best Salesperson. Or Your Worst.</div>
+        <p class="cap-d-p">We design and build websites that convert &mdash; fast to load, honest about the product, and wired to your CRM for lead handoff. Next.js, Webflow, WordPress &mdash; whichever fits the job, not our comfort zone.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Full site design + development in Next.js, Webflow, or WordPress &mdash; you pick the stack, we recommend</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Conversion-focused landing pages, A/B tested and wired to CRM ownership rules</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">CMS setup + content-team training so your marketers ship without waiting on devs</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Performance tuning &mdash; Core Web Vitals, mobile-first, image optimization, SEO scores</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Next.js</span><span class="tt">Webflow</span><span class="tt">Tailwind</span><span class="tt">Vercel</span><span class="tt">Sanity</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)"><button class="bp" style="font-size:13px;padding:11px 22px">Build Your Site <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422;animation-delay:-5s">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <!-- Browser chrome -->
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">acme.co/pricing</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(16,185,129,.18);color:#10B981;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:.05em">LIVE</span>
+          </div>
+          <!-- Landing page mock -->
+          <div style="padding:26px 22px 22px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at top right,rgba(236,169,52,.1),transparent 60%);pointer-events:none"></div>
+            <div style="font-size:9px;padding:3px 9px;border-radius:100px;background:rgba(236,169,52,.12);border:1px solid rgba(236,169,52,.28);color:var(--t);font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.09em;display:inline-block;margin-bottom:12px">NEW &middot; SPRING 2026</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--tx);line-height:1.1;margin-bottom:8px;letter-spacing:-.02em">Ship faster.<br><span style="color:var(--t)">Convert better.</span></div>
+            <div style="font-size:11px;color:var(--dim);line-height:1.6;margin-bottom:14px">A conversion-first site, built for your buyer &mdash; not your CMS.</div>
+            <div style="display:flex;gap:8px">
+              <div style="padding:8px 14px;background:var(--t);color:#0D1232;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800">Book a Call &rarr;</div>
+              <div style="padding:8px 14px;background:rgba(255,255,255,.06);color:var(--tx);border:1px solid rgba(255,255,255,.12);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700">See Pricing</div>
+            </div>
+            <!-- Fake product image placeholder -->
+            <div style="margin-top:18px;height:70px;border-radius:9px;background:linear-gradient(135deg,rgba(236,169,52,.15),rgba(236,169,52,.02));border:1px solid rgba(236,169,52,.15);display:flex;align-items:center;justify-content:center;color:rgba(236,169,52,.3)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          </div>
+          <!-- Performance stats footer -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.06);background:#080B16">
+            <div style="padding:12px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.06)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em;margin-bottom:2px">SPEED</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#10B981">98</div>
+            </div>
+            <div style="padding:12px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.06)">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em;margin-bottom:2px">UPTIME</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--t)">99.9%</div>
+            </div>
+            <div style="padding:12px 10px;text-align:center">
+              <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--dim);letter-spacing:.08em;margin-bottom:2px">CVR</div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--t)">4.2%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec">
+  <div class="si">
     <div class="sl">FAQ</div>
     <div class="sh">Digital Marketing &mdash; What Clients Ask.</div>
     <div class="faq-block" style="margin-top:32px">
