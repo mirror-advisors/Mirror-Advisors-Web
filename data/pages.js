@@ -3479,15 +3479,73 @@ export const pages = {
     <div class="sl">Deep Dive</div>
     <div class="sh">Your Business Generates Data All Day.<br>Most of It Never Gets Used.</div>
     <p class="sp">We build AI systems that actually work inside your existing tools &mdash; not standalone demos. Claude-powered agents connected to your CRM, your docs, your data, doing real work without needing a human in the loop.</p>
-    <div class="use-cases" style="margin-top:36px">
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Lead scoring &amp; qualification agents that analyze engagement signals and rank pipeline automatically</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Document generation bots &mdash; proposals, contracts, SOWs &mdash; trained on your templates</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Internal Q&amp;A assistants that answer questions from your knowledge base via custom RAG</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Automated reporting that narrates your data in plain English every week</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Client portals + partner extranets tied to your CRM, with role-based access and full audit trail</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">MCP (Model Context Protocol) servers exposing your internal tools to Claude directly &mdash; agents that can act, not just chat</div></div>
+
+    <div class="flow-grid">
+      <!-- 01 Lead Scoring Agents -->
+      <div class="flow-card">
+        <div class="flow-num">01</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div>
+        <div class="flow-title">Lead Scoring Agents</div>
+        <p class="flow-desc">Autonomous agents that analyze engagement signals and rank your pipeline automatically. Reps call the right deals first.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Ranked pipeline</span></div>
+      </div>
+
+      <!-- 02 Document Generation -->
+      <div class="flow-card">
+        <div class="flow-num">02</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="flow-title">Document Generation</div>
+        <p class="flow-desc">Proposals, contracts, SOWs generated from CRM data in seconds &mdash; trained on your templates, brand-voice, and pricing rules.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Faster close</span></div>
+      </div>
+
+      <!-- 03 Internal Q&A -->
+      <div class="flow-card">
+        <div class="flow-num">03</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></div>
+        <div class="flow-title">Internal Q&amp;A Assistants</div>
+        <p class="flow-desc">RAG-powered assistants that answer questions from your knowledge base &mdash; like an intern who&#39;s read every doc.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Fewer tickets</span></div>
+      </div>
+
+      <!-- 04 Automated Reporting -->
+      <div class="flow-card">
+        <div class="flow-num">04</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="flow-title">Automated Reporting</div>
+        <p class="flow-desc">Weekly reports that narrate your data in plain English &mdash; no dashboard-crawling required. Delivered to Slack or email.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Exec visibility</span></div>
+      </div>
+
+      <!-- 05 Client Portals -->
+      <div class="flow-card">
+        <div class="flow-num">05</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="flow-title">Client Portals + Extranets</div>
+        <p class="flow-desc">CRM-tied portals with role-based access and full audit trail &mdash; the interface layer that makes your AI stack shippable to customers.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Client experience</span></div>
+      </div>
+
+      <!-- 06 MCP Servers -->
+      <div class="flow-card">
+        <div class="flow-num">06</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="flow-title">MCP Servers</div>
+        <p class="flow-desc">Model Context Protocol servers exposing your internal tools to Claude directly &mdash; agents that can act, not just chat.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Outcome</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Action-capable AI</span></div>
+      </div>
     </div>
-    <div class="tech-tags" style="margin-top:28px"><span class="tt">Claude API</span><span class="tt">MCP Servers</span><span class="tt">Custom RAG</span><span class="tt">Next.js</span><span class="tt">Supabase</span><span class="tt">Zoho Deluge</span><span class="tt">Webhooks</span><span class="tt">Zoho Creator</span></div>
+
+    <div class="flow-summary">
+      <div class="flow-summary-inner">
+        <div class="flow-summary-label">Each of these took</div>
+        <div class="flow-summary-target">3&ndash;12 WEEKS</div>
+        <div class="flow-summary-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="flow-summary-target flow-summary-target-t">FROM SCOPE TO GO-LIVE</div>
+      </div>
+    </div>
+
+    <div class="tech-tags" style="margin-top:28px;justify-content:center"><span class="tt">Claude API</span><span class="tt">MCP Servers</span><span class="tt">Custom RAG</span><span class="tt">Next.js</span><span class="tt">Supabase</span><span class="tt">Zoho Deluge</span><span class="tt">Webhooks</span><span class="tt">Zoho Creator</span></div>
   </div>
 </section>
 
