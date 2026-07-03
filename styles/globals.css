@@ -7368,3 +7368,58 @@ body.menu-open { overflow: hidden; }
   color: #EF4444;
 }
 .poc-status.failed .poc-status-dot { background: #EF4444; animation: none; }
+
+/* Interactive elements inside the PoC mockup preview. Every button,
+   nav item, and card in the generated mockup carries this class so
+   the visitor can "explore" the mockup and every click routes to
+   Mirror Advisors' /contact page (the point of the whole feature). */
+.poc-interactive {
+  cursor: pointer;
+  transition: transform .18s ease, filter .18s ease, background-color .18s ease;
+}
+.poc-interactive:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+.poc-interactive:active {
+  transform: translateY(0);
+}
+
+/* Floating "Book a Call" chat bubble that sits in the bottom-right
+   of every mockup — reads like a real live-chat widget. Clicking
+   it goes to /contact. Persistent affordance so the visitor always
+   knows how to reach us regardless of what else they interact with. */
+.poc-chat-bubble {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #0f3e17;
+  color: #fffefc;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  z-index: 10;
+  transition: transform .18s ease, background-color .18s ease;
+  animation: pocChatPulse 2.2s ease-in-out infinite;
+}
+.poc-chat-bubble:hover {
+  background: #0c2f10;
+  transform: translateY(-2px);
+  animation: none;
+}
+.poc-chat-bubble-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #b1dbb8;
+  box-shadow: 0 0 8px rgba(177,219,184,.7);
+}
+@keyframes pocChatPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15,62,23,.35); }
+  50%      { box-shadow: 0 0 0 10px rgba(15,62,23,0); }
+}
