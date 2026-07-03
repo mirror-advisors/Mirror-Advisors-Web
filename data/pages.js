@@ -2248,48 +2248,95 @@ export const pages = {
     <div class="sl">What We Deploy</div>
     <div class="sh">The Full Zoho One Stack.</div>
     <p class="sp">We deploy the entire Zoho One suite &mdash; not just CRM. Every product is configured to how your team actually works, integrated across modules, and automated end-to-end.</p>
-    <div class="svc-hi-grid">
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <div class="zh-stack-grid">
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="zh-stack-name">CRM</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">CRM</div>
-        <p class="svc-hi-desc">Pipeline stages, deal workflows, workflow rules, custom modules, and cross-module automations tied to your sales process.</p>
+        <p class="zh-stack-desc">Pipeline stages, deal workflows, and cross-module automations tied to your sales process.</p>
+        <ul class="zh-stack-list">
+          <li>Deal stages + workflow rules</li>
+          <li>Custom modules &amp; layouts</li>
+          <li>Cross-module automation</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Deluge</span><span class="tt">Workflows</span><span class="tt">API</span></div>
       </div>
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="zh-stack-name">Books &amp; Invoice</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">Books &amp; Invoice</div>
-        <p class="svc-hi-desc">Revenue recognition, multi-currency, chart of accounts, tax localization, and CRM &harr; finance sync.</p>
+        <p class="zh-stack-desc">Revenue recognition, multi-currency, tax localization, and CRM &harr; finance sync.</p>
+        <ul class="zh-stack-list">
+          <li>Chart of accounts + tax rules</li>
+          <li>Multi-currency handling</li>
+          <li>Books &harr; CRM &harr; Inventory sync</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Multi-currency</span><span class="tt">Tax</span><span class="tt">Sync</span></div>
       </div>
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="zh-stack-name">Creator</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">Creator</div>
-        <p class="svc-hi-desc">Custom apps that extend standard modules with your unique business logic &mdash; no waiting for feature parity.</p>
+        <p class="zh-stack-desc">Custom apps that extend standard modules with your unique business logic &mdash; no waiting for feature parity.</p>
+        <ul class="zh-stack-list">
+          <li>Bespoke module extensions</li>
+          <li>Role-based access + audit trail</li>
+          <li>Deluge-powered logic</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Deluge</span><span class="tt">Forms</span><span class="tt">Reports</span></div>
       </div>
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="zh-stack-name">SalesIQ</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">SalesIQ</div>
-        <p class="svc-hi-desc">Live chat, visitor tracking, chatbot routing rules &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p>
+        <p class="zh-stack-desc">Live chat, visitor tracking, and chatbot routing &mdash; wired to CRM lead ownership so intent doesn&#39;t get lost.</p>
+        <ul class="zh-stack-list">
+          <li>Live chat + AI chatbot</li>
+          <li>Real-time visitor scoring</li>
+          <li>CRM owner routing rules</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Live Chat</span><span class="tt">Chatbot</span><span class="tt">Scoring</span></div>
       </div>
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div>
+          <div class="zh-stack-name">Desk</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">Desk</div>
-        <p class="svc-hi-desc">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p>
+        <p class="zh-stack-desc">Support desk configuration, SLAs, escalations, and CRM contact linking so support has full customer context.</p>
+        <ul class="zh-stack-list">
+          <li>SLA + escalation rules</li>
+          <li>Auto-triage &amp; assignment</li>
+          <li>CRM contact linking</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">SLAs</span><span class="tt">Automation</span><span class="tt">Portal</span></div>
       </div>
-      <div class="svc-hi-card" style="cursor:default">
-        <div class="svc-hi-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+
+      <div class="zh-stack-card">
+        <div class="zh-stack-head">
+          <div class="zh-stack-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+          <div class="zh-stack-name">Campaigns &amp; Marketing</div>
+          <div class="zh-stack-pill">MA Certified</div>
         </div>
-        <div class="svc-hi-title">Campaigns &amp; Marketing</div>
-        <p class="svc-hi-desc">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p>
+        <p class="zh-stack-desc">Email nurture flows, journey builders, and lead scoring that feeds directly into the CRM pipeline.</p>
+        <ul class="zh-stack-list">
+          <li>Journey builder flows</li>
+          <li>Automated lead scoring</li>
+          <li>Attribution to pipeline</li>
+        </ul>
+        <div class="zh-stack-tags"><span class="tt">Campaigns</span><span class="tt">Marketing Automation</span><span class="tt">Analytics</span></div>
       </div>
     </div>
   </div>
