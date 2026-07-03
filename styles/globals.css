@@ -7125,18 +7125,20 @@ body.menu-open { overflow: hidden; }
 .poc-form input::placeholder, .poc-form textarea::placeholder { color: rgba(255,255,255,.28); }
 
 /* Radio pair — two side-by-side selectable pills.
-   Third rewrite. Two prior attempts got the label either wrapping
-   to two lines OR collapsed to zero width. Root cause of the drift
-   was flex layout on the label span — it stretched or collapsed
-   depending on other rules. Fix: don't put the span in a flex row
-   with the radio input. Keep the pill as a normal block with the
-   radio + span rendered as an inline-flex GROUP left-aligned inside
-   the pill. Padding stays the same; nothing about the visual
-   changes other than the label sitting next to the dot again. */
-.poc-radio-row { display: flex; gap: 8px; }
+   FOURTH rewrite. Ditching flex entirely because three flex-based
+   attempts each drifted (wrap / invisible / floating-center).
+   Using GRID for the row (guaranteed equal columns via 1fr 1fr)
+   and DISPLAY:BLOCK on the pill with the radio + span sitting as
+   normal inline elements. No flex ambiguity — where each child
+   ends up is determined by natural inline flow, not by flex-grow
+   / flex-shrink / basis / justify-content combinations. */
+.poc-radio-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
 .poc-radio {
-  flex: 1 1 0;
-  min-width: 0;
+  display: block;
   padding: 12px 16px;
   border-radius: 10px;
   background: rgba(255,255,255,.04);
@@ -7148,26 +7150,20 @@ body.menu-open { overflow: hidden; }
   font-weight: 700;
   color: var(--mid);
   user-select: none;
-  /* Inline-flex the radio + span at the left of the pill */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
   text-align: left;
   text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .poc-radio input[type="radio"] {
   accent-color: #ECA934;
   cursor: pointer;
-  flex-shrink: 0;
-  margin: 0;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
 }
 .poc-radio > span {
-  /* Content-sized, single line, no flex growth. If the pill is ever
-     truly too narrow, the text overflows visibly (obvious to catch)
-     instead of collapsing to nothing. */
-  white-space: nowrap;
-  flex: 0 0 auto;
+  vertical-align: middle;
 }
 .poc-radio:hover { border-color: rgba(236,169,52,.28); color: var(--tx); }
 .poc-radio:has(input:checked) {
