@@ -7258,7 +7258,13 @@ body.menu-open { overflow: hidden; }
   transition: border-color .3s, background .3s;
 }
 .poc-preview.filled {
+  /* Stack children vertically so the .poc-status ribbon sits at the top
+     as a thin bar and the mockup fills the rest — otherwise the flex
+     row default lays them out side-by-side and the ribbon balloons into
+     a tall narrow column. */
+  flex-direction: column;
   align-items: stretch;
+  justify-content: flex-start;
   border-color: rgba(236,169,52,.22);
   padding: 20px;
 }
