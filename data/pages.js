@@ -2943,15 +2943,73 @@ export const pages = {
     <div class="sl">How We Deliver</div>
     <div class="sh">Everything Ties Back to Pipeline.</div>
     <p class="sp">Most marketing teams optimize for clicks, opens, and impressions. We optimize for what actually matters: qualified pipeline, revenue attribution, and a marketing budget your CFO doesn&#39;t have to guess about.</p>
-    <div class="use-cases" style="margin-top:36px">
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Zoho Campaigns + Marketing Automation deployments end-to-end &mdash; email templates, journeys, triggers, list segmentation</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Landing pages built to convert &mdash; A/B tested, mobile-first, wired to your CRM with owner-routing rules</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">SalesIQ live-chat + AI chatbot deployment tied to lead capture (this site uses the same setup)</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">First-party data collection &mdash; server-side tracking, UTM discipline, and CRM contact enrichment so attribution survives ad-blockers</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Pipeline-to-revenue dashboards in Zoho Analytics or Looker Studio &mdash; monthly recaps sent to the exec team automatically</div></div>
-      <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Paid campaign coordination &mdash; we manage the strategy, tracking, and reporting; your existing ad agency (or ours) executes the buy</div></div>
+
+    <div class="flow-grid">
+      <!-- 01 Marketing Automation → Nurture -->
+      <div class="flow-card">
+        <div class="flow-num">01</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="flow-title">Marketing Automation</div>
+        <p class="flow-desc">End-to-end Zoho Campaigns + Marketing Automation. Email templates, journeys, triggers, list segmentation.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Nurture</span></div>
+      </div>
+
+      <!-- 02 Landing Pages → Capture -->
+      <div class="flow-card">
+        <div class="flow-num">02</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="flow-title">Landing Pages</div>
+        <p class="flow-desc">Built to convert. A/B tested, mobile-first, wired to your CRM with owner-routing rules.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Capture</span></div>
+      </div>
+
+      <!-- 03 SalesIQ + Chatbot → Convert -->
+      <div class="flow-card">
+        <div class="flow-num">03</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="flow-title">SalesIQ + AI Chatbot</div>
+        <p class="flow-desc">Live chat and AI chatbot tied to lead capture. This site uses the same setup.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Convert</span></div>
+      </div>
+
+      <!-- 04 First-Party Data → Attribution -->
+      <div class="flow-card">
+        <div class="flow-num">04</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="flow-title">First-Party Data</div>
+        <p class="flow-desc">Server-side tracking, UTM discipline, and CRM contact enrichment so attribution survives ad-blockers.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Attribution</span></div>
+      </div>
+
+      <!-- 05 Pipeline Dashboards → Revenue -->
+      <div class="flow-card">
+        <div class="flow-num">05</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
+        <div class="flow-title">Pipeline Dashboards</div>
+        <p class="flow-desc">Zoho Analytics or Looker Studio dashboards. Monthly exec recap sent automatically.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Revenue</span></div>
+      </div>
+
+      <!-- 06 Paid Media → Awareness -->
+      <div class="flow-card">
+        <div class="flow-num">06</div>
+        <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <div class="flow-title">Paid Media Coordination</div>
+        <p class="flow-desc">We manage the strategy, tracking, and reporting; your existing ad agency (or ours) executes the buy.</p>
+        <div class="flow-stage"><span class="flow-stage-lbl">Feeds</span><span class="flow-stage-arrow">&rarr;</span><span class="flow-stage-name">Awareness</span></div>
+      </div>
     </div>
-    <div class="tech-tags" style="margin-top:28px"><span class="tt">Zoho Campaigns</span><span class="tt">Zoho Marketing Automation</span><span class="tt">Zoho Social</span><span class="tt">Zoho Analytics</span><span class="tt">Google Ads</span><span class="tt">LinkedIn Ads</span><span class="tt">SEO</span><span class="tt">Attribution</span></div>
+
+    <div class="flow-summary">
+      <div class="flow-summary-inner">
+        <div class="flow-summary-label">All six flows converge on</div>
+        <div class="flow-summary-target">YOUR PIPELINE</div>
+        <div class="flow-summary-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="flow-summary-target flow-summary-target-t">REVENUE</div>
+      </div>
+    </div>
+
+    <div class="tech-tags" style="margin-top:28px;justify-content:center"><span class="tt">Zoho Campaigns</span><span class="tt">Zoho Marketing Automation</span><span class="tt">Zoho Social</span><span class="tt">Zoho Analytics</span><span class="tt">Google Ads</span><span class="tt">LinkedIn Ads</span><span class="tt">SEO</span><span class="tt">Attribution</span></div>
   </div>
 </section>
 

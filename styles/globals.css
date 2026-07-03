@@ -6864,3 +6864,156 @@ body.menu-open { overflow: hidden; }
   .zh-stack-name { font-size: 15px; }
   .zh-stack-pill { font-size: 8.5px; padding: 3px 7px; }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   FLOW GRID — used on /services/digital-marketing "How We Deliver"
+   section. Six capability cards, each showing which pipeline stage
+   it feeds. A summary bar below reinforces the "everything ties
+   back to pipeline" theme.
+   ───────────────────────────────────────────────────────────────── */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+@media (max-width: 900px)  { .flow-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .flow-grid { grid-template-columns: 1fr; } }
+
+.flow-card {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(236,169,52,.06) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.015) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 22px 20px 18px;
+  transition: transform .22s, border-color .22s, box-shadow .22s;
+  overflow: hidden;
+}
+.flow-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20px; right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(236,169,52,.4), transparent);
+  opacity: .55;
+}
+.flow-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(236,169,52,.28);
+  box-shadow: 0 12px 26px rgba(0,0,0,.35);
+}
+.flow-num {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: rgba(236,169,52,.14);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.flow-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(236,169,52,.18), rgba(236,169,52,.05));
+  border: 1px solid rgba(236,169,52,.28);
+  color: #ECA934;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.flow-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tx);
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.flow-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--dim);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.flow-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 8px;
+  border-radius: 100px;
+  background: rgba(236,169,52,.08);
+  border: 1px solid rgba(236,169,52,.22);
+  font-family: 'Montserrat', sans-serif;
+}
+.flow-stage-lbl {
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--dim);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.flow-stage-arrow {
+  color: rgba(236,169,52,.55);
+  font-size: 10px;
+  font-weight: 700;
+}
+.flow-stage-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ECA934;
+  letter-spacing: .01em;
+}
+
+/* Summary bar under the grid — reinforces the "everything ties back
+   to pipeline" theme with a subtle amber gradient background. */
+.flow-summary {
+  margin-top: 26px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(236,169,52,.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 50%, rgba(236,169,52,.08) 0%, transparent 55%),
+    linear-gradient(90deg, rgba(255,255,255,.03), rgba(236,169,52,.04), rgba(255,255,255,.03));
+  border: 1px solid rgba(236,169,52,.22);
+}
+.flow-summary-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.flow-summary-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dim);
+  letter-spacing: .04em;
+}
+.flow-summary-target {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--tx);
+  letter-spacing: .06em;
+}
+.flow-summary-target-t {
+  color: #ECA934;
+  text-shadow: 0 0 12px rgba(236,169,52,.25);
+}
+.flow-summary-arrow {
+  color: #ECA934;
+  display: inline-flex;
+  align-items: center;
+  opacity: .8;
+}
+@media (max-width: 560px) {
+  .flow-summary { padding: 16px 18px; }
+  .flow-summary-inner { gap: 10px; }
+  .flow-summary-target { font-size: 12px; }
+  .flow-summary-label { font-size: 10px; }
+}
