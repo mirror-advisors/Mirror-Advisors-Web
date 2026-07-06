@@ -1116,6 +1116,67 @@ export const pages = {
 </section>
 
 
+<!-- What We Actually Build — a peek at each sub-page's "What We Build"
+     section. Three columns (one per sub-page), four discipline items per
+     column, each linking out to the full sub-page for detail. -->
+<section class="sec" style="background:#0E1422">
+  <div class="si">
+    <div class="sl">The Deliverables</div>
+    <div class="sh">What We Actually Build.</div>
+    <p class="sp">A peek at what falls under each practice. Every discipline gets the full treatment on its sub-page &mdash; this is just the roll-up.</p>
+
+    <div class="svc-what-grid">
+
+      <!-- Zoho Implementation column -->
+      <a href="/services/zoho-implementation" class="svc-what-card" style="text-decoration:none;color:inherit">
+        <div class="svc-what-cardhead" style="border-color:#ECA934">
+          <div class="svc-what-cardname">Zoho Implementation</div>
+          <div class="svc-what-cardsub">Four disciplines, one practice</div>
+        </div>
+        <div class="svc-what-items">
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#ECA934">01</span><div class="svc-what-itembody"><div class="svc-what-itemt">AI-Powered Apps</div><div class="svc-what-itemd">Claude agents wired into your existing tools &mdash; not standalone demos.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#ECA934">02</span><div class="svc-what-itembody"><div class="svc-what-itemt">Business Consulting</div><div class="svc-what-itemd">Process maps and a technology roadmap you will actually execute.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#ECA934">03</span><div class="svc-what-itembody"><div class="svc-what-itemt">Systems Integration</div><div class="svc-what-itemd">Bridges between the 8&ndash;14 tools that were never designed to talk.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#ECA934">04</span><div class="svc-what-itembody"><div class="svc-what-itemt">ERP Implementation</div><div class="svc-what-itemd">Zoho One rollouts across multi-entity orgs, migrations, and training.</div></div></div>
+        </div>
+        <div class="svc-what-cta" style="color:#ECA934">See full details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <!-- Digital Marketing column -->
+      <a href="/services/digital-marketing" class="svc-what-card" style="text-decoration:none;color:inherit">
+        <div class="svc-what-cardhead" style="border-color:#6B9FD4">
+          <div class="svc-what-cardname">Digital Marketing</div>
+          <div class="svc-what-cardsub">Four marketing disciplines</div>
+        </div>
+        <div class="svc-what-items">
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#6B9FD4">01</span><div class="svc-what-itembody"><div class="svc-what-itemt">Social Media Marketing</div><div class="svc-what-itemd">Multi-platform programs wired back to your CRM &mdash; not vanity metrics.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#6B9FD4">02</span><div class="svc-what-itembody"><div class="svc-what-itemt">Content Marketing</div><div class="svc-what-itemd">Graphic design and short-form video that routes viewers into your funnel.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#6B9FD4">03</span><div class="svc-what-itembody"><div class="svc-what-itemt">Email Marketing</div><div class="svc-what-itemd">Nurture flows and campaign sequences tied to revenue outcomes.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#6B9FD4">04</span><div class="svc-what-itembody"><div class="svc-what-itemt">Website Design &amp; Dev</div><div class="svc-what-itemd">Fast, honest, CRM-wired sites &mdash; Next.js, Webflow, or WordPress.</div></div></div>
+        </div>
+        <div class="svc-what-cta" style="color:#6B9FD4">See full details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <!-- Custom AI Application column -->
+      <a href="/services/custom-ai-application" class="svc-what-card" style="text-decoration:none;color:inherit">
+        <div class="svc-what-cardhead" style="border-color:#8B9FD4">
+          <div class="svc-what-cardname">Custom AI Application</div>
+          <div class="svc-what-cardsub">Four AI disciplines, one practice</div>
+        </div>
+        <div class="svc-what-items">
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#8B9FD4">01</span><div class="svc-what-itembody"><div class="svc-what-itemt">AI-Powered Apps</div><div class="svc-what-itemd">Claude-powered agents connected to your CRM, docs, and internal data.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#8B9FD4">02</span><div class="svc-what-itembody"><div class="svc-what-itemt">Business Consulting</div><div class="svc-what-itemd">The strategy layer that decides which AI is actually worth building.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#8B9FD4">03</span><div class="svc-what-itembody"><div class="svc-what-itemt">Core AI Capabilities</div><div class="svc-what-itemd">Language, vision, speech, decisioning &mdash; the right tool for each problem.</div></div></div>
+          <div class="svc-what-item"><span class="svc-what-num" style="color:#8B9FD4">04</span><div class="svc-what-itembody"><div class="svc-what-itemt">End-to-End Delivery</div><div class="svc-what-itemd">Four-phase pipeline: strategy &rarr; prototype &rarr; build &rarr; deploy.</div></div></div>
+        </div>
+        <div class="svc-what-cta" style="color:#8B9FD4">See full details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
 <div class="fade-divider"></div>
 
 <section class="sec">
