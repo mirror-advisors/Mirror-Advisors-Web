@@ -1053,10 +1053,12 @@ export const pages = {
 
       <a href="/erp" class="svc-mini-card" style="text-decoration:none;color:inherit">
         <div class="svc-mini-visual" style="background:linear-gradient(135deg,rgba(107,159,212,.15),rgba(107,159,212,.03))">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <ellipse cx="18" cy="9" rx="12" ry="4" stroke="#6B9FD4" stroke-width="2" fill="none"/>
-            <path d="M6 9 v18 c0 2.2 5.4 4 12 4 s12-1.8 12-4 v-18" stroke="#6B9FD4" stroke-width="2" fill="none"/>
-            <path d="M6 18 c0 2.2 5.4 4 12 4 s12-1.8 12-4" stroke="#6B9FD4" stroke-width="2" fill="none" opacity=".6"/>
+          <svg width="64" height="60" viewBox="0 0 64 60" fill="none" style="filter:drop-shadow(0 6px 12px rgba(107,159,212,.28))">
+            <path d="M4 52 h56 M8 56 h48" stroke="#6B9FD4" stroke-width="1" opacity=".22" stroke-linecap="round"/>
+            <ellipse cx="32" cy="12" rx="18" ry="6" fill="rgba(107,159,212,.14)" stroke="#6B9FD4" stroke-width="2"/>
+            <path d="M14 12 v24 c0 3.3 8 6 18 6 s18-2.7 18-6 v-24" fill="rgba(107,159,212,.09)" stroke="#6B9FD4" stroke-width="2"/>
+            <path d="M14 24 c0 3.3 8 6 18 6 s18-2.7 18-6" stroke="#6B9FD4" stroke-width="1.8" opacity=".6" fill="none"/>
+            <circle cx="46" cy="12" r="1.5" fill="#ECA934" opacity=".85"/>
           </svg>
         </div>
         <div class="svc-mini-title">ERP Projects</div>
@@ -1069,8 +1071,12 @@ export const pages = {
 
       <a href="/infinity" class="svc-mini-card" style="text-decoration:none;color:inherit">
         <div class="svc-mini-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.15),rgba(236,169,52,.03))">
-          <svg width="52" height="28" viewBox="0 0 52 28" fill="none">
-            <path d="M8 14 C8 7, 20 7, 26 14 C32 21, 44 21, 44 14 C44 7, 32 7, 26 14 C20 21, 8 21, 8 14 Z" stroke="#ECA934" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+          <svg width="76" height="42" viewBox="0 0 76 42" fill="none" style="filter:drop-shadow(0 6px 12px rgba(236,169,52,.28))">
+            <path d="M14 21 C14 10, 32 10, 38 21 C44 32, 62 32, 62 21 C62 10, 44 10, 38 21 C32 32, 14 32, 14 21 Z" stroke="#ECA934" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+            <path d="M14 21 C14 10, 32 10, 38 21 C44 32, 62 32, 62 21 C62 10, 44 10, 38 21 C32 32, 14 32, 14 21 Z" stroke="#ECA934" stroke-width="6" fill="none" stroke-linejoin="round" opacity=".12"/>
+            <circle cx="38" cy="21" r="2.2" fill="#ECA934"/>
+            <circle cx="14" cy="21" r="1.8" fill="#ECA934" opacity=".7"/>
+            <circle cx="62" cy="21" r="1.8" fill="#ECA934" opacity=".7"/>
           </svg>
         </div>
         <div class="svc-mini-title">Infinity Mirror</div>
@@ -1083,13 +1089,25 @@ export const pages = {
 
       <a href="/bankhours" class="svc-mini-card" style="text-decoration:none;color:inherit">
         <div class="svc-mini-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.15),rgba(139,159,212,.03))">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <circle cx="18" cy="18" r="13" stroke="#8B9FD4" stroke-width="2" fill="none"/>
-            <path d="M18 9 v9 l6 4" stroke="#8B9FD4" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="18" cy="6" r="1.2" fill="#8B9FD4" opacity=".7"/>
-            <circle cx="30" cy="18" r="1.2" fill="#8B9FD4" opacity=".7"/>
-            <circle cx="18" cy="30" r="1.2" fill="#8B9FD4" opacity=".7"/>
-            <circle cx="6"  cy="18" r="1.2" fill="#8B9FD4" opacity=".7"/>
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="filter:drop-shadow(0 6px 12px rgba(139,159,212,.28))">
+            <circle cx="30" cy="30" r="24" fill="rgba(139,159,212,.08)"/>
+            <circle cx="30" cy="30" r="22" stroke="#8B9FD4" stroke-width="2" fill="none"/>
+            <path d="M30 30 L30 12 A18 18 0 0 1 46 38 Z" fill="#8B9FD4" opacity=".22"/>
+            <line x1="30" y1="10" x2="30" y2="15" stroke="#8B9FD4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="50" y1="30" x2="45" y2="30" stroke="#8B9FD4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30" y1="50" x2="30" y2="45" stroke="#8B9FD4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="10" y1="30" x2="15" y2="30" stroke="#8B9FD4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="41" y1="12" x2="39" y2="16" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="48" y1="19" x2="44" y2="21" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="48" y1="41" x2="44" y2="39" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="41" y1="48" x2="39" y2="44" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="19" y1="48" x2="21" y2="44" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="12" y1="41" x2="16" y2="39" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="12" y1="19" x2="16" y2="21" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <line x1="19" y1="12" x2="21" y2="16" stroke="#8B9FD4" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+            <path d="M30 30 v-14" stroke="#8B9FD4" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M30 30 l10 6" stroke="#8B9FD4" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="30" cy="30" r="2.2" fill="#8B9FD4"/>
           </svg>
         </div>
         <div class="svc-mini-title">Bank of Hours</div>
@@ -1102,11 +1120,14 @@ export const pages = {
 
       <a href="/support" class="svc-mini-card" style="text-decoration:none;color:inherit">
         <div class="svc-mini-visual" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.03))">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <path d="M18 5 C10 5, 5 11, 5 18 v6" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path d="M31 24 v-6 c0-7-5-13-13-13" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <rect x="3" y="21" width="6" height="9" rx="2" fill="#10B981" opacity=".28"/>
-            <rect x="27" y="21" width="6" height="9" rx="2" fill="#10B981" opacity=".8"/>
+          <svg width="64" height="60" viewBox="0 0 64 60" fill="none" style="filter:drop-shadow(0 6px 12px rgba(16,185,129,.3))">
+            <path d="M52 22 c3 3 3 13 0 16" stroke="#10B981" stroke-width="1.5" opacity=".5" fill="none" stroke-linecap="round"/>
+            <path d="M56 18 c5 5 5 19 0 24" stroke="#10B981" stroke-width="1.5" opacity=".28" fill="none" stroke-linecap="round"/>
+            <path d="M14 30 C14 12, 42 12, 42 30" stroke="#10B981" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <rect x="8"  y="28" width="10" height="16" rx="3" fill="rgba(16,185,129,.6)" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="38" y="28" width="10" height="16" rx="3" fill="rgba(16,185,129,.85)" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M48 40 c6 0 8 4 8 8" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="56" cy="50" r="2.2" fill="#10B981"/>
           </svg>
         </div>
         <div class="svc-mini-title">Support Only</div>
