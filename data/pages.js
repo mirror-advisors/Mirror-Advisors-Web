@@ -1183,54 +1183,33 @@ export const pages = {
   <div class="si">
     <div class="sl">The Full Journey</div>
     <div class="sh">From First Call to Go-Live</div>
-    <p class="sp">Every engagement follows the same proven sequence &mdash; the sections above are the middle chapters, this is the whole arc.</p>
+    <p class="sp">Four chapters. Every engagement follows the same arc.</p>
     <div class="journey-track">
 
       <div class="journey-step">
         <div class="js-node js-node-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.92 3.33A2 2 0 0 1 3.9 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.94 5.94l1.2-1.17a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="js-content"><div class="js-tag">Day 1</div><div class="js-title">Discovery Call</div><div class="js-desc">30-minute intro. We listen, you ask anything &mdash; no deck, no pitch.</div></div>
+        <div class="js-content"><div class="js-tag">Day 1</div><div class="js-title">Discovery Call</div><div class="js-desc">30-minute intro. We listen, you ask anything.</div></div>
       </div>
 
       <div class="journey-connector"></div>
 
       <div class="journey-step">
         <div class="js-node js-node-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-        <div class="js-content"><div class="js-tag">Week 1-4</div><div class="js-title">Scope Engagement</div><div class="js-desc">Audit, blueprint, recommendations &mdash; fixed fee. The prerequisite covered in <span style="color:var(--t)">Step One</span> above.</div></div>
-      </div>
-
-      <div class="journey-connector"></div>
-
-      <div class="journey-step">
-        <div class="js-node js-node-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><path d="M18 9a3 3 0 0 0 -3 -3h-3l3 -3M18 9v6a3 3 0 0 1 -3 3h-3"/></svg></div>
-        <div class="js-content"><div class="js-tag">Post-Scope</div><div class="js-title">Choose Your Engagement</div><div class="js-desc">We present the recommendation. You pick the model &mdash; ERP Project, Infinity Mirror, Bank of Hours, or Support Only. See <span style="color:var(--t)">Engagement Models</span> above.</div></div>
-      </div>
-
-      <div class="journey-connector"></div>
-
-      <div class="journey-step">
-        <div class="js-node js-node-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="js-content"><div class="js-tag" style="color:var(--dim)">Week 1 of Delivery</div><div class="js-title">Kickoff &amp; Team Assembly</div><div class="js-desc">Your dedicated pod is named. Ceremonies, comms, and shared tooling are stood up before Sprint Zero.</div></div>
+        <div class="js-content"><div class="js-tag">Week 1-4</div><div class="js-title">Scope Engagement</div><div class="js-desc">Audit, blueprint, roadmap &mdash; fixed fee. Then you pick the engagement model that fits.</div></div>
       </div>
 
       <div class="journey-connector"></div>
 
       <div class="journey-step">
         <div class="js-node js-node-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-        <div class="js-content"><div class="js-tag" style="color:var(--dim)">Ongoing</div><div class="js-title">Build &amp; Iterate</div><div class="js-desc">Bi-weekly demos against the blueprint. Every change is tracked against Scope &mdash; no drift, no surprise invoices.</div></div>
-      </div>
-
-      <div class="journey-connector"></div>
-
-      <div class="journey-step">
-        <div class="js-node js-node-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12l4 4v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="14 4 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-        <div class="js-content"><div class="js-tag" style="color:var(--dim)">Final Weeks</div><div class="js-title">Cutover, Migration &amp; Training</div><div class="js-desc">Data migration with verification. Role-based training. Documentation your team can actually find later.</div></div>
+        <div class="js-content"><div class="js-tag" style="color:var(--dim)">Delivery</div><div class="js-title">Build &amp; Iterate</div><div class="js-desc">Bi-weekly demos against the blueprint. Every change tracked to Scope &mdash; no drift.</div></div>
       </div>
 
       <div class="journey-connector"></div>
 
       <div class="journey-step">
         <div class="js-node js-node-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <div class="js-content"><div class="js-tag">Go-Live &amp; Beyond</div><div class="js-title">Hypercare, Then Long-Term Partnership</div><div class="js-desc">A dedicated hypercare window so day one is confident. After that, most clients continue on Infinity Mirror or a Support SLA &mdash; we don&#39;t disappear at go-live.</div></div>
+        <div class="js-content"><div class="js-tag">Go-Live &amp; Beyond</div><div class="js-title">Cutover, Training, Hypercare</div><div class="js-desc">Migration, training, and a hypercare window. Most clients then stay on an ongoing engagement.</div></div>
       </div>
 
     </div>
