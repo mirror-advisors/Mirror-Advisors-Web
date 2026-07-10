@@ -3245,7 +3245,7 @@ export const pages = {
     <div>
       <div class="badge">Custom AI Application</div>
       <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Claude-Powered Apps<br><span style="color:var(--t)">That Live Inside Your Stack.</span></h1>
-      <p class="ph-sub">Bespoke web apps and AI agents built around your workflow &mdash; not standalone demos. Claude API + your CRM + your data + your logic. Real work, no humans in the loop.</p>
+      <p class="ph-sub">Custom AI business applications. Agents, RAG, MCP servers wired into your CRM and stack. Book a Blueprinting Session.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
         <a href="#" onclick="go('contact')"><button class="bp">Scope an AI Build <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
         <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
