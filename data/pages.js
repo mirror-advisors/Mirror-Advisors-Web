@@ -897,7 +897,7 @@ export const pages = {
     <div>
       <div class="badge">Our Practice</div>
       <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,68px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:24px">Every Engagement<br><span style="color:var(--t)">Starts With Scope.</span></h1>
-      <p class="ph-sub">Four disciplines, one practice. Before any build begins, we understand your systems, your logic, and your goals. Scope is the fixed-fee discovery that makes everything else possible.</p>
+      <p class="ph-sub">Three practices under one roof: Zoho implementation, custom Claude AI, and digital marketing. Book a Blueprinting Session with Mirror Advisors.</p>
     </div>
     <div class="svc-hero-right">
       <div class="inf3d-wrap">
