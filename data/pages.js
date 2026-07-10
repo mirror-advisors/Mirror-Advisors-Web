@@ -2026,7 +2026,7 @@ export const pages = {
     <div>
       <div class="badge">Zoho Implementation</div>
       <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px">Your Zoho Stack.<br><span style="color:var(--t)">Deployed, Configured, and Actually Used.</span></h1>
-      <p class="ph-sub">Full-suite Zoho One deployments &mdash; CRM, Books, Creator, SalesIQ, Desk, Campaigns. Certified partner expertise, from licensing audit to live in production and beyond.</p>
+      <p class="ph-sub">Full Zoho One deployments, data migration, multi-entity CRM &amp; Books setup, custom Deluge automation. Book a Blueprinting Session with a Certified Zoho consultant.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
         <a href="#" onclick="go('contact')"><button class="bp">Deploy Zoho With Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
         <a href="#" onclick="go('services')"><button class="bs">&larr; Back to Services</button></a>
