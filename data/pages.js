@@ -918,7 +918,7 @@ export const pages = {
   <div class="si">
     <div class="sl">Core Services</div>
     <div class="sh">Two Practices, One Team.</div>
-    <p class="sp">The three service lines we deploy on every engagement. Each has its own deep-dive page &mdash; the cards below are the quick tour.</p>
+    <p class="sp">The two service lines we deploy on every engagement. Each has its own deep-dive page &mdash; the cards below are the quick tour.</p>
 
     <div class="svc-preview-grid">
 
