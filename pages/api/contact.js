@@ -31,9 +31,7 @@ const ZOHO_ENDPOINT =
 // validates MultipleChoice against the exact value strings.
 const ALLOWED_SERVICES = new Set([
   'Zoho implementation',
-  'Custom apps',
-  'Claude AI solutions',
-  'Digital marketing',
+  'Custom AI Application',
 ]);
 
 const ALLOWED_TIMELINES = new Set([

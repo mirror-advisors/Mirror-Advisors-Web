@@ -1773,9 +1773,7 @@ export const pages = {
               </button>
               <div class="ms-panel" id="svcPanel" role="listbox" aria-multiselectable="true">
                 <label class="ms-option"><input type="checkbox" data-svc value="Zoho implementation"><span>Zoho implementation</span></label>
-                <label class="ms-option"><input type="checkbox" data-svc value="Custom apps"><span>Custom apps</span></label>
-                <label class="ms-option"><input type="checkbox" data-svc value="Claude AI solutions"><span>Claude AI solutions</span></label>
-                <label class="ms-option"><input type="checkbox" data-svc value="Digital marketing"><span>Digital marketing</span></label>
+                <label class="ms-option"><input type="checkbox" data-svc value="Custom AI Application"><span>Custom AI Application</span></label>
               </div>
             </div>
             <div class="fg-err" data-for="svcChips"></div>
