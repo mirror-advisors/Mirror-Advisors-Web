@@ -216,7 +216,6 @@ export default function Layout({ children }) {
               <div className="nav-drop-menu" role="menu" aria-label="Services">
                 <Link href="/services"                        className="nav-drop-link" role="menuitem">Overview</Link>
                 <Link href="/services/zoho-implementation"    className="nav-drop-link" role="menuitem">Zoho Implementation</Link>
-                <Link href="/services/digital-marketing"      className="nav-drop-link" role="menuitem">Digital Marketing</Link>
                 <Link href="/services/custom-ai-application"  className="nav-drop-link" role="menuitem">Custom AI Application</Link>
               </div>
             </div>
@@ -273,7 +272,6 @@ export default function Layout({ children }) {
           <div className="mm-svc-header">Services</div>
           <Link href="/services"                                                                      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
           <Link href="/services/zoho-implementation"   data-page-key="zoho-implementation"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho-implementation' ? ' on' : '')}>Zoho Implementation</Link>
-          <Link href="/services/digital-marketing"     data-page-key="digital-marketing"             onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/digital-marketing' ? ' on' : '')}>Digital Marketing</Link>
           <Link href="/services/custom-ai-application" data-page-key="custom-ai-application"         onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-ai-application' ? ' on' : '')}>Custom AI Application</Link>
         </div>
         <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
