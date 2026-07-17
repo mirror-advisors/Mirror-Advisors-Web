@@ -219,10 +219,11 @@ export default function Layout({ children }) {
                 <Link href="/services/custom-ai-application"  className="nav-drop-link" role="menuitem">Custom AI Application</Link>
               </div>
             </div>
-            <Link href="/cases"      className={currentNavKey === 'cases'      ? 'on' : ''}>Case Studies</Link>
-            <Link href="/technology" className={currentNavKey === 'technology' ? 'on' : ''}>Technology</Link>
-            <Link href="/about"      className={currentNavKey === 'about'      ? 'on' : ''}>About</Link>
-            <Link href="/contact"    className={currentNavKey === 'contact'    ? 'on' : ''}>Contact</Link>
+            <Link href="/cases"          className={currentNavKey === 'cases'          ? 'on' : ''}>Case Studies</Link>
+            <Link href="/technology"     className={currentNavKey === 'technology'     ? 'on' : ''}>Technology</Link>
+            <Link href="/about"          className={currentNavKey === 'about'          ? 'on' : ''}>About</Link>
+            <Link href="/contact"        className={currentNavKey === 'contact'        ? 'on' : ''}>Contact</Link>
+            <Link href="/ai-field-guide" className={currentNavKey === 'ai-field-guide' ? 'on' : ''}>AI Field Guide</Link>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <a href="https://app.mirroradvisors.com" target="_blank" rel="noopener noreferrer" className="portal-btn">
@@ -277,7 +278,8 @@ export default function Layout({ children }) {
         <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
         <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'technology' ? ' on' : '')}>Technology</Link>
         <Link href="/about"      data-page-key="about"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'about'      ? ' on' : '')}>About</Link>
-        <Link href="/contact"    data-page-key="contact"    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'contact'    ? ' on' : '')}>Contact</Link>
+        <Link href="/contact"        data-page-key="contact"        onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'contact'        ? ' on' : '')}>Contact</Link>
+        <Link href="/ai-field-guide" data-page-key="ai-field-guide" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'ai-field-guide' ? ' on' : '')}>AI Field Guide</Link>
         <div className="mm-cta-wrap">
           <a
             href="https://app.mirroradvisors.com"

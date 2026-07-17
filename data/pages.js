@@ -3253,4 +3253,261 @@ export const pages = {
   </div>
 </section>
 `,
+  'ai-field-guide': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in">
+    <div class="badge">The AI Field Guide</div>
+    <h1 class="ph-h" style="font-size:clamp(40px,5vw,64px);letter-spacing:-.03em;line-height:1.05">What AI Can<br><span style="color:var(--t)">Actually Do.</span></h1>
+    <p class="ph-sub">A plain-language field guide to the nine capabilities of AI inside a real business &mdash; from answering employee questions to running silent, autonomous workflows. Each card is what the AI does, plus one concrete example.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+      <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 30px">Book a Blueprinting Session <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      <a href="#" onclick="go(&#39;services/custom-ai-application&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 24px">Our AI Practice</button></a>
+    </div>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="si">
+    <div class="sl">Nine Capabilities</div>
+    <div class="sh">From Simple Q&amp;A to Full Autonomy.</div>
+    <p class="sp">The list follows a natural progression &mdash; every capability builds on the one before it. Most businesses start at the top and grow into the deeper capabilities as their needs mature.</p>
+
+    <div class="afg-grid">
+
+      <!-- 01 Answering Internal Questions -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
+          <span class="afg-num" style="color:rgba(236,169,52,.25)">01</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
+            <rect x="18" y="14" width="34" height="42" rx="3" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2"/>
+            <path d="M24 24 h22 M24 30 h22 M24 36 h14" stroke="#ECA934" stroke-width="1.6" opacity=".6" stroke-linecap="round"/>
+            <circle cx="50" cy="52" r="12" fill="#0a0d1a" stroke="#ECA934" stroke-width="2.5"/>
+            <circle cx="50" cy="52" r="7" fill="rgba(236,169,52,.14)"/>
+            <line x1="59" y1="61" x2="67" y2="69" stroke="#ECA934" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Answering Internal Questions</div>
+          <div class="afg-summary">An internal search engine and knowledge base for employees.</div>
+          <p class="afg-desc">Powered by RAG (Retrieval-Augmented Generation), the AI reads across your documents, handbooks, and internal wikis to answer employee questions instantly &mdash; with a direct citation back to the source document.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">A new HR hire types, &ldquo;What is our parental leave policy for secondary caregivers?&rdquo; The AI instantly searches the employee handbook and responds, &ldquo;You get 6 weeks of fully paid leave, which must be taken within the first year,&rdquo; citing the exact page of the PDF.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Document Drafting & Reviewing -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(107,159,212,.16),rgba(107,159,212,.02))">
+          <span class="afg-num" style="color:rgba(107,159,212,.28)">02</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(107,159,212,.28))">
+            <rect x="14" y="16" width="34" height="44" rx="3" fill="rgba(107,159,212,.14)" stroke="#6B9FD4" stroke-width="2"/>
+            <path d="M20 28 h22 M20 34 h22 M20 40 h14 M20 46 h18" stroke="#6B9FD4" stroke-width="1.5" opacity=".55" stroke-linecap="round"/>
+            <path d="M52 20 L68 36 L58 46 L42 30 Z" fill="#6B9FD4" opacity=".9"/>
+            <path d="M42 30 L38 50 L58 46" stroke="#6B9FD4" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            <path d="M60 20 L66 26" stroke="#ECA934" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Document Drafting &amp; Reviewing</div>
+          <div class="afg-summary">Generates initial drafts and reviews text against your templates.</div>
+          <p class="afg-desc">The AI takes raw inputs &mdash; deal terms, requirements, feedback &mdash; and produces polished first drafts against pre-approved templates. A human reviewer signs off, so quality stays high while cycle time drops.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">A sales rep inputs a bulleted list of deal terms. The AI uses a pre-approved template to draft a formal, professional Service Level Agreement (SLA) in seconds, leaving placeholders for the legal team to sign off on.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 Persistent Context & Memory -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.16),rgba(139,159,212,.02))">
+          <span class="afg-num" style="color:rgba(139,159,212,.28)">03</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.3))">
+            <path d="M16 20 L40 40 L64 20 M16 60 L40 40 L64 60 M40 12 L40 68" stroke="#8B9FD4" stroke-width="1.4" opacity=".4"/>
+            <circle cx="40" cy="40" r="8" fill="#8B9FD4"/>
+            <circle cx="16" cy="20" r="5" fill="#8B9FD4" opacity=".85"/>
+            <circle cx="64" cy="20" r="5" fill="#8B9FD4" opacity=".65"/>
+            <circle cx="16" cy="60" r="5" fill="#8B9FD4" opacity=".65"/>
+            <circle cx="64" cy="60" r="5" fill="#8B9FD4" opacity=".85"/>
+            <circle cx="40" cy="12" r="4" fill="#8B9FD4" opacity=".55"/>
+            <circle cx="40" cy="68" r="4" fill="#8B9FD4" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Persistent Context &amp; Memory</div>
+          <div class="afg-summary">Retains long-term corporate memory and client history for smarter future interactions.</div>
+          <p class="afg-desc">Vector databases store past interactions, decisions, and preferences, then surface the right context automatically when a team member opens a client file or picks up a conversation months later.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">When an account manager opens a file for a client, the AI surfaces a brief: &ldquo;This client complained about billing delays in Q3 2025 and prefers email communication over phone calls.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 Document & Compliance Auditing -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
+          <span class="afg-num" style="color:rgba(236,169,52,.25)">04</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
+            <path d="M40 8 L64 15 V38 C64 52, 52 66, 40 72 C28 66, 16 52, 16 38 V15 Z" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2.5"/>
+            <path d="M26 38 L36 46 L54 28" stroke="#ECA934" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="62" cy="18" r="9" fill="#EF4444"/>
+            <path d="M62 14 v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="62" cy="22" r="1.3" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Document &amp; Compliance Auditing</div>
+          <div class="afg-summary">Analyzes contracts and reports against your policies to flag risks before humans get to them.</div>
+          <p class="afg-desc">The AI reads incoming documents against your Standard Operating Procedures, playbooks, or regulatory checklists, then flags any clause that violates policy &mdash; with a reference back to the exact rule.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">A legal ops team uploads a vendor contract. The AI scans the document against the company&#39;s Standard Operating Procedures (SOPs) and flags a clause: &ldquo;Warning: Section 4.2 allows the vendor to raise prices by 10&percnt; annually without prior notice. Our SOP caps annual increases at 5&percnt;.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 Proprietary Security Guardrails -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(107,159,212,.16),rgba(107,159,212,.02))">
+          <span class="afg-num" style="color:rgba(107,159,212,.28)">05</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(107,159,212,.28))">
+            <rect x="12" y="28" width="56" height="40" rx="4" fill="rgba(107,159,212,.14)" stroke="#6B9FD4" stroke-width="2.5"/>
+            <path d="M24 28 V20 C24 14, 30 8, 40 8 S56 14, 56 20 V28" stroke="#6B9FD4" stroke-width="2.5" fill="none"/>
+            <rect x="20" y="38" width="26" height="4" rx="1" fill="#6B9FD4" opacity=".55"/>
+            <rect x="20" y="46" width="18" height="4" rx="1" fill="#6B9FD4" opacity=".35"/>
+            <rect x="20" y="54" width="22" height="4" rx="1" fill="#6B9FD4" opacity=".5"/>
+            <circle cx="55" cy="48" r="6" fill="#6B9FD4"/>
+            <rect x="53.5" y="48" width="3" height="7" rx="1.2" fill="#0a0d1a"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Proprietary Security Guardrails</div>
+          <div class="afg-summary">Operates strictly within private, secure boundaries so sensitive data never leaks.</div>
+          <p class="afg-desc">The AI runs on private cloud instances (AWS, Azure, or GCP) with strict data-loss-prevention filters. Sensitive fields &mdash; patient IDs, financials, PII &mdash; are redacted before the data ever reaches an analysis layer.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">A healthcare company deploys an AI that redacts all patient names, social security numbers, and medical IDs before the data is processed by the analysis tool, keeping the company strictly HIPAA-compliant.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 Lead Qualification & Management -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
+          <span class="afg-num" style="color:rgba(236,169,52,.25)">06</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
+            <path d="M14 14 L66 14 L46 40 L46 66 L34 66 L34 40 Z" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="24" cy="24" r="3" fill="#ECA934"/>
+            <circle cx="34" cy="24" r="3" fill="#ECA934" opacity=".78"/>
+            <circle cx="46" cy="24" r="3" fill="#ECA934" opacity=".56"/>
+            <circle cx="56" cy="24" r="3" fill="#ECA934" opacity=".34"/>
+            <circle cx="40" cy="54" r="6" fill="#ECA934"/>
+            <path d="M37 54 L39 57 L43 51" stroke="#0a0d1a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Lead Qualification &amp; Management</div>
+          <div class="afg-summary">Scores incoming leads, drafts personalized outreach, and routes them to the right rep.</div>
+          <p class="afg-desc">Behavioral signals (site visits, downloads, job title, company size) get scored against your ideal customer profile. The AI then drafts a first-touch email personalized to the prospect&#39;s industry and queues it for the sales rep.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">A prospect downloads a whitepaper. The AI reviews their LinkedIn profile, notes they are a VP of IT at a 500-person company, automatically assigns them a &ldquo;Hot Lead&rdquo; status, drafts a hyper-personalized email referencing their specific industry bottlenecks, and queues it for the sales rep.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 System & Database Interoperability -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.16),rgba(139,159,212,.02))">
+          <span class="afg-num" style="color:rgba(139,159,212,.28)">07</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.3))">
+            <rect x="6" y="14" width="24" height="18" rx="3" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2"/>
+            <rect x="50" y="14" width="24" height="18" rx="3" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2"/>
+            <rect x="28" y="48" width="24" height="18" rx="3" fill="rgba(139,159,212,.28)" stroke="#8B9FD4" stroke-width="2"/>
+            <path d="M18 32 L34 48 M62 32 L46 48" stroke="#8B9FD4" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M30 23 L50 23" stroke="#8B9FD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/>
+            <circle cx="18" cy="23" r="2.5" fill="#ECA934"/>
+            <circle cx="62" cy="23" r="2.5" fill="#ECA934"/>
+            <circle cx="40" cy="57" r="2.5" fill="#ECA934"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">System &amp; Database Interoperability</div>
+          <div class="afg-summary">Extracts data from messy formats and writes it directly into your systems via API.</div>
+          <p class="afg-desc">Beyond reading, the AI writes. It pulls structured data out of unstructured inputs and pushes it into your CRM, ERP, or accounting system &mdash; mapping fields, matching records, and logging every transaction.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">An invoice arrives in the company inbox as a messy PDF. The AI reads it, extracts the line items, tax rates, and PO number, opens the company&#39;s accounting software via API, creates a new expense log, and matches it to the correct vendor account.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 Multi-Step Task Planning -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
+          <span class="afg-num" style="color:rgba(236,169,52,.25)">08</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
+            <path d="M14 20 H30 M50 20 H66 M20 26 V54 M60 26 V54 M14 60 H30 M50 60 H66 M36 20 H44 M36 60 H44 M40 26 V54" stroke="#ECA934" stroke-width="1.5" opacity=".55" fill="none" stroke-linecap="round"/>
+            <circle cx="14" cy="20" r="5" fill="#ECA934"/>
+            <circle cx="34" cy="20" r="5" fill="#ECA934" opacity=".82"/>
+            <circle cx="46" cy="20" r="5" fill="#ECA934" opacity=".7"/>
+            <circle cx="66" cy="20" r="5" fill="#ECA934" opacity=".58"/>
+            <circle cx="20" cy="60" r="5" fill="#ECA934" opacity=".5"/>
+            <circle cx="40" cy="60" r="5" fill="#ECA934" opacity=".65"/>
+            <circle cx="60" cy="60" r="5" fill="#ECA934" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Multi-Step Task Planning</div>
+          <div class="afg-summary">Breaks a large goal into sub-tasks and executes them in sequence, self-correcting along the way.</div>
+          <p class="afg-desc">Agentic AI acts as a project manager &mdash; planning a workflow, executing each step, evaluating the result, and adjusting the plan on the fly if a step fails or returns unexpected data.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">You give the goal: &ldquo;Onboard new vendor X.&rdquo; The AI independently plans the sequence: it drafts the contract, sends it via email, waits for the signed copy, triggers an internal IT ticket to create their user accounts, and logs the final execution date in the CRM.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 Autonomous Triggering & Workflow Automation -->
+      <div class="afg-card">
+        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.18),rgba(139,159,212,.02))">
+          <span class="afg-num" style="color:rgba(139,159,212,.28)">09</span>
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.32))">
+            <path d="M30 8 L18 36 L30 36 L22 72 L52 30 L40 30 L46 8 Z" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="62" cy="20" r="4" fill="#8B9FD4" opacity=".55"/>
+            <circle cx="68" cy="36" r="4" fill="#8B9FD4" opacity=".78"/>
+            <circle cx="68" cy="52" r="4" fill="#8B9FD4"/>
+            <path d="M52 30 L60 22 M52 30 L66 36 M52 30 L66 52" stroke="#8B9FD4" stroke-width="1.4" opacity=".5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="afg-body">
+          <div class="afg-title">Autonomous Triggering &amp; Workflow Automation</div>
+          <div class="afg-summary">Runs end-to-end workflows in the background based on system events &mdash; no human prompt required.</div>
+          <p class="afg-desc">Living inside Zoho, Salesforce, or SAP, the AI listens for triggers &mdash; a customer cancels, an invoice arrives, a deadline hits &mdash; and executes the full downstream workflow silently. No human types a prompt. No dashboard needs checking.</p>
+          <div class="afg-example">
+            <div class="afg-example-lbl">Example</div>
+            <p class="afg-example-body">The moment a customer clicks &ldquo;Cancel Subscription&rdquo; in Zoho, a background event triggers the AI. It pulls the customer&#39;s 3-year usage history, detects their main pain point, creates a custom discount offer tailored to their usage, emails it to them, and schedules a high-priority calendar invite for the account manager if they don&#39;t respond in 24 hours &mdash; all silently in the background.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="ctas">
+  <div class="ctas-glow"></div>
+  <h2>Curious which of these fits your business?</h2>
+  <p>Every AI engagement starts with Scope &mdash; a fixed-fee blueprint that maps which capabilities are actually worth building for you.</p>
+  <div class="ctas-btns">
+    <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
+    <a href="#" onclick="go(&#39;services&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 26px">See Our Services</button></a>
+  </div>
+</div>
+`,
 };
