@@ -3437,7 +3437,7 @@ export const pages = {
                 <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);line-height:1.55"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Q1 2026 &middot;</strong> Praised on-time renewal. Interested in adding a second entity next quarter.</div>
               </div>
               <div style="position:relative;padding-left:14px">
-                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934;box-shadow:0 0 8px rgba(236,169,52,.5)"></div>
+                <div class="afg-glow-dot" style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934"></div>
                 <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.55;font-weight:500"><strong style="color:#ECA934;font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Now &middot;</strong> Opening this file &mdash; call scheduled 3:00 PM CET. Prep brief ready.</div>
               </div>
             </div>
@@ -3514,11 +3514,11 @@ export const pages = {
             <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
             <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
             <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">dlp / patient-batch-0912</span>
-            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.18);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>HIPAA</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.18);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span class="afg-live-dot" style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>HIPAA</span>
           </div>
           <div style="padding:22px 24px;background:#0E1422">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
-              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase">Patient records &middot; 4 of 218</div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase">Patient records &middot; 7 of 218</div>
               <div style="font-family:Montserrat,sans-serif;font-size:9.5px;color:#10B981;font-weight:700;letter-spacing:.05em">47 fields protected</div>
             </div>
             <div style="border:1px solid rgba(107,159,212,.2);border-radius:10px;overflow:hidden">
@@ -3548,6 +3548,24 @@ export const pages = {
                 <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
                 <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
                 <div style="color:#10B981">Chronic pain, opioid-free plan</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#ECA934"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Migraine, chronic &middot; monthly prophylaxis</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#6B9FD4"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Asthma, moderate persistent</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#EF4444"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">CKD stage 3 &middot; nephrology f/u</div>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:8px;margin-top:12px;padding:10px 12px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.22);border-radius:8px">
@@ -3597,7 +3615,7 @@ export const pages = {
               </div>
             </div>
             <div style="height:5px;background:rgba(255,255,255,.05);border-radius:100px;overflow:hidden;margin-bottom:16px">
-              <div style="height:100%;width:92%;background:linear-gradient(90deg,#ECA934,#f5c460);border-radius:100px"></div>
+              <div class="afg-fill-bar" style="--target:92%;height:100%;background:linear-gradient(90deg,#ECA934,#f5c460);border-radius:100px"></div>
             </div>
             <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(236,169,52,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Signals detected</div>
             <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
@@ -3717,7 +3735,7 @@ export const pages = {
             <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
             <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
             <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">agent / onboard-tokamak-systems</span>
-            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(236,169,52,.2);color:#ECA934;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#ECA934;box-shadow:0 0 5px #ECA934"></span>RUNNING</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(236,169,52,.2);color:#ECA934;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span class="afg-live-dot" style="width:5px;height:5px;border-radius:50%;background:#ECA934;box-shadow:0 0 5px #ECA934"></span>RUNNING</span>
           </div>
           <div style="padding:22px 24px;background:#0E1422">
             <div style="padding:14px 16px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.24);border-radius:10px;margin-bottom:16px">
@@ -3785,7 +3803,7 @@ export const pages = {
             <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
             <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
             <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">zoho / event-log / churn-agent</span>
-            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.2);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>COMPLETED</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.2);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span class="afg-live-dot" style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>COMPLETED</span>
           </div>
           <div style="padding:22px 24px;background:#0E1422">
             <div style="padding:12px 14px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.28);border-radius:10px;margin-bottom:12px">
@@ -3796,7 +3814,7 @@ export const pages = {
               <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--tx);font-weight:500">Customer <strong style="color:var(--tx)">tsavva@peak.co</strong> clicked "Cancel Subscription" in Zoho</div>
             </div>
             <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Cascade &middot; auto-executed</div>
-            <div style="position:relative;padding-left:14px;border-left:1.5px solid rgba(107,159,212,.28)">
+            <div class="afg-cascade" style="position:relative;padding-left:14px;border-left:1.5px solid rgba(107,159,212,.28)">
               <div style="position:relative;padding-left:14px;margin-bottom:9px">
                 <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#6B9FD4"></div>
                 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
@@ -3826,7 +3844,7 @@ export const pages = {
                 </div>
               </div>
               <div style="position:relative;padding-left:14px">
-                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934;box-shadow:0 0 8px rgba(236,169,52,.5)"></div>
+                <div class="afg-glow-dot" style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934"></div>
                 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
                   <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5;font-weight:500">If no response in 24h: high-priority call scheduled with AM &middot; <em style="color:var(--mid);font-style:italic">pending</em></div>
                   <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:#ECA934;flex-shrink:0">t + 24h</span>

@@ -1656,7 +1656,10 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,66px);font-weigh
 .ph-tag-sub{font-size:12px;color:var(--dim)}
 
 /* Cap detail cards */
-.cap-detail{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:72px 0;border-bottom:1px solid var(--bd)}
+.cap-detail{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch;padding:72px 0;border-bottom:1px solid var(--bd)}
+.cap-d-right{display:flex}
+.cap-detail .vis-panel{flex:1;display:flex;flex-direction:column;width:100%}
+.cap-detail .vis-panel > *:not(.vis-glow):last-child{flex:1;display:flex;flex-direction:column;justify-content:center}
 
 .cap-detail:last-child{border-bottom:none;padding-bottom:0}
 
@@ -7797,5 +7800,56 @@ body.menu-open { overflow: hidden; }
   /* Preview panel padding tighter on phones so the mockup uses more width */
   .poc-preview { padding: 14px; }
   .poc-preview.filled { padding: 12px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   AI FIELD GUIDE — targeted animations on the capability mockups.
+   Kept subtle: a pulsing status dot on live indicators, a one-shot
+   fill for the lead-score bar, and a fade-in-cascade utility for
+   sequenced items. All respect prefers-reduced-motion.
+   ───────────────────────────────────────────────────────────────── */
+@keyframes afgLivePulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: .55; transform: scale(1.35); }
+}
+.afg-live-dot { animation: afgLivePulse 1.8s ease-in-out infinite; }
+
+@keyframes afgFillBar {
+  0%   { width: 0; }
+  100% { width: var(--target, 92%); }
+}
+.afg-fill-bar {
+  width: 0;
+  animation: afgFillBar 1.4s cubic-bezier(.22, 1, .36, 1) forwards;
+  animation-delay: .35s;
+}
+
+@keyframes afgCascadeIn {
+  0%   { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0);   }
+}
+.afg-cascade > * {
+  opacity: 0;
+  animation: afgCascadeIn .55s ease-out forwards;
+}
+.afg-cascade > *:nth-child(1) { animation-delay: .10s; }
+.afg-cascade > *:nth-child(2) { animation-delay: .30s; }
+.afg-cascade > *:nth-child(3) { animation-delay: .50s; }
+.afg-cascade > *:nth-child(4) { animation-delay: .70s; }
+.afg-cascade > *:nth-child(5) { animation-delay: .90s; }
+
+@keyframes afgGlowPulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(236,169,52,.35); }
+  50%      { box-shadow: 0 0 14px rgba(236,169,52,.75); }
+}
+.afg-glow-dot { animation: afgGlowPulse 2.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .afg-live-dot,
+  .afg-glow-dot,
+  .afg-fill-bar,
+  .afg-cascade > * { animation: none !important; }
+  .afg-fill-bar { width: var(--target, 92%); }
+  .afg-cascade > * { opacity: 1; transform: none; }
 }
 
