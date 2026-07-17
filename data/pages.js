@@ -3257,13 +3257,157 @@ export const pages = {
 <div class="ph" style="position:relative">
   <div class="ph-grid"></div>
   <div class="ph-glow"></div>
-  <div class="ph-in">
-    <div class="badge">The AI Field Guide</div>
-    <h1 class="ph-h" style="font-size:clamp(40px,5vw,60px);letter-spacing:-.03em;line-height:1.05">What AI Can<br><span style="color:var(--t)">Actually Do.</span></h1>
-    <p class="ph-sub">Nine capabilities of AI inside a real business &mdash; from answering employee questions to running silent, autonomous workflows. Each card is what the AI does, plus one concrete example of it in action.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
-      <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 30px">Book a Blueprinting Session <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
-      <a href="#" onclick="go(&#39;services/custom-ai-application&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 24px">Our AI Practice</button></a>
+  <div class="ph-in ph-in-split">
+    <div>
+      <div class="badge">The AI Field Guide</div>
+      <h1 class="ph-h" style="font-size:clamp(40px,5vw,60px);letter-spacing:-.03em;line-height:1.05">What AI Can<br><span style="color:var(--t)">Actually Do.</span></h1>
+      <p class="ph-sub">Nine capabilities of AI inside a real business &mdash; from answering employee questions to running silent, autonomous workflows. Each card is what the AI does, plus one concrete example of it in action.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 30px">Book a Blueprinting Session <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="#" onclick="go(&#39;services/custom-ai-application&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 24px">Our AI Practice</button></a>
+      </div>
+    </div>
+    <div class="ph-right" aria-hidden="true">
+      <!-- AI AGENT COMMAND CENTER — a central agent core orchestrating six
+           business tools (CRM, Docs, Email, DB, Calendar, APIs). Data
+           packets travel outward along the six spokes on a staggered
+           schedule, showing the AI actively calling tools rather than
+           passively chatting. Halo pulses on the core. Prefers-reduced-
+           motion is honored via .afg-hero-viz{ *; animation: none } below. -->
+      <div class="afg-hero-viz" style="width:100%;max-width:480px;position:relative;aspect-ratio:1/1">
+        <svg viewBox="0 0 440 440" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI agent orchestrating multiple business tools">
+          <defs>
+            <radialGradient id="afgCoreGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ECA934" stop-opacity=".38"/>
+              <stop offset="55%" stop-color="#ECA934" stop-opacity=".08"/>
+              <stop offset="100%" stop-color="#ECA934" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="afgSatGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".06"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Ambient glow behind the core -->
+          <circle cx="220" cy="220" r="210" fill="url(#afgCoreGlow)"/>
+
+          <!-- Connection spokes from the core to each satellite. Named ids
+               so the data-packet <animateMotion> can reference them via mpath. -->
+          <g stroke="rgba(236,169,52,.16)" stroke-width="1.5" fill="none" stroke-linecap="round">
+            <path id="afg-path-1" d="M220,220 L220,90"/>
+            <path id="afg-path-2" d="M220,220 L336,155"/>
+            <path id="afg-path-3" d="M220,220 L336,285"/>
+            <path id="afg-path-4" d="M220,220 L220,350"/>
+            <path id="afg-path-5" d="M220,220 L104,285"/>
+            <path id="afg-path-6" d="M220,220 L104,155"/>
+          </g>
+
+          <!-- Satellites (tools the agent orchestrates) -->
+          <!-- CRM · top -->
+          <g transform="translate(220, 90)">
+            <circle r="30" fill="#0E1422" stroke="rgba(107,159,212,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <path d="M0,-3 a7,7 0 1,0 0.01,0 M-10,10 a10,10 0 0,1 20,0" stroke="#6B9FD4" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#6B9FD4" text-anchor="middle">CRM</text>
+          </g>
+          <!-- DOCS · top-right -->
+          <g transform="translate(336, 155)">
+            <circle r="30" fill="#0E1422" stroke="rgba(139,159,212,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <rect x="-8" y="-10" width="16" height="20" rx="2" stroke="#8B9FD4" stroke-width="1.5" fill="none"/>
+            <line x1="-4" y1="-4" x2="4" y2="-4" stroke="#8B9FD4" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="-4" y1="0"  x2="4" y2="0"  stroke="#8B9FD4" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="-4" y1="4"  x2="1" y2="4"  stroke="#8B9FD4" stroke-width="1.3" stroke-linecap="round"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#8B9FD4" text-anchor="middle">DOCS</text>
+          </g>
+          <!-- EMAIL · bottom-right -->
+          <g transform="translate(336, 285)">
+            <circle r="30" fill="#0E1422" stroke="rgba(236,169,52,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <rect x="-9" y="-6" width="18" height="12" rx="1.6" stroke="#ECA934" stroke-width="1.6" fill="none"/>
+            <path d="M-9,-4 L0,3 L9,-4" stroke="#ECA934" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#ECA934" text-anchor="middle">EMAIL</text>
+          </g>
+          <!-- DB · bottom -->
+          <g transform="translate(220, 350)">
+            <circle r="30" fill="#0E1422" stroke="rgba(16,185,129,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <ellipse cx="0" cy="-7" rx="9" ry="2.8" stroke="#10B981" stroke-width="1.5" fill="none"/>
+            <path d="M-9,-7 v11 c0,1.5 4,2.8 9,2.8 s9,-1.3 9,-2.8 v-11" stroke="#10B981" stroke-width="1.5" fill="none"/>
+            <path d="M-9,-1 c0,1.5 4,2.8 9,2.8 s9,-1.3 9,-2.8" stroke="#10B981" stroke-width="1.3" fill="none" opacity=".6"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#10B981" text-anchor="middle">DB</text>
+          </g>
+          <!-- CALENDAR · bottom-left -->
+          <g transform="translate(104, 285)">
+            <circle r="30" fill="#0E1422" stroke="rgba(107,159,212,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <rect x="-9" y="-8" width="18" height="16" rx="1.6" stroke="#6B9FD4" stroke-width="1.5" fill="none"/>
+            <line x1="-9" y1="-3" x2="9" y2="-3" stroke="#6B9FD4" stroke-width="1.5"/>
+            <line x1="-5" y1="-11" x2="-5" y2="-6" stroke="#6B9FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5" y1="-11" x2="5" y2="-6" stroke="#6B9FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="-3" y="1" width="3.5" height="3.5" fill="#6B9FD4"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#6B9FD4" text-anchor="middle">CAL</text>
+          </g>
+          <!-- APIS · top-left -->
+          <g transform="translate(104, 155)">
+            <circle r="30" fill="#0E1422" stroke="rgba(139,159,212,.42)" stroke-width="1.5"/>
+            <circle r="30" fill="url(#afgSatGlow)"/>
+            <path d="M-4,-9 c-4,0 -4,5 -4,5 s0,4 -2,4 s2,0 2,4 s0,5 4,5" stroke="#8B9FD4" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4,-9 c4,0 4,5 4,5 s0,4 2,4 s-2,0 -2,4 s0,5 -4,5" stroke="#8B9FD4" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="0" y="45" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.14em" fill="#8B9FD4" text-anchor="middle">APIS</text>
+          </g>
+
+          <!-- Central agent core -->
+          <g transform="translate(220, 220)">
+            <!-- Pulsing outer halo -->
+            <circle r="70" fill="rgba(236,169,52,.06)">
+              <animate attributeName="r"       values="66;80;66" dur="3.2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values=".55;.15;.55" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Hexagonal chassis -->
+            <path d="M0,-46 L40,-23 L40,23 L0,46 L-40,23 L-40,-23 Z" fill="rgba(236,169,52,.12)" stroke="#ECA934" stroke-width="2.2" stroke-linejoin="round"/>
+            <!-- Inner glyph: three connected nodes (neural triangle) -->
+            <line x1="0"   y1="-16" x2="-14" y2="10" stroke="#ECA934" stroke-width="1.6" opacity=".55"/>
+            <line x1="0"   y1="-16" x2="14"  y2="10" stroke="#ECA934" stroke-width="1.6" opacity=".55"/>
+            <line x1="-14" y1="10"  x2="14"  y2="10" stroke="#ECA934" stroke-width="1.6" opacity=".55"/>
+            <circle cx="0"   cy="-16" r="4.5" fill="#ECA934"/>
+            <circle cx="-14" cy="10"  r="4.5" fill="#ECA934" opacity=".8"/>
+            <circle cx="14"  cy="10"  r="4.5" fill="#ECA934" opacity=".8"/>
+            <!-- Label -->
+            <text y="62" font-family="Montserrat,sans-serif" font-size="9" font-weight="800" letter-spacing="0.16em" fill="#ECA934" text-anchor="middle">AGENT</text>
+          </g>
+
+          <!-- Data packets — each dot travels a spoke on a staggered
+               schedule, fading in/out so they appear then disappear at
+               the endpoint. Different colors = different data kinds. -->
+          <g>
+            <circle r="4" fill="#ECA934">
+              <animateMotion dur="2.0s" repeatCount="indefinite" begin="0s"><mpath href="#afg-path-1"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.0s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="4" fill="#8B9FD4">
+              <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.4s"><mpath href="#afg-path-2"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+            </circle>
+            <circle r="4" fill="#ECA934">
+              <animateMotion dur="1.9s" repeatCount="indefinite" begin="0.8s"><mpath href="#afg-path-3"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="1.9s" repeatCount="indefinite" begin="0.8s"/>
+            </circle>
+            <circle r="4" fill="#10B981">
+              <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.2s"><mpath href="#afg-path-4"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
+            </circle>
+            <circle r="4" fill="#6B9FD4">
+              <animateMotion dur="2.0s" repeatCount="indefinite" begin="1.6s"><mpath href="#afg-path-5"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.0s" repeatCount="indefinite" begin="1.6s"/>
+            </circle>
+            <circle r="4" fill="#8B9FD4">
+              <animateMotion dur="2.3s" repeatCount="indefinite" begin="2.0s"><mpath href="#afg-path-6"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.3s" repeatCount="indefinite" begin="2.0s"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
 </div>
