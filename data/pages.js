@@ -3259,8 +3259,8 @@ export const pages = {
   <div class="ph-glow"></div>
   <div class="ph-in">
     <div class="badge">The AI Field Guide</div>
-    <h1 class="ph-h" style="font-size:clamp(40px,5vw,64px);letter-spacing:-.03em;line-height:1.05">What AI Can<br><span style="color:var(--t)">Actually Do.</span></h1>
-    <p class="ph-sub">A plain-language field guide to the nine capabilities of AI inside a real business &mdash; from answering employee questions to running silent, autonomous workflows. Each card is what the AI does, plus one concrete example.</p>
+    <h1 class="ph-h" style="font-size:clamp(40px,5vw,60px);letter-spacing:-.03em;line-height:1.05">What AI Can<br><span style="color:var(--t)">Actually Do.</span></h1>
+    <p class="ph-sub">Nine capabilities of AI inside a real business &mdash; from answering employee questions to running silent, autonomous workflows. Each card is what the AI does, plus one concrete example of it in action.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
       <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 30px">Book a Blueprinting Session <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       <a href="#" onclick="go(&#39;services/custom-ai-application&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 24px">Our AI Practice</button></a>
@@ -3274,236 +3274,581 @@ export const pages = {
     <div class="sh">From Simple Q&amp;A to Full Autonomy.</div>
     <p class="sp">The list follows a natural progression &mdash; every capability builds on the one before it. Most businesses start at the top and grow into the deeper capabilities as their needs mature.</p>
 
-    <div class="afg-grid">
-
-      <!-- 01 Answering Internal Questions -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
-          <span class="afg-num" style="color:rgba(236,169,52,.25)">01</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
-            <rect x="18" y="14" width="34" height="42" rx="3" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2"/>
-            <path d="M24 24 h22 M24 30 h22 M24 36 h14" stroke="#ECA934" stroke-width="1.6" opacity=".6" stroke-linecap="round"/>
-            <circle cx="50" cy="52" r="12" fill="#0a0d1a" stroke="#ECA934" stroke-width="2.5"/>
-            <circle cx="50" cy="52" r="7" fill="rgba(236,169,52,.14)"/>
-            <line x1="59" y1="61" x2="67" y2="69" stroke="#ECA934" stroke-width="3" stroke-linecap="round"/>
-          </svg>
+    <!-- ═════ 01 · Answering Internal Questions ═════════════════════════ -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; Answering Internal Questions</div>
+        <div class="cap-d-h">Every Company Has Answers Buried in Documents Nobody Reads.</div>
+        <p class="cap-d-p">An internal search engine and knowledge base for your team. The AI reads across handbooks, wikis, SharePoint, and PDFs to answer questions instantly &mdash; and cites the exact source so people trust the answer.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">HR &amp; policy questions answered without pulling a manager into it</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Sales enablement: "What&#39;s our answer to competitor X?" in seconds</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Onboarding co-pilot for new hires &mdash; day-one productivity, not week-four</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Every response cites the page and paragraph it came from</div></div>
         </div>
-        <div class="afg-body">
-          <div class="afg-title">Answering Internal Questions</div>
-          <div class="afg-summary">An internal search engine and knowledge base for employees.</div>
-          <p class="afg-desc">Powered by RAG (Retrieval-Augmented Generation), the AI reads across your documents, handbooks, and internal wikis to answer employee questions instantly &mdash; with a direct citation back to the source document.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">A new HR hire types, &ldquo;What is our parental leave policy for secondary caregivers?&rdquo; The AI instantly searches the employee handbook and responds, &ldquo;You get 6 weeks of fully paid leave, which must be taken within the first year,&rdquo; citing the exact page of the PDF.</p>
+        <div class="tech-tags"><span class="tt">Retrieval-Augmented Generation</span><span class="tt">Vector search</span><span class="tt">Claude API</span><span class="tt">Citations</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">knowledge.internal</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(236,169,52,.18);color:#ECA934;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">LIVE</span>
+          </div>
+          <div style="padding:26px 28px;background:#0E1422">
+            <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:rgba(236,169,52,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:14px">HR ASSISTANT &middot; Karen L.</div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ECA934,#c97e13);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0E1422;font-family:Montserrat,sans-serif;font-weight:800;font-size:12px">KL</div>
+              <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--tx);line-height:1.45">What is our parental leave policy for secondary caregivers?</div>
+            </div>
+            <div style="background:rgba(236,169,52,.05);border:1px solid rgba(236,169,52,.22);border-radius:12px;padding:16px 18px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+                <div style="width:22px;height:22px;border-radius:6px;background:#ECA934;display:flex;align-items:center;justify-content:center;color:#0E1422;font-family:Georgia,serif;font-weight:700;font-size:13px;font-style:italic">M</div>
+                <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:#ECA934;letter-spacing:.08em;text-transform:uppercase">Mirror Assistant</div>
+              </div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--tx);line-height:1.65;margin-bottom:12px">Secondary caregivers receive <strong style="color:#ECA934">6 weeks of fully paid leave</strong>, which must be taken within the first 12 months following the child&#39;s arrival. This applies to birth, adoption, or foster placement.</div>
+              <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--mid)">Employee_Handbook_2026.pdf &middot; <span style="color:#ECA934">page 47</span></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <span style="font-family:Montserrat,sans-serif;font-size:9.5px;padding:5px 10px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--mid);letter-spacing:.05em">Related: primary caregiver</span>
+              <span style="font-family:Montserrat,sans-serif;font-size:9.5px;padding:5px 10px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--mid);letter-spacing:.05em">Adoption assistance</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- 02 Document Drafting & Reviewing -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(107,159,212,.16),rgba(107,159,212,.02))">
-          <span class="afg-num" style="color:rgba(107,159,212,.28)">02</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(107,159,212,.28))">
-            <rect x="14" y="16" width="34" height="44" rx="3" fill="rgba(107,159,212,.14)" stroke="#6B9FD4" stroke-width="2"/>
-            <path d="M20 28 h22 M20 34 h22 M20 40 h14 M20 46 h18" stroke="#6B9FD4" stroke-width="1.5" opacity=".55" stroke-linecap="round"/>
-            <path d="M52 20 L68 36 L58 46 L42 30 Z" fill="#6B9FD4" opacity=".9"/>
-            <path d="M42 30 L38 50 L58 46" stroke="#6B9FD4" stroke-width="2" fill="none" stroke-linejoin="round"/>
-            <path d="M60 20 L66 26" stroke="#ECA934" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Document Drafting &amp; Reviewing</div>
-          <div class="afg-summary">Generates initial drafts and reviews text against your templates.</div>
-          <p class="afg-desc">The AI takes raw inputs &mdash; deal terms, requirements, feedback &mdash; and produces polished first drafts against pre-approved templates. A human reviewer signs off, so quality stays high while cycle time drops.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">A sales rep inputs a bulleted list of deal terms. The AI uses a pre-approved template to draft a formal, professional Service Level Agreement (SLA) in seconds, leaving placeholders for the legal team to sign off on.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 Persistent Context & Memory -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.16),rgba(139,159,212,.02))">
-          <span class="afg-num" style="color:rgba(139,159,212,.28)">03</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.3))">
-            <path d="M16 20 L40 40 L64 20 M16 60 L40 40 L64 60 M40 12 L40 68" stroke="#8B9FD4" stroke-width="1.4" opacity=".4"/>
-            <circle cx="40" cy="40" r="8" fill="#8B9FD4"/>
-            <circle cx="16" cy="20" r="5" fill="#8B9FD4" opacity=".85"/>
-            <circle cx="64" cy="20" r="5" fill="#8B9FD4" opacity=".65"/>
-            <circle cx="16" cy="60" r="5" fill="#8B9FD4" opacity=".65"/>
-            <circle cx="64" cy="60" r="5" fill="#8B9FD4" opacity=".85"/>
-            <circle cx="40" cy="12" r="4" fill="#8B9FD4" opacity=".55"/>
-            <circle cx="40" cy="68" r="4" fill="#8B9FD4" opacity=".55"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Persistent Context &amp; Memory</div>
-          <div class="afg-summary">Retains long-term corporate memory and client history for smarter future interactions.</div>
-          <p class="afg-desc">Vector databases store past interactions, decisions, and preferences, then surface the right context automatically when a team member opens a client file or picks up a conversation months later.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">When an account manager opens a file for a client, the AI surfaces a brief: &ldquo;This client complained about billing delays in Q3 2025 and prefers email communication over phone calls.&rdquo;</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 04 Document & Compliance Auditing -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
-          <span class="afg-num" style="color:rgba(236,169,52,.25)">04</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
-            <path d="M40 8 L64 15 V38 C64 52, 52 66, 40 72 C28 66, 16 52, 16 38 V15 Z" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2.5"/>
-            <path d="M26 38 L36 46 L54 28" stroke="#ECA934" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="62" cy="18" r="9" fill="#EF4444"/>
-            <path d="M62 14 v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="62" cy="22" r="1.3" fill="#fff"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Document &amp; Compliance Auditing</div>
-          <div class="afg-summary">Analyzes contracts and reports against your policies to flag risks before humans get to them.</div>
-          <p class="afg-desc">The AI reads incoming documents against your Standard Operating Procedures, playbooks, or regulatory checklists, then flags any clause that violates policy &mdash; with a reference back to the exact rule.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">A legal ops team uploads a vendor contract. The AI scans the document against the company&#39;s Standard Operating Procedures (SOPs) and flags a clause: &ldquo;Warning: Section 4.2 allows the vendor to raise prices by 10&percnt; annually without prior notice. Our SOP caps annual increases at 5&percnt;.&rdquo;</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 Proprietary Security Guardrails -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(107,159,212,.16),rgba(107,159,212,.02))">
-          <span class="afg-num" style="color:rgba(107,159,212,.28)">05</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(107,159,212,.28))">
-            <rect x="12" y="28" width="56" height="40" rx="4" fill="rgba(107,159,212,.14)" stroke="#6B9FD4" stroke-width="2.5"/>
-            <path d="M24 28 V20 C24 14, 30 8, 40 8 S56 14, 56 20 V28" stroke="#6B9FD4" stroke-width="2.5" fill="none"/>
-            <rect x="20" y="38" width="26" height="4" rx="1" fill="#6B9FD4" opacity=".55"/>
-            <rect x="20" y="46" width="18" height="4" rx="1" fill="#6B9FD4" opacity=".35"/>
-            <rect x="20" y="54" width="22" height="4" rx="1" fill="#6B9FD4" opacity=".5"/>
-            <circle cx="55" cy="48" r="6" fill="#6B9FD4"/>
-            <rect x="53.5" y="48" width="3" height="7" rx="1.2" fill="#0a0d1a"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Proprietary Security Guardrails</div>
-          <div class="afg-summary">Operates strictly within private, secure boundaries so sensitive data never leaks.</div>
-          <p class="afg-desc">The AI runs on private cloud instances (AWS, Azure, or GCP) with strict data-loss-prevention filters. Sensitive fields &mdash; patient IDs, financials, PII &mdash; are redacted before the data ever reaches an analysis layer.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">A healthcare company deploys an AI that redacts all patient names, social security numbers, and medical IDs before the data is processed by the analysis tool, keeping the company strictly HIPAA-compliant.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 Lead Qualification & Management -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
-          <span class="afg-num" style="color:rgba(236,169,52,.25)">06</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
-            <path d="M14 14 L66 14 L46 40 L46 66 L34 66 L34 40 Z" fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2" stroke-linejoin="round"/>
-            <circle cx="24" cy="24" r="3" fill="#ECA934"/>
-            <circle cx="34" cy="24" r="3" fill="#ECA934" opacity=".78"/>
-            <circle cx="46" cy="24" r="3" fill="#ECA934" opacity=".56"/>
-            <circle cx="56" cy="24" r="3" fill="#ECA934" opacity=".34"/>
-            <circle cx="40" cy="54" r="6" fill="#ECA934"/>
-            <path d="M37 54 L39 57 L43 51" stroke="#0a0d1a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Lead Qualification &amp; Management</div>
-          <div class="afg-summary">Scores incoming leads, drafts personalized outreach, and routes them to the right rep.</div>
-          <p class="afg-desc">Behavioral signals (site visits, downloads, job title, company size) get scored against your ideal customer profile. The AI then drafts a first-touch email personalized to the prospect&#39;s industry and queues it for the sales rep.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">A prospect downloads a whitepaper. The AI reviews their LinkedIn profile, notes they are a VP of IT at a 500-person company, automatically assigns them a &ldquo;Hot Lead&rdquo; status, drafts a hyper-personalized email referencing their specific industry bottlenecks, and queues it for the sales rep.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 07 System & Database Interoperability -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.16),rgba(139,159,212,.02))">
-          <span class="afg-num" style="color:rgba(139,159,212,.28)">07</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.3))">
-            <rect x="6" y="14" width="24" height="18" rx="3" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2"/>
-            <rect x="50" y="14" width="24" height="18" rx="3" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2"/>
-            <rect x="28" y="48" width="24" height="18" rx="3" fill="rgba(139,159,212,.28)" stroke="#8B9FD4" stroke-width="2"/>
-            <path d="M18 32 L34 48 M62 32 L46 48" stroke="#8B9FD4" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M30 23 L50 23" stroke="#8B9FD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/>
-            <circle cx="18" cy="23" r="2.5" fill="#ECA934"/>
-            <circle cx="62" cy="23" r="2.5" fill="#ECA934"/>
-            <circle cx="40" cy="57" r="2.5" fill="#ECA934"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">System &amp; Database Interoperability</div>
-          <div class="afg-summary">Extracts data from messy formats and writes it directly into your systems via API.</div>
-          <p class="afg-desc">Beyond reading, the AI writes. It pulls structured data out of unstructured inputs and pushes it into your CRM, ERP, or accounting system &mdash; mapping fields, matching records, and logging every transaction.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">An invoice arrives in the company inbox as a messy PDF. The AI reads it, extracts the line items, tax rates, and PO number, opens the company&#39;s accounting software via API, creates a new expense log, and matches it to the correct vendor account.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 08 Multi-Step Task Planning -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(236,169,52,.16),rgba(236,169,52,.02))">
-          <span class="afg-num" style="color:rgba(236,169,52,.25)">08</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(236,169,52,.28))">
-            <path d="M14 20 H30 M50 20 H66 M20 26 V54 M60 26 V54 M14 60 H30 M50 60 H66 M36 20 H44 M36 60 H44 M40 26 V54" stroke="#ECA934" stroke-width="1.5" opacity=".55" fill="none" stroke-linecap="round"/>
-            <circle cx="14" cy="20" r="5" fill="#ECA934"/>
-            <circle cx="34" cy="20" r="5" fill="#ECA934" opacity=".82"/>
-            <circle cx="46" cy="20" r="5" fill="#ECA934" opacity=".7"/>
-            <circle cx="66" cy="20" r="5" fill="#ECA934" opacity=".58"/>
-            <circle cx="20" cy="60" r="5" fill="#ECA934" opacity=".5"/>
-            <circle cx="40" cy="60" r="5" fill="#ECA934" opacity=".65"/>
-            <circle cx="60" cy="60" r="5" fill="#ECA934" opacity=".85"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Multi-Step Task Planning</div>
-          <div class="afg-summary">Breaks a large goal into sub-tasks and executes them in sequence, self-correcting along the way.</div>
-          <p class="afg-desc">Agentic AI acts as a project manager &mdash; planning a workflow, executing each step, evaluating the result, and adjusting the plan on the fly if a step fails or returns unexpected data.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">You give the goal: &ldquo;Onboard new vendor X.&rdquo; The AI independently plans the sequence: it drafts the contract, sends it via email, waits for the signed copy, triggers an internal IT ticket to create their user accounts, and logs the final execution date in the CRM.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 09 Autonomous Triggering & Workflow Automation -->
-      <div class="afg-card">
-        <div class="afg-visual" style="background:linear-gradient(135deg,rgba(139,159,212,.18),rgba(139,159,212,.02))">
-          <span class="afg-num" style="color:rgba(139,159,212,.28)">09</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:drop-shadow(0 6px 14px rgba(139,159,212,.32))">
-            <path d="M30 8 L18 36 L30 36 L22 72 L52 30 L40 30 L46 8 Z" fill="rgba(139,159,212,.16)" stroke="#8B9FD4" stroke-width="2" stroke-linejoin="round"/>
-            <circle cx="62" cy="20" r="4" fill="#8B9FD4" opacity=".55"/>
-            <circle cx="68" cy="36" r="4" fill="#8B9FD4" opacity=".78"/>
-            <circle cx="68" cy="52" r="4" fill="#8B9FD4"/>
-            <path d="M52 30 L60 22 M52 30 L66 36 M52 30 L66 52" stroke="#8B9FD4" stroke-width="1.4" opacity=".5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="afg-body">
-          <div class="afg-title">Autonomous Triggering &amp; Workflow Automation</div>
-          <div class="afg-summary">Runs end-to-end workflows in the background based on system events &mdash; no human prompt required.</div>
-          <p class="afg-desc">Living inside Zoho, Salesforce, or SAP, the AI listens for triggers &mdash; a customer cancels, an invoice arrives, a deadline hits &mdash; and executes the full downstream workflow silently. No human types a prompt. No dashboard needs checking.</p>
-          <div class="afg-example">
-            <div class="afg-example-lbl">Example</div>
-            <p class="afg-example-body">The moment a customer clicks &ldquo;Cancel Subscription&rdquo; in Zoho, a background event triggers the AI. It pulls the customer&#39;s 3-year usage history, detects their main pain point, creates a custom discount offer tailored to their usage, emails it to them, and schedules a high-priority calendar invite for the account manager if they don&#39;t respond in 24 hours &mdash; all silently in the background.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- ═════ 02 · Document Drafting & Reviewing ═════════════════════════ -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4">02 &mdash; Document Drafting &amp; Reviewing</div>
+        <div class="cap-d-h">Turn Rough Notes Into a Finished First Draft in Seconds.</div>
+        <p class="cap-d-p">The AI takes raw inputs &mdash; deal terms, requirements, meeting notes &mdash; and produces polished first drafts against your pre-approved templates. A human signs off, so quality stays high while cycle time drops.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Contracts, SOWs, and SLAs drafted from bullet points against your templates</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Proposal and pitch decks generated from a discovery call transcript</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Meeting-minutes auto-summarized with owners, dates, and decisions extracted</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Legal &amp; brand review notes flagged inline for the human editor</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">LLM drafting</span><span class="tt">Template library</span><span class="tt">Style-guide tuning</span><span class="tt">Human-in-loop</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">drafts.internal / new-sla</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(107,159,212,.18);color:#6B9FD4;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">4.2s</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Input &middot; deal terms</div>
+              <div style="background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:10px;padding:14px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);line-height:1.7">
+                &bull; Client: Acme Retail<br>
+                &bull; Response SLA: 4 hrs<br>
+                &bull; Uptime: 99.9&percnt;<br>
+                &bull; Term: 24 months<br>
+                &bull; Auto-renew: yes<br>
+                &bull; Fee: $8,400 / mo
+              </div>
+            </div>
+            <div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:#6B9FD4;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Draft output</div>
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(107,159,212,.25);border-radius:10px;padding:14px;font-family:Georgia,serif;font-size:10.5px;color:var(--tx);line-height:1.55">
+                <div style="font-weight:700;margin-bottom:8px;font-family:Montserrat,sans-serif;letter-spacing:.03em">SERVICE LEVEL AGREEMENT</div>
+                <div style="margin-bottom:6px;color:var(--mid)">1. Response Time. Support requests will receive a first response within <span style="background:rgba(107,159,212,.22);padding:0 3px;border-radius:2px;color:var(--tx)">four (4) hours</span> during business days.</div>
+                <div style="margin-bottom:6px;color:var(--mid)">2. Uptime. The Service shall maintain <span style="background:rgba(107,159,212,.22);padding:0 3px;border-radius:2px;color:var(--tx)">99.9&percnt; monthly uptime</span>, excluding scheduled maintenance.</div>
+                <div style="color:var(--mid)">3. Term. This Agreement shall commence on the Effective Date and continue for <span style="background:rgba(107,159,212,.22);padding:0 3px;border-radius:2px;color:var(--tx)">24 months</span> [<span style="color:#ECA934">legal review</span>].</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:0 24px 22px;background:#0E1422">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.2);border-radius:10px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span style="font-family:Montserrat,sans-serif;font-size:11px;color:var(--tx);font-weight:600">Drafted from Master SLA Template v3.2</span>
+              </div>
+              <span style="font-family:Montserrat,sans-serif;font-size:9.5px;color:var(--mid);letter-spacing:.05em">1 note for legal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 03 · Persistent Context & Memory ═════════════════════════ -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(139,159,212,.1);border:1px solid rgba(139,159,212,.2);color:#8B9FD4">03 &mdash; Persistent Context &amp; Memory</div>
+        <div class="cap-d-h">The AI Remembers Every Conversation So Your People Don&rsquo;t Have To.</div>
+        <p class="cap-d-p">Vector databases store past interactions, decisions, and preferences. When an account manager opens a client file six months later, the AI surfaces exactly what they need to walk into that meeting prepared.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Client briefs that recap history, preferences, and open issues before every call</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Handoffs between reps preserve context &mdash; no "let me get up to speed" moments</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Long-running projects retain decisions and rationale across months of work</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Preferences (channel, tone, cadence) surface automatically per contact</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Vector databases</span><span class="tt">Semantic memory</span><span class="tt">Timeline synthesis</span><span class="tt">Zoho CRM</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(139,159,212,.09),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">crm / Nowak Manufacturing</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(139,159,212,.2);color:#8B9FD4;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">SYNCED</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8B9FD4,#5f6fa8);display:flex;align-items:center;justify-content:center;color:#0E1422;font-family:Montserrat,sans-serif;font-weight:800;font-size:15px;flex-shrink:0">NM</div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:800;color:var(--tx);letter-spacing:-.005em">Nowak Manufacturing</div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);margin-top:2px">Anna Nowak &middot; VP Operations &middot; Client since 2023</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+                <span style="font-family:Montserrat,sans-serif;font-size:9px;padding:3px 8px;border-radius:100px;background:rgba(139,159,212,.14);color:#8B9FD4;font-weight:700;letter-spacing:.05em">EMAIL</span>
+                <span style="font-family:Montserrat,sans-serif;font-size:9px;padding:3px 8px;border-radius:100px;background:rgba(255,255,255,.06);color:var(--mid);font-weight:700;letter-spacing:.05em">TZ: CET</span>
+              </div>
+            </div>
+            <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(139,159,212,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">MEMORY TIMELINE</div>
+            <div style="display:flex;flex-direction:column;gap:8px;position:relative;padding-left:14px;border-left:1.5px dashed rgba(139,159,212,.28)">
+              <div style="position:relative;padding-left:14px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#8B9FD4"></div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);line-height:1.55"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Q3 2025 &middot;</strong> Complained about billing delays. Wants monthly invoices in EUR.</div>
+              </div>
+              <div style="position:relative;padding-left:14px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#8B9FD4"></div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);line-height:1.55"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Q4 2025 &middot;</strong> Requested weekly status reports every Friday morning.</div>
+              </div>
+              <div style="position:relative;padding-left:14px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#8B9FD4"></div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);line-height:1.55"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Q1 2026 &middot;</strong> Praised on-time renewal. Interested in adding a second entity next quarter.</div>
+              </div>
+              <div style="position:relative;padding-left:14px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934;box-shadow:0 0 8px rgba(236,169,52,.5)"></div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.55;font-weight:500"><strong style="color:#ECA934;font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.04em">Now &middot;</strong> Opening this file &mdash; call scheduled 3:00 PM CET. Prep brief ready.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 04 · Document & Compliance Auditing ═════════════════════════ -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">04 &mdash; Document &amp; Compliance Auditing</div>
+        <div class="cap-d-h">Flag Risk Before It Becomes a Legal Problem.</div>
+        <p class="cap-d-p">The AI reads incoming contracts and reports against your Standard Operating Procedures, playbooks, or regulatory checklists &mdash; then flags every clause that violates policy with a reference back to the exact rule that&rsquo;s at odds.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Vendor contracts checked against procurement SOPs before you sign</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Financial reports audited against internal controls and materiality thresholds</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Marketing copy screened for regulated-industry compliance language</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Every flag cites the SOP section and the violating passage side by side</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">SOP embeddings</span><span class="tt">Clause detection</span><span class="tt">Diff highlighting</span><span class="tt">Audit trail</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">audit / vendor-contract-4211.pdf</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(239,68,68,.2);color:#EF4444;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">1 FLAG</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(236,169,52,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:12px">CONTRACT PREVIEW</div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;font-family:Georgia,serif;font-size:10.5px;color:var(--mid);line-height:1.6;margin-bottom:14px">
+              <div style="margin-bottom:6px"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:9.5px;letter-spacing:.04em">Section 4.1</strong> &mdash; The parties agree to renew this Agreement on identical terms unless notice is given 30 days prior.</div>
+              <div style="padding:8px 10px;background:rgba(239,68,68,.08);border-left:2px solid #EF4444;border-radius:0 6px 6px 0"><strong style="color:#EF4444;font-family:Montserrat,sans-serif;font-size:9.5px;letter-spacing:.04em">Section 4.2</strong> &mdash; Vendor may raise prices <span style="background:rgba(239,68,68,.25);padding:0 3px;border-radius:2px;color:var(--tx);font-weight:600">up to 10&percnt; annually</span> without prior notice to Client.</div>
+              <div style="margin-top:6px"><strong style="color:var(--tx);font-family:Montserrat,sans-serif;font-size:9.5px;letter-spacing:.04em">Section 4.3</strong> &mdash; Client shall have the right to audit invoices within 60 days of receipt.</div>
+            </div>
+            <div style="display:flex;gap:10px;padding:12px 14px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.28);border-radius:10px;align-items:flex-start">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.4" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><circle cx="12" cy="16" r=".5" fill="#EF4444"/></svg>
+              <div style="flex:1">
+                <div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;color:#EF4444;letter-spacing:.05em;margin-bottom:3px">SOP VIOLATION</div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--tx);line-height:1.5;margin-bottom:6px">Section 4.2 allows a 10&percnt; annual price increase. Procurement SOP <span style="color:#ECA934;font-weight:600">&sect; 7.3</span> caps annual increases at 5&percnt;.</div>
+                <div style="font-family:Montserrat,sans-serif;font-size:9.5px;color:var(--mid);letter-spacing:.05em">Recommended action: request amendment before signing.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 05 · Proprietary Security Guardrails ═════════════════════════ -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4">05 &mdash; Proprietary Security Guardrails</div>
+        <div class="cap-d-h">Deploy AI on Sensitive Data Without Leaking a Byte.</div>
+        <p class="cap-d-p">The AI runs on private cloud instances with strict data-loss-prevention filters. Sensitive fields &mdash; patient IDs, PII, financials, credentials &mdash; are redacted before the data ever reaches an analysis layer or a foundation model outside your walls.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">HIPAA / SOC 2 / GDPR-compliant deployments on private AWS or Azure</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Automatic redaction of PII, PHI, and PCI fields before any external API call</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Every prompt and response logged with full audit trail for compliance review</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Role-based access control per data class and per user</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Private cloud</span><span class="tt">DLP filters</span><span class="tt">Field-level redaction</span><span class="tt">Audit logs</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">dlp / patient-batch-0912</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.18);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>HIPAA</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase">Patient records &middot; 4 of 218</div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;color:#10B981;font-weight:700;letter-spacing:.05em">47 fields protected</div>
+            </div>
+            <div style="border:1px solid rgba(107,159,212,.2);border-radius:10px;overflow:hidden">
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:8px 12px;background:rgba(107,159,212,.06);font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;color:var(--mid);letter-spacing:.08em;text-transform:uppercase">
+                <div>Patient</div><div>SSN</div><div>Medical ID</div><div>Diagnosis (for model)</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#EF4444"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Type-2 diabetes, HbA1c 8.2</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#ECA934"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Hypertension, uncontrolled</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#6B9FD4"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Post-op recovery, day 12</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);border-top:1px solid rgba(255,255,255,.05);align-items:center">
+                <div style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#8B9FD4"></span>█████████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">███-██-████</div>
+                <div style="color:var(--mid);font-family:'SF Mono',ui-monospace,monospace;font-size:10px">MRN-██████</div>
+                <div style="color:#10B981">Chronic pain, opioid-free plan</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:12px;padding:10px 12px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.22);border-radius:8px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div style="flex:1;font-family:Montserrat,sans-serif;font-size:10.5px;color:var(--tx);font-weight:600">All PII redacted before model call &middot; audit logged</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 06 · Lead Qualification & Management ═════════════════════════ -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">06 &mdash; Lead Qualification &amp; Management</div>
+        <div class="cap-d-h">Every Lead Scored, Briefed, and First-Touched Before Your Rep Sees It.</div>
+        <p class="cap-d-p">Behavioral signals &mdash; site visits, downloads, LinkedIn signals, company size &mdash; get scored against your ideal customer profile. The AI drafts a first-touch email tailored to the prospect&rsquo;s industry and queues it for the rep to send with one click.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Real-time scoring against your ICP &mdash; hot leads routed instantly</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Prospect research auto-run: LinkedIn, company news, funding, tech stack</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Personalized first email referencing their industry bottleneck</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Rep gets a queued draft, not a raw form submission</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">ICP scoring</span><span class="tt">Enrichment API</span><span class="tt">Personalized outreach</span><span class="tt">Zoho CRM</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">crm / new-lead / mfujimoto</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(239,68,68,.2);color:#EF4444;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">HOT</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:16px">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#ECA934,#c97e13);display:flex;align-items:center;justify-content:center;color:#0E1422;font-family:Montserrat,sans-serif;font-weight:800;font-size:15px;flex-shrink:0">MF</div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:800;color:var(--tx);letter-spacing:-.005em">Marc Fujimoto</div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mid);margin-top:2px">VP of IT &middot; Tokamak Systems &middot; 512 employees</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-family:Montserrat,sans-serif;font-size:24px;font-weight:900;color:#ECA934;line-height:1;letter-spacing:-.03em">92</div>
+                <div style="font-family:Montserrat,sans-serif;font-size:8.5px;color:var(--mid);letter-spacing:.09em;text-transform:uppercase;margin-top:3px">Lead Score</div>
+              </div>
+            </div>
+            <div style="height:5px;background:rgba(255,255,255,.05);border-radius:100px;overflow:hidden;margin-bottom:16px">
+              <div style="height:100%;width:92%;background:linear-gradient(90deg,#ECA934,#f5c460);border-radius:100px"></div>
+            </div>
+            <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(236,169,52,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Signals detected</div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx)">Downloaded "Zoho ERP Buyer&rsquo;s Guide" &middot; 3 min ago</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx)">Company posted "$4.2M Series B" 6 days ago</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx)">Title match: VP IT &middot; industry match: manufacturing</span></div>
+            </div>
+            <div style="padding:12px 14px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.24);border-radius:10px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;color:#ECA934;letter-spacing:.05em">DRAFT EMAIL QUEUED FOR REP</div>
+              </div>
+              <div style="font-family:Georgia,serif;font-size:11.5px;color:var(--tx);line-height:1.55;font-style:italic">"Marc &mdash; congrats on the Series B. Most manufacturing IT teams hit the same wall around 500 people: ERP consolidation. Happy to walk you through what worked at &hellip;"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 07 · System & Database Interoperability ═════════════════════ -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(139,159,212,.1);border:1px solid rgba(139,159,212,.2);color:#8B9FD4">07 &mdash; System &amp; Database Interoperability</div>
+        <div class="cap-d-h">Read Messy Documents. Write Clean Records.</div>
+        <p class="cap-d-p">Beyond reading, the AI writes. It pulls structured data out of unstructured inputs &mdash; PDFs, emails, scanned invoices, images &mdash; and pushes it into your CRM, ERP, or accounting system via API. Fields mapped, records matched, transactions logged.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Invoice OCR &rarr; line items &rarr; expense record in QuickBooks or Zoho Books</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Email attachments parsed and filed against the right vendor/customer record</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Handwritten forms digitized and posted to the correct entity in your CRM</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#8B9FD4"></div><div class="uc-text">Every write is idempotent, audited, and reversible</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">OCR + LLM extraction</span><span class="tt">REST APIs</span><span class="tt">Zoho / QuickBooks</span><span class="tt">Idempotency keys</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(139,159,212,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">bridge / invoice-INV-4211.pdf</span>
+            <span style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:100px;background:rgba(16,185,129,.2);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em">LOGGED</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="display:grid;grid-template-columns:1fr 30px 1fr;gap:8px;align-items:center">
+              <div>
+                <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:var(--mid);letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px">Source PDF</div>
+                <div style="background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.14);border-radius:10px;padding:12px 13px;font-family:'SF Mono',ui-monospace,monospace;font-size:10px;color:var(--mid);line-height:1.7">
+                  <div style="font-family:Georgia,serif;font-style:italic;color:var(--tx);margin-bottom:5px">Acme Supply Co.</div>
+                  Invoice #INV-4211<br>
+                  Date: 05/12/2026<br>
+                  PO: PO-9083<br><br>
+                  Line 1: Ball bearings<br>
+                  &nbsp;&nbsp;40 @ $12.50 = $500<br>
+                  Line 2: Shipping<br>
+                  &nbsp;&nbsp;$47.00<br>
+                  Tax (8.25&percnt;): $45.13<br>
+                  <span style="color:var(--tx);font-weight:600">Total: $592.13</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div>
+                <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:#8B9FD4;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px">Zoho Books Record</div>
+                <div style="background:rgba(139,159,212,.06);border:1px solid rgba(139,159,212,.28);border-radius:10px;padding:12px 13px;font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--tx);line-height:1.65">
+                  <div style="display:flex;justify-content:space-between;color:var(--mid);font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:.05em;margin-bottom:5px"><span>VENDOR</span><span>&nbsp;</span></div>
+                  <div style="margin-bottom:8px;font-weight:600">Acme Supply Co. <span style="color:#8B9FD4">&#8226; matched</span></div>
+                  <div style="display:flex;justify-content:space-between;color:var(--mid);font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:.05em;margin-bottom:5px"><span>BILL</span><span>PO-9083</span></div>
+                  <div style="display:grid;grid-template-columns:1.4fr 40px 60px;gap:4px;font-size:10px;margin-bottom:6px">
+                    <span style="color:var(--mid)">Ball bearings</span><span style="color:var(--mid);text-align:right">40</span><span style="text-align:right">$500.00</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1.4fr 40px 60px;gap:4px;font-size:10px;margin-bottom:6px">
+                    <span style="color:var(--mid)">Shipping</span><span></span><span style="text-align:right">$47.00</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1.4fr 40px 60px;gap:4px;font-size:10px;padding-top:6px;border-top:1px dashed rgba(139,159,212,.28)">
+                    <span style="color:var(--mid)">Tax 8.25&percnt;</span><span></span><span style="text-align:right">$45.13</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(139,159,212,.28)">
+                    <span style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:var(--tx)">TOTAL</span>
+                    <span style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:800;color:#8B9FD4">$592.13</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:14px;padding:9px 12px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.22);border-radius:8px">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="flex:1;font-family:Montserrat,sans-serif;font-size:10.5px;color:var(--tx);font-weight:600">Wrote to Zoho Books &middot; matched vendor &middot; PO reconciled</div>
+              <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9.5px;color:var(--mid)">1.8s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 08 · Multi-Step Task Planning ═════════════════════════ -->
+    <div class="cap-detail rev">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">08 &mdash; Multi-Step Task Planning</div>
+        <div class="cap-d-h">Give the AI a Goal. It Runs the Whole Playbook.</div>
+        <p class="cap-d-p">Agentic AI acts as a project manager. Give it a goal &mdash; "onboard vendor X" or "close the books for March" &mdash; and it plans the sequence, executes each step, evaluates the result, and adjusts the plan on the fly if a step fails.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Vendor onboarding: contract, ID verification, IT provisioning, CRM entry</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Month-end close: reconciliations, reports, approvals, filings</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Employee offboarding: access revocation, exit interview, final payroll</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#ECA934"></div><div class="uc-text">Self-correcting: retry on failure, escalate to a human when stuck</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Agentic loops</span><span class="tt">Tool use</span><span class="tt">Plan-execute-reflect</span><span class="tt">Human escalation</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">agent / onboard-tokamak-systems</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(236,169,52,.2);color:#ECA934;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#ECA934;box-shadow:0 0 5px #ECA934"></span>RUNNING</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="padding:14px 16px;background:rgba(236,169,52,.06);border:1px solid rgba(236,169,52,.24);border-radius:10px;margin-bottom:16px">
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:#ECA934;letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px">GOAL</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--tx);font-weight:500">Onboard new vendor: Tokamak Systems (US &middot; manufacturing)</div>
+            </div>
+            <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(236,169,52,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Sub-tasks &middot; 3 of 6 complete</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.22);border-radius:8px">
+                <div style="width:20px;height:20px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0E1422" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--tx)">Draft NDA and MSA against template</div>
+                <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9.5px;color:var(--mid)">2m ago</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.22);border-radius:8px">
+                <div style="width:20px;height:20px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0E1422" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--tx)">Send for e-signature via DocuSign</div>
+                <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9.5px;color:var(--mid)">1m ago</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.22);border-radius:8px">
+                <div style="width:20px;height:20px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0E1422" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--tx)">Verify W-9 and beneficial ownership</div>
+                <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9.5px;color:var(--mid)">30s ago</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(236,169,52,.05);border:1px solid rgba(236,169,52,.28);border-radius:8px">
+                <div style="width:20px;height:20px;border-radius:50%;border:2px solid #ECA934;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="width:6px;height:6px;border-radius:50%;background:#ECA934;animation:pocChatPulse 1.6s ease-in-out infinite"></span></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--tx);font-weight:500">Create IT accounts &amp; distribute credentials</div>
+                <span style="font-family:Montserrat,sans-serif;font-size:9.5px;color:#ECA934;font-weight:700;letter-spacing:.05em">RUNNING</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:8px;opacity:.65">
+                <div style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.2);flex-shrink:0"></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--mid)">Create CRM record and vendor tile</div>
+                <span style="font-family:Montserrat,sans-serif;font-size:9.5px;color:var(--mid);letter-spacing:.05em">QUEUED</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:8px;opacity:.65">
+                <div style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.2);flex-shrink:0"></div>
+                <div style="flex:1;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--mid)">Log go-live date &amp; notify AM</div>
+                <span style="font-family:Montserrat,sans-serif;font-size:9.5px;color:var(--mid);letter-spacing:.05em">QUEUED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════ 09 · Autonomous Triggering & Workflow Automation ═════════════ -->
+    <div class="cap-detail" style="grid-template-columns:0.85fr 1.15fr">
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(107,159,212,.1);border:1px solid rgba(107,159,212,.2);color:#6B9FD4">09 &mdash; Autonomous Triggering &amp; Workflow</div>
+        <div class="cap-d-h">Workflows That Run in the Background. No Prompts. No Dashboards. No Humans.</div>
+        <p class="cap-d-p">Living inside Zoho, Salesforce, or SAP, the AI listens for system events &mdash; a customer cancels, an invoice arrives, a threshold trips &mdash; then executes the full downstream workflow silently. No prompt. No dashboard. Just the outcome.</p>
+        <div class="use-cases">
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Churn intervention triggered the moment a customer clicks "cancel"</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Auto-generated dunning sequences that adapt to payment history</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">SLA breach recovery: refund, apology, escalation &mdash; all before the human sees it</div></div>
+          <div class="uc"><div class="uc-dot" style="background:#6B9FD4"></div><div class="uc-text">Every action logged and reversible &mdash; no runaway loops, ever</div></div>
+        </div>
+        <div class="tech-tags"><span class="tt">Event-driven agents</span><span class="tt">Zoho Deluge / Flow</span><span class="tt">Circuit breakers</span><span class="tt">Full audit trail</span></div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Book a Blueprinting Session <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+      </div>
+      <div class="cap-d-right">
+        <div class="vis-panel" style="padding:0;overflow:hidden;background:#0E1422">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(107,159,212,.08),transparent 70%)"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#080B16;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+            <span style="margin-left:8px;font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px">zoho / event-log / churn-agent</span>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.2);color:#10B981;font-weight:700;font-family:Montserrat,sans-serif;letter-spacing:.05em"><span style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 5px #10B981"></span>COMPLETED</span>
+          </div>
+          <div style="padding:22px 24px;background:#0E1422">
+            <div style="padding:12px 14px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.28);border-radius:10px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.4"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:800;color:#EF4444;letter-spacing:.09em">TRIGGER &middot; 09:14:07</div>
+              </div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--tx);font-weight:500">Customer <strong style="color:var(--tx)">tsavva@peak.co</strong> clicked "Cancel Subscription" in Zoho</div>
+            </div>
+            <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:700;color:rgba(107,159,212,.75);letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px">Cascade &middot; auto-executed</div>
+            <div style="position:relative;padding-left:14px;border-left:1.5px solid rgba(107,159,212,.28)">
+              <div style="position:relative;padding-left:14px;margin-bottom:9px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#6B9FD4"></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+                  <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5">Pulled 3-year usage history &middot; identified 40&percnt; drop-off in Q1</div>
+                  <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:var(--mid);flex-shrink:0">+0.9s</span>
+                </div>
+              </div>
+              <div style="position:relative;padding-left:14px;margin-bottom:9px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#6B9FD4"></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+                  <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5">Diagnosed root cause: switched to a competitor for advanced reporting</div>
+                  <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:var(--mid);flex-shrink:0">+1.4s</span>
+                </div>
+              </div>
+              <div style="position:relative;padding-left:14px;margin-bottom:9px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#6B9FD4"></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+                  <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5">Generated retention offer: 3 months free on Business tier + reporting add-on</div>
+                  <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:var(--mid);flex-shrink:0">+2.1s</span>
+                </div>
+              </div>
+              <div style="position:relative;padding-left:14px;margin-bottom:9px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#6B9FD4"></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+                  <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5">Email dispatched to customer with one-click accept link</div>
+                  <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:var(--mid);flex-shrink:0">+2.6s</span>
+                </div>
+              </div>
+              <div style="position:relative;padding-left:14px">
+                <div style="position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#ECA934;box-shadow:0 0 8px rgba(236,169,52,.5)"></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+                  <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--tx);line-height:1.5;font-weight:500">If no response in 24h: high-priority call scheduled with AM &middot; <em style="color:var(--mid);font-style:italic">pending</em></div>
+                  <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9px;color:#ECA934;flex-shrink:0">t + 24h</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:9px 12px;background:rgba(107,159,212,.06);border:1px solid rgba(107,159,212,.22);border-radius:8px">
+              <div style="font-family:Montserrat,sans-serif;font-size:10.5px;color:var(--tx);font-weight:600">Total run &middot; 2.6 seconds &middot; zero human touches</div>
+              <span style="font-family:'SF Mono',ui-monospace,monospace;font-size:9.5px;color:var(--mid)">audit id&colon; e7f2ac</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <div class="ctas">
   <div class="ctas-glow"></div>
   <h2>Curious which of these fits your business?</h2>
-  <p>Every AI engagement starts with Scope &mdash; a fixed-fee blueprint that maps which capabilities are actually worth building for you.</p>
+  <p>Every AI engagement starts with Scope &mdash; a fixed-fee blueprint that maps which of these capabilities is actually worth building for you.</p>
   <div class="ctas-btns">
     <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
     <a href="#" onclick="go(&#39;services&#39;)" style="text-decoration:none"><button class="bs" style="padding:13px 26px">See Our Services</button></a>
