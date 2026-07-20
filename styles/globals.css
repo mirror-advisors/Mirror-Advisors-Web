@@ -7922,3 +7922,136 @@ body.menu-open { overflow: hidden; }
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   PH-TEAM (/ph-team) — unlisted internal operations-team page.
+   Two team-member cards, circular photo placeholder with initials
+   until a real image is dropped in, then a shared social-icons row
+   below. Reuses the existing .pft-social pattern for the icons.
+   ───────────────────────────────────────────────────────────────── */
+.pht-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+.pht-card {
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  padding: 32px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: border-color .22s ease, background .22s ease, transform .22s ease;
+}
+.pht-card:hover {
+  border-color: rgba(236, 169, 52, .28);
+  background: rgba(255, 255, 255, .04);
+  transform: translateY(-2px);
+}
+.pht-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(236,169,52,.14) 0%, transparent 60%),
+    rgba(255, 255, 255, .04);
+  border: 1.5px solid rgba(236, 169, 52, .22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.pht-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pht-initials {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  color: #ECA934;
+  opacity: .55;
+  user-select: none;
+}
+.pht-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--tx);
+  letter-spacing: -.01em;
+  margin-bottom: 6px;
+  text-wrap: balance;
+}
+.pht-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #ECA934;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  padding: 5px 12px;
+  background: rgba(236, 169, 52, .08);
+  border: 1px solid rgba(236, 169, 52, .22);
+  border-radius: 100px;
+  margin-bottom: 22px;
+}
+.pht-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+.pht-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 10px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 13px;
+  color: var(--mid);
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+  overflow: hidden;
+}
+.pht-contact:hover {
+  background: rgba(236, 169, 52, .06);
+  border-color: rgba(236, 169, 52, .28);
+  color: var(--tx);
+}
+.pht-contact svg { flex-shrink: 0; }
+.pht-contact span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+/* Centered social icons row on ph-team. .pft-social already exists
+   from the footer; this variant centers the row and adds a touch
+   more spacing. */
+.pht-socials {
+  justify-content: center;
+  margin-top: 4px !important;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .pht-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pht-card { padding: 26px 22px 22px; }
+  .pht-photo { width: 116px; height: 116px; margin-bottom: 16px; }
+  .pht-initials { font-size: 28px; }
+  .pht-name { font-size: 18px; }
+  .pht-title { font-size: 10px; }
+}
+

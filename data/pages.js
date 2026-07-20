@@ -4017,4 +4017,80 @@ export const pages = {
   </div>
 </div>
 `,
+  'ph-team': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in" style="text-align:center">
+    <div class="badge" style="margin-left:auto;margin-right:auto">Mirror Advisors</div>
+    <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,52px);letter-spacing:-.03em;line-height:1.05">The Operations<br><span style="color:var(--t)">Team.</span></h1>
+    <p class="ph-sub" style="margin-left:auto;margin-right:auto">The people who make everything run behind the scenes.</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="si" style="max-width:860px">
+    <div class="pht-grid">
+
+      <!-- Janna · Operations Manager -->
+      <div class="pht-card">
+        <div class="pht-photo" aria-hidden="true">
+          <!-- TODO: replace with photo when available. Drop the file
+               at /public/images/team/janna.jpg and swap this div for:
+               <img src="/images/team/janna.jpg" alt="Janna Binea Malicad" /> -->
+          <div class="pht-initials">JBM</div>
+        </div>
+        <div class="pht-name">Janna Binea Malicad</div>
+        <div class="pht-title">Operations Manager</div>
+        <div class="pht-contacts">
+          <a href="tel:+639241152681" class="pht-contact">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.92 3.33A2 2 0 0 1 3.9 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.94 5.94l1.2-1.17a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+63 924 115 2681</span>
+          </a>
+          <a href="mailto:Janna@mirroradvisors.com" class="pht-contact">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Janna@mirroradvisors.com</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mark · Operations Assistant -->
+      <div class="pht-card">
+        <div class="pht-photo" aria-hidden="true">
+          <!-- TODO: replace with photo when available. Drop the file
+               at /public/images/team/mark.jpg and swap this div for:
+               <img src="/images/team/mark.jpg" alt="Mark Adam Atienza" /> -->
+          <div class="pht-initials">MAA</div>
+        </div>
+        <div class="pht-name">Mark Adam Atienza</div>
+        <div class="pht-title">Operations Assistant</div>
+        <div class="pht-contacts">
+          <a href="tel:+639688511430" class="pht-contact">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.92 3.33A2 2 0 0 1 3.9 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.94 5.94l1.2-1.17a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+63 968 851 1430</span>
+          </a>
+          <a href="mailto:Sythe@mirroradvisors.com" class="pht-contact">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Sythe@mirroradvisors.com</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding-top:56px;padding-bottom:56px">
+  <div class="si" style="max-width:640px;text-align:center">
+    <div class="sl" style="justify-content:center;display:flex">Follow Us</div>
+    <div class="sh" style="font-size:clamp(22px,2.6vw,30px)">Mirror Advisors, everywhere.</div>
+    <p class="sp" style="margin-left:auto;margin-right:auto;margin-bottom:28px">The company's live social channels. Whichever ones are enabled in the admin panel show here.</p>
+    <!-- pft-social class is what _renderSocialIcons() targets. When the
+         page mounts, _INIT.ph_team calls that renderer and fills this
+         container with the currently-enabled social icons from the
+         same source-of-truth the footer uses (window._SOCIAL_LINKS). -->
+    <div class="pft-social pht-socials" role="list" aria-label="Mirror Advisors social channels"></div>
+  </div>
+</section>
+`,
 };
