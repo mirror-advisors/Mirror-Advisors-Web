@@ -7850,3 +7850,75 @@ body.menu-open { overflow: hidden; }
   .afg-cascade > * { opacity: 1; transform: none; }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   AI FIELD GUIDE — mobile refinements. The bespoke mockups inside
+   each .vis-panel use inline grid-template-columns for their
+   internal layout, which cramps at phone widths. Collapse those
+   grids explicitly here so the mockup content stacks legibly.
+   Also mirror .svc-hero-right's tablet-and-below hide behavior on
+   the new .afg-hero-viz.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Hide the hero agent-command-center at tablet-and-below so the
+   .ph-in-split copy alone drives the hero on smaller screens. Uses
+   the same 900px breakpoint that already collapses .ph-in-split
+   and hides .svc-hero-right. */
+@media (max-width: 900px) {
+  .afg-hero-viz { display: none !important; }
+}
+
+/* Phone (≤700px): collapse inline mockup grids inside vis-panels. */
+@media (max-width: 700px) {
+  /* Card 02 (Draft) and any other 2-col layout inside a mockup —
+     stack vertically so each column gets full width. */
+  .cap-d-right [style*="grid-template-columns:1fr 1fr"],
+  .cap-d-right [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Card 07 (System Interoperability) uses a 3-col [source | arrow
+     | dest] grid. Stack source and dest, drop the arrow — the
+     visual flow reads fine top-to-bottom. */
+  .cap-d-right [style*="grid-template-columns:1fr 30px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .cap-d-right [style*="grid-template-columns:1fr 30px 1fr"] > *:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Card 05 patient table — 4 cols crush on phones. Keep only the
+     patient identifier and the diagnosis (the two useful cells);
+     hide SSN and Medical ID columns since they're just redaction
+     bars and the meaning survives without them. */
+  .cap-d-right [style*="grid-template-columns:1.2fr 1fr 1fr 1.4fr"] {
+    grid-template-columns: 1fr 1.4fr !important;
+    gap: 8px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .cap-d-right [style*="grid-template-columns:1.2fr 1fr 1fr 1.4fr"] > *:nth-child(2),
+  .cap-d-right [style*="grid-template-columns:1.2fr 1fr 1fr 1.4fr"] > *:nth-child(3) {
+    display: none !important;
+  }
+}
+
+/* Small phones (≤420px): the mockup chrome-bar URLs sometimes
+   overflow with long paths (e.g. "crm / Nowak Manufacturing").
+   Force them to truncate cleanly. */
+@media (max-width: 420px) {
+  .cap-d-right .vis-panel [style*="padding:10px 14px"][style*="background:#080B16"] {
+    padding: 8px 10px !important;
+    gap: 4px !important;
+  }
+  .cap-d-right .vis-panel [style*="padding:10px 14px"][style*="background:#080B16"] > span:nth-of-type(4),
+  .cap-d-right .vis-panel [style*="padding:10px 14px"][style*="background:#080B16"] > span:nth-of-type(5) {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
