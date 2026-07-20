@@ -4080,11 +4080,11 @@ export const pages = {
   </div>
 </section>
 
-<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding-top:56px;padding-bottom:56px">
-  <div class="si" style="max-width:640px;text-align:center">
+<section class="sec pht-social-sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding-top:64px;padding-bottom:64px">
+  <div class="pht-social-glow" aria-hidden="true"></div>
+  <div class="si" style="max-width:640px;text-align:center;position:relative;z-index:1">
     <div class="sl" style="justify-content:center;display:flex">Follow Us</div>
-    <div class="sh" style="font-size:clamp(22px,2.6vw,30px)">Mirror Advisors, everywhere.</div>
-    <p class="sp" style="margin-left:auto;margin-right:auto;margin-bottom:28px">The company's live social channels. Whichever ones are enabled in the admin panel show here.</p>
+    <div class="sh" style="font-size:clamp(24px,3vw,36px);margin-bottom:36px">Mirror Advisors, <em style="font-style:italic;color:var(--t)">everywhere</em>.</div>
     <!-- pft-social class is what _renderSocialIcons() targets. When the
          page mounts, _INIT.ph_team calls that renderer and fills this
          container with the currently-enabled social icons from the

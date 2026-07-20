@@ -8036,14 +8036,87 @@ body.menu-open { overflow: hidden; }
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-/* Centered social icons row on ph-team. .pft-social already exists
-   from the footer; this variant centers the row and adds a touch
-   more spacing. */
+/* ── PH TEAM · social section ──────────────────────────────────
+   Full-width strip below the team cards. The footer .pft-social
+   pattern is compact by design; here we override the buttons to
+   be larger and more inviting, add an ambient amber glow behind
+   the section, and make hover a real "click me" moment. */
+.pht-social-sec {
+  position: relative;
+  overflow: hidden;
+}
+.pht-social-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 45%, rgba(236,169,52,.10) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 80%, rgba(236,169,52,.05) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
 .pht-socials {
   justify-content: center;
-  margin-top: 4px !important;
+  margin-top: 0 !important;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 14px;
+}
+/* Override the compact footer button styling for this page's row.
+   Bigger tap targets, subtle amber tint at rest, real lift + glow
+   on hover so the buttons read as "portals to our channels" not
+   footer chrome. */
+.pht-socials .pft-social-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(236,169,52,.10) 0%, transparent 65%),
+    rgba(255, 255, 255, .04);
+  border: 1px solid rgba(236, 169, 52, .18);
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s cubic-bezier(.2,.7,.2,1),
+    box-shadow .25s ease;
+  position: relative;
+}
+.pht-socials .pft-social-btn::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(236,169,52,.5), rgba(236,169,52,.15));
+  opacity: 0;
+  transition: opacity .25s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+.pht-socials .pft-social-btn svg {
+  width: 22px;
+  height: 22px;
+  transition: transform .25s ease;
+}
+.pht-socials .pft-social-btn:hover {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(236,169,52,.28) 0%, transparent 70%),
+    rgba(236, 169, 52, .10);
+  border-color: rgba(236, 169, 52, .55);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 24px -8px rgba(236, 169, 52, .35);
+}
+.pht-socials .pft-social-btn:hover::before {
+  opacity: 1;
+}
+.pht-socials .pft-social-btn:hover svg {
+  transform: scale(1.08);
+}
+.pht-socials .pft-social-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .pht-socials { gap: 10px; }
+  .pht-socials .pft-social-btn { width: 48px; height: 48px; border-radius: 12px; }
+  .pht-socials .pft-social-btn svg { width: 20px; height: 20px; }
 }
 
 @media (max-width: 720px) {
