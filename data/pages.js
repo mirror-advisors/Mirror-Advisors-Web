@@ -4056,11 +4056,8 @@ export const pages = {
 
       <!-- Mark · Operations Assistant -->
       <div class="pht-card">
-        <div class="pht-photo" aria-hidden="true">
-          <!-- TODO: replace with photo when available. Drop the file
-               at /public/images/team/mark.jpg and swap this div for:
-               <img src="/images/team/mark.jpg" alt="Mark Adam Atienza" /> -->
-          <div class="pht-initials">MAA</div>
+        <div class="pht-photo">
+          <img src="/images/team/mark-atienza.png" alt="Mark Adam Atienza" width="800" height="800" loading="lazy" decoding="async" />
         </div>
         <div class="pht-name">Mark Adam Atienza</div>
         <div class="pht-title">Operations Assistant</div>
