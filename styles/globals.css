@@ -8036,6 +8036,39 @@ body.menu-open { overflow: hidden; }
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
+
+/* "Save to Contacts" button — links to a .vcf file with a download
+   attribute. On mobile browsers this triggers the native
+   "Add to Contacts" prompt; on desktop it downloads the .vcf. */
+.pht-vcard-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  margin-top: 4px;
+  background: transparent;
+  border: 1px solid rgba(236, 169, 52, .45);
+  border-radius: 10px;
+  color: #ECA934;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.pht-vcard-btn:hover {
+  background: #ECA934;
+  color: #0a0d1a;
+  border-color: #ECA934;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -6px rgba(236, 169, 52, .45);
+}
+.pht-vcard-btn:active { transform: translateY(0); }
+.pht-vcard-btn svg { flex-shrink: 0; }
 /* ── PH TEAM · social section ──────────────────────────────────
    Full-width strip below the team cards. The footer .pft-social
    pattern is compact by design; here we override the buttons to
