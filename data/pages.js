@@ -4034,11 +4034,8 @@ export const pages = {
 
       <!-- Janna · Operations Manager -->
       <div class="pht-card">
-        <div class="pht-photo" aria-hidden="true">
-          <!-- TODO: replace with photo when available. Drop the file
-               at /public/images/team/janna.jpg and swap this div for:
-               <img src="/images/team/janna.jpg" alt="Janna Binea Malicad" /> -->
-          <div class="pht-initials">JBM</div>
+        <div class="pht-photo">
+          <img src="/images/team/janna-malicad.jpg" alt="Janna Binea Malicad" loading="lazy" />
         </div>
         <div class="pht-name">Janna Binea Malicad</div>
         <div class="pht-title">Operations Manager</div>
