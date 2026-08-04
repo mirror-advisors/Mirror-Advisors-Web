@@ -63,6 +63,72 @@ export const pages = {
 </section>
 
 <!-- ============================================================
+     CAPABILITIES
+============================================================ -->
+<section id="capabilities">
+  <div class="section-wrap">
+    <div class="sec-label">What We Build</div>
+    <div class="sec-h">Four Disciplines.<br>One Practice.</div>
+    <p class="sec-sub">Every engagement draws from all four. We don't silo our expertise — your problem gets the full picture.</p>
+
+    <div class="cap-grid">
+      <!-- Card 1 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M7 17a5 5 0 0 1 10 0"/></svg>
+        </div>
+        <div class="cap-title">AI-Powered Apps</div>
+        <div class="cap-desc">We build AI agents that live inside your existing tools &mdash; scoring leads, drafting documents, answering internal questions, and flagging problems before you see them. No new software to learn. No humans in the loop.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#6B9FD4,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(107,159,212,0.09);border:1px solid rgba(107,159,212,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="1.7"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="cap-title">Business Consulting</div>
+        <div class="cap-desc">Before we build anything, we map what you actually have, what&rsquo;s broken, and what&rsquo;s costing you. Then we give you a technology plan that we&rsquo;re accountable for executing &mdash; not a deck that sits in a drawer.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#8B9FD4,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(139,159,212,0.09);border:1px solid rgba(139,159,212,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="1.7"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v3M8.5 15.5l6.5-3.5M7.4 17.5l-1.9-3.3M16.6 17.5l1.9-3.3"/></svg>
+        </div>
+        <div class="cap-title">Systems Integration</div>
+        <div class="cap-desc">Most businesses run 8&ndash;14 tools that don&rsquo;t share data. We build the connections that make your stack behave like one system &mdash; so a deal closed in CRM becomes an invoice in accounting without anyone touching a keyboard.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
+        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
+        
+        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="cap-title">ERP Implementation</div>
+        <div class="cap-desc">ERP projects have a notorious failure rate. Ours don&rsquo;t miss. We handle the full cycle &mdash; blueprint, migration, configuration, training &mdash; and we don&rsquo;t hand you off to a support queue when it goes live.</div>
+        <div class="cap-arrow-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      SCREENS
 ============================================================ -->
 <section id="screens">
@@ -319,72 +385,6 @@ export const pages = {
         <div class="screen-caption">
           <div class="screen-caption-title">Infinity Mirror — My Queue</div>
           <div class="screen-caption-text">Live work tracking for every Mirror Advisors engagement &mdash; in-flight tasks, queued work, items waiting on you, and a 30-day delivery log.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CAPABILITIES
-============================================================ -->
-<section id="capabilities">
-  <div class="section-wrap">
-    <div class="sec-label">What We Build</div>
-    <div class="sec-h">Four Disciplines.<br>One Practice.</div>
-    <p class="sec-sub">Every engagement draws from all four. We don't silo our expertise — your problem gets the full picture.</p>
-
-    <div class="cap-grid">
-      <!-- Card 1 -->
-      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
-        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
-        
-        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M7 17a5 5 0 0 1 10 0"/></svg>
-        </div>
-        <div class="cap-title">AI-Powered Apps</div>
-        <div class="cap-desc">We build AI agents that live inside your existing tools &mdash; scoring leads, drafting documents, answering internal questions, and flagging problems before you see them. No new software to learn. No humans in the loop.</div>
-        <div class="cap-arrow-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
-        <div class="cap-card-accent" style="background:linear-gradient(90deg,#6B9FD4,transparent);"></div>
-        
-        <div class="cap-icon-box" style="background:rgba(107,159,212,0.09);border:1px solid rgba(107,159,212,0.2);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="1.7"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <div class="cap-title">Business Consulting</div>
-        <div class="cap-desc">Before we build anything, we map what you actually have, what&rsquo;s broken, and what&rsquo;s costing you. Then we give you a technology plan that we&rsquo;re accountable for executing &mdash; not a deck that sits in a drawer.</div>
-        <div class="cap-arrow-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
-        <div class="cap-card-accent" style="background:linear-gradient(90deg,#8B9FD4,transparent);"></div>
-        
-        <div class="cap-icon-box" style="background:rgba(139,159,212,0.09);border:1px solid rgba(139,159,212,0.2);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="1.7"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v3M8.5 15.5l6.5-3.5M7.4 17.5l-1.9-3.3M16.6 17.5l1.9-3.3"/></svg>
-        </div>
-        <div class="cap-title">Systems Integration</div>
-        <div class="cap-desc">Most businesses run 8&ndash;14 tools that don&rsquo;t share data. We build the connections that make your stack behave like one system &mdash; so a deal closed in CRM becomes an invoice in accounting without anyone touching a keyboard.</div>
-        <div class="cap-arrow-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B9FD4" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="cap-card" onclick="go('services')" style="cursor:pointer">
-        <div class="cap-card-accent" style="background:linear-gradient(90deg,#ECA934,transparent);"></div>
-        
-        <div class="cap-icon-box" style="background:rgba(236,169,52,0.09);border:1px solid rgba(236,169,52,0.2);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-        </div>
-        <div class="cap-title">ERP Implementation</div>
-        <div class="cap-desc">ERP projects have a notorious failure rate. Ours don&rsquo;t miss. We handle the full cycle &mdash; blueprint, migration, configuration, training &mdash; and we don&rsquo;t hand you off to a support queue when it goes live.</div>
-        <div class="cap-arrow-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
       </div>
     </div>
