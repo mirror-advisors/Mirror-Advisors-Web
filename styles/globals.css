@@ -617,7 +617,6 @@ img { max-width: 100%; }
 
 #screens {
   padding: 100px 0;
-  background: #0C0F22;
 }
 
 .screens-grid {
@@ -794,7 +793,7 @@ img { max-width: 100%; }
 /* ============================================================
    CAPABILITIES
 ============================================================ */
-#capabilities { padding: 100px 0; }
+#capabilities { padding: 100px 0; background: #0C0F22; }
 
 .cap-grid {
   display: grid;
