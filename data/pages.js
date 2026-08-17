@@ -1796,6 +1796,20 @@ export const pages = {
             </select>
             <div class="fg-err" data-for="timeline"></div>
           </div>
+          <!-- Cloudflare Turnstile widget. Turnstile's api.js (loaded via
+               pages/contact.js) auto-renders every .cf-turnstile div on
+               the page and, on success, populates a hidden input named
+               cf-turnstile-response with the verification token. The
+               submit handler reads that token and forwards it as
+               payload.turnstileToken to /api/contact, which verifies it
+               server-side before the Zoho forward. -->
+          <div class="fg cf-fg" style="align-items:center">
+            <div class="cf-turnstile"
+                 data-sitekey="0x4AAAAAAES1viXZkZvIHoPY"
+                 data-action="contact"
+                 data-theme="dark"></div>
+            <div class="fg-err" data-for="cfTurnstile"></div>
+          </div>
           <div class="privacy-note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Your information is never shared or sold. We use it only to prepare for our conversation with you.

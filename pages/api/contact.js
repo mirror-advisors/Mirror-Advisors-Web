@@ -73,8 +73,9 @@ export default async function handler(req, res) {
   const company  = String(body.company  || '').trim();
   const size     = String(body.size     || '').trim();
   const message  = String(body.message  || '').trim();
-  const timeline = normaliseTimeline(body.timeline);
-  const services = Array.isArray(body.services) ? body.services : [];
+  const timeline       = normaliseTimeline(body.timeline);
+  const services       = Array.isArray(body.services) ? body.services : [];
+  const turnstileToken = String(body.turnstileToken || '').trim();
 
   // Server-side validation mirrors the client. Keeps the API robust against
   // direct POSTs that skip the browser form.
@@ -91,9 +92,55 @@ export default async function handler(req, res) {
   if (!timeline || !ALLOWED_TIMELINES.has(timeline))           errors.timeline = 'Please pick a timeline.';
   if (!services.length || !services.every(s => ALLOWED_SERVICES.has(s)))
     errors.services = 'Please pick at least one service.';
+  if (!turnstileToken)                                         errors.cfTurnstile = 'Verification challenge required.';
 
   if (Object.keys(errors).length) {
     return res.status(400).json({ ok: false, error: 'validation', fields: errors });
+  }
+
+  // ── Cloudflare Turnstile — verify the token BEFORE forwarding to Zoho ──
+  // POST the token + our secret to Cloudflare's siteverify endpoint. On
+  // success it returns {success: true, hostname, action, ...}. On failure
+  // ({success: false, "error-codes": [...]}) we bail with a friendly 400.
+  // TURNSTILE_SECRET must be set in Vercel env vars (Production + Preview
+  // + Development). Cloudflare secrets start with "0x4AAAAAAA...".
+  const turnstileSecret = process.env.TURNSTILE_SECRET;
+  if (!turnstileSecret) {
+    console.error('[/api/contact] TURNSTILE_SECRET env var missing — cannot verify challenge');
+    return res.status(500).json({
+      ok:       false,
+      error:    'turnstile_misconfigured',
+      friendly: 'Verification service is unavailable. Please email info@mirroradvisors.com instead.',
+    });
+  }
+  try {
+    const remoteIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim()
+                  || (req.socket && req.socket.remoteAddress) || '';
+    const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret:   turnstileSecret,
+        response: turnstileToken,
+        remoteip: remoteIp,
+      }),
+    });
+    const cfData = await cfRes.json().catch(() => ({}));
+    if (!cfData.success) {
+      console.error('[/api/contact] Turnstile verify failed:', cfData['error-codes'] || cfData);
+      return res.status(400).json({
+        ok:       false,
+        error:    'turnstile_failed',
+        friendly: 'Verification failed. Please refresh the page and try again.',
+      });
+    }
+  } catch (e) {
+    console.error('[/api/contact] Turnstile verify threw:', e && e.message ? e.message : e);
+    return res.status(502).json({
+      ok:       false,
+      error:    'turnstile_unreachable',
+      friendly: 'Verification service is temporarily unavailable. Please try again in a moment.',
+    });
   }
 
   // Build multipart/form-data using Zoho's exact field names. The native
