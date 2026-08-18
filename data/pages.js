@@ -1796,6 +1796,17 @@ export const pages = {
             </select>
             <div class="fg-err" data-for="timeline"></div>
           </div>
+          <!-- Honeypot. Hidden from real users via display:none and
+               aria-hidden, tabindex="-1" so keyboard users skip it,
+               autocomplete="off" so browsers don't autofill it. Bots
+               that blindly scrape and fill every input will populate
+               this. The API returns 200 OK silently on any submission
+               with a value here, so the bot thinks it succeeded and
+               doesn't retry with a smarter payload. -->
+          <div class="fg hp-fg" aria-hidden="true" style="display:none">
+            <label for="website_url">Website (leave blank)</label>
+            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+          </div>
           <!-- Cloudflare Turnstile widget. Turnstile's api.js (loaded via
                pages/contact.js) auto-renders every .cf-turnstile div on
                the page and, on success, populates a hidden input named

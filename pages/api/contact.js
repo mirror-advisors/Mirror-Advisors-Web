@@ -66,6 +66,20 @@ export default async function handler(req, res) {
   }
   if (!body || typeof body !== 'object') return bad(res, 400, 'invalid_body');
 
+  // ── Honeypot ──────────────────────────────────────────────────────────
+  // Silent bot filter. The visible form hides the website_url input with
+  // display:none + tabindex="-1"; real users never touch it. Bots that
+  // blindly fill every input will populate it. When that happens we drop
+  // the submission on the floor and return 200 OK so the bot logs a
+  // "success" and moves on without retrying with a smarter payload.
+  // Must run BEFORE any other validation so error responses can't teach
+  // a bot which fields are required.
+  const honeypot = String(body.website_url || '').trim();
+  if (honeypot) {
+    console.warn('[/api/contact] honeypot tripped — dropping bot submission silently');
+    return res.status(200).json({ ok: true });
+  }
+
   const fname    = String(body.fname    || '').trim();
   const lname    = String(body.lname    || '').trim();
   const email    = String(body.email    || '').trim();
