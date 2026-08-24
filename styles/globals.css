@@ -8420,3 +8420,98 @@ body.menu-open { overflow: hidden; }
   .ai-chat-bubble { font-size: 12px; padding: 9px 12px; }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence/chatbot — long-form article page.
+   Editorial typography: narrow measure, generous leading, amber
+   accents on h2 rules and inline code, italicized emphasis, and
+   a pull-quote block for the closer.
+   ───────────────────────────────────────────────────────────────── */
+.ai-article {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--tx);
+}
+.ai-article-lede {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--tx);
+  font-weight: 300;
+  margin: 0 0 44px;
+  letter-spacing: -.005em;
+}
+.ai-article-h {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--tx);
+  letter-spacing: -.015em;
+  line-height: 1.25;
+  margin: 44px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  position: relative;
+}
+.ai-article-h::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 44px;
+  height: 2px;
+  background: #ECA934;
+}
+.ai-article-h:first-of-type {
+  margin-top: 8px;
+}
+.ai-article-p {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.78;
+  color: var(--mid);
+  margin: 0 0 20px;
+  font-weight: 300;
+}
+.ai-article-p strong {
+  color: var(--tx);
+  font-weight: 600;
+}
+.ai-article-p em {
+  color: var(--tx);
+  font-style: italic;
+}
+.ai-article-p code {
+  font-family: 'SF Mono', ui-monospace, 'Menlo', monospace;
+  font-size: 13.5px;
+  background: rgba(236, 169, 52, .08);
+  border: 1px solid rgba(236, 169, 52, .18);
+  color: #ECA934;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.ai-article-pullquote {
+  font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--tx);
+  margin: 44px 0 0;
+  padding: 22px 26px;
+  border-left: 3px solid #ECA934;
+  background: linear-gradient(90deg, rgba(236, 169, 52, .06) 0%, transparent 100%);
+  border-radius: 0 10px 10px 0;
+  text-wrap: balance;
+}
+
+/* Small back-link above the hero badge on the article page */
+.ai-back-link { margin-bottom: 22px; }
+.ai-back-link a { transition: color .18s ease, gap .18s ease; }
+.ai-back-link a:hover { color: var(--t) !important; }
+
+@media (max-width: 720px) {
+  .ai-article-lede    { font-size: 17px; margin-bottom: 32px; }
+  .ai-article-h       { font-size: 19px; margin: 36px 0 14px; padding-top: 22px; }
+  .ai-article-p       { font-size: 15px; line-height: 1.72; margin-bottom: 16px; }
+  .ai-article-pullquote { font-size: 17px; padding: 18px 20px; margin-top: 32px; }
+}
+

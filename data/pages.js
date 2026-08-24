@@ -4142,7 +4142,8 @@ export const pages = {
         <div class="cap-d-h">A live conversation, wired to your business.</div>
         <p class="cap-d-p">The chatbot is the front door. Every visitor walks in with a question &mdash; and the assistant is what answers it, in your voice, from your knowledge base, at any hour of the day.</p>
         <p class="cap-d-p">We build assistants powered by Claude, private to your data, and grounded in how you actually explain what you do. They can hold a real conversation, ask the right clarifying questions, capture qualified leads, and hand them to your team with the full context of the exchange.</p>
-        <p class="cap-d-p" style="margin-bottom:0">No off-the-shelf widget. No canned responses. Every deployment is tuned on your services, your process, and your voice &mdash; until the conversation feels like it&#39;s coming from someone who actually works there.</p>
+        <p class="cap-d-p">No off-the-shelf widget. No canned responses. Every deployment is tuned on your services, your process, and your voice &mdash; until the conversation feels like it&#39;s coming from someone who actually works there.</p>
+        <a href="/artificial-intelligence/chatbot" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">See How We Build It <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       </div>
 
       <!-- RIGHT · animated chat mockup -->
@@ -4190,5 +4191,69 @@ export const pages = {
     </div>
   </div>
 </section>
+`,
+  'ai-chatbot': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in">
+    <div class="ai-back-link"><a href="/artificial-intelligence" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to AI</a></div>
+    <div class="badge">Article</div>
+    <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,54px);letter-spacing:-.03em;line-height:1.06">How we build<br>the <span style="color:var(--t)">chatbot</span>.</h1>
+    <p class="ph-sub">Prompt to deployment, in prose. What actually works when the coding tool is the coder.</p>
+  </div>
+</div>
+
+<section class="sec" style="padding-top:56px;padding-bottom:96px">
+  <div class="si">
+    <article class="ai-article">
+
+      <p class="ai-article-lede">A chatbot used to be a two-week project. With an AI coding assistant sitting next to you &mdash; Claude Code, Cursor, Windsurf, whichever one you like &mdash; it&#39;s a Saturday afternoon. This is the workflow that actually works.</p>
+
+      <h2 class="ai-article-h">The mindset shift</h2>
+      <p class="ai-article-p">Stop thinking about <em>how</em> to write the code. Start thinking about <em>what</em> you want, one small chunk at a time, and let the AI write it. Your job is to describe the outcome, verify each step, and know when to move on. If a step doesn&#39;t work, you don&#39;t debug from scratch &mdash; you tell the AI what happened and it fixes it.</p>
+      <p class="ai-article-p">The trick is ordering the chunks so each one produces something you can <em>test right now</em>.</p>
+
+      <h2 class="ai-article-h">What you need before you start</h2>
+      <p class="ai-article-p">Three accounts and one tool: <strong>Anthropic</strong> (for the API key that powers the model), <strong>Supabase</strong> (for the database), and an IDE with an AI assistant (Cursor, Windsurf, or Claude Code in your terminal). Total signup time: under ten minutes.</p>
+
+      <h2 class="ai-article-h">The stack</h2>
+      <p class="ai-article-p">Next.js on the frontend, Supabase for the database, Claude as the model. Not because it&#39;s the only way &mdash; but because it&#39;s the fewest moving parts. One deploy target (Vercel), one database, one AI API key. You can swap any of them later.</p>
+
+      <h2 class="ai-article-h">Building it, one prompt at a time</h2>
+      <p class="ai-article-p"><strong>Start with the shell.</strong> Ask the AI to spin up a fresh Next.js project with the SDKs you&#39;ll need and placeholder environment variables. Don&#39;t paste your real keys into the prompt &mdash; the AI writes the config, you paste the keys yourself into <code>.env.local</code>. Verify with <code>npm run dev</code>. If the dev server runs, move on. If not, tell the AI the exact error message and it fixes it.</p>
+      <p class="ai-article-p"><strong>Then the widget, with no brains.</strong> Describe the UI: a floating button, a slide-out panel, a message list, an input. Tell it to hard-code a dummy "hello" message so you can see something on screen. This step doesn&#39;t touch the AI or the database yet &mdash; it&#39;s just proving the visual shell renders.</p>
+      <p class="ai-article-p"><strong>Then the API endpoint, with no brains either.</strong> Ask the AI to create <code>pages/api/chat.js</code> that accepts a POST with a messages array and returns <code>{answer: "Echo: " + last message}</code>. Test with <code>curl</code>. This proves the plumbing between browser and server works before you complicate it.</p>
+      <p class="ai-article-p"><strong>Then wire them together.</strong> Tell the AI to have the widget POST to <code>/api/chat</code> when the user hits send, show a typing indicator while waiting, and render the response. Now you have a "chatbot" that echoes. Congratulations &mdash; the whole architecture works. Everything after this is swapping the echo for something smarter.</p>
+      <p class="ai-article-p"><strong>Then bring in Claude.</strong> Replace the echo with a real call to Anthropic. One prompt: <em>"In <code>pages/api/chat.js</code>, use the <code>@anthropic-ai/sdk</code> to call Claude with the incoming messages. Use <code>claude-sonnet-4-5</code>. System prompt: you are a friendly assistant for {my company}."</em> The AI writes the twenty lines of code. You test with a real question and get a real reply. This is the moment it feels like magic.</p>
+      <p class="ai-article-p"><strong>Then the database.</strong> Ask the AI to write the SQL migration for three tables: conversations, messages, and leads. Include row-level security. Run the SQL in Supabase&#39;s SQL Editor &mdash; one paste, one click. Now the schema exists. Then have the AI update your API route to insert every message into the database as it flows through. Suddenly you have a permanent record of every conversation, and you didn&#39;t write a single SQL query yourself.</p>
+      <p class="ai-article-p"><strong>Then lead capture.</strong> This is the clever bit. Extend the system prompt so Claude appends a hidden JSON block whenever a visitor gives their name or email. Then have the AI parse that block out of the response server-side, insert into the leads table, and strip it before returning the visible text. Now your chatbot doesn&#39;t just chat &mdash; it captures qualified prospects while they think they&#39;re just asking questions.</p>
+      <p class="ai-article-p"><strong>Then safety.</strong> Rate limits, input length caps, history truncation. One prompt covers all three. This is boring but it&#39;s the difference between a demo and a production tool. Test by spamming your own endpoint until it starts rejecting you.</p>
+      <p class="ai-article-p"><strong>Then deploy.</strong> Push to GitHub, connect to Vercel, paste your environment variables into the dashboard. Vercel builds automatically. Two minutes later your chatbot is live on the internet. Ask the AI: <em>"Give me a checklist of every environment variable I need in Vercel."</em> It hands you the list. You paste, redeploy, done.</p>
+
+      <h2 class="ai-article-h">What actually makes this work</h2>
+      <p class="ai-article-p"><strong>Small verifiable steps.</strong> Never let the AI write more than one chunk between tests. If step 4 fails, you know exactly what broke. If you asked for the whole app in one prompt and got a broken app back, you&#39;d have no idea where to start debugging.</p>
+      <p class="ai-article-p"><strong>Real error messages.</strong> When something breaks, paste the exact error into the AI. Don&#39;t paraphrase. The AI can read a stack trace better than you can.</p>
+      <p class="ai-article-p"><strong>Verifying visually.</strong> After every step, look at the browser or hit the endpoint with <code>curl</code>. Don&#39;t trust that the code works because the AI says so &mdash; check it yourself.</p>
+      <p class="ai-article-p"><strong>Knowing when to stop.</strong> The chatbot doesn&#39;t need streaming, doesn&#39;t need Markdown rendering, doesn&#39;t need voice input on day one. Ship the boring version, put it in front of real users, then let <em>their</em> behavior tell you what to add next.</p>
+
+      <h2 class="ai-article-h">The last thing</h2>
+      <p class="ai-article-p">The hardest part of this build isn&#39;t the code. It&#39;s the <strong>system prompt</strong> &mdash; the instructions you give Claude about who it&#39;s supposed to be and how to talk. Spend more time there than anywhere else. Read a hundred real conversations from your logs, notice where the bot answered something wrong or missed a lead, and tune the prompt. That&#39;s the whole product.</p>
+
+      <blockquote class="ai-article-pullquote">You don&#39;t need to be a developer to do this. You need to be someone who can describe what they want clearly, verify the result honestly, and iterate until it&#39;s right. The AI does the rest.</blockquote>
+
+    </article>
+  </div>
+</section>
+
+<div class="ctas">
+  <div class="ctas-glow"></div>
+  <h2>Want one of these for your business?</h2>
+  <p>Every AI engagement starts with Scope &mdash; a fixed-fee blueprint that maps exactly what your assistant should know, do, and never do.</p>
+  <div class="ctas-btns">
+    <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
+    <a href="/artificial-intelligence" style="text-decoration:none"><button class="bs" style="padding:13px 26px">Back to AI</button></a>
+  </div>
+</div>
 `,
 };
