@@ -8806,6 +8806,346 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 900px) {
   .ai-terminal { max-width: 100%; }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   Solo variant of the "keep reading" card · wider, has a sub
+   ───────────────────────────────────────────────────────────────── */
+.ai-article-next-solo {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 34px 28px;
+}
+.ai-article-next-card-sub {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 60ch;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence/chatbot/steps — step-by-step playbook
+   Hero right column carries a "Build progress" checklist visual.
+   Body is 12 numbered step cards, each with a prompt block +
+   verify line or checklist.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Hero right column · animated progress checklist */
+.ai-progress {
+  width: 100%;
+  max-width: 440px;
+  background: #0B0F1D;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .55);
+  margin-left: auto;
+}
+.ai-progress-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #060810;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+.ai-progress-chrome-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tx);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ai-progress-chrome-count {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--mid);
+}
+.ai-progress-current { color: #ECA934; font-weight: 700; }
+
+.ai-progress-list {
+  padding: 16px 20px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ai-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.4;
+}
+.ai-progress-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255, 255, 255, .18);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .18s ease, border-color .18s ease;
+}
+.ai-progress-item.ai-progress-done {
+  color: var(--tx);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, .18);
+  text-decoration-thickness: 1px;
+}
+.ai-progress-item.ai-progress-done .ai-progress-box {
+  background: #ECA934;
+  border-color: #ECA934;
+}
+.ai-progress-item.ai-progress-doing { color: var(--tx); font-weight: 500; }
+.ai-progress-item.ai-progress-doing .ai-progress-box {
+  border-color: #ECA934;
+  background: rgba(236, 169, 52, .12);
+}
+.ai-progress-dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ECA934;
+  box-shadow: 0 0 6px #ECA934;
+  animation: aiChatStatusPulse 1.6s ease-in-out infinite;
+}
+.ai-progress-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  margin-top: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--dim);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ai-progress-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ECA934;
+  box-shadow: 0 0 6px #ECA934;
+  animation: aiChatStatusPulse 1.8s ease-in-out infinite;
+}
+
+/* Body · steps container */
+.ai-steps {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.ai-step {
+  background: rgba(255, 255, 255, .025);
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 14px;
+  padding: 30px 32px 28px;
+  transition: border-color .22s ease, background .22s ease;
+}
+.ai-step:hover {
+  border-color: rgba(236, 169, 52, .22);
+  background: rgba(255, 255, 255, .035);
+}
+.ai-step-prelude {
+  background: rgba(236, 169, 52, .04);
+  border-color: rgba(236, 169, 52, .18);
+}
+.ai-step-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.ai-step-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #ECA934;
+  letter-spacing: -.02em;
+  line-height: 1;
+  padding: 10px 14px;
+  background: rgba(236, 169, 52, .08);
+  border: 1px solid rgba(236, 169, 52, .3);
+  border-radius: 10px;
+  flex-shrink: 0;
+  min-width: 52px;
+  text-align: center;
+}
+.ai-step-num-prelude {
+  font-size: 16px;
+  color: #ECA934;
+  min-width: 44px;
+  padding: 12px 14px;
+}
+.ai-step-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--tx);
+  letter-spacing: -.015em;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+.ai-step-prompt-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--t);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ai-step-prompt {
+  font-family: Georgia, 'Iowan Old Style', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--tx);
+  margin: 0 0 18px;
+  padding: 18px 22px;
+  background: rgba(236, 169, 52, .05);
+  border-left: 3px solid #ECA934;
+  border-radius: 0 10px 10px 0;
+}
+.ai-step-prompt strong {
+  color: #ECA934;
+  font-weight: 700;
+  font-style: normal;
+}
+.ai-step-prompt code {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-style: normal;
+  font-size: 13px;
+  background: rgba(236, 169, 52, .1);
+  border: 1px solid rgba(236, 169, 52, .2);
+  color: #ECA934;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.ai-step-verify {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.6;
+  padding: 10px 14px;
+  background: rgba(16, 185, 129, .04);
+  border: 1px solid rgba(16, 185, 129, .16);
+  border-radius: 8px;
+}
+.ai-step-verify code {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .1);
+  color: var(--tx);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.ai-step-verify-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #10B981;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.ai-step-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ai-step-checklist li {
+  position: relative;
+  padding-left: 26px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 14.5px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+.ai-step-checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(236, 169, 52, .4);
+  background: rgba(236, 169, 52, .04);
+}
+.ai-step-checklist li code {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  background: rgba(236, 169, 52, .08);
+  border: 1px solid rgba(236, 169, 52, .18);
+  color: #ECA934;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.ai-step-checklist li strong { color: var(--tx); font-weight: 600; }
+
+/* Rule-of-thumb closer block */
+.ai-step-rule {
+  background: rgba(236, 169, 52, .06);
+  border: 1px solid rgba(236, 169, 52, .24);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-top: 8px;
+}
+.ai-step-rule-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ECA934;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ai-step-rule-body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 15px;
+  color: var(--tx);
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .ai-progress { max-width: 100%; }
+  .ai-progress-hide-sm { display: none; }
+}
+@media (max-width: 720px) {
+  .ai-step { padding: 22px 20px 20px; }
+  .ai-step-header { gap: 12px; margin-bottom: 16px; }
+  .ai-step-num { font-size: 18px; min-width: 44px; padding: 8px 10px; }
+  .ai-step-title { font-size: 18px; }
+  .ai-step-prompt { font-size: 14px; padding: 14px 16px; }
+  .ai-step-verify { font-size: 13px; padding: 9px 12px; flex-direction: column; gap: 4px; }
+  .ai-step-checklist li { font-size: 13.5px; padding-left: 24px; }
+  .ai-step-rule { padding: 22px 20px; }
+  .ai-step-rule-body { font-size: 14px; }
+  .ai-article-next-solo { padding: 26px 22px 22px; }
+}
 @media (max-width: 720px) {
   .ai-article-num { font-size: 10px; padding: 3px 7px; margin-right: 10px; }
   .ai-article-midquote { font-size: 18px; margin: 30px 0; padding-left: 18px; }

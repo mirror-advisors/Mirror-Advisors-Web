@@ -4303,21 +4303,13 @@ export const pages = {
     </article>
 
     <div class="ai-article-next">
-      <div class="ai-article-next-inner">
-        <div class="ai-article-next-eyebrow">Keep reading</div>
-        <div class="ai-article-next-grid">
-          <a href="/ai-field-guide" class="ai-article-next-card" style="text-decoration:none;color:inherit">
-            <div class="ai-article-next-card-tag">Field Guide</div>
-            <div class="ai-article-next-card-h">Nine capabilities of AI inside a business.</div>
-            <div class="ai-article-next-card-cta">Read the guide <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </a>
-          <a href="/services/custom-ai-application" class="ai-article-next-card" style="text-decoration:none;color:inherit">
-            <div class="ai-article-next-card-tag">Our Practice</div>
-            <div class="ai-article-next-card-h">The AI service: custom Claude applications.</div>
-            <div class="ai-article-next-card-cta">See the service <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </a>
-        </div>
-      </div>
+      <div class="ai-article-next-eyebrow">Prefer the checklist?</div>
+      <a href="/artificial-intelligence/chatbot/steps" class="ai-article-next-card ai-article-next-solo" style="text-decoration:none;color:inherit">
+        <div class="ai-article-next-card-tag">The Playbook</div>
+        <div class="ai-article-next-card-h">Twelve steps, prompt to deployment.</div>
+        <p class="ai-article-next-card-sub">The same build, formatted as a step-by-step checklist. Every step gives you the exact prompt to paste into your AI assistant, plus a way to verify it worked before moving on.</p>
+        <div class="ai-article-next-card-cta">Open the playbook <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
     </div>
   </div>
 </section>
@@ -4326,6 +4318,209 @@ export const pages = {
   <div class="ctas-glow"></div>
   <h2>Want one of these for your business?</h2>
   <p>Every AI engagement starts with Scope &mdash; a fixed-fee blueprint that maps exactly what your assistant should know, do, and never do.</p>
+  <div class="ctas-btns">
+    <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
+    <a href="/artificial-intelligence" style="text-decoration:none"><button class="bs" style="padding:13px 26px">Back to AI</button></a>
+  </div>
+</div>
+`,
+  'ai-chatbot-steps': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in ph-in-split" style="align-items:center">
+    <div>
+      <div class="ai-back-link"><a href="/artificial-intelligence/chatbot" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to the Article</a></div>
+      <div class="badge">The Chatbot &middot; Playbook</div>
+      <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,54px);letter-spacing:-.03em;line-height:1.06">The <span style="color:var(--t)">step-by-step</span>.</h1>
+      <p class="ph-sub">Twelve steps you can follow start to finish. Copy each prompt into your AI assistant, verify the outcome, then move on to the next.</p>
+      <div class="ai-article-meta">
+        <span class="ai-article-meta-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>12 steps</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">Copy &amp; paste</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">By Mirror Advisors</span>
+      </div>
+    </div>
+    <div class="ph-right" aria-hidden="true">
+      <div class="ai-progress">
+        <div class="ai-progress-chrome">
+          <div class="ai-progress-chrome-title">Build progress</div>
+          <div class="ai-progress-chrome-count"><span class="ai-progress-current">3</span> / 12</div>
+        </div>
+        <div class="ai-progress-list">
+          <div class="ai-progress-item ai-progress-done"><span class="ai-progress-box"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0a0d1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Create the project</div>
+          <div class="ai-progress-item ai-progress-done"><span class="ai-progress-box"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0a0d1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Add your API keys</div>
+          <div class="ai-progress-item ai-progress-doing"><span class="ai-progress-box"><span class="ai-progress-dot-inner"></span></span>Build the chat widget UI</div>
+          <div class="ai-progress-item"><span class="ai-progress-box"></span>Build the backend endpoint</div>
+          <div class="ai-progress-item"><span class="ai-progress-box"></span>Wire the widget to the endpoint</div>
+          <div class="ai-progress-item"><span class="ai-progress-box"></span>Add Claude</div>
+          <div class="ai-progress-item ai-progress-hide-sm"><span class="ai-progress-box"></span>Set up the database</div>
+          <div class="ai-progress-item ai-progress-hide-sm"><span class="ai-progress-box"></span>Persist conversations</div>
+          <div class="ai-progress-item ai-progress-hide-sm"><span class="ai-progress-box"></span>Add lead capture</div>
+        </div>
+        <div class="ai-progress-status">
+          <span class="ai-progress-status-dot"></span>
+          <span>in progress &middot; ~5 min per step</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="padding-top:56px;padding-bottom:96px">
+  <div class="si">
+    <article class="ai-steps">
+
+      <!-- Before you start -->
+      <div class="ai-step ai-step-prelude">
+        <div class="ai-step-header">
+          <div class="ai-step-num ai-step-num-prelude">&#9679;</div>
+          <h2 class="ai-step-title">Before you start</h2>
+        </div>
+        <ul class="ai-step-checklist">
+          <li>You have a project idea &mdash; what should the bot know about?</li>
+          <li>Sign up for <strong>Anthropic</strong> at console.anthropic.com and grab an API key.</li>
+          <li>Sign up for <strong>Supabase</strong> at supabase.com and grab the URL, anon key, and service role key.</li>
+          <li>Have an IDE with an AI coding assistant &mdash; Claude Code, Cursor, or Windsurf.</li>
+        </ul>
+      </div>
+
+      <!-- Step 01 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">01</div><h2 class="ai-step-title">Create the project</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Create a new Next.js Pages Router project called <strong>my-chatbot</strong>. Install <strong>@anthropic-ai/sdk</strong> and <strong>@supabase/supabase-js</strong>. Add a <code>.env.local</code> with placeholders for ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, and SUPABASE_SERVICE_ROLE_KEY. Do not commit <code>.env.local</code>.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span><code>npm run dev</code> starts on http://localhost:3000.</div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">02</div><h2 class="ai-step-title">Add your API keys</h2></div>
+        <ul class="ai-step-checklist">
+          <li>Open <code>.env.local</code>.</li>
+          <li>Paste your Anthropic API key.</li>
+          <li>Paste your Supabase URL and both keys.</li>
+          <li>Restart <code>npm run dev</code>.</li>
+        </ul>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">03</div><h2 class="ai-step-title">Build the chat widget UI</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Add a chat widget to my Next.js site. A fixed bottom-right floating button that opens a panel with a header, a scrollable message list, and a text input. Use CSS modules. Match a dark theme with an amber accent. Do not wire up any backend yet &mdash; just the UI, with a dummy "hello" message hard-coded in the list.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Button appears bottom-right; clicking opens the panel; dummy message renders.</div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">04</div><h2 class="ai-step-title">Build the backend endpoint</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Create a Next.js API route at <strong>pages/api/chat.js</strong>. Accept POST with <code>{messages: [{role, content}]}</code> in the body. For now, just return <code>{answer: "Echo: " + last user message}</code>. Add basic input validation.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span><code>curl -X POST localhost:3000/api/chat -H "Content-Type: application/json" -d '{"messages":[{"role":"user","content":"hi"}]}'</code> returns the echo.</div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">05</div><h2 class="ai-step-title">Wire the widget to the endpoint</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Update the chat widget: when the user sends a message, POST the message history to <code>/api/chat</code>, show a typing indicator while waiting, then render the response as a bot bubble. Maintain the history in React state.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Typing a message shows the echo bubble.</div>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">06</div><h2 class="ai-step-title">Add Claude</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">In <strong>pages/api/chat.js</strong>, replace the echo with a real call to Claude. Use @anthropic-ai/sdk. Model: <strong>claude-sonnet-4-5</strong>. Max tokens: 1024. Add a system prompt: "You are a friendly assistant for a company called {your company}." Read the API key from process.env.ANTHROPIC_API_KEY.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Send a real message and get a real response from Claude.</div>
+      </div>
+
+      <!-- Step 07 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">07</div><h2 class="ai-step-title">Set up the database</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Create a SQL migration for Supabase with three tables: <strong>conversations</strong> (id, visitor_id, started_at), <strong>messages</strong> (id, conversation_id, role, content, ts), and <strong>chat_leads</strong> (id, name, email, phone, message, captured_at). Enable row-level security. Anon can insert; only the service role can read. Give me the SQL as a copy-paste block.</blockquote>
+        <ul class="ai-step-checklist">
+          <li>Run the SQL in Supabase &rarr; SQL Editor.</li>
+          <li>Verify tables appear in the Table Editor.</li>
+        </ul>
+      </div>
+
+      <!-- Step 08 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">08</div><h2 class="ai-step-title">Persist conversations</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Update <strong>pages/api/chat.js</strong>: before calling Claude, insert the incoming user message into the messages table. After Claude replies, insert the assistant message too. Track the conversation_id in the request; if none, create a new conversation row first. Use the service role key server-side.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Send a few messages, then check Supabase &mdash; messages appear in the table.</div>
+      </div>
+
+      <!-- Step 09 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">09</div><h2 class="ai-step-title">Add lead capture</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Extend the system prompt so Claude appends <code>&lt;&lt;LEAD&gt;&gt;{json}&lt;&lt;END_LEAD&gt;&gt;</code> when the visitor gives their name, email, or phone. In pages/api/chat.js, parse that block out of the response, insert it into chat_leads, and strip the block from the returned text so the user doesn&#39;t see it.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Tell the bot "I&#39;m Alex, alex@test.com". A row appears in chat_leads and the JSON block is stripped from the visible response.</div>
+      </div>
+
+      <!-- Step 10 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">10</div><h2 class="ai-step-title">Add safety</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Add basic safety to pages/api/chat.js: rate-limit by IP (max 20 requests per minute), reject messages longer than 4000 characters, and cap the message history sent to Claude at the last 20 turns.</blockquote>
+        <div class="ai-step-verify"><span class="ai-step-verify-label">Verify</span>Send 25 messages fast &mdash; the 21st onward gets rate-limited.</div>
+      </div>
+
+      <!-- Step 11 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">11</div><h2 class="ai-step-title">Deploy</h2></div>
+        <div class="ai-step-prompt-label">Prompt your AI assistant</div>
+        <blockquote class="ai-step-prompt">Prepare the app for Vercel deployment. Confirm .env.local is in .gitignore. Give me a checklist of every environment variable I need to add in the Vercel dashboard.</blockquote>
+        <ul class="ai-step-checklist">
+          <li>Push to GitHub.</li>
+          <li>Import the repo into Vercel.</li>
+          <li>Add environment variables in Vercel (all four from Step 02).</li>
+          <li>Deploy.</li>
+          <li>Test the widget on the deployed URL.</li>
+        </ul>
+      </div>
+
+      <!-- Step 12 -->
+      <div class="ai-step">
+        <div class="ai-step-header"><div class="ai-step-num">12</div><h2 class="ai-step-title">Monitor and iterate</h2></div>
+        <ul class="ai-step-checklist">
+          <li>Watch Vercel function logs for errors (first 24 hours).</li>
+          <li>Watch the Anthropic usage dashboard for cost.</li>
+          <li>Read your <code>chat_leads</code> table weekly.</li>
+          <li>Improve the system prompt based on real conversations.</li>
+        </ul>
+      </div>
+
+      <!-- Rule of thumb closer -->
+      <div class="ai-step-rule">
+        <div class="ai-step-rule-eyebrow">Rule of thumb</div>
+        <p class="ai-step-rule-body">Small verifiable steps, real error messages, visual verification after every step. If a step fails, tell the AI exactly what happened and paste the error. Never let the AI write more than one chunk between tests.</p>
+      </div>
+    </article>
+
+    <!-- Back to article card -->
+    <div class="ai-article-next">
+      <div class="ai-article-next-eyebrow">Want the story instead?</div>
+      <a href="/artificial-intelligence/chatbot" class="ai-article-next-card ai-article-next-solo" style="text-decoration:none;color:inherit">
+        <div class="ai-article-next-card-tag">The Article</div>
+        <div class="ai-article-next-card-h">Read the prose version.</div>
+        <p class="ai-article-next-card-sub">Same build, written as a story. Better for handing to someone who wants the context and reasoning before diving into the how-to.</p>
+        <div class="ai-article-next-card-cta">Read the article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="ctas">
+  <div class="ctas-glow"></div>
+  <h2>Rather have us build it?</h2>
+  <p>Skip the twelve steps. We&#39;ll deliver a custom Claude-powered assistant for your business &mdash; trained on your voice, wired to your data, deployed on your infrastructure.</p>
   <div class="ctas-btns">
     <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
     <a href="/artificial-intelligence" style="text-decoration:none"><button class="bs" style="padding:13px 26px">Back to AI</button></a>

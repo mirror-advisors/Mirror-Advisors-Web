@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import HtmlPage from '../../components/HtmlPage';
-import { pages } from '../../data/pages';
+import HtmlPage from '../../../components/HtmlPage';
+import { pages } from '../../../data/pages';
 
 export default function Page() {
   return (
