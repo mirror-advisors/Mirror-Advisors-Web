@@ -8631,11 +8631,11 @@ body.menu-open { overflow: hidden; }
 @keyframes aiTermPhrase3 { 0%,42%{opacity:0;transform:translateY(4px)} 45%,58%{opacity:1;transform:translateY(0)} 61%{opacity:0;transform:translateY(-4px)} 62%,100%{opacity:0} }
 @keyframes aiTermPhrase4 { 0%,62%{opacity:0;transform:translateY(4px)} 65%,78%{opacity:1;transform:translateY(0)} 81%{opacity:0;transform:translateY(-4px)} 82%,100%{opacity:0} }
 @keyframes aiTermPhrase5 { 0%,82%{opacity:0;transform:translateY(4px)} 85%,97%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-4px)} }
-.ai-terminal-phrase-1 { animation: aiTermPhrase1 12s ease-in-out infinite; }
-.ai-terminal-phrase-2 { animation: aiTermPhrase2 12s ease-in-out infinite; }
-.ai-terminal-phrase-3 { animation: aiTermPhrase3 12s ease-in-out infinite; }
-.ai-terminal-phrase-4 { animation: aiTermPhrase4 12s ease-in-out infinite; }
-.ai-terminal-phrase-5 { animation: aiTermPhrase5 12s ease-in-out infinite; }
+.ai-terminal-phrase-1 { animation: aiTermPhrase1 14s ease-in-out infinite; }
+.ai-terminal-phrase-2 { animation: aiTermPhrase2 14s ease-in-out infinite; }
+.ai-terminal-phrase-3 { animation: aiTermPhrase3 14s ease-in-out infinite; }
+.ai-terminal-phrase-4 { animation: aiTermPhrase4 14s ease-in-out infinite; }
+.ai-terminal-phrase-5 { animation: aiTermPhrase5 14s ease-in-out infinite; }
 .ai-terminal-cursor {
   color: #ECA934;
   font-size: 14px;
