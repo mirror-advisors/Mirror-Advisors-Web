@@ -4130,5 +4130,65 @@ export const pages = {
     <p class="ph-sub">The infrastructure, judgment, and taste to build systems that actually earn their keep.</p>
   </div>
 </div>
+
+<!-- ═════ 01 · The Chatbot ═════════════════════════════════════════ -->
+<section class="sec">
+  <div class="si">
+    <div class="cap-detail" style="grid-template-columns:0.9fr 1.1fr">
+
+      <!-- LEFT · descriptive copy -->
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; The Chatbot</div>
+        <div class="cap-d-h">A live conversation, wired to your business.</div>
+        <p class="cap-d-p">The chatbot is the front door. Every visitor walks in with a question &mdash; and the assistant is what answers it, in your voice, from your knowledge base, at any hour of the day.</p>
+        <p class="cap-d-p">We build assistants powered by Claude, private to your data, and grounded in how you actually explain what you do. They can hold a real conversation, ask the right clarifying questions, capture qualified leads, and hand them to your team with the full context of the exchange.</p>
+        <p class="cap-d-p" style="margin-bottom:0">No off-the-shelf widget. No canned responses. Every deployment is tuned on your services, your process, and your voice &mdash; until the conversation feels like it&#39;s coming from someone who actually works there.</p>
+      </div>
+
+      <!-- RIGHT · animated chat mockup -->
+      <div class="cap-d-right">
+        <div class="vis-panel ai-chat-panel">
+          <div class="vis-glow" style="background:radial-gradient(circle,rgba(236,169,52,.09),transparent 70%)"></div>
+
+          <!-- Widget chrome: avatar + assistant name + status -->
+          <div class="ai-chat-head">
+            <div class="ai-chat-avatar" aria-hidden="true">
+              <div class="ai-chat-avatar-glyph">M</div>
+            </div>
+            <div class="ai-chat-head-body">
+              <div class="ai-chat-head-name">Mirror Advisors</div>
+              <div class="ai-chat-head-meta"><span class="ai-chat-status-dot"></span>Ask anything &middot; AI assistant</div>
+            </div>
+            <div class="ai-chat-head-icons" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 18 18 6"/><path d="M18 18 6 6"/></svg>
+            </div>
+          </div>
+
+          <!-- Conversation stream · CSS-driven staggered animation loop -->
+          <div class="ai-chat-stream">
+            <div class="ai-chat-bubble ai-bot ai-chat-msg-1">Hi! I&#39;m the Mirror Advisors assistant. What can I help you with today?</div>
+            <div class="ai-chat-typing ai-user ai-chat-typing-1"><span></span><span></span><span></span></div>
+            <div class="ai-chat-bubble ai-user ai-chat-msg-2">Can you build a private chatbot for my business?</div>
+            <div class="ai-chat-typing ai-bot ai-chat-typing-2"><span></span><span></span><span></span></div>
+            <div class="ai-chat-bubble ai-bot ai-chat-msg-3">Yes &mdash; a private Claude assistant, trained on your voice and data. What kind of business are you running?</div>
+            <div class="ai-chat-bubble ai-user ai-chat-msg-4">A mid-size logistics company.</div>
+            <div class="ai-chat-typing ai-bot ai-chat-typing-3"><span></span><span></span><span></span></div>
+            <div class="ai-chat-bubble ai-bot ai-chat-msg-5">Great fit. Let me walk you through what we&#39;ve deployed for logistics teams your size&hellip;</div>
+          </div>
+
+          <!-- Input bar (idle) -->
+          <div class="ai-chat-input">
+            <div class="ai-chat-input-field">Type a message&hellip;</div>
+            <div class="ai-chat-send" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a0d1a" stroke="none"><path d="M2 12 L22 3 L18 22 L11 14 Z" fill="#0a0d1a"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 `,
 };

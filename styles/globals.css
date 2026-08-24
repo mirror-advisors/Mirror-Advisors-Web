@@ -8160,3 +8160,263 @@ body.menu-open { overflow: hidden; }
   .pht-title { font-size: 10px; }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence — SECTION 01 · The Chatbot
+   Chat-widget mockup with a scripted CSS-only conversation loop.
+   Everything below fits inside .vis-panel.ai-chat-panel. Each
+   message and typing indicator has its own keyframes animation
+   with staggered visibility windows over a shared 14s cycle so
+   the whole thing feels like a live conversation replaying.
+   ───────────────────────────────────────────────────────────────── */
+.ai-chat-panel {
+  padding: 0 !important;
+  overflow: hidden;
+  background: #0E1422;
+  border-color: rgba(236, 169, 52, .18);
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  animation: none !important;   /* override .vis-panel floatY */
+}
+
+/* Widget chrome — header with avatar + name + status */
+.ai-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, #080B16 0%, #0B0F1D 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  flex-shrink: 0;
+}
+.ai-chat-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ECA934 0%, #c07e13 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(236, 169, 52, .25);
+}
+.ai-chat-avatar-glyph {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  color: #0a0d1a;
+  line-height: 1;
+}
+.ai-chat-head-body { flex: 1; min-width: 0; }
+.ai-chat-head-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tx);
+  letter-spacing: -.005em;
+  line-height: 1.15;
+}
+.ai-chat-head-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  color: var(--mid);
+  margin-top: 2px;
+}
+.ai-chat-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: aiChatStatusPulse 2s ease-in-out infinite;
+}
+@keyframes aiChatStatusPulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: .55; transform: scale(1.3); }
+}
+.ai-chat-head-icons {
+  display: flex;
+  gap: 10px;
+  color: var(--mid);
+}
+
+/* Stream · vertical stack of messages */
+.ai-chat-stream {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(236,169,52,.06) 0%, transparent 55%),
+    #0E1422;
+}
+.ai-chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(6px);
+  will-change: opacity, transform;
+}
+.ai-chat-bubble.ai-bot {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .08);
+  color: var(--tx);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.ai-chat-bubble.ai-user {
+  background: linear-gradient(135deg, rgba(236,169,52,.22) 0%, rgba(236,169,52,.14) 100%);
+  border: 1px solid rgba(236, 169, 52, .35);
+  color: var(--tx);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Typing indicator — three dots that bounce while it's visible */
+.ai-chat-typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  opacity: 0;
+  transform: translateY(6px);
+  align-self: flex-start;
+  will-change: opacity, transform;
+}
+.ai-chat-typing.ai-user { align-self: flex-end; }
+.ai-chat-typing.ai-bot {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+.ai-chat-typing.ai-user {
+  background: rgba(236, 169, 52, .12);
+  border: 1px solid rgba(236, 169, 52, .28);
+}
+.ai-chat-typing > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mid);
+  animation: aiChatTypingDot 1.2s ease-in-out infinite;
+}
+.ai-chat-typing.ai-user > span { background: #ECA934; }
+.ai-chat-typing > span:nth-child(2) { animation-delay: .18s; }
+.ai-chat-typing > span:nth-child(3) { animation-delay: .36s; }
+@keyframes aiChatTypingDot {
+  0%, 60%, 100% { transform: translateY(0);   opacity: .5; }
+  30%           { transform: translateY(-4px); opacity: 1;  }
+}
+
+/* Input bar (static, idle placeholder) */
+.ai-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  background: #0B0F1D;
+  flex-shrink: 0;
+}
+.ai-chat-input-field {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .35);
+}
+.ai-chat-send {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ECA934;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(236, 169, 52, .35);
+}
+
+/* ── The staggered conversation loop ─────────────────────────────
+   14-second master cycle. Each element gets its own keyframes so
+   we can control appear time, hold duration, and disappearance.
+   All animations share the same 14s duration + infinite loop so
+   they stay perfectly in sync every cycle. */
+@keyframes aiChatMsgAppear {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  8%, 96%  { opacity: 1; transform: translateY(0);   }
+}
+@keyframes aiChatMsgUserAppear {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  25%, 96% { opacity: 1; transform: translateY(0);   }
+}
+@keyframes aiChatMsg3Appear {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  46%, 96% { opacity: 1; transform: translateY(0);   }
+}
+@keyframes aiChatMsg4Appear {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  63%, 96% { opacity: 1; transform: translateY(0);   }
+}
+@keyframes aiChatMsg5Appear {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  87%, 97% { opacity: 1; transform: translateY(0);   }
+}
+@keyframes aiChatTyping1Appear {
+  0%, 17%   { opacity: 0; }
+  19%, 23%  { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+@keyframes aiChatTyping2Appear {
+  0%, 36%   { opacity: 0; }
+  38%, 43%  { opacity: 1; }
+  45%, 100% { opacity: 0; }
+}
+@keyframes aiChatTyping3Appear {
+  0%, 77%   { opacity: 0; }
+  79%, 84%  { opacity: 1; }
+  86%, 100% { opacity: 0; }
+}
+
+.ai-chat-msg-1    { animation: aiChatMsgAppear     14s ease-in-out infinite; }
+.ai-chat-typing-1 { animation: aiChatTyping1Appear 14s ease-in-out infinite; }
+.ai-chat-msg-2    { animation: aiChatMsgUserAppear 14s ease-in-out infinite; }
+.ai-chat-typing-2 { animation: aiChatTyping2Appear 14s ease-in-out infinite; }
+.ai-chat-msg-3    { animation: aiChatMsg3Appear    14s ease-in-out infinite; }
+.ai-chat-msg-4    { animation: aiChatMsg4Appear    14s ease-in-out infinite; }
+.ai-chat-typing-3 { animation: aiChatTyping3Appear 14s ease-in-out infinite; }
+.ai-chat-msg-5    { animation: aiChatMsg5Appear    14s ease-in-out infinite; }
+
+/* Respect reduced-motion — show everything at once, no cycling. */
+@media (prefers-reduced-motion: reduce) {
+  .ai-chat-msg-1, .ai-chat-msg-2, .ai-chat-msg-3, .ai-chat-msg-4, .ai-chat-msg-5,
+  .ai-chat-typing-1, .ai-chat-typing-2, .ai-chat-typing-3,
+  .ai-chat-status-dot, .ai-chat-typing > span {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ai-chat-typing-1, .ai-chat-typing-2, .ai-chat-typing-3 { display: none !important; }
+}
+
+/* Mobile — panel a bit shorter, tighter padding */
+@media (max-width: 700px) {
+  .ai-chat-panel { min-height: 440px; }
+  .ai-chat-head { padding: 14px 16px; }
+  .ai-chat-stream { padding: 16px 16px 6px; }
+  .ai-chat-bubble { font-size: 12px; padding: 9px 12px; }
+}
+
