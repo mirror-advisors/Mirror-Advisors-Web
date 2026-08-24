@@ -4120,4 +4120,15 @@ export const pages = {
   </div>
 </section>
 `,
+  'artificial-intelligence': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in">
+    <div class="badge">Artificial Intelligence</div>
+    <h1 class="ph-h" style="font-size:clamp(40px,5vw,60px);letter-spacing:-.03em;line-height:1.05">AI, <span style="color:var(--t)">done properly</span>.</h1>
+    <p class="ph-sub">The infrastructure, judgment, and taste to build systems that actually earn their keep.</p>
+  </div>
+</div>
+`,
 };
