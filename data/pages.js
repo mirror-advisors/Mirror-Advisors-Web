@@ -4138,7 +4138,7 @@ export const pages = {
 
       <!-- LEFT · descriptive copy -->
       <div class="cap-d-left">
-        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">01 &mdash; The Chatbot</div>
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Chatbot</div>
         <div class="cap-d-h">A live conversation, wired to your business.</div>
         <p class="cap-d-p">The chatbot is the front door. Every visitor walks in with a question &mdash; and the assistant is what answers it, in your voice, from your knowledge base, at any hour of the day.</p>
         <p class="cap-d-p">We build assistants powered by Claude, private to your data, and grounded in how you actually explain what you do. They can hold a real conversation, ask the right clarifying questions, capture qualified leads, and hand them to your team with the full context of the exchange.</p>
