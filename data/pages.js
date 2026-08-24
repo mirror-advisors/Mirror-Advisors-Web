@@ -4196,11 +4196,52 @@ export const pages = {
 <div class="ph" style="position:relative">
   <div class="ph-grid"></div>
   <div class="ph-glow"></div>
-  <div class="ph-in">
-    <div class="ai-back-link"><a href="/artificial-intelligence" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to AI</a></div>
-    <div class="badge">Article</div>
-    <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,54px);letter-spacing:-.03em;line-height:1.06">How we build<br>the <span style="color:var(--t)">chatbot</span>.</h1>
-    <p class="ph-sub">Prompt to deployment, in prose. What actually works when the coding tool is the coder.</p>
+  <div class="ph-in ph-in-split" style="align-items:center">
+    <div>
+      <div class="ai-back-link"><a href="/artificial-intelligence" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to AI</a></div>
+      <div class="badge">The Chatbot &middot; Article</div>
+      <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,54px);letter-spacing:-.03em;line-height:1.06">How we build<br>the <span style="color:var(--t)">chatbot</span>.</h1>
+      <p class="ph-sub">Prompt to deployment, in prose. What actually works when the coding tool is the coder.</p>
+      <div class="ai-article-meta">
+        <span class="ai-article-meta-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 min read</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">Six sections</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">By Mirror Advisors</span>
+      </div>
+    </div>
+    <div class="ph-right" aria-hidden="true">
+      <div class="ai-terminal">
+        <div class="ai-terminal-chrome">
+          <span class="ai-terminal-dot" style="background:#ff5f57"></span>
+          <span class="ai-terminal-dot" style="background:#ffbd2e"></span>
+          <span class="ai-terminal-dot" style="background:#28c840"></span>
+          <span class="ai-terminal-title">claude-code &middot; ~/chatbot</span>
+        </div>
+        <div class="ai-terminal-body">
+          <div class="ai-terminal-line">
+            <span class="ai-terminal-prompt-user">you</span>
+            <span class="ai-terminal-static-text">You know what to build. The AI writes it.</span>
+          </div>
+          <div class="ai-terminal-divider"></div>
+          <div class="ai-terminal-cycle">
+            <span class="ai-terminal-prompt">&gt;</span>
+            <span class="ai-terminal-cycle-slot">
+              <span class="ai-terminal-phrase ai-terminal-phrase-1">Create a chat widget with a floating button.</span>
+              <span class="ai-terminal-phrase ai-terminal-phrase-2">Wire the widget to a Next.js API route.</span>
+              <span class="ai-terminal-phrase ai-terminal-phrase-3">Swap the echo for a real Claude call.</span>
+              <span class="ai-terminal-phrase ai-terminal-phrase-4">Save every message to Supabase.</span>
+              <span class="ai-terminal-phrase ai-terminal-phrase-5">Rate-limit, deploy, done.</span>
+            </span>
+            <span class="ai-terminal-cursor">&#9611;</span>
+          </div>
+          <div class="ai-terminal-status">
+            <span class="ai-terminal-status-dot"></span>
+            <span>agent ready &middot; verifying</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -4210,17 +4251,19 @@ export const pages = {
 
       <p class="ai-article-lede">A chatbot used to be a two-week project. With an AI coding assistant sitting next to you &mdash; Claude Code, Cursor, Windsurf, whichever one you like &mdash; it&#39;s a Saturday afternoon. This is the workflow that actually works.</p>
 
-      <h2 class="ai-article-h">The mindset shift</h2>
+      <h2 class="ai-article-h"><span class="ai-article-num">01</span>The mindset shift</h2>
       <p class="ai-article-p">Stop thinking about <em>how</em> to write the code. Start thinking about <em>what</em> you want, one small chunk at a time, and let the AI write it. Your job is to describe the outcome, verify each step, and know when to move on. If a step doesn&#39;t work, you don&#39;t debug from scratch &mdash; you tell the AI what happened and it fixes it.</p>
       <p class="ai-article-p">The trick is ordering the chunks so each one produces something you can <em>test right now</em>.</p>
 
-      <h2 class="ai-article-h">What you need before you start</h2>
+      <h2 class="ai-article-h"><span class="ai-article-num">02</span>What you need before you start</h2>
       <p class="ai-article-p">Three accounts and one tool: <strong>Anthropic</strong> (for the API key that powers the model), <strong>Supabase</strong> (for the database), and an IDE with an AI assistant (Cursor, Windsurf, or Claude Code in your terminal). Total signup time: under ten minutes.</p>
 
-      <h2 class="ai-article-h">The stack</h2>
+      <h2 class="ai-article-h"><span class="ai-article-num">03</span>The stack</h2>
       <p class="ai-article-p">Next.js on the frontend, Supabase for the database, Claude as the model. Not because it&#39;s the only way &mdash; but because it&#39;s the fewest moving parts. One deploy target (Vercel), one database, one AI API key. You can swap any of them later.</p>
 
-      <h2 class="ai-article-h">Building it, one prompt at a time</h2>
+      <blockquote class="ai-article-midquote">Your job is to describe the outcome, verify each step, and know when to move on. The AI does the rest.</blockquote>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">04</span>Building it, one prompt at a time</h2>
       <p class="ai-article-p"><strong>Start with the shell.</strong> Ask the AI to spin up a fresh Next.js project with the SDKs you&#39;ll need and placeholder environment variables. Don&#39;t paste your real keys into the prompt &mdash; the AI writes the config, you paste the keys yourself into <code>.env.local</code>. Verify with <code>npm run dev</code>. If the dev server runs, move on. If not, tell the AI the exact error message and it fixes it.</p>
       <p class="ai-article-p"><strong>Then the widget, with no brains.</strong> Describe the UI: a floating button, a slide-out panel, a message list, an input. Tell it to hard-code a dummy "hello" message so you can see something on screen. This step doesn&#39;t touch the AI or the database yet &mdash; it&#39;s just proving the visual shell renders.</p>
       <p class="ai-article-p"><strong>Then the API endpoint, with no brains either.</strong> Ask the AI to create <code>pages/api/chat.js</code> that accepts a POST with a messages array and returns <code>{answer: "Echo: " + last message}</code>. Test with <code>curl</code>. This proves the plumbing between browser and server works before you complicate it.</p>
@@ -4231,18 +4274,51 @@ export const pages = {
       <p class="ai-article-p"><strong>Then safety.</strong> Rate limits, input length caps, history truncation. One prompt covers all three. This is boring but it&#39;s the difference between a demo and a production tool. Test by spamming your own endpoint until it starts rejecting you.</p>
       <p class="ai-article-p"><strong>Then deploy.</strong> Push to GitHub, connect to Vercel, paste your environment variables into the dashboard. Vercel builds automatically. Two minutes later your chatbot is live on the internet. Ask the AI: <em>"Give me a checklist of every environment variable I need in Vercel."</em> It hands you the list. You paste, redeploy, done.</p>
 
-      <h2 class="ai-article-h">What actually makes this work</h2>
+      <div class="ai-article-stats">
+        <div class="ai-article-stat">
+          <div class="ai-article-stat-val">1</div>
+          <div class="ai-article-stat-lbl">afternoon,<br>not two weeks</div>
+        </div>
+        <div class="ai-article-stat">
+          <div class="ai-article-stat-val">3</div>
+          <div class="ai-article-stat-lbl">accounts to sign up<br>(under 10 minutes)</div>
+        </div>
+        <div class="ai-article-stat">
+          <div class="ai-article-stat-val">4</div>
+          <div class="ai-article-stat-lbl">moving parts:<br>widget, API, DB, model</div>
+        </div>
+      </div>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">05</span>What actually makes this work</h2>
       <p class="ai-article-p"><strong>Small verifiable steps.</strong> Never let the AI write more than one chunk between tests. If step 4 fails, you know exactly what broke. If you asked for the whole app in one prompt and got a broken app back, you&#39;d have no idea where to start debugging.</p>
       <p class="ai-article-p"><strong>Real error messages.</strong> When something breaks, paste the exact error into the AI. Don&#39;t paraphrase. The AI can read a stack trace better than you can.</p>
       <p class="ai-article-p"><strong>Verifying visually.</strong> After every step, look at the browser or hit the endpoint with <code>curl</code>. Don&#39;t trust that the code works because the AI says so &mdash; check it yourself.</p>
       <p class="ai-article-p"><strong>Knowing when to stop.</strong> The chatbot doesn&#39;t need streaming, doesn&#39;t need Markdown rendering, doesn&#39;t need voice input on day one. Ship the boring version, put it in front of real users, then let <em>their</em> behavior tell you what to add next.</p>
 
-      <h2 class="ai-article-h">The last thing</h2>
+      <h2 class="ai-article-h"><span class="ai-article-num">06</span>The last thing</h2>
       <p class="ai-article-p">The hardest part of this build isn&#39;t the code. It&#39;s the <strong>system prompt</strong> &mdash; the instructions you give Claude about who it&#39;s supposed to be and how to talk. Spend more time there than anywhere else. Read a hundred real conversations from your logs, notice where the bot answered something wrong or missed a lead, and tune the prompt. That&#39;s the whole product.</p>
 
       <blockquote class="ai-article-pullquote">You don&#39;t need to be a developer to do this. You need to be someone who can describe what they want clearly, verify the result honestly, and iterate until it&#39;s right. The AI does the rest.</blockquote>
 
     </article>
+
+    <div class="ai-article-next">
+      <div class="ai-article-next-inner">
+        <div class="ai-article-next-eyebrow">Keep reading</div>
+        <div class="ai-article-next-grid">
+          <a href="/ai-field-guide" class="ai-article-next-card" style="text-decoration:none;color:inherit">
+            <div class="ai-article-next-card-tag">Field Guide</div>
+            <div class="ai-article-next-card-h">Nine capabilities of AI inside a business.</div>
+            <div class="ai-article-next-card-cta">Read the guide <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </a>
+          <a href="/services/custom-ai-application" class="ai-article-next-card" style="text-decoration:none;color:inherit">
+            <div class="ai-article-next-card-tag">Our Practice</div>
+            <div class="ai-article-next-card-h">The AI service: custom Claude applications.</div>
+            <div class="ai-article-next-card-cta">See the service <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
