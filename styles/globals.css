@@ -9401,6 +9401,384 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence · Section 03 · Conversational sign-up
+   Step-through form styled as a chat, but deliberately NOT visually
+   copying the site's live chatbot widget:
+   - Full-width card, not a floating panel
+   - Cream/pale surface with serif bot voice (not dark bubbles)
+   - Bot messages left, user replies right, softer bubble shapes
+   - Inline in the page section, no fixed positioning
+   ───────────────────────────────────────────────────────────────── */
+.ai-signup-section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.ai-signup-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ECA934;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.ai-signup-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 900;
+  color: var(--tx);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.ai-signup-lede {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--mid);
+  margin: 0 0 36px;
+  max-width: 56ch;
+}
+
+/* Card container — cream stock, not the dark widget aesthetic */
+.ai-signup-container {
+  background: linear-gradient(180deg, #FAF6EE 0%, #F5F0E4 100%);
+  border: 1px solid #E3DBC6;
+  border-radius: 18px;
+  box-shadow:
+    0 30px 60px -24px rgba(0, 0, 0, .55),
+    inset 0 1px 0 rgba(255, 255, 255, .5);
+  overflow: hidden;
+  position: relative;
+}
+.ai-signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #ECA934 50%, transparent 100%);
+}
+
+/* Shared avatar for both intro and chat states */
+.ai-signup-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ECA934 0%, #c07e13 100%);
+  color: #FAF6EE;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px -6px rgba(236, 169, 52, .5);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Intro state */
+.ai-signup-intro {
+  padding: 38px 42px 34px;
+}
+.ai-signup-intro-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ai-signup-intro-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1A1A1E;
+  letter-spacing: -.005em;
+}
+.ai-signup-intro-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #6A6A70;
+  margin-top: 3px;
+}
+.ai-signup-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2F7A44;
+  box-shadow: 0 0 6px #2F7A44;
+  animation: aiChatStatusPulse 1.8s ease-in-out infinite;
+}
+.ai-signup-intro-msg {
+  font-family: Georgia, 'Iowan Old Style', serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #1A1A1E;
+  margin: 0 0 26px;
+  text-wrap: balance;
+}
+.ai-signup-start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  background: #1A1A1E;
+  color: #FAF6EE;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.ai-signup-start-btn:hover {
+  background: #ECA934;
+  color: #1A1A1E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(236, 169, 52, .45);
+}
+
+/* Conversation state */
+.ai-signup-chat {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+.ai-signup-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 28px;
+  border-bottom: 1px solid #E3DBC6;
+  background: #F5F0E4;
+}
+.ai-signup-chat-head-body { flex: 1; }
+.ai-signup-chat-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1A1A1E;
+}
+.ai-signup-chat-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #6A6A70;
+  margin-top: 2px;
+}
+
+.ai-signup-stream {
+  padding: 26px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+/* Bot message — Georgia serif, cream bubble on left */
+.ai-signup-bot {
+  font-family: Georgia, 'Iowan Old Style', serif;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: #1A1A1E;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1px solid #E8E1D0;
+  border-radius: 14px 14px 14px 4px;
+  align-self: flex-start;
+  max-width: 82%;
+  text-wrap: balance;
+}
+.ai-signup-msg-final {
+  border-color: rgba(236, 169, 52, .35);
+  background: linear-gradient(180deg, #FFFEFA 0%, #FDF6E8 100%);
+}
+
+/* User reply — Montserrat sans, amber on right */
+.ai-signup-user {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A1E;
+  padding: 12px 18px;
+  background: rgba(236, 169, 52, .22);
+  border: 1px solid rgba(236, 169, 52, .45);
+  border-radius: 14px 14px 4px 14px;
+  align-self: flex-end;
+  max-width: 82%;
+  letter-spacing: -.005em;
+  word-break: break-word;
+}
+
+/* Input row — text/tel/email/textarea */
+.ai-signup-input-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 4px 0;
+  align-self: stretch;
+}
+.ai-signup-input {
+  flex: 1;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1.5px solid #E3DBC6;
+  border-radius: 12px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 14.5px;
+  color: #1A1A1E;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.ai-signup-input::placeholder { color: #B0AAA0; }
+.ai-signup-input:focus {
+  border-color: #ECA934;
+  box-shadow: 0 0 0 3px rgba(236, 169, 52, .15);
+}
+.ai-signup-textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+}
+.ai-signup-send {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  background: #ECA934;
+  color: #1A1A1E;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+  flex-shrink: 0;
+}
+.ai-signup-send:hover {
+  background: #d4941e;
+  transform: translateY(-1px);
+}
+
+/* Yes/No choice buttons */
+.ai-signup-input-row-choices { flex-wrap: wrap; }
+.ai-signup-choice {
+  padding: 12px 22px;
+  background: #FFFFFF;
+  color: #1A1A1E;
+  border: 1.5px solid #E3DBC6;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.ai-signup-choice:hover {
+  background: #ECA934;
+  border-color: #ECA934;
+  color: #1A1A1E;
+  transform: translateY(-2px);
+}
+
+/* Multi-select */
+.ai-signup-input-row-multi { flex-direction: column; gap: 12px; }
+.ai-signup-multi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ai-signup-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #E3DBC6;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #1A1A1E;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease;
+}
+.ai-signup-check:hover {
+  background: #FDF6E8;
+  border-color: rgba(236, 169, 52, .5);
+}
+.ai-signup-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ECA934;
+  cursor: pointer;
+}
+.ai-signup-check input[type="checkbox"]:checked + span {
+  font-weight: 600;
+}
+.ai-signup-input-row-multi > .ai-signup-send {
+  align-self: flex-end;
+}
+
+/* Typing indicator between steps */
+.ai-signup-typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1px solid #E8E1D0;
+  border-radius: 14px 14px 14px 4px;
+  align-self: flex-start;
+}
+.ai-signup-typing > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #B0AAA0;
+  animation: aiChatTypingDot 1.2s ease-in-out infinite;
+}
+.ai-signup-typing > span:nth-child(2) { animation-delay: .18s; }
+.ai-signup-typing > span:nth-child(3) { animation-delay: .36s; }
+
+/* Message reveal animation */
+@keyframes aiSignupAppear {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0);   }
+}
+.ai-signup-msg-appear { animation: aiSignupAppear .35s ease-out forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-signup-msg-appear { animation: none !important; opacity: 1; transform: none; }
+  .ai-signup-live-dot, .ai-signup-typing > span { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+  .ai-signup-section { padding-top: 64px; padding-bottom: 64px; }
+  .ai-signup-heading { font-size: clamp(26px, 6vw, 34px); }
+  .ai-signup-intro { padding: 28px 22px 24px; }
+  .ai-signup-intro-msg { font-size: 16px; }
+  .ai-signup-chat-head { padding: 18px 20px; }
+  .ai-signup-stream { padding: 20px 20px 22px; max-height: 480px; }
+  .ai-signup-bot, .ai-signup-user { font-size: 14px; max-width: 92%; }
+  .ai-signup-input-row { flex-direction: column; gap: 8px; }
+  .ai-signup-send { align-self: flex-end; }
+  .ai-signup-choice { padding: 10px 18px; font-size: 12.5px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    /artificial-intelligence/policy — article sub-page
    Reuses ai-article-* typography. Adds:
    - .ai-policy-paper-lg  · bigger hero variant of the policy card

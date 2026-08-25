@@ -4337,6 +4337,42 @@ export const pages = {
     </div>
   </div>
 </section>
+
+<!-- ═════ 03 · Sign-up · Conversational form ═════════════════════ -->
+<section class="sec ai-signup-section">
+  <div class="si" style="max-width:760px">
+    <div class="ai-signup-eyebrow">Free chatbot session</div>
+    <h2 class="ai-signup-heading">Let&#39;s see if we&#39;re a fit.</h2>
+    <p class="ai-signup-lede">Answer a few quick questions and we&#39;ll get you set up for a free chatbot session. Two minutes.</p>
+
+    <div class="ai-signup-container" id="aiSignupContainer">
+      <!-- Intro screen · shown until the visitor hits Start chat -->
+      <div class="ai-signup-intro" id="aiSignupIntro">
+        <div class="ai-signup-intro-head">
+          <div class="ai-signup-avatar" aria-hidden="true"><span>M</span></div>
+          <div>
+            <div class="ai-signup-intro-name">Mirror Assistant</div>
+            <div class="ai-signup-intro-meta"><span class="ai-signup-live-dot"></span>Ready when you are</div>
+          </div>
+        </div>
+        <p class="ai-signup-intro-msg">Hi there. I&#39;ll walk you through a few quick questions so we know what fits your business &mdash; then we&#39;ll set up a free chatbot session for you.</p>
+        <button class="ai-signup-start-btn" onclick="aiSignupStart()">Start chat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
+      <!-- Conversation state · hidden until Start -->
+      <div class="ai-signup-chat" id="aiSignupChat" style="display:none">
+        <div class="ai-signup-chat-head">
+          <div class="ai-signup-avatar" aria-hidden="true"><span>M</span></div>
+          <div class="ai-signup-chat-head-body">
+            <div class="ai-signup-chat-name">Mirror Assistant</div>
+            <div class="ai-signup-chat-meta"><span class="ai-signup-live-dot"></span>Getting to know you</div>
+          </div>
+        </div>
+        <div class="ai-signup-stream" id="aiSignupStream"></div>
+      </div>
+    </div>
+  </div>
+</section>
 `,
   'ai-chatbot': `
 <div class="ph" style="position:relative">
