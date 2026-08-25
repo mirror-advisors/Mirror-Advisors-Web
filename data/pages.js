@@ -4131,78 +4131,70 @@ export const pages = {
       <p class="ph-sub">The infrastructure, judgment, and taste to build systems that actually earn their keep.</p>
     </div>
     <div class="ph-right" aria-hidden="true">
-      <div class="ai-hero-viz">
-        <svg viewBox="0 0 500 500" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A concentric AI system visualisation">
-          <defs>
-            <radialGradient id="aiHeroCoreGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ECA934" stop-opacity=".38"/>
-              <stop offset="55%" stop-color="#ECA934" stop-opacity=".08"/>
-              <stop offset="100%" stop-color="#ECA934" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
+      <div class="ai-hero-viz ai-dashboard">
+        <div class="ai-dashboard-head">
+          <div class="ai-dashboard-eyebrow">MIRROR &middot; AI KERNEL</div>
+          <div class="ai-dashboard-status"><span class="ai-dashboard-status-dot"></span>WORKING</div>
+        </div>
 
-          <!-- Ambient background glow -->
-          <circle cx="250" cy="250" r="240" fill="url(#aiHeroCoreGlow)"/>
+        <!-- Current task · chat-style activity line + typing dots -->
+        <div class="ai-dashboard-section">
+          <div class="ai-dashboard-section-label">CURRENT TASK</div>
+          <div class="ai-dashboard-task-line">
+            <span class="ai-dashboard-task-dot"></span>
+            <span class="ai-dashboard-task-text">Rewriting the client brief for Nowak Mfg&hellip;</span>
+          </div>
+          <div class="ai-dashboard-typing">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
 
-          <!-- Ring 3 · outermost · TASTE · amber -->
-          <g>
-            <circle cx="250" cy="250" r="205" fill="none" stroke="rgba(236,169,52,.16)" stroke-width="1.5" stroke-dasharray="1 5"/>
-            <circle cx="250" cy="45"  r="4"   fill="#ECA934"/>
-            <circle cx="428" cy="147" r="3"   fill="#ECA934" opacity=".7"/>
-            <circle cx="428" cy="353" r="3"   fill="#ECA934" opacity=".55"/>
-            <circle cx="250" cy="455" r="4"   fill="#ECA934" opacity=".8"/>
-            <circle cx="72"  cy="353" r="3"   fill="#ECA934" opacity=".7"/>
-            <circle cx="72"  cy="147" r="3"   fill="#ECA934" opacity=".55"/>
-            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 250 250" to="360 250 250" dur="90s" repeatCount="indefinite"/>
-          </g>
+        <!-- Reasoning progress bar · fills 0 → 82% then holds -->
+        <div class="ai-dashboard-section">
+          <div class="ai-dashboard-progress-head">
+            <span>REASONING</span>
+            <span class="ai-dashboard-progress-pct">82&percnt;</span>
+          </div>
+          <div class="ai-dashboard-progress-bar">
+            <div class="ai-dashboard-progress-fill" style="--target:82%"></div>
+          </div>
+        </div>
 
-          <!-- Ring 2 · middle · JUDGMENT · violet -->
-          <g>
-            <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(139,159,212,.18)" stroke-width="1.5" stroke-dasharray="2 4"/>
-            <circle cx="250" cy="100" r="3.5" fill="#8B9FD4"/>
-            <circle cx="380" cy="175" r="3"   fill="#8B9FD4" opacity=".7"/>
-            <circle cx="380" cy="325" r="3.5" fill="#8B9FD4" opacity=".9"/>
-            <circle cx="250" cy="400" r="3"   fill="#8B9FD4" opacity=".7"/>
-            <circle cx="120" cy="325" r="3"   fill="#8B9FD4" opacity=".65"/>
-            <circle cx="120" cy="175" r="3.5" fill="#8B9FD4" opacity=".85"/>
-            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 250 250" to="0 250 250" dur="60s" repeatCount="indefinite"/>
-          </g>
+        <!-- Two mini stat cards -->
+        <div class="ai-dashboard-stats">
+          <div class="ai-dashboard-stat">
+            <div class="ai-dashboard-stat-label">SIGNAL</div>
+            <div class="ai-dashboard-stat-bars">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+              <span class="bar bar-5"></span>
+              <span class="bar bar-6"></span>
+              <span class="bar bar-7"></span>
+            </div>
+          </div>
+          <div class="ai-dashboard-stat">
+            <div class="ai-dashboard-stat-label">SOURCES</div>
+            <div class="ai-dashboard-stat-value">3<span class="ai-dashboard-stat-of">/ 4</span></div>
+            <div class="ai-dashboard-stat-meta">verified</div>
+          </div>
+        </div>
 
-          <!-- Ring 1 · innermost · INFRASTRUCTURE · blue -->
-          <g>
-            <circle cx="250" cy="250" r="98" fill="none" stroke="rgba(107,159,212,.22)" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <circle cx="250" cy="152" r="4"   fill="#6B9FD4"/>
-            <circle cx="335" cy="250" r="3.5" fill="#6B9FD4" opacity=".85"/>
-            <circle cx="250" cy="348" r="4"   fill="#6B9FD4" opacity=".9"/>
-            <circle cx="165" cy="250" r="3.5" fill="#6B9FD4" opacity=".8"/>
-            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 250 250" to="360 250 250" dur="40s" repeatCount="indefinite"/>
-          </g>
-
-          <!-- Central hexagonal core -->
-          <g class="ai-hero-core">
-            <!-- Pulsing halo -->
-            <circle cx="250" cy="250" r="55" fill="rgba(236,169,52,.09)">
-              <animate attributeName="r" values="52;62;52" dur="3.2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values=".5;.15;.5" dur="3.2s" repeatCount="indefinite"/>
-            </circle>
-            <!-- Hexagon -->
-            <polygon points="250,205 289,227.5 289,272.5 250,295 211,272.5 211,227.5"
-                     fill="rgba(236,169,52,.14)" stroke="#ECA934" stroke-width="2" stroke-linejoin="round"/>
-            <!-- Inner neural triangle -->
-            <line x1="250" y1="228" x2="234" y2="262" stroke="#ECA934" stroke-width="1.4" opacity=".55"/>
-            <line x1="250" y1="228" x2="266" y2="262" stroke="#ECA934" stroke-width="1.4" opacity=".55"/>
-            <line x1="234" y1="262" x2="266" y2="262" stroke="#ECA934" stroke-width="1.4" opacity=".55"/>
-            <circle cx="250" cy="228" r="4" fill="#ECA934"/>
-            <circle cx="234" cy="262" r="4" fill="#ECA934" opacity=".8"/>
-            <circle cx="266" cy="262" r="4" fill="#ECA934" opacity=".8"/>
-          </g>
-        </svg>
-
-        <!-- Legend for the three rings -->
-        <div class="ai-hero-legend">
-          <span class="ai-hero-legend-item"><span class="ai-hero-legend-dot" style="background:#6B9FD4"></span>Infrastructure</span>
-          <span class="ai-hero-legend-item"><span class="ai-hero-legend-dot" style="background:#8B9FD4"></span>Judgment</span>
-          <span class="ai-hero-legend-item"><span class="ai-hero-legend-dot" style="background:#ECA934"></span>Taste</span>
+        <!-- Task checklist -->
+        <div class="ai-dashboard-tasks">
+          <div class="ai-dashboard-task done">
+            <span class="ai-dashboard-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0a0d1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Verified quarterly figures</span>
+          </div>
+          <div class="ai-dashboard-task done">
+            <span class="ai-dashboard-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0a0d1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Cited three sources</span>
+          </div>
+          <div class="ai-dashboard-task doing">
+            <span class="ai-dashboard-check"><span class="ai-dashboard-check-dot"></span></span>
+            <span>Awaiting reviewer sign-off</span>
+          </div>
         </div>
       </div>
     </div>
