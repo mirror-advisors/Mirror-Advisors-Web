@@ -4193,17 +4193,17 @@ export const pages = {
 </section>
 
 <!-- ═════ 02 · The Policy ═════════════════════════════════════════ -->
-<section class="sec">
+<section class="sec" style="background:#0C0F22;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
   <div class="si">
     <div class="cap-detail rev" style="grid-template-columns:1.1fr 0.9fr">
 
       <!-- LEFT (with .rev this renders on the RIGHT) · descriptive copy -->
       <div class="cap-d-left">
         <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Policy</div>
-        <div class="cap-d-h">Not a twenty-page legal document.</div>
-        <p class="cap-d-p">Every business will draft an AI usage policy this year. Most will get it wrong &mdash; twenty pages of restrictions nobody reads, with rules that lag six months behind what the team is already doing.</p>
-        <p class="cap-d-p">A working policy is one page. It answers three questions: what data can I feed into AI, what tasks can I use it for, and who is responsible for the output. Every rule traces back to one of those.</p>
-        <p class="cap-d-p" style="margin-bottom:0">We help teams draft policies that actually get followed. Traffic-light data classification. Human-in-the-loop verification. An approved-tool roster that stays current. Short, practical, and updated the same week the tools change.</p>
+        <div class="cap-d-h">The line between useful and reckless.</div>
+        <p class="cap-d-p"><strong style="color:var(--tx)">Do</strong> use AI to draft, summarize, brainstorm, translate, explain, and refactor. It&#39;s a research assistant, editor, and thinking partner rolled into one. Feed it public information, generic scenarios, and your own drafts &mdash; anything you&#39;d already share on a public LinkedIn post is safe.</p>
+        <p class="cap-d-p"><strong style="color:var(--tx)">Don&#39;t</strong> paste customer data, financial records, source code, or NDA material into a public AI tool. Don&#39;t trust a factual claim without verifying it. Don&#39;t ship anything an AI wrote without a human review. And don&#39;t let a new tool onto the team without a five-minute check.</p>
+        <p class="cap-d-p" style="margin-bottom:0">The dos make AI the fastest team member you&#39;ve ever had &mdash; always available, never tired, endlessly patient. The don&#39;ts keep you out of the newspaper. A working policy is the line between the two, written down where everyone can see it.</p>
       </div>
 
       <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
