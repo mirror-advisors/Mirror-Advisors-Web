@@ -4622,55 +4622,51 @@ export const pages = {
       </div>
     </div>
     <div class="ph-right" aria-hidden="true">
-      <div class="ai-policy-paper ai-policy-paper-lg">
-        <div class="ai-policy-head">
-          <div>
-            <div class="ai-policy-eyebrow">AI Usage Policy &middot; v1.0</div>
-            <div class="ai-policy-title">One page. Three colors. No jargon.</div>
+      <div class="vis-panel ai-policy-panel">
+        <div class="ai-policy-paper">
+          <div class="ai-policy-head">
+            <div>
+              <div class="ai-policy-eyebrow">AI Usage Policy &middot; v1.0</div>
+              <div class="ai-policy-title">One page. Three colors. No jargon.</div>
+            </div>
+            <div class="ai-policy-badge">SIGNED</div>
           </div>
-          <div class="ai-policy-badge">SIGNED</div>
-        </div>
 
-        <div class="ai-policy-question">
-          <span class="ai-policy-q-num">01</span>
-          <span class="ai-policy-q-text">What data can I feed into AI?</span>
-        </div>
+          <div class="ai-policy-question">
+            <span class="ai-policy-q-num">01</span>
+            <span class="ai-policy-q-text">What data can I feed into AI?</span>
+          </div>
 
-        <div class="ai-policy-rules">
-          <div class="ai-policy-rule">
-            <span class="ai-policy-dot ai-policy-dot-green"></span>
-            <div class="ai-policy-rule-body">
-              <div class="ai-policy-rule-label ai-policy-lbl-green">Green light</div>
-              <div class="ai-policy-rule-text">Public data, brainstorms, non-sensitive drafts.</div>
+          <div class="ai-policy-rules">
+            <div class="ai-policy-rule ai-policy-rule-1">
+              <span class="ai-policy-dot ai-policy-dot-green"></span>
+              <div class="ai-policy-rule-body">
+                <div class="ai-policy-rule-label ai-policy-lbl-green">Green light</div>
+                <div class="ai-policy-rule-text">Public data, brainstorms, non-sensitive drafts, open code concepts.</div>
+              </div>
+            </div>
+            <div class="ai-policy-rule ai-policy-rule-2">
+              <span class="ai-policy-dot ai-policy-dot-yellow"></span>
+              <div class="ai-policy-rule-body">
+                <div class="ai-policy-rule-label ai-policy-lbl-yellow">Yellow light</div>
+                <div class="ai-policy-rule-text">Internal notes, anonymised operational data &mdash; enterprise tools only.</div>
+              </div>
+            </div>
+            <div class="ai-policy-rule ai-policy-rule-3">
+              <span class="ai-policy-dot ai-policy-dot-red"></span>
+              <div class="ai-policy-rule-body">
+                <div class="ai-policy-rule-label ai-policy-lbl-red">Red light</div>
+                <div class="ai-policy-rule-text">PII, customer data, financials, source code, trade secrets, NDA material.</div>
+              </div>
             </div>
           </div>
-          <div class="ai-policy-rule">
-            <span class="ai-policy-dot ai-policy-dot-yellow"></span>
-            <div class="ai-policy-rule-body">
-              <div class="ai-policy-rule-label ai-policy-lbl-yellow">Yellow light</div>
-              <div class="ai-policy-rule-text">Internal notes &mdash; enterprise tools only.</div>
-            </div>
-          </div>
-          <div class="ai-policy-rule">
-            <span class="ai-policy-dot ai-policy-dot-red"></span>
-            <div class="ai-policy-rule-body">
-              <div class="ai-policy-rule-label ai-policy-lbl-red">Red light</div>
-              <div class="ai-policy-rule-text">PII, customer data, financials, source code, NDAs.</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="ai-policy-question">
-          <span class="ai-policy-q-num">02</span>
-          <span class="ai-policy-q-text">Who owns the output?</span>
-        </div>
-        <div class="ai-policy-answer">You do. Every time. &ldquo;The AI told me so&rdquo; is not a defence.</div>
-
-        <div class="ai-policy-signature">
-          <div class="ai-policy-sig-mark"></div>
-          <div class="ai-policy-sig-meta">
-            <div>Approved company-wide</div>
-            <div class="ai-policy-sig-date">Revised quarterly</div>
+          <div class="ai-policy-signature">
+            <div class="ai-policy-sig-mark"></div>
+            <div class="ai-policy-sig-meta">
+              <div>Approved company-wide</div>
+              <div class="ai-policy-sig-date">Revised quarterly</div>
+            </div>
           </div>
         </div>
       </div>
