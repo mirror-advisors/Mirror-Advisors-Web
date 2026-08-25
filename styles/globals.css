@@ -8808,6 +8808,251 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence — SECTION 02 · The Policy
+   Reverse of the chatbot section: layout is .cap-detail.rev, and
+   the visual is a LIGHT-THEMED paper document (a "policy card")
+   that contrasts against the dark site — the mirror opposite of
+   the dark chat panel above.
+   ───────────────────────────────────────────────────────────────── */
+.ai-policy-panel {
+  padding: 0 !important;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+.ai-policy-paper {
+  background: #FAF6EE;
+  border-radius: 14px;
+  padding: 32px 34px 28px;
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, .45),
+    0 0 0 1px rgba(255, 255, 255, .06);
+  position: relative;
+  overflow: hidden;
+  color: #1A1A1E;
+  font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.ai-policy-paper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2F7A44 0%, #2F7A44 33%, #A57315 33%, #A57315 66%, #A83C3C 66%, #A83C3C 100%);
+}
+
+/* Header — eyebrow + title + signed badge */
+.ai-policy-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E3DBC6;
+}
+.ai-policy-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  color: #B8811F;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ai-policy-title {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1A1E;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+}
+.ai-policy-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  color: #2F7A44;
+  letter-spacing: .14em;
+  padding: 5px 10px;
+  border: 1.5px solid #2F7A44;
+  border-radius: 4px;
+  transform: rotate(-6deg);
+  flex-shrink: 0;
+  animation: aiPolicyBadge 3s ease-in-out infinite;
+}
+@keyframes aiPolicyBadge {
+  0%, 100% { transform: rotate(-6deg) scale(1); }
+  50%      { transform: rotate(-4deg) scale(1.03); }
+}
+
+/* Question line — italic serif */
+.ai-policy-question {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #4A4A50;
+}
+.ai-policy-q-num {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 800;
+  color: #B8811F;
+  letter-spacing: .12em;
+  padding: 3px 7px;
+  background: rgba(184, 129, 31, .1);
+  border: 1px solid rgba(184, 129, 31, .28);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.ai-policy-q-text {
+  line-height: 1.4;
+}
+
+/* The three rules stack — each fades in on stagger */
+.ai-policy-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.ai-policy-rule {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 1px solid #E8E1D0;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(-8px);
+  will-change: opacity, transform;
+}
+.ai-policy-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, .04);
+}
+.ai-policy-dot-green  { background: #2F7A44; }
+.ai-policy-dot-yellow { background: #E0A951; }
+.ai-policy-dot-red    { background: #A83C3C; }
+.ai-policy-rule-body { flex: 1; min-width: 0; }
+.ai-policy-rule-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.ai-policy-lbl-green  { color: #2F7A44; }
+.ai-policy-lbl-yellow { color: #A57315; }
+.ai-policy-lbl-red    { color: #A83C3C; }
+.ai-policy-rule-text {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #3A3A3E;
+}
+
+/* Signature footer */
+.ai-policy-signature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #E3DBC6;
+  margin-top: auto;
+}
+.ai-policy-sig-mark {
+  width: 60px;
+  height: 24px;
+  background: transparent;
+  border-bottom: 1.5px solid #1A1A1E;
+  position: relative;
+}
+.ai-policy-sig-mark::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 40px;
+  height: 14px;
+  background:
+    radial-gradient(circle at 20% 60%, #1A1A1E 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 30%, #1A1A1E 0 1px, transparent 2px),
+    radial-gradient(circle at 65% 65%, #1A1A1E 0 1px, transparent 2px),
+    linear-gradient(180deg, transparent 40%, rgba(26,26,30,.6) 55%, transparent 70%);
+  border-radius: 2px;
+  transform: skew(-8deg);
+  opacity: .85;
+}
+.ai-policy-sig-meta {
+  flex: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4A4A50;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.ai-policy-sig-date {
+  color: #8A8A92;
+  font-weight: 600;
+}
+
+/* Staggered rule animation · 11-second master cycle
+   Each rule fades in, all three hold visible together, then all
+   fade out and loop. Feels like the policy being drafted. */
+@keyframes aiPolicyRule1 {
+  0%, 100% { opacity: 0; transform: translateX(-8px); }
+  6%, 88%  { opacity: 1; transform: translateX(0);    }
+  94%      { opacity: 0; transform: translateX(4px);  }
+}
+@keyframes aiPolicyRule2 {
+  0%, 22%, 100% { opacity: 0; transform: translateX(-8px); }
+  28%, 88%      { opacity: 1; transform: translateX(0);    }
+  94%           { opacity: 0; transform: translateX(4px);  }
+}
+@keyframes aiPolicyRule3 {
+  0%, 44%, 100% { opacity: 0; transform: translateX(-8px); }
+  50%, 88%      { opacity: 1; transform: translateX(0);    }
+  94%           { opacity: 0; transform: translateX(4px);  }
+}
+.ai-policy-rule-1 { animation: aiPolicyRule1 11s ease-in-out infinite; }
+.ai-policy-rule-2 { animation: aiPolicyRule2 11s ease-in-out infinite; }
+.ai-policy-rule-3 { animation: aiPolicyRule3 11s ease-in-out infinite; }
+
+/* Reduced motion — show all rules statically, freeze badge wiggle */
+@media (prefers-reduced-motion: reduce) {
+  .ai-policy-rule-1, .ai-policy-rule-2, .ai-policy-rule-3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ai-policy-badge { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+  .ai-policy-paper { padding: 26px 22px 22px; min-height: 400px; }
+  .ai-policy-title { font-size: 17px; }
+  .ai-policy-question { font-size: 14px; }
+  .ai-policy-rule { padding: 12px 14px; gap: 12px; }
+  .ai-policy-rule-text { font-size: 12.5px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    Solo variant of the "keep reading" card · wider, has a sub
    ───────────────────────────────────────────────────────────────── */
 .ai-article-next-solo {

@@ -4191,6 +4191,76 @@ export const pages = {
     </div>
   </div>
 </section>
+
+<!-- ═════ 02 · The Policy ═════════════════════════════════════════ -->
+<section class="sec">
+  <div class="si">
+    <div class="cap-detail rev" style="grid-template-columns:1.1fr 0.9fr">
+
+      <!-- LEFT (with .rev this renders on the RIGHT) · descriptive copy -->
+      <div class="cap-d-left">
+        <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Policy</div>
+        <div class="cap-d-h">Not a twenty-page legal document.</div>
+        <p class="cap-d-p">Every business will draft an AI usage policy this year. Most will get it wrong &mdash; twenty pages of restrictions nobody reads, with rules that lag six months behind what the team is already doing.</p>
+        <p class="cap-d-p">A working policy is one page. It answers three questions: what data can I feed into AI, what tasks can I use it for, and who is responsible for the output. Every rule traces back to one of those.</p>
+        <p class="cap-d-p" style="margin-bottom:0">We help teams draft policies that actually get followed. Traffic-light data classification. Human-in-the-loop verification. An approved-tool roster that stays current. Short, practical, and updated the same week the tools change.</p>
+      </div>
+
+      <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
+      <div class="cap-d-right">
+        <div class="vis-panel ai-policy-panel">
+          <div class="ai-policy-paper">
+            <div class="ai-policy-head">
+              <div>
+                <div class="ai-policy-eyebrow">AI Usage Policy &middot; v1.0</div>
+                <div class="ai-policy-title">One page. Three colors. No jargon.</div>
+              </div>
+              <div class="ai-policy-badge">SIGNED</div>
+            </div>
+
+            <div class="ai-policy-question">
+              <span class="ai-policy-q-num">01</span>
+              <span class="ai-policy-q-text">What data can I feed into AI?</span>
+            </div>
+
+            <div class="ai-policy-rules">
+              <div class="ai-policy-rule ai-policy-rule-1">
+                <span class="ai-policy-dot ai-policy-dot-green"></span>
+                <div class="ai-policy-rule-body">
+                  <div class="ai-policy-rule-label ai-policy-lbl-green">Green light</div>
+                  <div class="ai-policy-rule-text">Public data, brainstorms, non-sensitive drafts, open code concepts.</div>
+                </div>
+              </div>
+              <div class="ai-policy-rule ai-policy-rule-2">
+                <span class="ai-policy-dot ai-policy-dot-yellow"></span>
+                <div class="ai-policy-rule-body">
+                  <div class="ai-policy-rule-label ai-policy-lbl-yellow">Yellow light</div>
+                  <div class="ai-policy-rule-text">Internal notes, anonymised operational data &mdash; enterprise tools only.</div>
+                </div>
+              </div>
+              <div class="ai-policy-rule ai-policy-rule-3">
+                <span class="ai-policy-dot ai-policy-dot-red"></span>
+                <div class="ai-policy-rule-body">
+                  <div class="ai-policy-rule-label ai-policy-lbl-red">Red light</div>
+                  <div class="ai-policy-rule-text">PII, customer data, financials, source code, trade secrets, NDA material.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-policy-signature">
+              <div class="ai-policy-sig-mark"></div>
+              <div class="ai-policy-sig-meta">
+                <div>Approved company-wide</div>
+                <div class="ai-policy-sig-date">Revised quarterly</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 `,
   'ai-chatbot': `
 <div class="ph" style="position:relative">
