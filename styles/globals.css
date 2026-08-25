@@ -9092,6 +9092,48 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence hero visual — the AI Nucleus
+   Central hex core + three concentric rings rotating at different
+   speeds (via SVG animateTransform, so the geometry stays crisp
+   under any zoom). Legend below names the three rings after the
+   words from the sub-copy: infrastructure, judgment, taste.
+   ───────────────────────────────────────────────────────────────── */
+.ai-hero-viz {
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  position: relative;
+}
+.ai-hero-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: -8px;
+  flex-wrap: wrap;
+}
+.ai-hero-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.ai-hero-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px currentColor;
+}
+@media (max-width: 900px) {
+  .ai-hero-viz { display: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    /artificial-intelligence/policy — article sub-page
    Reuses ai-article-* typography. Adds:
    - .ai-policy-paper-lg  · bigger hero variant of the policy card
