@@ -9052,6 +9052,45 @@ body.menu-open { overflow: hidden; }
   .ai-policy-rule-text { font-size: 12.5px; }
 }
 
+/* Chip row · shared class for adding color-coded pill tags below
+   section body copy. Used by the Policy section to echo the
+   traffic-light system without duplicating the rule text. */
+.ai-section-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 24px;
+}
+.ai-section-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mid);
+  letter-spacing: .04em;
+  transition: border-color .18s ease, background .18s ease;
+}
+.ai-section-chip:hover {
+  border-color: rgba(236, 169, 52, .3);
+  background: rgba(236, 169, 52, .05);
+}
+.ai-section-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .03);
+}
+@media (max-width: 720px) {
+  .ai-section-chip { font-size: 10.5px; padding: 6px 11px; }
+}
+
 /* ─────────────────────────────────────────────────────────────────
    Solo variant of the "keep reading" card · wider, has a sub
    ───────────────────────────────────────────────────────────────── */

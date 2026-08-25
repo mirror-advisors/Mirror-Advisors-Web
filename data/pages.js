@@ -4202,7 +4202,14 @@ export const pages = {
         <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Policy</div>
         <div class="cap-d-h">Nobody reads the policy.</div>
         <p class="cap-d-p">Somewhere in your company, someone&#39;s about to paste customer data into ChatGPT. Not maliciously &mdash; just because nobody told them not to.</p>
-        <p class="cap-d-p" style="margin-bottom:0">Skip the twenty-page legal doc. Ship the one-page card the team can quote by Friday.</p>
+        <p class="cap-d-p">Skip the twenty-page legal doc. Ship the one-page card the team can quote by Friday.</p>
+        <div class="ai-section-chips">
+          <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:#2F7A44"></span>One page</span>
+          <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:#E0A951"></span>Three colors</span>
+          <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:#A83C3C"></span>Zero jargon</span>
+          <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:rgba(255,255,255,.4)"></span>Quarterly review</span>
+        </div>
+        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Talk to us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       </div>
 
       <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
