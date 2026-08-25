@@ -4200,10 +4200,9 @@ export const pages = {
       <!-- LEFT (with .rev this renders on the RIGHT) · descriptive copy -->
       <div class="cap-d-left">
         <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Policy</div>
-        <div class="cap-d-h">Every team will get burned.</div>
-        <p class="cap-d-p">Somewhere in your company right now, someone is about to paste customer data into a public AI tool. Not maliciously &mdash; just because nobody told them not to.</p>
-        <p class="cap-d-p">The teams that survive the AI transition aren&#39;t the ones with the strictest policy. They&#39;re the ones whose rules are short enough to quote from memory by Friday.</p>
-        <p class="cap-d-p" style="margin-bottom:0">Done right, AI stops being your biggest liability and becomes your fastest team member &mdash; always available, never tired, and clear on where the line is.</p>
+        <div class="cap-d-h">Nobody reads the policy.</div>
+        <p class="cap-d-p">Somewhere in your company, someone&#39;s about to paste customer data into ChatGPT. Not maliciously &mdash; just because nobody told them not to.</p>
+        <p class="cap-d-p" style="margin-bottom:0">Skip the twenty-page legal doc. Ship the one-page card the team can quote by Friday.</p>
       </div>
 
       <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
