@@ -4200,10 +4200,10 @@ export const pages = {
       <!-- LEFT (with .rev this renders on the RIGHT) · descriptive copy -->
       <div class="cap-d-left">
         <div class="cap-d-label" style="background:rgba(236,169,52,.1);border:1px solid rgba(236,169,52,.2);color:#ECA934">The Policy</div>
-        <div class="cap-d-h">The line between useful and reckless.</div>
-        <p class="cap-d-p"><strong style="color:var(--tx)">Do</strong> use AI to draft, summarize, brainstorm, translate, explain, and refactor. It&#39;s a research assistant, editor, and thinking partner rolled into one. Feed it public information, generic scenarios, and your own drafts &mdash; anything you&#39;d already share on a public LinkedIn post is safe.</p>
-        <p class="cap-d-p"><strong style="color:var(--tx)">Don&#39;t</strong> paste customer data, financial records, source code, or NDA material into a public AI tool. Don&#39;t trust a factual claim without verifying it. Don&#39;t ship anything an AI wrote without a human review. And don&#39;t let a new tool onto the team without a five-minute check.</p>
-        <p class="cap-d-p" style="margin-bottom:0">The dos make AI the fastest team member you&#39;ve ever had &mdash; always available, never tired, endlessly patient. The don&#39;ts keep you out of the newspaper. A working policy is the line between the two, written down where everyone can see it.</p>
+        <div class="cap-d-h">Every team will get burned.</div>
+        <p class="cap-d-p">Somewhere in your company right now, someone is about to paste customer data into a public AI tool. Not maliciously &mdash; just because nobody told them not to.</p>
+        <p class="cap-d-p">The teams that survive the AI transition aren&#39;t the ones with the strictest policy. They&#39;re the ones whose rules are short enough to quote from memory by Friday.</p>
+        <p class="cap-d-p" style="margin-bottom:0">Done right, AI stops being your biggest liability and becomes your fastest team member &mdash; always available, never tired, and clear on where the line is.</p>
       </div>
 
       <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
