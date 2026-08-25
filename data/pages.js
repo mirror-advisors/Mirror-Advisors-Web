@@ -4209,7 +4209,7 @@ export const pages = {
           <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:#A83C3C"></span>Zero jargon</span>
           <span class="ai-section-chip"><span class="ai-section-chip-dot" style="background:rgba(255,255,255,.4)"></span>Quarterly review</span>
         </div>
-        <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Talk to us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="/artificial-intelligence/policy" style="text-decoration:none"><button class="bp" style="font-size:13px;padding:11px 22px">Read the article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
       </div>
 
       <!-- RIGHT (with .rev this renders on the LEFT) · animated policy document -->
@@ -4597,6 +4597,171 @@ export const pages = {
   <div class="ctas-glow"></div>
   <h2>Rather have us build it?</h2>
   <p>Skip the twelve steps. We&#39;ll deliver a custom Claude-powered assistant for your business &mdash; trained on your voice, wired to your data, deployed on your infrastructure.</p>
+  <div class="ctas-btns">
+    <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
+    <a href="/artificial-intelligence" style="text-decoration:none"><button class="bs" style="padding:13px 26px">Back to AI</button></a>
+  </div>
+</div>
+`,
+  'ai-policy': `
+<div class="ph" style="position:relative">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-in ph-in-split" style="align-items:center">
+    <div>
+      <div class="ai-back-link"><a href="/artificial-intelligence" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to AI</a></div>
+      <div class="badge">The Policy &middot; Article</div>
+      <h1 class="ph-h" style="font-size:clamp(36px,4.5vw,54px);letter-spacing:-.03em;line-height:1.06">AI Policy, <span style="color:var(--t)">unfussy</span>.</h1>
+      <p class="ph-sub">Every company will have one within the year. Most will draft it wrong. Here&#39;s the version your team will actually follow.</p>
+      <div class="ai-article-meta">
+        <span class="ai-article-meta-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>6 min read</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">Four sections</span>
+        <span class="ai-article-meta-sep">&middot;</span>
+        <span class="ai-article-meta-item">By Mirror Advisors</span>
+      </div>
+    </div>
+    <div class="ph-right" aria-hidden="true">
+      <div class="ai-policy-paper ai-policy-paper-lg">
+        <div class="ai-policy-head">
+          <div>
+            <div class="ai-policy-eyebrow">AI Usage Policy &middot; v1.0</div>
+            <div class="ai-policy-title">One page. Three colors. No jargon.</div>
+          </div>
+          <div class="ai-policy-badge">SIGNED</div>
+        </div>
+
+        <div class="ai-policy-question">
+          <span class="ai-policy-q-num">01</span>
+          <span class="ai-policy-q-text">What data can I feed into AI?</span>
+        </div>
+
+        <div class="ai-policy-rules">
+          <div class="ai-policy-rule">
+            <span class="ai-policy-dot ai-policy-dot-green"></span>
+            <div class="ai-policy-rule-body">
+              <div class="ai-policy-rule-label ai-policy-lbl-green">Green light</div>
+              <div class="ai-policy-rule-text">Public data, brainstorms, non-sensitive drafts.</div>
+            </div>
+          </div>
+          <div class="ai-policy-rule">
+            <span class="ai-policy-dot ai-policy-dot-yellow"></span>
+            <div class="ai-policy-rule-body">
+              <div class="ai-policy-rule-label ai-policy-lbl-yellow">Yellow light</div>
+              <div class="ai-policy-rule-text">Internal notes &mdash; enterprise tools only.</div>
+            </div>
+          </div>
+          <div class="ai-policy-rule">
+            <span class="ai-policy-dot ai-policy-dot-red"></span>
+            <div class="ai-policy-rule-body">
+              <div class="ai-policy-rule-label ai-policy-lbl-red">Red light</div>
+              <div class="ai-policy-rule-text">PII, customer data, financials, source code, NDAs.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-policy-question">
+          <span class="ai-policy-q-num">02</span>
+          <span class="ai-policy-q-text">Who owns the output?</span>
+        </div>
+        <div class="ai-policy-answer">You do. Every time. &ldquo;The AI told me so&rdquo; is not a defence.</div>
+
+        <div class="ai-policy-signature">
+          <div class="ai-policy-sig-mark"></div>
+          <div class="ai-policy-sig-meta">
+            <div>Approved company-wide</div>
+            <div class="ai-policy-sig-date">Revised quarterly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="padding-top:56px;padding-bottom:96px">
+  <div class="si">
+    <article class="ai-article">
+
+      <p class="ai-article-lede"><span class="ai-article-dropcap">A</span> workplace AI usage policy doesn&#39;t need to be a dense, restrictive, twenty-page legal document. Frame it as a practical guide that empowers your team to use AI efficiently &mdash; without putting the company at risk. The goal isn&#39;t to ban AI. The goal is to answer three quiet questions for every employee, in plain language, on a single page they can actually read.</p>
+
+      <p class="ai-article-p">The first: <em>what data can I feed into this thing?</em> The second: <em>what tasks can I actually use it for?</em> The third: <em>who is responsible when the output goes out the door?</em></p>
+
+      <p class="ai-article-p">Every rule you write should trace back to one of those three. If a section doesn&#39;t answer any of them, cut it.</p>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">01</span>Green, yellow, red.</h2>
+      <p class="ai-article-p">The most critical part of any AI policy is spelling out, in blunt English, what data is safe to type into a public AI tool. Standard ChatGPT and Claude accounts feed the model &mdash; and in many cases the training set behind future models &mdash; every prompt they receive. Enterprise contracts change that math, but only for the enterprise seat, and only when the privacy toggles are actually turned on. Employees on personal accounts get no such protection.</p>
+      <p class="ai-article-p">A traffic-light system is the fastest way to make this legible. Three colors, three lists, no ambiguity.</p>
+      <p class="ai-article-p"><span class="ai-policy-inline-dot" style="background:#2F7A44"></span><strong style="color:#8BC79A">Green light.</strong> Publicly available data, brainstorming prompts, non-sensitive draft copy, open code snippet concepts, general research. Anything a competitor could already read on your website is fair game.</p>
+      <p class="ai-article-p"><span class="ai-policy-inline-dot" style="background:#E0A951"></span><strong style="color:#E0A951">Yellow light.</strong> Internal process notes, anonymised operational data, meeting summaries. Fine to use, but only through enterprise AI tools with privacy protections switched on. Never on a personal account.</p>
+      <p class="ai-article-p"><span class="ai-policy-inline-dot" style="background:#C56262"></span><strong style="color:#DA8080">Red light.</strong> Personally identifiable information, customer data, financial records, proprietary source code, trade secrets, NDA-covered material. Never in any prompt, in any tool. No exceptions dressed up as one-off favors.</p>
+      <p class="ai-article-p">Print the list somewhere visible. Post it in the office kitchen if you have to. The clarity of the three colors is doing more work than any policy paragraph ever will.</p>
+
+      <blockquote class="ai-article-midquote">The clarity of the three colors is doing more work than any policy paragraph ever will.</blockquote>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">02</span>The human is still the human.</h2>
+      <p class="ai-article-p">AI models invent facts. The polite term is that they &ldquo;hallucinate.&rdquo; The practical translation is that anything a model produces is a first draft, not a final answer. Sometimes the draft is brilliant. Sometimes it&#39;s wrong in ways that read as confident. That&#39;s the danger.</p>
+      <p class="ai-article-p">A policy needs to be explicit about who is on the hook when the wrongness ships. The rule is simple: the employee is one hundred percent accountable for the accuracy, tone, and quality of any work submitted or published, no matter which tool helped write it. &ldquo;The AI told me so&rdquo; is not a defense. It is not a mitigating circumstance. It is not a line item on the incident report.</p>
+      <p class="ai-article-p">Which means every factual claim, code snippet, statistic, or citation that came out of an AI has to be manually verified by a person before it goes live, gets sent to a client, or hits production. That verification is not optional and it is not asynchronous. It happens before the send button.</p>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">03</span>Whose art is this, anyway?</h2>
+      <p class="ai-article-p">Two rules on the intellectual-property side keep the company on safe legal ground. Neither is complicated.</p>
+      <p class="ai-article-p">First: never ask an AI to generate artwork, code, or written work that directly mimics or reproduces existing copyrighted material. &ldquo;In the style of&rdquo; prompts are the fastest known route to a legal complaint, and they compound the risk by putting the imitation on paper with the company&#39;s name attached.</p>
+      <p class="ai-article-p">Second: add real human work. In most jurisdictions purely AI-generated content cannot be copyrighted. Anything the company plans to hold as intellectual property &mdash; product copy, brand assets, code that ships &mdash; needs substantial human creation involved. Editing an AI draft is not enough; someone has to shape, rewrite, and take authorial responsibility for the piece.</p>
+
+      <h2 class="ai-article-h"><span class="ai-article-num">04</span>The tools you actually use.</h2>
+      <p class="ai-article-p">Keep a short list &mdash; and a real one &mdash; of the AI tools the company has vetted and approved. Put it somewhere everyone can find in five seconds: the intranet, a pinned Slack channel, an internal wiki. Update it when the roster changes.</p>
+      <p class="ai-article-p">And when an employee wants to use a new AI tool or plugin, it has to run through a quick IT or management review first. This one rule prevents the single most common failure mode in workplace AI: <em>shadow AI</em> &mdash; well-intentioned employees quietly using unvetted tools that leak data, violate the policy, or expose the company to third-party terms that no one has read. Shadow AI is what makes headlines. A twenty-second review request kills it at the source.</p>
+
+      <blockquote class="ai-article-midquote">Shadow AI is what makes headlines. A twenty-second review request kills it at the source.</blockquote>
+
+    </article>
+
+    <!-- Cheat sheet sidebar -->
+    <div class="ai-cheatsheet">
+      <div class="ai-cheatsheet-eyebrow">The cheat sheet</div>
+      <div class="ai-cheatsheet-title">A blueprint your coworker can steal.</div>
+      <p class="ai-cheatsheet-lede">A four-line starter framework for whoever is drafting version one. Copy it, tune the example rules to your industry, and you have a working document by the end of the afternoon.</p>
+      <div class="ai-cheatsheet-rules">
+        <div class="ai-cheatsheet-rule">
+          <div class="ai-cheatsheet-rule-label">Data safety</div>
+          <div class="ai-cheatsheet-rule-body"><em>&ldquo;Never paste customer names, emails, or company financials into public AI prompts.&rdquo;</em></div>
+        </div>
+        <div class="ai-cheatsheet-rule">
+          <div class="ai-cheatsheet-rule-label">Output review</div>
+          <div class="ai-cheatsheet-rule-body"><em>&ldquo;Fact-check all AI outputs. You are responsible for any errors in your final deliverable.&rdquo;</em></div>
+        </div>
+        <div class="ai-cheatsheet-rule">
+          <div class="ai-cheatsheet-rule-label">Tool approval</div>
+          <div class="ai-cheatsheet-rule-body"><em>&ldquo;Use company-provided enterprise accounts over personal AI subscriptions for work tasks.&rdquo;</em></div>
+        </div>
+        <div class="ai-cheatsheet-rule">
+          <div class="ai-cheatsheet-rule-label">Transparency</div>
+          <div class="ai-cheatsheet-rule-body"><em>&ldquo;Disclose AI assistance when drafting external client deliverables or public publications.&rdquo;</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-article">
+      <blockquote class="ai-article-pullquote">The best AI policy is the one people actually follow.</blockquote>
+    </div>
+
+    <!-- Back to article card -->
+    <div class="ai-article-next">
+      <div class="ai-article-next-eyebrow">Prefer the how-to?</div>
+      <a href="/artificial-intelligence/chatbot" class="ai-article-next-card ai-article-next-solo" style="text-decoration:none;color:inherit">
+        <div class="ai-article-next-card-tag">The Chatbot</div>
+        <div class="ai-article-next-card-h">How we build the private assistant, prompt to deployment.</div>
+        <p class="ai-article-next-card-sub">The sister article, on the other side of the AI page. Same tone, different subject &mdash; the technical how instead of the operational why.</p>
+        <div class="ai-article-next-card-cta">Read the chatbot article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="ctas">
+  <div class="ctas-glow"></div>
+  <h2>Want us to draft yours?</h2>
+  <p>We&#39;ll build a one-page AI policy tuned to your industry, your team, and your risk profile &mdash; and revisit it every quarter as the tools change.</p>
   <div class="ctas-btns">
     <a href="#" onclick="go(&#39;contact&#39;)" style="text-decoration:none"><button class="bp" style="padding:14px 34px;font-size:15px">Book a Blueprinting Session</button></a>
     <a href="/artificial-intelligence" style="text-decoration:none"><button class="bs" style="padding:13px 26px">Back to AI</button></a>

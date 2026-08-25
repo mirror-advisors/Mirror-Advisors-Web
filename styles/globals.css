@@ -9092,6 +9092,152 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   /artificial-intelligence/policy — article sub-page
+   Reuses ai-article-* typography. Adds:
+   - .ai-policy-paper-lg  · bigger hero variant of the policy card
+                           with a second question block (rules
+                           show statically, no cycle animation)
+   - .ai-policy-inline-dot· inline traffic-light dot for the body
+                           paragraphs on the article
+   - .ai-cheatsheet       · cream sidebar block for the four-rule
+                           blueprint at the end
+   - .ai-article-dropcap  · large amber initial on the lede
+   ───────────────────────────────────────────────────────────────── */
+
+/* Bigger hero-variant of the policy paper — static (no cycle),
+   more content, taller card so it fills the hero right column. */
+.ai-policy-paper-lg {
+  min-height: 540px;
+  padding: 34px 36px 30px;
+}
+.ai-policy-paper-lg .ai-policy-rule {
+  opacity: 1;
+  transform: none;
+  animation: none !important;
+}
+.ai-policy-answer {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3A3A3E;
+  padding: 12px 16px;
+  background: rgba(184, 129, 31, .08);
+  border-left: 2px solid #B8811F;
+  border-radius: 0 8px 8px 0;
+  margin: 4px 0;
+}
+
+/* Inline traffic-light dot for the article body */
+.ai-policy-inline-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  vertical-align: 1px;
+  margin-right: 8px;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* Drop cap for the article lede */
+.ai-article-dropcap {
+  font-family: Georgia, 'Iowan Old Style', serif;
+  font-size: 56px;
+  line-height: .85;
+  font-weight: 700;
+  color: #ECA934;
+  float: left;
+  margin-right: 12px;
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+/* Cheatsheet sidebar · cream card, boxed rules */
+.ai-cheatsheet {
+  max-width: 780px;
+  margin: 56px auto 40px;
+  padding: 36px 40px 32px;
+  background: linear-gradient(180deg, #FAF6EE 0%, #F5F0E4 100%);
+  border: 1px solid #E3DBC6;
+  border-radius: 16px;
+  color: #1A1A1E;
+  position: relative;
+  overflow: hidden;
+}
+.ai-cheatsheet::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2F7A44 0%, #2F7A44 33%, #E0A951 33%, #E0A951 66%, #C56262 66%, #C56262 100%);
+}
+.ai-cheatsheet-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #B8811F;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ai-cheatsheet-title {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1A1A1E;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+.ai-cheatsheet-lede {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4A4A50;
+  margin: 0 0 24px;
+}
+.ai-cheatsheet-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ai-cheatsheet-rule {
+  padding: 16px 18px;
+  background: #FFFFFF;
+  border: 1px solid #E8E1D0;
+  border-radius: 10px;
+}
+.ai-cheatsheet-rule-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #B8811F;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ai-cheatsheet-rule-body {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #3A3A3E;
+}
+.ai-cheatsheet-rule-body em {
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .ai-article-dropcap { font-size: 44px; margin-right: 8px; }
+  .ai-cheatsheet { margin: 40px auto 30px; padding: 26px 22px 22px; }
+  .ai-cheatsheet-title { font-size: 20px; }
+  .ai-cheatsheet-rules { grid-template-columns: 1fr; gap: 12px; }
+  .ai-cheatsheet-rule { padding: 14px 16px; }
+  .ai-policy-paper-lg { padding: 26px 22px 22px; min-height: 460px; }
+  .ai-policy-answer { font-size: 12.5px; padding: 10px 14px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    Solo variant of the "keep reading" card · wider, has a sub
    ───────────────────────────────────────────────────────────────── */
 .ai-article-next-solo {
