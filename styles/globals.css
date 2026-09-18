@@ -10283,3 +10283,189 @@ body.menu-open { overflow: hidden; }
   .ai-article-pullquote { font-size: 17px; padding: 18px 20px; margin-top: 32px; }
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REBUILD 2026-09 — messaging refresh (Sep rebuild brief)
+   Brand tokens: Navy #0d1233 / Gold #eea720 / Cream #fff6ea
+   Namespaced under .brf-* so nothing collides with the legacy page CSS.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --brf-navy: #0d1233;
+  --brf-gold: #eea720;
+  --brf-cream: #fff6ea;
+  --brf-dark-grey: #333;
+  --brf-mid-grey: #565b6d;
+  --brf-border: #ebe6dc;
+}
+
+.brf-page {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--brf-dark-grey);
+  background: #fff;
+  min-height: 100vh;
+  padding-top: 88px;
+}
+
+.brf-container { max-width: 1080px; margin: 0 auto; }
+.brf-container-narrow { max-width: 780px; margin: 0 auto; }
+
+.brf-hero { padding: 88px 32px 96px; background: #fff; }
+.brf-hero-navy { background: var(--brf-navy); }
+
+.brf-eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--brf-gold);
+  margin: 0 0 20px;
+}
+
+.brf-h1 {
+  font-size: 56px; font-weight: 800; line-height: 1.06;
+  letter-spacing: -0.02em; color: var(--brf-navy);
+  margin: 0 0 22px;
+}
+.brf-hero-navy .brf-h1 { color: #fff; }
+
+.brf-h2 {
+  font-size: 34px; font-weight: 800; line-height: 1.15;
+  letter-spacing: -0.015em; color: var(--brf-navy);
+  margin: 0 0 24px;
+}
+
+.brf-h3 {
+  font-size: 20px; font-weight: 800; color: var(--brf-navy);
+  margin: 0 0 12px; letter-spacing: -0.01em;
+}
+
+.brf-lead {
+  font-size: 19px; line-height: 1.6; color: var(--brf-dark-grey);
+  margin: 0 0 28px; max-width: 680px; font-weight: 500;
+}
+.brf-hero-navy .brf-lead { color: rgba(255, 255, 255, 0.85); }
+
+.brf-body {
+  font-size: 16px; line-height: 1.7; color: var(--brf-dark-grey);
+  margin: 0 0 18px;
+}
+.brf-section-navy .brf-body { color: rgba(255, 255, 255, 0.9); }
+
+.brf-btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 32px 0 20px; }
+
+.brf-cta-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brf-gold); color: var(--brf-navy);
+  border: none; padding: 15px 28px;
+  font-family: inherit; font-size: 14px; font-weight: 800;
+  letter-spacing: 0.02em; border-radius: 8px; cursor: pointer;
+  text-decoration: none; transition: filter .2s ease, transform .18s ease;
+}
+.brf-cta-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.brf-cta-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--brf-navy);
+  border: 1.5px solid var(--brf-navy); padding: 13.5px 26px;
+  font-family: inherit; font-size: 14px; font-weight: 800;
+  letter-spacing: 0.02em; border-radius: 8px; cursor: pointer;
+  text-decoration: none; transition: background .2s ease, color .2s ease;
+}
+.brf-cta-secondary:hover { background: var(--brf-navy); color: #fff; }
+.brf-hero-navy .brf-cta-secondary { color: #fff; border-color: rgba(255,255,255,0.4); }
+.brf-hero-navy .brf-cta-secondary:hover { background: #fff; color: var(--brf-navy); }
+
+.brf-hero-note { font-size: 13px; color: var(--brf-mid-grey); margin-top: 22px; font-weight: 600; }
+.brf-hero-navy .brf-hero-note { color: rgba(255, 255, 255, 0.65); }
+
+.brf-section { padding: 80px 32px; background: #fff; }
+.brf-section-cream { background: var(--brf-cream); }
+.brf-section-navy { background: var(--brf-navy); color: #fff; }
+.brf-section-navy .brf-h2 { color: #fff; }
+.brf-section-navy .brf-h3 { color: #fff; }
+
+.brf-list { list-style: none; padding: 0; margin: 0 0 28px; }
+.brf-list li {
+  position: relative; padding-left: 26px; font-size: 16.5px;
+  line-height: 1.6; color: var(--brf-dark-grey); margin-bottom: 12px;
+}
+.brf-list li::before {
+  content: ''; position: absolute; left: 0; top: 11px;
+  width: 12px; height: 2px; background: var(--brf-gold);
+}
+.brf-section-navy .brf-list li { color: rgba(255, 255, 255, 0.9); }
+
+.brf-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 36px; }
+.brf-card {
+  padding: 28px 26px 30px; background: #fff; border: 1.5px solid var(--brf-border);
+  border-radius: 14px; text-decoration: none; color: inherit; display: block;
+  transition: border-color .2s ease, transform .18s ease, box-shadow .2s ease;
+}
+.brf-card:hover {
+  border-color: var(--brf-navy); transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 18, 51, 0.08);
+}
+.brf-card-featured { border-color: var(--brf-gold); border-width: 2px; position: relative; background: rgba(238, 167, 32, 0.03); }
+.brf-card-featured::before {
+  content: 'Featured'; position: absolute; top: 16px; right: 18px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--brf-gold);
+}
+.brf-card-title { font-size: 19px; font-weight: 800; color: var(--brf-navy); margin: 0 0 10px; letter-spacing: -0.01em; }
+.brf-card-desc { font-size: 15px; line-height: 1.55; color: var(--brf-dark-grey); margin: 0 0 14px; }
+.brf-card-learn { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brf-gold); }
+
+.brf-cards-lg .brf-card { padding: 34px 30px 34px; }
+.brf-cards-lg .brf-card-title { font-size: 22px; margin-bottom: 12px; }
+.brf-cards-lg .brf-card-desc { font-size: 15.5px; }
+
+.brf-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 40px 0 28px; }
+.brf-step { padding: 22px 20px 24px; background: #fff; border: 1.5px solid var(--brf-border); border-radius: 12px; }
+.brf-step-num { font-size: 13px; font-weight: 800; color: var(--brf-gold); letter-spacing: 0.06em; margin-bottom: 10px; }
+.brf-step-name { font-size: 15.5px; font-weight: 800; color: var(--brf-navy); margin-bottom: 6px; letter-spacing: -0.01em; }
+.brf-step-desc { font-size: 13.5px; line-height: 1.5; color: var(--brf-dark-grey); }
+.brf-section-cream .brf-step { background: #fff; }
+
+.brf-why-block {
+  padding: 24px 26px; border-left: 3px solid var(--brf-gold);
+  margin-bottom: 22px; background: rgba(238, 167, 32, 0.045);
+}
+.brf-why-block-title { font-size: 18px; font-weight: 800; color: var(--brf-navy); margin: 0 0 10px; letter-spacing: -0.01em; }
+.brf-why-block-body { font-size: 15.5px; line-height: 1.6; color: var(--brf-dark-grey); margin: 0; }
+
+.brf-cta-block { background: var(--brf-navy); color: #fff; padding: 72px 32px 80px; text-align: center; }
+.brf-cta-block .brf-h2 { color: #fff; margin-bottom: 18px; }
+.brf-cta-block .brf-body { color: rgba(255, 255, 255, 0.88); max-width: 640px; margin: 0 auto 30px; font-size: 17px; }
+.brf-cta-block .brf-cta-primary { padding: 17px 34px; font-size: 15px; }
+
+.brf-back-link {
+  display: inline-block; font-size: 12px; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--brf-gold); text-decoration: none; margin-bottom: 22px; cursor: pointer;
+}
+.brf-back-link:hover { color: var(--brf-navy); }
+
+.brf-service-body { max-width: 780px; margin: 0 auto; }
+.brf-service-body .brf-h2 { font-size: 26px; margin: 44px 0 18px; }
+.brf-service-body .brf-body { font-size: 16.5px; }
+
+.brf-note {
+  padding: 20px 24px; background: var(--brf-cream);
+  border-radius: 12px; font-size: 14.5px; line-height: 1.6;
+  color: var(--brf-dark-grey); margin: 28px 0;
+}
+
+@media (max-width: 900px) {
+  .brf-h1 { font-size: 38px; }
+  .brf-h2 { font-size: 26px; }
+  .brf-lead { font-size: 17px; }
+  .brf-section, .brf-hero { padding: 56px 22px 64px; }
+  .brf-cta-block { padding: 56px 22px 64px; }
+  .brf-steps { grid-template-columns: 1fr; gap: 12px; }
+  .brf-page { padding-top: 72px; }
+}
+
+/* Rebuild 2026-09: highlight AI & Automation in the nav dropdown as
+   the featured service. Applied to both the desktop hover-dropdown
+   and the mobile hamburger sub-links. */
+.nav-drop-link-featured,
+.mm-sub-featured { color: #eea720 !important; font-weight: 700; }

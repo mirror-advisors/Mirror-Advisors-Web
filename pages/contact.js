@@ -7,7 +7,8 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Contact — Mirror Advisors</title>
+        <title>Contact | Mirror Advisors</title>
+        <meta name="description" content="Tell us what's broken with your systems and we'll tell you honestly whether we're the right firm to fix it. Based in The Woodlands, Texas." />
       </Head>
       {/* Cloudflare Turnstile — loads the widget script. The .cf-turnstile
           div lives inside the contact form (data/pages.js). Turnstile auto-

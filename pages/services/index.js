@@ -2,15 +2,12 @@ import Head from 'next/head';
 import HtmlPage from '../../components/HtmlPage';
 import { pages } from '../../data/pages';
 
-// Services Overview. Same content as the pre-restructure /services page —
-// renamed from pages/services.js → pages/services/index.js when the
-// sub-pages (zoho-implementation, custom-ai-application) were added under
-// this folder.
 export default function Page() {
   return (
     <>
       <Head>
-        <title>Services — Mirror Advisors</title>
+        <title>Services | Systems Integration, ERP, Custom Development &amp; AI | Mirror Advisors</title>
+        <meta name="description" content="Systems integration, data migration, ERP implementation, custom development, AI and automation, and Zoho consulting. US-led, scoped before built." />
       </Head>
       <HtmlPage html={pages['services']} />
     </>

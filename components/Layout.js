@@ -187,7 +187,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>Mirror Advisors</title>
-        <meta name="description" content="Texas-based Zoho premium partner and Anthropic Claude AI consulting. We build the technology infrastructure that lets ambitious businesses move faster." />
+        <meta name="description" content="US-led systems integration, ERP and custom development. We get growing companies onto one system. Scoped before built." />
         {/* Browser tab icon. Drop the file at public/mirror.svg. */}
         <link rel="icon" type="image/svg+xml" href="/mirror.svg" />
         <link rel="apple-touch-icon" href="/mirror.svg" />
@@ -214,29 +214,22 @@ export default function Layout({ children }) {
             <div className="nav-drop">
               <Link href="/services" className={currentNavKey === 'services' ? 'on' : ''}>Services</Link>
               <div className="nav-drop-menu" role="menu" aria-label="Services">
-                <Link href="/services"                        className="nav-drop-link" role="menuitem">Overview</Link>
-                <Link href="/services/zoho-implementation"    className="nav-drop-link" role="menuitem">Zoho Implementation</Link>
-                <Link href="/services/custom-ai-application"  className="nav-drop-link" role="menuitem">Custom AI Application</Link>
+                <Link href="/services"                       className="nav-drop-link" role="menuitem">Overview</Link>
+                <Link href="/services/systems-integration"   className="nav-drop-link" role="menuitem">Systems Integration</Link>
+                <Link href="/services/data-migration"        className="nav-drop-link" role="menuitem">Data Migration</Link>
+                <Link href="/services/erp-implementation"    className="nav-drop-link" role="menuitem">ERP Implementation</Link>
+                <Link href="/services/custom-development"    className="nav-drop-link" role="menuitem">Custom Development</Link>
+                <Link href="/services/ai-automation"         className="nav-drop-link nav-drop-link-featured" role="menuitem">AI &amp; Automation</Link>
+                <Link href="/services/zoho"                  className="nav-drop-link" role="menuitem">Zoho Consulting &amp; Support</Link>
               </div>
             </div>
-            <Link href="/cases"          className={currentNavKey === 'cases'          ? 'on' : ''}>Case Studies</Link>
-            <Link href="/technology"     className={currentNavKey === 'technology'     ? 'on' : ''}>Technology</Link>
-            <Link href="/about"                  className={currentNavKey === 'about'                  ? 'on' : ''}>About</Link>
-            <Link href="/artificial-intelligence" className={currentNavKey === 'artificial-intelligence' ? 'on' : ''}>AI</Link>
-            <Link href="/contact"                className={currentNavKey === 'contact'                ? 'on' : ''}>Contact</Link>
-            <Link href="/ai-field-guide"         className={currentNavKey === 'ai-field-guide'         ? 'on' : ''}>AI Field Guide</Link>
+            <Link href="/how-we-work"    className={currentNavKey === 'how-we-work'    ? 'on' : ''}>How We Work</Link>
+            <Link href="/about"          className={currentNavKey === 'about'          ? 'on' : ''}>About</Link>
+            <Link href="/contact"        className={currentNavKey === 'contact'        ? 'on' : ''}>Contact</Link>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <a href="https://app.mirroradvisors.com" target="_blank" rel="noopener noreferrer" className="portal-btn">
-              <div className="portal-icon">
-                <svg className="inf-spin" width="11" height="8" viewBox="0 0 44 20" fill="none" stroke="#0D1232" strokeWidth="2.8" strokeLinecap="round">
-                  <path d="M22 10 C22 10 18 2 10 2 C4 2 1 6 1 10 C1 14 4 18 10 18 C18 18 22 10 22 10 C22 10 26 2 34 2 C40 2 43 6 43 10 C43 14 40 18 34 18 C26 18 22 10 22 10 Z" />
-                </svg>
-              </div>
-              <span>Infinity Portal</span>
-            </a>
             <Link href="/contact" legacyBehavior>
-              <a><button className="ncta">Book a Call &rarr;</button></a>
+              <a><button className="ncta">Book a call &rarr;</button></a>
             </Link>
             <button
               className="nav-hamburger"
@@ -272,25 +265,24 @@ export default function Layout({ children }) {
             services is disabled. */}
         <div className="mm-svc-group" data-page-key="services">
           <div className="mm-svc-header">Services</div>
-          <Link href="/services"                                                                      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
-          <Link href="/services/zoho-implementation"   data-page-key="zoho-implementation"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho-implementation' ? ' on' : '')}>Zoho Implementation</Link>
-          <Link href="/services/custom-ai-application" data-page-key="custom-ai-application"         onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-ai-application' ? ' on' : '')}>Custom AI Application</Link>
+          <Link href="/services"                                                                    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
+          <Link href="/services/systems-integration"  data-page-key="systems-integration"          onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/systems-integration' ? ' on' : '')}>Systems Integration</Link>
+          <Link href="/services/data-migration"       data-page-key="data-migration"               onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/data-migration' ? ' on' : '')}>Data Migration</Link>
+          <Link href="/services/erp-implementation"   data-page-key="erp-implementation"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/erp-implementation' ? ' on' : '')}>ERP Implementation</Link>
+          <Link href="/services/custom-development"   data-page-key="custom-development"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-development' ? ' on' : '')}>Custom Development</Link>
+          <Link href="/services/ai-automation"        data-page-key="ai-automation"                onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub mm-sub-featured' + (router.pathname === '/services/ai-automation' ? ' on' : '')}>AI &amp; Automation</Link>
+          <Link href="/services/zoho"                 data-page-key="zoho"                         onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho' ? ' on' : '')}>Zoho Consulting &amp; Support</Link>
         </div>
-        <Link href="/cases"      data-page-key="cases"      onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'cases'      ? ' on' : '')}>Case Studies</Link>
-        <Link href="/technology" data-page-key="technology" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'technology' ? ' on' : '')}>Technology</Link>
+        <Link href="/how-we-work"            data-page-key="how-we-work"            onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'how-we-work'            ? ' on' : '')}>How We Work</Link>
         <Link href="/about"                  data-page-key="about"                  onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'about'                  ? ' on' : '')}>About</Link>
-        <Link href="/artificial-intelligence" data-page-key="artificial-intelligence" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'artificial-intelligence' ? ' on' : '')}>AI</Link>
         <Link href="/contact"                data-page-key="contact"                onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'contact'                ? ' on' : '')}>Contact</Link>
-        <Link href="/ai-field-guide" data-page-key="ai-field-guide" onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'ai-field-guide' ? ' on' : '')}>AI Field Guide</Link>
         <div className="mm-cta-wrap">
           <a
-            href="https://app.mirroradvisors.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="portal-btn"
             onClick={() => window.closeMobileMenu && window.closeMobileMenu()}
           >
-            <span>Infinity Portal &#8599;</span>
+            <span>Book a call</span>
           </a>
           <Link href="/contact" legacyBehavior>
             <a onClick={() => window.closeMobileMenu && window.closeMobileMenu()}>
