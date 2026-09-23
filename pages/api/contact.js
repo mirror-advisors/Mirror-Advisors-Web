@@ -66,17 +66,46 @@ export default async function handler(req, res) {
   }
   if (!body || typeof body !== 'object') return bad(res, 400, 'invalid_body');
 
-  // ── Honeypot ──────────────────────────────────────────────────────────
-  // Silent bot filter. The visible form hides the website_url input with
-  // display:none + tabindex="-1"; real users never touch it. Bots that
-  // blindly fill every input will populate it. When that happens we drop
-  // the submission on the floor and return 200 OK so the bot logs a
-  // "success" and moves on without retrying with a smarter payload.
-  // Must run BEFORE any other validation so error responses can't teach
-  // a bot which fields are required.
+  // ── Silent spam filters ───────────────────────────────────────────────
+  // Everything in this block returns 200 OK on match so bots see a
+  // "success" and move on without retrying with a smarter payload.
+  // Real users never trip any of them. Must run BEFORE any other
+  // validation so error responses can't teach a bot which fields are
+  // required or which values are accepted.
+
+  // 1. Honeypot. The visible form hides the website_url input with
+  //    display:none + tabindex="-1"; real users never touch it. Bots
+  //    that blindly fill every input will populate it.
   const honeypot = String(body.website_url || '').trim();
   if (honeypot) {
     console.warn('[/api/contact] honeypot tripped — dropping bot submission silently');
+    return res.status(200).json({ ok: true });
+  }
+
+  // 2. Time-to-Submit Lock. loadTimestamp is set on page mount by
+  //    _INIT.contact and forwarded here in the payload. Humans can't
+  //    tab through and fill seven fields in under three seconds; bots
+  //    almost always can. We only enforce the check when a plausible
+  //    loadTimestamp is present (Turnstile catches direct-post bots
+  //    that skip the field entirely); this keeps us from breaking
+  //    real submissions when a browser extension strips the field.
+  const loadTimestamp = Number(body.loadTimestamp);
+  if (Number.isFinite(loadTimestamp) && loadTimestamp > 0) {
+    const elapsedSec = (Date.now() - loadTimestamp) / 1000;
+    if (elapsedSec < 3) {
+      console.warn('[/api/contact] time-to-submit lock tripped (' + elapsedSec.toFixed(2) + 's) — dropping bot submission silently');
+      return res.status(200).json({ ok: true });
+    }
+  }
+
+  // 3. Link Limiter. Genuine leads describing what's broken don't need
+  //    to link to more than one thing; scrapers, SEO backlink spam and
+  //    "check out my site" pitches almost always do. Match http:// and
+  //    https:// case-insensitively so http/HTTP/hTTPs all count.
+  const messageRaw = String(body.message || '');
+  const urlMatches = messageRaw.match(/https?:\/\//gi);
+  if (urlMatches && urlMatches.length > 1) {
+    console.warn('[/api/contact] link limiter tripped (' + urlMatches.length + ' URLs) — dropping bot submission silently');
     return res.status(200).json({ ok: true });
   }
 
