@@ -245,6 +245,9 @@ export default function Layout({ children }) {
         </div>
       </nav>
 
+      {/* Edge serial label — decorative, runs down the right margin on wide screens. */}
+      <div className="oz-sidelabel" aria-hidden="true">Mirror Advisors</div>
+
       <div
         className="mobile-menu-backdrop"
         id="mobileMenuBackdrop"

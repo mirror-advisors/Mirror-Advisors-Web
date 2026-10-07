@@ -14,139 +14,157 @@ import { FOOTER_HTML } from '../lib/footer';
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
-  'home': `<div class="brf-page">
+  'home': `<div class="brf-page oz-page">
 
-  <!-- ── SECTION 1 · HERO ── -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
+  <!-- ── 01 · HERO — void-mode reveal: headline / object / body ── -->
+  <section class="oz-sec oz-reveal oz-hero" aria-labelledby="oz-home-h1">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <p class="oz-tagline">US-led. Global delivery. The same lead from your first call to go-live.</p>
+        <h1 class="oz-display" id="oz-home-h1">One system your whole business runs on.</h1>
+        <div class="oz-btns">
+          <a class="oz-btn-fill" href="/contact" onclick="go('contact')">Book a call</a>
+          <a class="oz-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
+        </div>
       </div>
-      <div class="brf-hero-note">US-led. Global delivery. The same lead from your first call to go-live.</div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">If this sounds familiar, it usually is.</h2>
-      <ul class="brf-list">
-        <li>Your CRM doesn't know what your accounting system knows.</li>
-        <li>The same customer record lives in three places, and two of them are out of date.</li>
-        <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
-        <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
-        <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
-      </ul>
-      <p class="brf-body">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
-    </div>
-  </section>
-
-  <!-- ── SECTION 3 · WHAT WE DO ── -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">Six ways we get your business onto one system.</h2>
-      <div class="brf-cards">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-hero" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Every project starts with a Mirror Scope.</h2>
-      <div style="max-width:780px">
-        <p class="brf-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="brf-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
+  <!-- ── 02 · THE PROBLEM ── -->
+  <section class="oz-sec" aria-labelledby="oz-home-problem">
+    <div class="oz-split">
+      <div class="oz-split-l">
+        <h2 class="oz-h" id="oz-home-problem">If this sounds familiar, it usually is.</h2>
       </div>
-      <div class="brf-steps">
-        <div class="brf-step">
-          <div class="brf-step-num">01</div>
-          <div class="brf-step-name">Mirror Scope</div>
-          <div class="brf-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">02</div>
-          <div class="brf-step-name">Approval</div>
-          <div class="brf-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">03</div>
-          <div class="brf-step-name">Build</div>
-          <div class="brf-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">04</div>
-          <div class="brf-step-name">Training</div>
-          <div class="brf-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">05</div>
-          <div class="brf-step-name">Live and supported</div>
-          <div class="brf-step-desc">You go live, and we stay reachable.</div>
-        </div>
-      </div>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">More on how we work</a>
+      <div class="oz-split-r">
+        <ul class="oz-rows">
+          <li>Your CRM doesn't know what your accounting system knows.</li>
+          <li>The same customer record lives in three places, and two of them are out of date.</li>
+          <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
+          <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
+          <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
+        </ul>
+        <p class="oz-voice oz-after-rows">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Why companies choose us.</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">US-led from the first call.</div>
-        <p class="brf-why-block-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+  <!-- ── 03 · WHAT WE DO ── -->
+  <section class="oz-sec" aria-labelledby="oz-home-services">
+    <div class="oz-head-row">
+      <h2 class="oz-h" id="oz-home-services">Six ways we get your business onto one system.</h2>
+    </div>
+    <div class="oz-cards">
+      <a class="oz-card" href="/services/systems-integration" onclick="go('services/systems-integration')">
+        <div class="oz-card-title">Systems Integration</div>
+        <p class="oz-card-desc">Connect the software you already own so your data moves on its own.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+      <a class="oz-card" href="/services/data-migration" onclick="go('services/data-migration')">
+        <div class="oz-card-title">Data Migration</div>
+        <p class="oz-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+      <a class="oz-card" href="/services/erp-implementation" onclick="go('services/erp-implementation')">
+        <div class="oz-card-title">ERP Implementation</div>
+        <p class="oz-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+      <a class="oz-card" href="/services/custom-development" onclick="go('services/custom-development')">
+        <div class="oz-card-title">Custom Development</div>
+        <p class="oz-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+      <a class="oz-card oz-card-featured" href="/services/ai-automation" onclick="go('services/ai-automation')">
+        <div class="oz-card-title">AI &amp; Automation</div>
+        <p class="oz-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+      <a class="oz-card" href="/services/zoho" onclick="go('services/zoho')">
+        <div class="oz-card-title">Zoho Consulting &amp; Support</div>
+        <p class="oz-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
+        <div class="oz-card-more">Learn more →</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── 04 · MIRROR SCOPE — second reveal, object top-down ── -->
+  <section class="oz-sec oz-reveal" aria-labelledby="oz-home-scope">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-h" id="oz-home-scope">Every project starts with a Mirror Scope.</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We scope before we build.</div>
-        <p class="brf-why-block-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-flat" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We answer.</div>
-        <p class="brf-why-block-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+      <div class="oz-tri-r">
+        <p class="oz-voice-s">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+        <p class="oz-voice-s">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">You can see the work.</div>
-        <p class="brf-why-block-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+    </div>
+    <ol class="oz-steps">
+      <li class="oz-step">
+        <div class="oz-step-num">01</div>
+        <div class="oz-step-name">Mirror Scope</div>
+        <div class="oz-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
+      </li>
+      <li class="oz-step">
+        <div class="oz-step-num">02</div>
+        <div class="oz-step-name">Approval</div>
+        <div class="oz-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
+      </li>
+      <li class="oz-step">
+        <div class="oz-step-num">03</div>
+        <div class="oz-step-name">Build</div>
+        <div class="oz-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
+      </li>
+      <li class="oz-step">
+        <div class="oz-step-num">04</div>
+        <div class="oz-step-name">Training</div>
+        <div class="oz-step-desc">We train your team on what we built, not on generic software documentation.</div>
+      </li>
+      <li class="oz-step">
+        <div class="oz-step-num">05</div>
+        <div class="oz-step-name">Live and supported</div>
+        <div class="oz-step-desc">You go live, and we stay reachable.</div>
+      </li>
+    </ol>
+    <div class="oz-btns">
+      <a class="oz-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
+    </div>
+  </section>
+
+  <!-- ── 05 · WHY COMPANIES CHOOSE US — museum-label spec sheet ── -->
+  <section class="oz-sec" aria-labelledby="oz-home-why">
+    <div class="oz-head-row">
+      <h2 class="oz-h" id="oz-home-why">Why companies choose us.</h2>
+    </div>
+    <div class="oz-spec">
+      <div class="oz-spec-row">
+        <div class="oz-spec-t">US-led from the first call.</div>
+        <p class="oz-spec-b">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We build software, not just configure it.</div>
-        <p class="brf-why-block-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+      <div class="oz-spec-row">
+        <div class="oz-spec-t">We scope before we build.</div>
+        <p class="oz-spec-b">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+      </div>
+      <div class="oz-spec-row">
+        <div class="oz-spec-t">We answer.</div>
+        <p class="oz-spec-b">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+      </div>
+      <div class="oz-spec-row">
+        <div class="oz-spec-t">You can see the work.</div>
+        <p class="oz-spec-b">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+      </div>
+      <div class="oz-spec-row">
+        <div class="oz-spec-t">We build software, not just configure it.</div>
+        <p class="oz-spec-b">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
       </div>
     </div>
   </section>
@@ -160,102 +178,157 @@ export const pages = {
   </section>
   -->
 
-  <!-- ── SECTION 7 · CLOSING CTA ── -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+  <!-- ── 07 · CLOSING — final reveal, object turned to face you ── -->
+  <section class="oz-sec oz-reveal oz-close" aria-labelledby="oz-home-close">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-display" id="oz-home-close">Start with a conversation.</h2>
+      </div>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-front" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+        <div class="oz-btns">
+          <a class="oz-btn-fill" href="/contact" onclick="go('contact')">Book a call</a>
+        </div>
+      </div>
     </div>
   </section>
 
 </div>`,
 
-  'how-we-work': `<div class="brf-page">
+  'how-we-work': `<div class="brf-page oz-page">
 
-  <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">No surprises. That's the whole idea.</h1>
-      <p class="brf-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+  <!-- HERO — void-mode reveal -->
+  <section class="oz-sec oz-reveal oz-hero" aria-labelledby="oz-hww-h1">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h1 class="oz-display" id="oz-hww-h1">No surprises. That's the whole idea.</h1>
+      </div>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-hero" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+      </div>
     </div>
   </section>
 
   <!-- MIRROR SCOPE -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">The Mirror Scope</h2>
-      <p class="brf-body">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
-      <p class="brf-body">It covers four things:</p>
-      <ul class="brf-list">
-        <li><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
-        <li><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
-        <li><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
-        <li><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
-      </ul>
-      <p class="brf-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
-      <p class="brf-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+  <section class="oz-sec" aria-labelledby="oz-hww-scope">
+    <div class="oz-split">
+      <div class="oz-split-l">
+        <h2 class="oz-h" id="oz-hww-scope">The Mirror Scope</h2>
+      </div>
+      <div class="oz-split-r">
+        <p class="oz-voice">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
+        <p class="oz-label oz-label-gap">It covers four things:</p>
+        <ul class="oz-info-grid">
+          <li class="oz-info"><strong class="oz-info-t">Business requirements.</strong> <span class="oz-info-b">What the system needs to do, in writing, agreed by you.</span></li>
+          <li class="oz-info"><strong class="oz-info-t">Process capture.</strong> <span class="oz-info-b">How your operation runs today, documented step by step, including the parts that only live in someone's head.</span></li>
+          <li class="oz-info"><strong class="oz-info-t">Best practice recommendations.</strong> <span class="oz-info-b">Where your current process should change, and where the software should bend to fit you instead.</span></li>
+          <li class="oz-info"><strong class="oz-info-t">The implementation plan.</strong> <span class="oz-info-b">Phases, sequence, timeline and cost.</span></li>
+        </ul>
+        <div class="oz-pair">
+          <p class="oz-voice-s">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
+          <p class="oz-voice-s">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- HOW A PROJECT RUNS -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">How a project runs</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Scope.</div>
-        <p class="brf-why-block-body">We map, document and plan.</p>
+  <!-- HOW A PROJECT RUNS — second reveal, object top-down -->
+  <section class="oz-sec oz-reveal" aria-labelledby="oz-hww-runs">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-h" id="oz-hww-runs">How a project runs</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Presentation and approval.</div>
-        <p class="brf-why-block-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-flat" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Build.</div>
-        <p class="brf-why-block-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Training.</div>
-        <p class="brf-why-block-body">We train your team on the system we built for you, using your data and your processes.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Go-live and support.</div>
-        <p class="brf-why-block-body">You go live with us alongside you, and we stay available afterward.</p>
+      <div class="oz-tri-r">
+        <ol class="oz-steps oz-steps-v">
+          <li class="oz-step">
+            <div class="oz-step-num">01</div>
+            <div class="oz-step-name">Scope.</div>
+            <div class="oz-step-desc">We map, document and plan.</div>
+          </li>
+          <li class="oz-step">
+            <div class="oz-step-num">02</div>
+            <div class="oz-step-name">Presentation and approval.</div>
+            <div class="oz-step-desc">We walk you through what we found and what we recommend. You approve it before anything gets built.</div>
+          </li>
+          <li class="oz-step">
+            <div class="oz-step-num">03</div>
+            <div class="oz-step-name">Build.</div>
+            <div class="oz-step-desc">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</div>
+          </li>
+          <li class="oz-step">
+            <div class="oz-step-num">04</div>
+            <div class="oz-step-name">Training.</div>
+            <div class="oz-step-desc">We train your team on the system we built for you, using your data and your processes.</div>
+          </li>
+          <li class="oz-step">
+            <div class="oz-step-num">05</div>
+            <div class="oz-step-name">Go-live and support.</div>
+            <div class="oz-step-desc">You go live with us alongside you, and we stay available afterward.</div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- WHO DOES THE WORK -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who does the work</h2>
-      <p class="brf-body">We're a US-led firm with a global delivery team.</p>
-      <p class="brf-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
-      <p class="brf-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+  <section class="oz-sec" aria-labelledby="oz-hww-who">
+    <div class="oz-split">
+      <div class="oz-split-l">
+        <h2 class="oz-h" id="oz-hww-who">Who does the work</h2>
+      </div>
+      <div class="oz-split-r">
+        <p class="oz-voice">We're a US-led firm with a global delivery team.</p>
+        <div class="oz-pair">
+          <p class="oz-voice-s">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
+          <p class="oz-voice-s">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHO WE WORK WITH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who we work with</h2>
-      <p class="brf-body">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
-      <p class="brf-body">In practice that means:</p>
-      <ul class="brf-list">
-        <li>An established team rather than a founder and a laptop</li>
-        <li>Executive involvement, because system decisions are business decisions</li>
-        <li>A real budget for the work, since the projects we take on run for months rather than days</li>
-      </ul>
-      <p class="brf-body">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+  <section class="oz-sec" aria-labelledby="oz-hww-with">
+    <div class="oz-split">
+      <div class="oz-split-l">
+        <h2 class="oz-h" id="oz-hww-with">Who we work with</h2>
+      </div>
+      <div class="oz-split-r">
+        <p class="oz-voice">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
+        <p class="oz-label oz-label-gap">In practice that means:</p>
+        <ul class="oz-rows">
+          <li>An established team rather than a founder and a laptop</li>
+          <li>Executive involvement, because system decisions are business decisions</li>
+          <li>A real budget for the work, since the projects we take on run for months rather than days</li>
+        </ul>
+        <p class="oz-voice-s oz-after-rows">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+  <!-- CLOSING — final reveal -->
+  <section class="oz-sec oz-reveal oz-close" aria-labelledby="oz-hww-close">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-display" id="oz-hww-close">Start with a conversation.</h2>
+      </div>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-front" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+        <div class="oz-btns">
+          <a class="oz-btn-fill" href="/contact" onclick="go('contact')">Book a call</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -320,7 +393,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -340,32 +413,32 @@ export const pages = {
   <section class="brf-section">
     <div class="brf-container">
       <div class="brf-cards brf-cards-lg">
-        <a class="brf-card" onclick="go('services/systems-integration')">
+        <a href="/services/systems-integration" class="brf-card" onclick="go('services/systems-integration')">
           <div class="brf-card-title">Systems Integration</div>
           <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
+        <a href="/services/data-migration" class="brf-card" onclick="go('services/data-migration')">
           <div class="brf-card-title">Data Migration</div>
           <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
+        <a href="/services/erp-implementation" class="brf-card" onclick="go('services/erp-implementation')">
           <div class="brf-card-title">ERP Implementation</div>
           <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
+        <a href="/services/custom-development" class="brf-card" onclick="go('services/custom-development')">
           <div class="brf-card-title">Custom Development</div>
           <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
+        <a href="/services/ai-automation" class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
           <div class="brf-card-title">AI &amp; Automation</div>
           <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/zoho')">
+        <a href="/services/zoho" class="brf-card" onclick="go('services/zoho')">
           <div class="brf-card-title">Zoho Consulting &amp; Support</div>
           <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
           <div class="brf-card-learn">Learn more →</div>
@@ -380,7 +453,7 @@ export const pages = {
       <h2 class="brf-h2">Not sure which of these you need?</h2>
       <p class="brf-body">That's normal, and it's what the Mirror Scope is for. Most clients arrive describing a symptom rather than a solution. We work out the cause before recommending anything.</p>
       <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">How we work</a>
+        <a href="/how-we-work" class="brf-cta-secondary" onclick="go('how-we-work')">How we work</a>
       </div>
     </div>
   </section>
@@ -390,45 +463,95 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'systems-integration': `<div class="brf-page">
+  'systems-integration': `<div class="brf-page oz-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">Your software should talk to itself.</h1>
-      <p class="brf-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+  <!-- HERO — void-mode reveal -->
+  <section class="oz-sec oz-reveal oz-hero" aria-labelledby="oz-si-h1">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <a class="oz-back" href="/services" onclick="go('services')">← All services</a>
+        <h1 class="oz-display" id="oz-si-h1">Your software should talk to itself.</h1>
+      </div>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-hero" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+      </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  <!-- STATEMENT -->
+  <section class="oz-sec oz-statement-sec">
+    <p class="oz-statement">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  </section>
 
-      <h2 class="brf-h2">What this looks like in practice</h2>
-      <ul class="brf-list">
-        <li>Sales activity flows into accounting without re-entry</li>
-        <li>A record created in one system appears everywhere it's needed</li>
-        <li>Reporting pulls from one source instead of four exports</li>
-        <li>The manual handoffs between departments stop being manual</li>
-      </ul>
-
-      <h2 class="brf-h2">How we approach it</h2>
-      <p class="brf-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
-      <p class="brf-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+  <!-- WHAT THIS LOOKS LIKE — headline / diagram / list -->
+  <section class="oz-sec oz-reveal" aria-labelledby="oz-si-practice">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-h" id="oz-si-practice">What this looks like in practice</h2>
+      </div>
+      <div class="oz-tri-c">
+        <svg class="oz-diagram" viewBox="0 0 320 420" role="presentation" aria-hidden="true" focusable="false">
+          <path class="oz-dg-line" d="M24 70 C 120 70, 150 130, 222 150"/>
+          <path class="oz-dg-line" d="M24 170 C 110 170, 150 190, 222 200"/>
+          <path class="oz-dg-line" d="M24 260 C 110 260, 150 240, 222 240"/>
+          <path class="oz-dg-line" d="M24 350 C 120 350, 150 300, 222 290"/>
+          <circle class="oz-dg-node" cx="24" cy="70" r="5"/>
+          <circle class="oz-dg-node" cx="24" cy="170" r="5"/>
+          <circle class="oz-dg-node" cx="24" cy="260" r="5"/>
+          <circle class="oz-dg-node" cx="24" cy="350" r="5"/>
+          <polygon class="oz-dg-edge" points="226,70 304,104 304,322 226,356"/>
+          <polygon class="oz-dg-frame" points="222,66 300,100 300,318 222,352"/>
+          <polygon class="oz-dg-glass" points="234,86 288,110 288,308 234,332"/>
+        </svg>
+      </div>
+      <div class="oz-tri-r">
+        <ul class="oz-rows">
+          <li>Sales activity flows into accounting without re-entry</li>
+          <li>A record created in one system appears everywhere it's needed</li>
+          <li>Reporting pulls from one source instead of four exports</li>
+          <li>The manual handoffs between departments stop being manual</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+  <!-- HOW WE APPROACH IT -->
+  <section class="oz-sec" aria-labelledby="oz-si-approach">
+    <div class="oz-split">
+      <div class="oz-split-l">
+        <h2 class="oz-h" id="oz-si-approach">How we approach it</h2>
+      </div>
+      <div class="oz-split-r">
+        <p class="oz-voice">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
+        <p class="oz-voice-s oz-after-rows">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING — final reveal -->
+  <section class="oz-sec oz-reveal oz-close" aria-labelledby="oz-si-close">
+    <div class="oz-tri">
+      <div class="oz-tri-l">
+        <h2 class="oz-display" id="oz-si-close">Start with a conversation.</h2>
+      </div>
+      <div class="oz-tri-c">
+        <div class="oz-artifact oz-pose-front" aria-hidden="true"><div class="oz-art-light"></div><div class="oz-art-stage"><div class="oz-art-obj"><span class="oz-f oz-f-l"></span><span class="oz-f oz-f-r"></span><span class="oz-f oz-f-t"></span><span class="oz-f oz-f-b"></span><span class="oz-art-frame"><span class="oz-art-glass"></span></span></div></div><div class="oz-art-floor"></div></div>
+      </div>
+      <div class="oz-tri-r">
+        <p class="oz-voice">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+        <div class="oz-btns">
+          <a class="oz-btn-fill" href="/contact" onclick="go('contact')">Book a call</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -438,7 +561,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a href="/services" class="brf-back-link" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">Bring your history with you.</h1>
       <p class="brf-lead">The fastest way to lose faith in a new system is to open it on day one and find that half your records came across wrong. Migration is the least visible part of an implementation and the part most likely to sink it.</p>
     </div>
@@ -467,7 +590,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -477,7 +600,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a href="/services" class="brf-back-link" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">The system your operation runs on.</h1>
       <p class="brf-lead">An ERP implementation touches every part of a business, which is why it's the project companies most often get wrong. It's rarely a technology failure. It's a failure to understand the operation before configuring the software.</p>
     </div>
@@ -508,7 +631,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -518,7 +641,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a href="/services" class="brf-back-link" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">When the software doesn't do it, we build it.</h1>
       <p class="brf-lead">Every business has a process that no vendor has ever built for. A workflow specific to your industry. An approval chain that doesn't match anyone's template. A report your team needs that the platform simply doesn't produce.</p>
     </div>
@@ -548,7 +671,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -558,7 +681,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a href="/services" class="brf-back-link" onclick="go('services')">← All services</a>
       <div class="brf-eyebrow">Featured Service</div>
       <h1 class="brf-h1">AI that earns its place.</h1>
       <p class="brf-lead">There is a lot of noise about AI in business software right now, and most of it is a feature list looking for a problem. We take a narrower view. AI is useful when it removes a specific piece of work a person is doing by hand today, inside a system that's already connected properly.</p>
@@ -592,7 +715,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -602,7 +725,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a href="/services" class="brf-back-link" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">We know this platform inside out.</h1>
       <p class="brf-lead">Mirror Advisors was founded by a former Zoho employee, and Zoho remains the platform we've implemented more than any other. If you're evaluating it, running it, or struggling with an implementation someone else left behind, this is our home ground.</p>
     </div>
@@ -641,7 +764,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a href="/contact" class="brf-cta-primary" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
