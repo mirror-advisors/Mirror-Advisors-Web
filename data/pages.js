@@ -14,139 +14,183 @@ import { FOOTER_HTML } from '../lib/footer';
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
-  'home': `<div class="brf-page">
+  'home': `<div class="brf-page ed-page">
 
   <!-- ── SECTION 1 · HERO ── -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
+  <header class="ed-hero">
+    <div class="ed-wrap">
+      <h1 class="ed-display">One system your whole business <span class="ed-ital">runs on.</span></h1>
+      <div class="ed-hero-grid">
+        <div class="ed-hero-aside">
+          <p class="ed-dateline">US-led. Global delivery. The same lead from your first call to go-live.</p>
+        </div>
+        <div class="ed-hero-main">
+          <p class="ed-standfirst">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+          <div class="ed-actions">
+            <a class="ed-btn" href="/contact" onclick="go('contact')">Book a call</a>
+            <a class="ed-textlink" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
+          </div>
+        </div>
       </div>
-      <div class="brf-hero-note">US-led. Global delivery. The same lead from your first call to go-live.</div>
     </div>
-  </section>
+  </header>
 
   <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">If this sounds familiar, it usually is.</h2>
-      <ul class="brf-list">
-        <li>Your CRM doesn't know what your accounting system knows.</li>
-        <li>The same customer record lives in three places, and two of them are out of date.</li>
-        <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
-        <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
-        <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
-      </ul>
-      <p class="brf-body">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
+  <section class="ed-chapter" aria-labelledby="ed-h-problem">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head">
+        <div class="ed-chapno" aria-hidden="true">01</div>
+        <h2 class="ed-h2" id="ed-h-problem">If this sounds familiar, it usually is.</h2>
+      </div>
+      <div class="ed-split-body">
+        <ol class="ed-symptoms">
+          <li>Your CRM doesn't know what your accounting system knows.</li>
+          <li>The same customer record lives in three places, and two of them are out of date.</li>
+          <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
+          <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
+          <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
+        </ol>
+        <p class="ed-body ed-dropcap">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <span class="ed-turn">That is the job we do.</span></p>
+      </div>
     </div>
   </section>
 
   <!-- ── SECTION 3 · WHAT WE DO ── -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">Six ways we get your business onto one system.</h2>
-      <div class="brf-cards">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
+  <section class="ed-chapter ed-chapter-ruled" aria-labelledby="ed-h-services">
+    <div class="ed-wrap">
+      <div class="ed-chapter-head">
+        <div class="ed-chapno" aria-hidden="true">02</div>
+        <h2 class="ed-h2" id="ed-h-services">Six ways we get your business onto one system.</h2>
       </div>
+      <ol class="ed-toc">
+        <li>
+          <a class="ed-toc-row" href="/services/systems-integration" onclick="go('services/systems-integration')">
+            <div class="ed-toc-num" aria-hidden="true">01</div>
+            <div class="ed-toc-title">Systems Integration</div>
+            <p class="ed-toc-desc">Connect the software you already own so your data moves on its own.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+        <li>
+          <a class="ed-toc-row" href="/services/data-migration" onclick="go('services/data-migration')">
+            <div class="ed-toc-num" aria-hidden="true">02</div>
+            <div class="ed-toc-title">Data Migration</div>
+            <p class="ed-toc-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+        <li>
+          <a class="ed-toc-row" href="/services/erp-implementation" onclick="go('services/erp-implementation')">
+            <div class="ed-toc-num" aria-hidden="true">03</div>
+            <div class="ed-toc-title">ERP Implementation</div>
+            <p class="ed-toc-desc">Deploy the system your operation runs on, from planning through go-live.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+        <li>
+          <a class="ed-toc-row" href="/services/custom-development" onclick="go('services/custom-development')">
+            <div class="ed-toc-num" aria-hidden="true">04</div>
+            <div class="ed-toc-title">Custom Development</div>
+            <p class="ed-toc-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+        <li>
+          <a class="ed-toc-row ed-toc-featured" href="/services/ai-automation" onclick="go('services/ai-automation')">
+            <div class="ed-toc-num" aria-hidden="true">05</div>
+            <div class="ed-toc-title">AI &amp; Automation</div>
+            <p class="ed-toc-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+        <li>
+          <a class="ed-toc-row" href="/services/zoho" onclick="go('services/zoho')">
+            <div class="ed-toc-num" aria-hidden="true">06</div>
+            <div class="ed-toc-title">Zoho Consulting &amp; Support</div>
+            <p class="ed-toc-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
+            <div class="ed-toc-more">Learn more →</div>
+          </a>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Every project starts with a Mirror Scope.</h2>
-      <div style="max-width:780px">
-        <p class="brf-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="brf-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
-      </div>
-      <div class="brf-steps">
-        <div class="brf-step">
-          <div class="brf-step-num">01</div>
-          <div class="brf-step-name">Mirror Scope</div>
-          <div class="brf-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
+  <!-- ── SECTION 4 · HOW WE WORK (full-bleed navy chapter) ── -->
+  <section class="ed-chapter ed-navy" aria-labelledby="ed-h-scope">
+    <div class="ed-wrap">
+      <div class="ed-split">
+        <div class="ed-split-head">
+          <div class="ed-chapno" aria-hidden="true">03</div>
+          <h2 class="ed-h2" id="ed-h-scope">Every project starts with a Mirror Scope.</h2>
         </div>
-        <div class="brf-step">
-          <div class="brf-step-num">02</div>
-          <div class="brf-step-name">Approval</div>
-          <div class="brf-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">03</div>
-          <div class="brf-step-name">Build</div>
-          <div class="brf-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">04</div>
-          <div class="brf-step-name">Training</div>
-          <div class="brf-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">05</div>
-          <div class="brf-step-name">Live and supported</div>
-          <div class="brf-step-desc">You go live, and we stay reachable.</div>
+        <div class="ed-split-body">
+          <p class="ed-body ed-dropcap">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+          <p class="ed-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
         </div>
       </div>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">More on how we work</a>
+      <ol class="ed-timeline">
+        <li class="ed-tl-step">
+          <div class="ed-tl-num" aria-hidden="true">01</div>
+          <h3 class="ed-tl-name">Mirror Scope</h3>
+          <p class="ed-tl-desc">We map your processes, define the requirements, and write the implementation plan.</p>
+        </li>
+        <li class="ed-tl-step">
+          <div class="ed-tl-num" aria-hidden="true">02</div>
+          <h3 class="ed-tl-name">Approval</h3>
+          <p class="ed-tl-desc">We walk you through the scope. You decide whether to build, and with whom.</p>
+        </li>
+        <li class="ed-tl-step">
+          <div class="ed-tl-num" aria-hidden="true">03</div>
+          <h3 class="ed-tl-name">Build</h3>
+          <p class="ed-tl-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</p>
+        </li>
+        <li class="ed-tl-step">
+          <div class="ed-tl-num" aria-hidden="true">04</div>
+          <h3 class="ed-tl-name">Training</h3>
+          <p class="ed-tl-desc">We train your team on what we built, not on generic software documentation.</p>
+        </li>
+        <li class="ed-tl-step">
+          <div class="ed-tl-num" aria-hidden="true">05</div>
+          <h3 class="ed-tl-name">Live and supported</h3>
+          <p class="ed-tl-desc">You go live, and we stay reachable.</p>
+        </li>
+      </ol>
+      <div class="ed-actions ed-actions-end">
+        <a class="ed-textlink" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Why companies choose us.</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">US-led from the first call.</div>
-        <p class="brf-why-block-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+  <section class="ed-chapter" aria-labelledby="ed-h-why">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head ed-sticky">
+        <div class="ed-chapno" aria-hidden="true">04</div>
+        <h2 class="ed-h2" id="ed-h-why">Why companies choose us.</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We scope before we build.</div>
-        <p class="brf-why-block-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We answer.</div>
-        <p class="brf-why-block-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">You can see the work.</div>
-        <p class="brf-why-block-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We build software, not just configure it.</div>
-        <p class="brf-why-block-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+      <div class="ed-split-body">
+        <div class="ed-reasons">
+          <article class="ed-reason">
+            <h3 class="ed-reason-title">US-led from the first call.</h3>
+            <p class="ed-reason-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+          </article>
+          <article class="ed-reason ed-reason-quote">
+            <h3 class="ed-reason-title">We scope before we build.</h3>
+            <p class="ed-pullquote">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+          </article>
+          <article class="ed-reason">
+            <h3 class="ed-reason-title">We answer.</h3>
+            <p class="ed-reason-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+          </article>
+          <article class="ed-reason">
+            <h3 class="ed-reason-title">You can see the work.</h3>
+            <p class="ed-reason-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+          </article>
+          <article class="ed-reason">
+            <h3 class="ed-reason-title">We build software, not just configure it.</h3>
+            <p class="ed-reason-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -165,88 +209,139 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'how-we-work': `<div class="brf-page">
+  'how-we-work': `<div class="brf-page ed-page">
 
   <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">No surprises. That's the whole idea.</h1>
-      <p class="brf-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+  <header class="ed-hero">
+    <div class="ed-wrap">
+      <h1 class="ed-display">No surprises. <span class="ed-ital">That's the whole idea.</span></h1>
+      <div class="ed-hero-grid">
+        <div class="ed-hero-aside">
+          <p class="ed-standfirst ed-standfirst-lg">Software projects fail in predictable ways.</p>
+        </div>
+        <div class="ed-hero-main">
+          <ol class="ed-failures">
+            <li>The requirements were never written down properly.</li>
+            <li>The price was quoted before anyone understood the work.</li>
+            <li>The team that sold it disappeared after the contract was signed.</li>
+          </ol>
+          <p class="ed-standfirst ed-standfirst-close">Everything about how we run projects is built to prevent those three things.</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
   <!-- MIRROR SCOPE -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">The Mirror Scope</h2>
-      <p class="brf-body">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
-      <p class="brf-body">It covers four things:</p>
-      <ul class="brf-list">
-        <li><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
-        <li><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
-        <li><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
-        <li><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
-      </ul>
-      <p class="brf-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
-      <p class="brf-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+  <section class="ed-chapter" aria-labelledby="ed-h-scope">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head ed-sticky">
+        <div class="ed-chapno" aria-hidden="true">01</div>
+        <h2 class="ed-h2" id="ed-h-scope">The Mirror Scope</h2>
+      </div>
+      <div class="ed-split-body">
+        <p class="ed-body ed-body-lg ed-dropcap">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
+        <p class="ed-label">It covers four things:</p>
+        <ol class="ed-quad">
+          <li><div class="ed-quad-num" aria-hidden="true">01</div><p><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</p></li>
+          <li><div class="ed-quad-num" aria-hidden="true">02</div><p><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</p></li>
+          <li><div class="ed-quad-num" aria-hidden="true">03</div><p><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</p></li>
+          <li><div class="ed-quad-num" aria-hidden="true">04</div><p><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</p></li>
+        </ol>
+        <p class="ed-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
+        <p class="ed-body ed-pq-para"><span class="ed-pq-lead">We charge for it because free discovery is shallow discovery.</span> A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+      </div>
     </div>
   </section>
 
-  <!-- HOW A PROJECT RUNS -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">How a project runs</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Scope.</div>
-        <p class="brf-why-block-body">We map, document and plan.</p>
+  <!-- HOW A PROJECT RUNS (full-bleed navy chapter) -->
+  <section class="ed-chapter ed-navy" aria-labelledby="ed-h-runs">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head ed-sticky">
+        <div class="ed-chapno" aria-hidden="true">02</div>
+        <h2 class="ed-h2" id="ed-h-runs">How a project runs</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Presentation and approval.</div>
-        <p class="brf-why-block-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Build.</div>
-        <p class="brf-why-block-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Training.</div>
-        <p class="brf-why-block-body">We train your team on the system we built for you, using your data and your processes.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Go-live and support.</div>
-        <p class="brf-why-block-body">You go live with us alongside you, and we stay available afterward.</p>
+      <div class="ed-split-body">
+        <ol class="ed-stages">
+          <li class="ed-stage">
+            <div class="ed-stage-num" aria-hidden="true">01</div>
+            <div class="ed-stage-text">
+              <h3 class="ed-stage-title">Scope.</h3>
+              <p class="ed-stage-body">We map, document and plan.</p>
+            </div>
+          </li>
+          <li class="ed-stage">
+            <div class="ed-stage-num" aria-hidden="true">02</div>
+            <div class="ed-stage-text">
+              <h3 class="ed-stage-title">Presentation and approval.</h3>
+              <p class="ed-stage-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
+            </div>
+          </li>
+          <li class="ed-stage">
+            <div class="ed-stage-num" aria-hidden="true">03</div>
+            <div class="ed-stage-text">
+              <h3 class="ed-stage-title">Build.</h3>
+              <p class="ed-stage-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
+            </div>
+          </li>
+          <li class="ed-stage">
+            <div class="ed-stage-num" aria-hidden="true">04</div>
+            <div class="ed-stage-text">
+              <h3 class="ed-stage-title">Training.</h3>
+              <p class="ed-stage-body">We train your team on the system we built for you, using your data and your processes.</p>
+            </div>
+          </li>
+          <li class="ed-stage">
+            <div class="ed-stage-num" aria-hidden="true">05</div>
+            <div class="ed-stage-text">
+              <h3 class="ed-stage-title">Go-live and support.</h3>
+              <p class="ed-stage-body">You go live with us alongside you, and we stay available afterward.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- WHO DOES THE WORK -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who does the work</h2>
-      <p class="brf-body">We're a US-led firm with a global delivery team.</p>
-      <p class="brf-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
-      <p class="brf-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+  <section class="ed-chapter" aria-labelledby="ed-h-who">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head">
+        <div class="ed-chapno" aria-hidden="true">03</div>
+        <h2 class="ed-h2" id="ed-h-who">Who does the work</h2>
+      </div>
+      <div class="ed-split-body">
+        <p class="ed-standfirst">We're a US-led firm with a global delivery team.</p>
+        <div class="ed-columns">
+          <p class="ed-body ed-dropcap">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
+          <p class="ed-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHO WE WORK WITH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who we work with</h2>
-      <p class="brf-body">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
-      <p class="brf-body">In practice that means:</p>
-      <ul class="brf-list">
-        <li>An established team rather than a founder and a laptop</li>
-        <li>Executive involvement, because system decisions are business decisions</li>
-        <li>A real budget for the work, since the projects we take on run for months rather than days</li>
-      </ul>
-      <p class="brf-body">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+  <section class="ed-chapter ed-chapter-tint" aria-labelledby="ed-h-with">
+    <div class="ed-wrap ed-split">
+      <div class="ed-split-head">
+        <div class="ed-chapno" aria-hidden="true">04</div>
+        <h2 class="ed-h2" id="ed-h-with">Who we work with</h2>
+      </div>
+      <div class="ed-split-body">
+        <p class="ed-body ed-body-lg">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
+        <p class="ed-label">In practice that means:</p>
+        <ol class="ed-triad">
+          <li><div class="ed-triad-num" aria-hidden="true">01</div><p>An established team rather than a founder and a laptop</p></li>
+          <li><div class="ed-triad-num" aria-hidden="true">02</div><p>Executive involvement, because system decisions are business decisions</p></li>
+          <li><div class="ed-triad-num" aria-hidden="true">03</div><p>A real budget for the work, since the projects we take on run for months rather than days</p></li>
+        </ol>
+        <p class="ed-aside-note">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+      </div>
     </div>
   </section>
 
@@ -255,7 +350,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -396,39 +491,65 @@ export const pages = {
 
 </div>`,
 
-  'systems-integration': `<div class="brf-page">
+  'systems-integration': `<div class="brf-page ed-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">Your software should talk to itself.</h1>
-      <p class="brf-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+  <header class="ed-hero ed-hero-article">
+    <div class="ed-wrap">
+      <a class="ed-backlink" href="/services" onclick="go('services')">← All services</a>
+      <h1 class="ed-display ed-display-md">Your software should <span class="ed-ital">talk to itself.</span></h1>
+      <div class="ed-hero-grid">
+        <div class="ed-hero-aside" aria-hidden="true"></div>
+        <div class="ed-hero-main">
+          <p class="ed-standfirst">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  <article class="ed-article">
+    <div class="ed-wrap">
 
-      <h2 class="brf-h2">What this looks like in practice</h2>
-      <ul class="brf-list">
-        <li>Sales activity flows into accounting without re-entry</li>
-        <li>A record created in one system appears everywhere it's needed</li>
-        <li>Reporting pulls from one source instead of four exports</li>
-        <li>The manual handoffs between departments stop being manual</li>
-      </ul>
+      <div class="ed-article-row">
+        <div class="ed-margin" aria-hidden="true"></div>
+        <div class="ed-article-col">
+          <p class="ed-body ed-body-open ed-dropcap">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+        </div>
+      </div>
 
-      <h2 class="brf-h2">How we approach it</h2>
-      <p class="brf-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
-      <p class="brf-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+      <div class="ed-article-row ed-article-ruled">
+        <div class="ed-margin">
+          <div class="ed-chapno" aria-hidden="true">01</div>
+        </div>
+        <div class="ed-article-col ed-article-col-wide">
+          <h2 class="ed-h2">What this looks like in practice</h2>
+          <ol class="ed-outcomes">
+            <li><div class="ed-outcome-num" aria-hidden="true">01</div><p>Sales activity flows into accounting without re-entry</p></li>
+            <li><div class="ed-outcome-num" aria-hidden="true">02</div><p>A record created in one system appears everywhere it's needed</p></li>
+            <li><div class="ed-outcome-num" aria-hidden="true">03</div><p>Reporting pulls from one source instead of four exports</p></li>
+            <li><div class="ed-outcome-num" aria-hidden="true">04</div><p>The manual handoffs between departments stop being manual</p></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="ed-article-row ed-article-ruled">
+        <div class="ed-margin">
+          <div class="ed-chapno" aria-hidden="true">02</div>
+        </div>
+        <div class="ed-article-col">
+          <h2 class="ed-h2">How we approach it</h2>
+          <p class="ed-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
+          <p class="ed-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. <span class="ed-turn">We do both.</span></p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </article>
 
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
