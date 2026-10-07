@@ -40,5 +40,50 @@ export default function HtmlPage({ html }) {
     return () => el.removeEventListener('click', handleClick);
   }, [router, html]);
 
+  // Scroll-reveal progressive enhancement. Content is fully visible by
+  // default; only once this effect runs (JS available, motion allowed) do
+  // [data-rv] / [data-lit] elements get their pre-reveal state. A single
+  // rAF-throttled scroll check (not IntersectionObserver) so that jumping
+  // past elements (End key, anchor, restored scroll) still reveals them.
+  // Re-runs whenever the page HTML changes.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof window === 'undefined') return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    let rv = Array.prototype.slice.call(el.querySelectorAll('[data-rv]'));
+    let lit = Array.prototype.slice.call(el.querySelectorAll('[data-lit]'));
+    if (!rv.length && !lit.length) return;
+    let raf = 0;
+    const check = () => {
+      raf = 0;
+      const vh = window.innerHeight || 0;
+      rv = rv.filter((t) => {
+        if (t.getBoundingClientRect().top < vh * 0.9) { t.classList.add('rv-in'); return false; }
+        return true;
+      });
+      lit = lit.filter((t) => {
+        if (t.getBoundingClientRect().top < vh * 0.6) { t.classList.add('is-lit'); return false; }
+        return true;
+      });
+      if (!rv.length && !lit.length) detach();
+    };
+    const onScroll = () => { if (!raf) raf = window.requestAnimationFrame(check); };
+    const detach = () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+    // Mark what is already on screen first, so it never flickers.
+    check();
+    el.classList.add('rv-ready');
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      detach();
+      if (raf) window.cancelAnimationFrame(raf);
+      el.classList.remove('rv-ready');
+    };
+  }, [html]);
+
   return <div ref={ref} dangerouslySetInnerHTML={{ __html: html }} />;
 }
