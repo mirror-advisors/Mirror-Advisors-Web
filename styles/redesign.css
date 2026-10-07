@@ -8,35 +8,35 @@
    EVERY colour lives in this token block. The -mirror variant only swaps it.
    ═══════════════════════════════════════════════════════════════════════════ */
 :root {
-  /* Surfaces */
-  --d-void: #000000;            /* page canvas, every section */
-  --d-void-rgb: 0, 0, 0;
-  --d-field: rgba(255, 255, 255, 0.06);   /* form fields only */
-  --d-field-hover: rgba(255, 255, 255, 0.09);
-  --d-hairline: rgba(255, 255, 255, 0.12);  /* dropdown panels only */
+  /* Surfaces — Mirror palette: near-black navy void */
+  --d-void: #070a1f;            /* page canvas, every section (navy-derived near-black) */
+  --d-void-rgb: 7, 10, 31;
+  --d-field: rgba(255, 246, 234, 0.06);   /* form fields only (cream wash) */
+  --d-field-hover: rgba(255, 246, 234, 0.09);
+  --d-hairline: rgba(255, 246, 234, 0.14);  /* dropdown panels only */
 
   /* Type colours */
   --d-ink: #ffffff;             /* headlines, primary body */
-  --d-ash: #9a9a9a;             /* nav, ghost links, labels */
-  --d-mist: #bdbdbd;            /* secondary body */
+  --d-ash: #9ba0b8;             /* nav, ghost links, labels (navy-derived grey) */
+  --d-mist: #c5c8d6;            /* secondary body (navy-derived light grey) */
 
   /* Accents */
-  --d-accent: #8052ff;          /* the one filled pill */
-  --d-accent-hover: #9470ff;
-  --d-accent-rgb: 128, 82, 255;
-  --d-on-accent: #ffffff;       /* text on the pill */
-  --d-spark: #ffb829;           /* emphasis, labels, link hover */
-  --d-spark-rgb: 255, 184, 41;
-  --d-verdant: #15846e;         /* logo-gradient depth tint */
-  --d-focus: #ffb829;
+  --d-accent: #eea720;          /* the one filled pill — gold */
+  --d-accent-hover: #f2b94a;
+  --d-accent-rgb: 238, 167, 32;
+  --d-on-accent: #0d1233;       /* navy text on the gold pill */
+  --d-spark: #fff6ea;           /* emphasis, labels, link hover — cream */
+  --d-spark-rgb: 255, 246, 234;
+  --d-verdant: #2a3366;         /* depth tint — navy tint */
+  --d-focus: #eea720;
 
-  /* Constellation palette (read by lib/constellation.js) */
-  --d-p1: #8052ff;
-  --d-p2: #b49cff;
-  --d-p3: #ffb829;
-  --d-p4: #1fb497;
-  --d-p5: #e45bd6;
-  --d-p6: #4f86ff;
+  /* Constellation palette (read by lib/constellation.js) — gold / cream / navy tints */
+  --d-p1: #eea720;
+  --d-p2: #fff6ea;
+  --d-p3: #f5c45e;
+  --d-p4: #5c6699;
+  --d-p5: #c98a12;
+  --d-p6: #8f97c6;
 
   /* Type */
   --d-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
