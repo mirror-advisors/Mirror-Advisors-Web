@@ -13,140 +13,252 @@ import { FOOTER_HTML } from '../lib/footer';
 
 const _FOOTER_HTML = FOOTER_HTML;
 
+// Line glyphs for the redesigned pages. Purely decorative (aria-hidden);
+// they sit inside circular icon containers next to existing copy.
+const _ic = (d) => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
+const ICON = {
+  link: _ic('<path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/>'),
+  unlink: _ic('<path d="M9 15l-1.5 1.5a3.5 3.5 0 0 1-5-5L4 10"/><path d="M15 9l1.5-1.5a3.5 3.5 0 0 1 5 5L20 14"/><path d="M8 3v3M3 8h3M16 21v-3M21 16h-3"/>'),
+  database: _ic('<ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/>'),
+  layers: _ic('<path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/>'),
+  code: _ic('<path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m14 5-4 14"/>'),
+  sparkle: _ic('<path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/>'),
+  grid: _ic('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'),
+  copy: _ic('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>'),
+  clock: _ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  pie: _ic('<path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>'),
+  table: _ic('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/>'),
+  pin: _ic('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
+  scope: _ic('<path d="M9 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/>'),
+  chat: _ic('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>'),
+  eye: _ic('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
+  terminal: _ic('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/>'),
+  file: _ic('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>'),
+  flow: _ic('<rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M6 9v3a3 3 0 0 0 3 3h6"/>'),
+  check: _ic('<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>'),
+  map: _ic('<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>'),
+  team: _ic('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/>'),
+  star: _ic('<path d="M12 3l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.4l-5.3 2.7 1-5.8-4.2-4.1 5.9-.9z"/>'),
+  card: _ic('<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>'),
+  arrows: _ic('<path d="M4 8h15l-3-3M20 16H5l3 3"/>'),
+  share: _ic('<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/>'),
+  chart: _ic('<path d="M4 20V11M10 20V5M16 20v-6M2 20h20"/>'),
+  handoff: _ic('<path d="M3 12h13M12 7l5 5-5 5"/><path d="M21 5v14"/>'),
+  search: _ic('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'),
+};
+
+// Hero geometry (decorative). Diagonal slabs + atmospheric wash, built in CSS.
+const HERO_ART = `<div class="rc-hero-art" aria-hidden="true">
+      <span class="rc-wash"></span>
+      <span class="rc-stage">
+        <span class="rc-blue rc-blue-1"></span>
+        <span class="rc-blue rc-blue-2"></span>
+        <span class="rc-glow"></span>
+        <span class="rc-bar rc-bar-1"></span>
+        <span class="rc-bar rc-bar-2"></span>
+        <span class="rc-bar rc-bar-3"></span>
+        <span class="rc-bar rc-bar-4"></span>
+        <span class="rc-beam"></span>
+      </span>
+      <span class="rc-fade"></span>
+    </div>`;
+
+const CTA_BLOCK = `<section class="rc-cta">
+    <div class="rc-container">
+      <div class="rc-cta-card">
+        <span class="rc-cta-glow" aria-hidden="true"></span>
+        <span class="rc-app-icon" aria-hidden="true"><img src="/images/mirror.svg" alt=""></span>
+        <h2 class="rc-h2">Start with a conversation.</h2>
+        <p class="rc-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+        <a class="rc-btn rc-btn-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      </div>
+    </div>
+  </section>`;
+
 export const pages = {
-  'home': `<div class="brf-page">
+  'home': `<div class="brf-page rc-page">
 
   <!-- ── SECTION 1 · HERO ── -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
+  <section class="rc-hero">
+    ${HERO_ART}
+    <div class="rc-container rc-hero-in">
+      <h1 class="rc-display">One system your whole business runs on.</h1>
+      <p class="rc-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+      <div class="rc-btn-row">
+        <a class="rc-btn rc-btn-primary" href="/contact" onclick="go('contact')">Book a call</a>
+        <a class="rc-btn rc-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
       </div>
-      <div class="brf-hero-note">US-led. Global delivery. The same lead from your first call to go-live.</div>
+      <p class="rc-meta"><span>US-led.</span> <span>Global delivery.</span> <span>The same lead from your first call to go-live.</span></p>
     </div>
   </section>
 
   <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">If this sounds familiar, it usually is.</h2>
-      <ul class="brf-list">
-        <li>Your CRM doesn't know what your accounting system knows.</li>
-        <li>The same customer record lives in three places, and two of them are out of date.</li>
-        <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
-        <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
-        <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-section-head">
+        <h2 class="rc-h2">If this sounds familiar, it usually is.</h2>
+      </div>
+      <ul class="rc-symptoms">
+        <li class="rc-tile"><span class="rc-ico">${ICON.unlink}</span><span class="rc-tile-text">Your CRM doesn't know what your accounting system knows.</span></li>
+        <li class="rc-tile"><span class="rc-ico">${ICON.copy}</span><span class="rc-tile-text">The same customer record lives in three places, and two of them are out of date.</span></li>
+        <li class="rc-tile"><span class="rc-ico">${ICON.clock}</span><span class="rc-tile-text">Someone on your team spends half a day every week moving data between tools by hand.</span></li>
+        <li class="rc-tile"><span class="rc-ico">${ICON.pie}</span><span class="rc-tile-text">You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</span></li>
+        <li class="rc-tile"><span class="rc-ico">${ICON.table}</span><span class="rc-tile-text">Getting a straight answer about the business means exporting to a spreadsheet first.</span></li>
       </ul>
-      <p class="brf-body">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
+      <p class="rc-statement">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <span class="rc-hi">That is the job we do.</span></p>
     </div>
   </section>
 
   <!-- ── SECTION 3 · WHAT WE DO ── -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">Six ways we get your business onto one system.</h2>
-      <div class="brf-cards">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-section-head">
+        <h2 class="rc-h2">Six ways we get your business onto one system.</h2>
+      </div>
+      <div class="rc-window">
+        <div class="rc-window-bar" aria-hidden="true">
+          <span class="rc-search">${ICON.search}<span class="rc-caret"></span></span>
+          <span class="rc-kbds"><kbd>↑</kbd><kbd>↓</kbd><kbd>↵</kbd></span>
+        </div>
+        <div class="rc-list">
+          <a class="rc-row" href="/services/systems-integration" onclick="go('services/systems-integration')">
+            <span class="rc-ico">${ICON.link}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">Systems Integration</div>
+              <p class="rc-row-desc">Connect the software you already own so your data moves on its own.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+          <a class="rc-row" href="/services/data-migration" onclick="go('services/data-migration')">
+            <span class="rc-ico">${ICON.database}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">Data Migration</div>
+              <p class="rc-row-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+          <a class="rc-row" href="/services/erp-implementation" onclick="go('services/erp-implementation')">
+            <span class="rc-ico">${ICON.layers}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">ERP Implementation</div>
+              <p class="rc-row-desc">Deploy the system your operation runs on, from planning through go-live.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+          <a class="rc-row" href="/services/custom-development" onclick="go('services/custom-development')">
+            <span class="rc-ico">${ICON.code}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">Custom Development</div>
+              <p class="rc-row-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+          <a class="rc-row rc-row-featured" href="/services/ai-automation" onclick="go('services/ai-automation')">
+            <span class="rc-ico">${ICON.sparkle}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">AI &amp; Automation</div>
+              <p class="rc-row-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+          <a class="rc-row" href="/services/zoho" onclick="go('services/zoho')">
+            <span class="rc-ico">${ICON.grid}</span>
+            <div class="rc-row-main">
+              <div class="rc-row-title">Zoho Consulting &amp; Support</div>
+              <p class="rc-row-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
+            </div>
+            <div class="rc-row-hint">Learn more →</div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Every project starts with a Mirror Scope.</h2>
-      <div style="max-width:780px">
-        <p class="brf-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="brf-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
-      </div>
-      <div class="brf-steps">
-        <div class="brf-step">
-          <div class="brf-step-num">01</div>
-          <div class="brf-step-name">Mirror Scope</div>
-          <div class="brf-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">02</div>
-          <div class="brf-step-name">Approval</div>
-          <div class="brf-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">03</div>
-          <div class="brf-step-name">Build</div>
-          <div class="brf-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">04</div>
-          <div class="brf-step-name">Training</div>
-          <div class="brf-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">05</div>
-          <div class="brf-step-name">Live and supported</div>
-          <div class="brf-step-desc">You go live, and we stay reachable.</div>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split">
+        <h2 class="rc-h2">Every project starts with a Mirror Scope.</h2>
+        <div class="rc-split-body">
+          <p class="rc-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+          <p class="rc-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
         </div>
       </div>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">More on how we work</a>
+      <ol class="rc-keys-row">
+        <li class="rc-step">
+          <span class="rc-keycap">01</span>
+          <div class="rc-step-name">Mirror Scope</div>
+          <p class="rc-step-desc">We map your processes, define the requirements, and write the implementation plan.</p>
+        </li>
+        <li class="rc-step">
+          <span class="rc-keycap">02</span>
+          <div class="rc-step-name">Approval</div>
+          <p class="rc-step-desc">We walk you through the scope. You decide whether to build, and with whom.</p>
+        </li>
+        <li class="rc-step">
+          <span class="rc-keycap">03</span>
+          <div class="rc-step-name">Build</div>
+          <p class="rc-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</p>
+        </li>
+        <li class="rc-step">
+          <span class="rc-keycap">04</span>
+          <div class="rc-step-name">Training</div>
+          <p class="rc-step-desc">We train your team on what we built, not on generic software documentation.</p>
+        </li>
+        <li class="rc-step">
+          <span class="rc-keycap">05</span>
+          <div class="rc-step-name">Live and supported</div>
+          <p class="rc-step-desc">You go live, and we stay reachable.</p>
+        </li>
+      </ol>
+      <div class="rc-btn-row rc-btn-row-center">
+        <a class="rc-btn rc-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Why companies choose us.</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">US-led from the first call.</div>
-        <p class="brf-why-block-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-section-head">
+        <h2 class="rc-h2">Why companies choose us.</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We scope before we build.</div>
-        <p class="brf-why-block-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We answer.</div>
-        <p class="brf-why-block-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">You can see the work.</div>
-        <p class="brf-why-block-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We build software, not just configure it.</div>
-        <p class="brf-why-block-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+      <div class="rc-features">
+        <article class="rc-feature rc-feature-wide">
+          <span class="rc-ico rc-ico-lg">${ICON.pin}</span>
+          <div>
+            <h3 class="rc-feature-title">US-led from the first call.</h3>
+            <p class="rc-feature-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+          </div>
+        </article>
+        <article class="rc-feature">
+          <span class="rc-ico rc-ico-lg">${ICON.scope}</span>
+          <div>
+            <h3 class="rc-feature-title">We scope before we build.</h3>
+            <p class="rc-feature-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+          </div>
+        </article>
+        <article class="rc-feature">
+          <span class="rc-ico rc-ico-lg">${ICON.chat}</span>
+          <div>
+            <h3 class="rc-feature-title">We answer.</h3>
+            <p class="rc-feature-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+          </div>
+        </article>
+        <article class="rc-feature">
+          <span class="rc-ico rc-ico-lg">${ICON.eye}</span>
+          <div>
+            <h3 class="rc-feature-title">You can see the work.</h3>
+            <p class="rc-feature-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+          </div>
+        </article>
+        <article class="rc-feature">
+          <span class="rc-ico rc-ico-lg">${ICON.terminal}</span>
+          <div>
+            <h3 class="rc-feature-title">We build software, not just configure it.</h3>
+            <p class="rc-feature-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -161,103 +273,150 @@ export const pages = {
   -->
 
   <!-- ── SECTION 7 · CLOSING CTA ── -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-    </div>
-  </section>
+  ${CTA_BLOCK}
 
 </div>`,
 
-  'how-we-work': `<div class="brf-page">
+  'how-we-work': `<div class="brf-page rc-page">
 
   <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">No surprises. That's the whole idea.</h1>
-      <p class="brf-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+  <section class="rc-hero rc-hero-sm">
+    ${HERO_ART}
+    <div class="rc-container rc-hero-in">
+      <h1 class="rc-display">No surprises. That's the whole idea.</h1>
+      <p class="rc-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
     </div>
   </section>
 
   <!-- MIRROR SCOPE -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">The Mirror Scope</h2>
-      <p class="brf-body">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
-      <p class="brf-body">It covers four things:</p>
-      <ul class="brf-list">
-        <li><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
-        <li><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
-        <li><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
-        <li><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split">
+        <h2 class="rc-h2">The Mirror Scope</h2>
+        <div class="rc-split-body">
+          <p class="rc-body rc-body-lg">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
+          <p class="rc-body">It covers four things:</p>
+        </div>
+      </div>
+      <ul class="rc-cards rc-cards-2">
+        <li class="rc-card">
+          <div class="rc-card-top"><span class="rc-ico">${ICON.file}</span><span class="rc-num">01</span></div>
+          <h3 class="rc-card-title"><strong>Business requirements.</strong></h3>
+          <p class="rc-card-body">What the system needs to do, in writing, agreed by you.</p>
+        </li>
+        <li class="rc-card">
+          <div class="rc-card-top"><span class="rc-ico">${ICON.flow}</span><span class="rc-num">02</span></div>
+          <h3 class="rc-card-title"><strong>Process capture.</strong></h3>
+          <p class="rc-card-body">How your operation runs today, documented step by step, including the parts that only live in someone's head.</p>
+        </li>
+        <li class="rc-card">
+          <div class="rc-card-top"><span class="rc-ico">${ICON.check}</span><span class="rc-num">03</span></div>
+          <h3 class="rc-card-title"><strong>Best practice recommendations.</strong></h3>
+          <p class="rc-card-body">Where your current process should change, and where the software should bend to fit you instead.</p>
+        </li>
+        <li class="rc-card">
+          <div class="rc-card-top"><span class="rc-ico">${ICON.map}</span><span class="rc-num">04</span></div>
+          <h3 class="rc-card-title"><strong>The implementation plan.</strong></h3>
+          <p class="rc-card-body">Phases, sequence, timeline and cost.</p>
+        </li>
       </ul>
-      <p class="brf-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
-      <p class="brf-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+      <div class="rc-split rc-split-tail">
+        <div></div>
+        <div class="rc-split-body">
+          <p class="rc-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
+          <p class="rc-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- HOW A PROJECT RUNS -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">How a project runs</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Scope.</div>
-        <p class="brf-why-block-body">We map, document and plan.</p>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-section-head">
+        <h2 class="rc-h2">How a project runs</h2>
       </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Presentation and approval.</div>
-        <p class="brf-why-block-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Build.</div>
-        <p class="brf-why-block-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Training.</div>
-        <p class="brf-why-block-body">We train your team on the system we built for you, using your data and your processes.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Go-live and support.</div>
-        <p class="brf-why-block-body">You go live with us alongside you, and we stay available afterward.</p>
+      <div class="rc-window rc-window-narrow">
+        <div class="rc-window-bar" aria-hidden="true">
+          <span class="rc-dots"><i></i><i></i><i></i></span>
+          <span class="rc-kbds"><kbd>↑</kbd><kbd>↓</kbd><kbd>↵</kbd></span>
+        </div>
+        <ol class="rc-timeline">
+          <li class="rc-tl-row">
+            <span class="rc-keycap">01</span>
+            <div class="rc-tl-main">
+              <div class="rc-tl-title">Scope.</div>
+              <p class="rc-tl-body">We map, document and plan.</p>
+            </div>
+          </li>
+          <li class="rc-tl-row">
+            <span class="rc-keycap">02</span>
+            <div class="rc-tl-main">
+              <div class="rc-tl-title">Presentation and approval.</div>
+              <p class="rc-tl-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
+            </div>
+          </li>
+          <li class="rc-tl-row">
+            <span class="rc-keycap">03</span>
+            <div class="rc-tl-main">
+              <div class="rc-tl-title">Build.</div>
+              <p class="rc-tl-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
+            </div>
+          </li>
+          <li class="rc-tl-row">
+            <span class="rc-keycap">04</span>
+            <div class="rc-tl-main">
+              <div class="rc-tl-title">Training.</div>
+              <p class="rc-tl-body">We train your team on the system we built for you, using your data and your processes.</p>
+            </div>
+          </li>
+          <li class="rc-tl-row">
+            <span class="rc-keycap">05</span>
+            <div class="rc-tl-main">
+              <div class="rc-tl-title">Go-live and support.</div>
+              <p class="rc-tl-body">You go live with us alongside you, and we stay available afterward.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- WHO DOES THE WORK -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who does the work</h2>
-      <p class="brf-body">We're a US-led firm with a global delivery team.</p>
-      <p class="brf-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
-      <p class="brf-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split">
+        <h2 class="rc-h2">Who does the work</h2>
+        <div class="rc-split-body">
+          <p class="rc-statement-sm">We're a US-led firm with a global delivery team.</p>
+          <p class="rc-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
+          <p class="rc-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHO WE WORK WITH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who we work with</h2>
-      <p class="brf-body">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
-      <p class="brf-body">In practice that means:</p>
-      <ul class="brf-list">
-        <li>An established team rather than a founder and a laptop</li>
-        <li>Executive involvement, because system decisions are business decisions</li>
-        <li>A real budget for the work, since the projects we take on run for months rather than days</li>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split">
+        <h2 class="rc-h2">Who we work with</h2>
+        <div class="rc-split-body">
+          <p class="rc-body rc-body-lg">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
+          <p class="rc-body">In practice that means:</p>
+        </div>
+      </div>
+      <ul class="rc-cards rc-cards-3">
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.team}</span><p class="rc-card-body">An established team rather than a founder and a laptop</p></li>
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.star}</span><p class="rc-card-body">Executive involvement, because system decisions are business decisions</p></li>
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.card}</span><p class="rc-card-body">A real budget for the work, since the projects we take on run for months rather than days</p></li>
       </ul>
-      <p class="brf-body">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+      <p class="rc-note">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
     </div>
   </section>
 
   <!-- CLOSING CTA -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-    </div>
-  </section>
+  ${CTA_BLOCK}
 
 </div>`,
 
@@ -396,41 +555,74 @@ export const pages = {
 
 </div>`,
 
-  'systems-integration': `<div class="brf-page">
+  'systems-integration': `<div class="brf-page rc-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">Your software should talk to itself.</h1>
-      <p class="brf-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+  <section class="rc-hero rc-hero-sm">
+    ${HERO_ART}
+    <div class="rc-container rc-hero-in">
+      <a class="rc-back" href="/services" onclick="go('services')">← All services</a>
+      <h1 class="rc-display">Your software should talk to itself.</h1>
+      <p class="rc-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split rc-split-even">
+        <p class="rc-statement-sm rc-si-intro">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+        <div class="rc-window rc-diagram-win" aria-hidden="true">
+          <div class="rc-window-bar"><span class="rc-dots"><i></i><i></i><i></i></span></div>
+          <svg class="rc-diagram" viewBox="0 0 560 340" role="presentation" focusable="false">
+            <g class="rc-dg-lines">
+              <path d="M150 70 C 192 70, 166 178, 206 178"/>
+              <path d="M410 70 C 368 70, 394 178, 354 178"/>
+              <path d="M150 270 C 192 270, 166 178, 206 178"/>
+              <path d="M410 270 C 368 270, 394 178, 354 178"/>
+            </g>
+            <g class="rc-dg-flow">
+              <path d="M150 70 C 192 70, 166 178, 206 178"/>
+              <path d="M410 70 C 368 70, 394 178, 354 178"/>
+              <path d="M150 270 C 192 270, 166 178, 206 178"/>
+              <path d="M410 270 C 368 270, 394 178, 354 178"/>
+            </g>
+            <g class="rc-dg-node"><rect x="30" y="48" width="120" height="44" rx="10"/><text x="90" y="75">CRM</text></g>
+            <g class="rc-dg-node"><rect x="410" y="48" width="120" height="44" rx="10"/><text x="470" y="75">accounting</text></g>
+            <g class="rc-dg-node"><rect x="30" y="248" width="120" height="44" rx="10"/><text x="90" y="275">sales</text></g>
+            <g class="rc-dg-node"><rect x="410" y="248" width="120" height="44" rx="10"/><text x="470" y="275">reporting</text></g>
+            <g class="rc-dg-hub"><rect x="206" y="150" width="148" height="56" rx="14"/><text x="280" y="183">one source</text></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h2 class="brf-h2">What this looks like in practice</h2>
-      <ul class="brf-list">
-        <li>Sales activity flows into accounting without re-entry</li>
-        <li>A record created in one system appears everywhere it's needed</li>
-        <li>Reporting pulls from one source instead of four exports</li>
-        <li>The manual handoffs between departments stop being manual</li>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-section-head">
+        <h2 class="rc-h2">What this looks like in practice</h2>
+      </div>
+      <ul class="rc-cards rc-cards-2">
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.arrows}</span><p class="rc-card-body">Sales activity flows into accounting without re-entry</p></li>
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.share}</span><p class="rc-card-body">A record created in one system appears everywhere it's needed</p></li>
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.chart}</span><p class="rc-card-body">Reporting pulls from one source instead of four exports</p></li>
+        <li class="rc-card rc-card-compact"><span class="rc-ico">${ICON.handoff}</span><p class="rc-card-body">The manual handoffs between departments stop being manual</p></li>
       </ul>
-
-      <h2 class="brf-h2">How we approach it</h2>
-      <p class="brf-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
-      <p class="brf-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
     </div>
   </section>
 
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+  <section class="rc-section">
+    <div class="rc-container">
+      <div class="rc-split">
+        <h2 class="rc-h2">How we approach it</h2>
+        <div class="rc-split-body">
+          <p class="rc-body rc-body-lg">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
+          <p class="rc-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  ${CTA_BLOCK}
 
 </div>`,
 
