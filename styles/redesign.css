@@ -11,26 +11,26 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Canvas + surfaces */
-  --oz-canvas: #100904;            /* Walnut Shadow — page canvas            */
-  --oz-canvas-rgb: 16, 9, 4;
-  --oz-raised: #382416;            /* Bark Brown — the one filled surface     */
-  --oz-raised-hover: #4a311e;
-  --oz-line: #40372e;              /* Cork Border — dashed hairlines          */
-  --oz-muted: #6c5f51;             /* Driftwood — secondary structure         */
+  /* Canvas + surfaces — Mirror palette mapping of the ORYZO roles */
+  --oz-canvas: #070a1f;            /* near-black navy (was Walnut Shadow)     */
+  --oz-canvas-rgb: 7, 10, 31;
+  --oz-raised: #1c2452;            /* raised navy (was Bark Brown)            */
+  --oz-raised-hover: #273068;
+  --oz-line: #2b3152;              /* navy-tinted grey hairline (was Cork)    */
+  --oz-muted: #5d6385;             /* navy-tinted grey (was Driftwood)        */
 
   /* Type */
-  --oz-text: #ffedd7;              /* Warm Cream — all text                   */
-  --oz-text-rgb: 255, 237, 215;
-  --oz-accent: #dc5000;            /* Ember — small text accents only         */
+  --oz-text: #fff6ea;              /* Mirror cream (was Warm Cream)           */
+  --oz-text-rgb: 255, 246, 234;
+  --oz-accent: #eea720;            /* Mirror gold (was Ember) — small text    */
 
-  /* The artifact (the "product render") — lit material + light */
-  --oz-mat-hi: #f2d3ab;
-  --oz-mat-mid: #a37d55;
-  --oz-mat-lo: #4b3321;
-  --oz-mat-edge: #24170d;
-  --oz-rim-rgb: 220, 80, 0;        /* warm rim light from the upper right     */
-  --oz-glow-rgb: 255, 190, 135;    /* soft key light behind the object        */
+  /* The artifact — the gold Mirror mark, lit from the upper right */
+  --oz-mat-hi: #f6cd73;
+  --oz-mat-mid: #c78d1d;
+  --oz-mat-lo: #694a0d;
+  --oz-mat-edge: #2a1e06;
+  --oz-rim-rgb: 255, 246, 234;     /* cream rim light                         */
+  --oz-glow-rgb: 238, 167, 32;     /* gold key light behind the object        */
 
   /* Derived */
   --oz-text-2: rgba(var(--oz-text-rgb), 0.76);
