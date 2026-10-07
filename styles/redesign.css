@@ -7,59 +7,64 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
+  /* ── Mirror palette variant ─────────────────────────────────
+     Navy #0d1233 · Gold #eea720 · Cream #fff6ea · Grey #333 · White.
+     Near-black canvas → near-black navy; coral → gold; the hero's blue
+     geometry → navy / gold / cream geometry. Neutrals derive from navy. */
+
   /* ── Surfaces (elevation steps) ─────────────────────────────── */
-  --rc-canvas: #040506;            /* page canvas */
-  --rc-card: #07080a;              /* cards, panels */
-  --rc-recessed: #111214;          /* wells, inputs, pressed */
-  --rc-badge: #1b1c1e;             /* badge / tag fill */
-  --rc-slate: #2f3031;             /* ghost button border */
-  --rc-border: #363739;            /* hairline component border */
-  --rc-hair: rgba(255, 255, 255, 0.06);      /* section dividers */
-  --rc-fill-soft: rgba(255, 255, 255, 0.05); /* input well / hover tint */
-  --rc-fill-hover: rgba(255, 255, 255, 0.08);
-  --rc-nav-bg: rgba(10, 11, 13, 0.62);
-  --rc-menu-bg: rgba(10, 11, 13, 0.94);
-  --rc-overlay: rgba(0, 0, 0, 0.6);
+  --rc-canvas: #070a1f;            /* page canvas: near-black navy */
+  --rc-card: #0a0e27;              /* cards, panels */
+  --rc-recessed: #10153a;          /* wells, inputs, pressed */
+  --rc-badge: #171d47;             /* badge / tag fill */
+  --rc-slate: #262c5a;             /* ghost button border */
+  --rc-border: #2f3566;            /* hairline component border */
+  --rc-hair: rgba(255, 246, 234, 0.07);      /* section dividers */
+  --rc-fill-soft: rgba(255, 246, 234, 0.05); /* input well / hover tint */
+  --rc-fill-hover: rgba(255, 246, 234, 0.08);
+  --rc-nav-bg: rgba(9, 12, 36, 0.62);
+  --rc-menu-bg: rgba(9, 12, 36, 0.95);
+  --rc-overlay: rgba(4, 6, 18, 0.65);
 
   /* ── Text ───────────────────────────────────────────────────── */
   --rc-text: #ffffff;
-  --rc-text-2: #9c9c9d;            /* ash: secondary / body on dark */
-  --rc-text-3: #6a6b6c;            /* smoke: muted, structural markers */
+  --rc-text-2: #a9acc2;            /* navy-tinted grey: secondary / body */
+  --rc-text-3: #6d7296;            /* muted, structural markers */
 
   /* ── Neutral action (the only filled button) ────────────────── */
-  --rc-btn: #e6e6e6;               /* mist */
+  --rc-btn: #fff6ea;               /* cream */
   --rc-btn-hover: #ffffff;
-  --rc-btn-text: #454647;          /* iron */
+  --rc-btn-text: #0d1233;          /* navy */
 
   /* ── Keycaps ────────────────────────────────────────────────── */
-  --rc-key-top: #232426;
-  --rc-key-bottom: #141517;
+  --rc-key-top: #1c2252;
+  --rc-key-bottom: #10153a;
 
   /* ── Brand accent (rationed) ────────────────────────────────── */
-  --rc-accent: #ff6363;            /* coral pulse */
-  --rc-accent-ink: #040506;        /* text on accent fill */
-  --rc-accent-tint: #452324;       /* ember hush */
+  --rc-accent: #eea720;            /* gold */
+  --rc-accent-ink: #0d1233;        /* navy text on gold fill */
+  --rc-accent-tint: #2c2412;       /* deep gold shade */
 
   /* ── Hero artwork only ──────────────────────────────────────── */
-  --rc-art-hot: #ff6363;           /* slabs */
-  --rc-art-hot-2: #ffc2bd;         /* slab highlight end */
-  --rc-art-1: #63a1ff;             /* electric sky */
-  --rc-art-2: #143ca3;             /* cobalt edge */
-  --rc-art-3: #02193b;             /* deep space */
-  --rc-art-wash: rgba(4, 63, 150, 0.7);
-  --rc-art-wash-2: rgba(6, 18, 37, 0.25);
+  --rc-art-hot: #eea720;           /* gold slabs */
+  --rc-art-hot-2: #fff6ea;         /* cream highlight end */
+  --rc-art-1: #fff6ea;             /* cream mid-tone */
+  --rc-art-2: #3a4592;             /* lifted navy edge */
+  --rc-art-3: #0d1233;             /* navy */
+  --rc-art-wash: rgba(36, 46, 120, 0.75);
+  --rc-art-wash-2: rgba(13, 18, 51, 0.35);
 
   /* ── Focus ──────────────────────────────────────────────────── */
-  --rc-focus: rgba(255, 255, 255, 0.85);
+  --rc-focus: rgba(238, 167, 32, 0.9);
 
   /* ── Shadows ────────────────────────────────────────────────── */
-  --rc-hl: rgba(255, 255, 255, 0.1);         /* inset top highlight */
-  --rc-shadow-key: rgba(255, 255, 255, 0.05) 0 1px 0 0 inset, rgba(255, 255, 255, 0.16) 0 0 0 1px, rgba(0, 0, 0, 0.2) 0 -1px 0 0 inset;
-  --rc-shadow-key-hover: rgba(255, 255, 255, 0.08) 0 1px 0 0 inset, rgba(255, 255, 255, 0.3) 0 0 0 1px, rgba(0, 0, 0, 0.2) 0 -1px 0 0 inset;
-  --rc-shadow-keycap: rgba(0, 0, 0, 0.4) 0 1.5px 0.5px 2.5px, rgb(0, 0, 0) 0 0 0.5px 1px, rgba(0, 0, 0, 0.25) 0 2px 1px 1px inset, rgba(255, 255, 255, 0.2) 0 1px 1px 1px inset;
-  --rc-shadow-btn: rgba(0, 0, 0, 0.03) 0 7px 3px 0, rgba(0, 0, 0, 0.25) 0 4px 4px 0;
-  --rc-shadow-window: rgba(255, 255, 255, 0.1) 0 1px 0 0 inset, rgba(0, 0, 0, 0.4) 0 30px 50px 0, rgba(3, 15, 129, 0.09) 0 4px 24px 0, rgba(255, 255, 255, 0.06) 0 0 0 1px inset;
-  --rc-shadow-xl: rgba(0, 0, 0, 0.4) 0 4px 40px 8px, rgba(0, 0, 0, 0.8) 0 0 0 0.5px, rgba(255, 255, 255, 0.3) 0 0.5px 0 0 inset;
+  --rc-hl: rgba(255, 246, 234, 0.1);         /* inset top highlight */
+  --rc-shadow-key: rgba(255, 246, 234, 0.05) 0 1px 0 0 inset, rgba(255, 246, 234, 0.15) 0 0 0 1px, rgba(0, 0, 0, 0.25) 0 -1px 0 0 inset;
+  --rc-shadow-key-hover: rgba(255, 246, 234, 0.08) 0 1px 0 0 inset, rgba(255, 246, 234, 0.3) 0 0 0 1px, rgba(0, 0, 0, 0.25) 0 -1px 0 0 inset;
+  --rc-shadow-keycap: rgba(2, 3, 12, 0.5) 0 1.5px 0.5px 2.5px, rgb(2, 3, 12) 0 0 0.5px 1px, rgba(0, 0, 0, 0.25) 0 2px 1px 1px inset, rgba(255, 246, 234, 0.2) 0 1px 1px 1px inset;
+  --rc-shadow-btn: rgba(0, 0, 0, 0.03) 0 7px 3px 0, rgba(2, 3, 12, 0.3) 0 4px 4px 0;
+  --rc-shadow-window: rgba(255, 246, 234, 0.1) 0 1px 0 0 inset, rgba(2, 3, 12, 0.5) 0 30px 50px 0, rgba(13, 18, 51, 0.5) 0 4px 24px 0, rgba(255, 246, 234, 0.06) 0 0 0 1px inset;
+  --rc-shadow-xl: rgba(2, 3, 12, 0.5) 0 4px 40px 8px, rgba(2, 3, 12, 0.85) 0 0 0 0.5px, rgba(255, 246, 234, 0.3) 0 0.5px 0 0 inset;
 
   /* ── Type ───────────────────────────────────────────────────── */
   --rc-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
