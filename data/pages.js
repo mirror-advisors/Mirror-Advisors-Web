@@ -14,139 +14,232 @@ import { FOOTER_HTML } from '../lib/footer';
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
-  'home': `<div class="brf-page">
+  'home': `<div class="brf-page bp-page bp-home">
 
   <!-- ── SECTION 1 · HERO ── -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
+  <section class="bp-hero bp-hero-home">
+    <div class="bp-wrap">
+      <div class="bp-hero-grid">
+        <div class="bp-hero-copy">
+          <h1 class="bp-h1"><span class="bp-hl">One system</span> your whole business runs on.</h1>
+          <p class="bp-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+          <div class="bp-btns">
+            <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+            <a class="brf-cta-secondary" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
+          </div>
+        </div>
+        <div class="bp-hero-fig" aria-hidden="true">
+          <svg class="bp-dia bp-dia-converge" viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <g class="d-frame">
+              <rect x="0.5" y="0.5" width="559" height="519"/>
+              <path d="M0 28H14M28 0V14M532 0V14M560 28H546M0 492H14M28 520V506M532 520V506M560 492H546"/>
+            </g>
+            <circle class="d-ring" cx="280" cy="266" r="122"/>
+            <g class="d-ghost">
+              <path d="M128 84L366 76"/>
+              <path d="M90 99L80 251"/>
+              <path d="M92 281L130 431"/>
+              <path d="M440 91L480 251"/>
+              <path d="M480 281L432 437"/>
+              <path d="M204 446L398 452"/>
+              <path d="M128 92L454 258"/>
+              <path d="M114 260L366 88"/>
+              <path d="M204 438L454 276"/>
+            </g>
+            <g class="d-links">
+              <path class="ln" pathLength="1" style="--i:0" d="M96 99V176H252V237"/>
+              <path class="ln" pathLength="1" style="--i:1" d="M424 91V176H308V237"/>
+              <path class="ln" pathLength="1" style="--i:2" d="M454 266H354"/>
+              <path class="ln" pathLength="1" style="--i:3" d="M114 266H206"/>
+              <path class="ln" pathLength="1" style="--i:4" d="M140 431V356H252V295"/>
+              <path class="ln" pathLength="1" style="--i:5" d="M424 437V356H308V295"/>
+            </g>
+            <g class="d-pulses">
+              <path class="pl" pathLength="1" style="--i:0" d="M96 99V176H252V237"/>
+              <path class="pl" pathLength="1" style="--i:3" d="M424 91V176H308V237"/>
+              <path class="pl" pathLength="1" style="--i:1" d="M454 266H354"/>
+              <path class="pl" pathLength="1" style="--i:4" d="M114 266H206"/>
+              <path class="pl" pathLength="1" style="--i:2" d="M140 431V356H252V295"/>
+              <path class="pl" pathLength="1" style="--i:5" d="M424 437V356H308V295"/>
+            </g>
+            <g class="d-joints">
+              <rect x="93" y="173" width="6" height="6"/><rect x="249" y="173" width="6" height="6"/>
+              <rect x="421" y="173" width="6" height="6"/><rect x="305" y="173" width="6" height="6"/>
+              <rect x="137" y="353" width="6" height="6"/><rect x="249" y="353" width="6" height="6"/>
+              <rect x="421" y="353" width="6" height="6"/><rect x="305" y="353" width="6" height="6"/>
+            </g>
+            <g class="d-nodes">
+              <g class="nd" style="--i:0"><rect x="64" y="69" width="64" height="30"/><text x="96" y="88">CRM</text></g>
+              <g class="nd" style="--i:1"><rect x="366" y="61" width="116" height="30"/><text x="424" y="80">ACCOUNTING</text></g>
+              <g class="nd" style="--i:2"><rect x="454" y="251" width="64" height="30"/><text x="486" y="270">ERP</text></g>
+              <g class="nd" style="--i:3"><rect x="42" y="251" width="72" height="30"/><text x="78" y="270">DATA</text></g>
+              <g class="nd" style="--i:4"><rect x="76" y="431" width="128" height="30"/><text x="140" y="450">SPREADSHEET</text></g>
+              <g class="nd" style="--i:5"><rect x="398" y="437" width="52" height="30"/><text x="424" y="456">AI</text></g>
+            </g>
+            <g class="d-core">
+              <rect class="core-halo" x="196" y="227" width="168" height="78"/>
+              <rect class="core" x="206" y="237" width="148" height="58"/>
+              <text class="core-t" x="280" y="270.5">ONE SYSTEM</text>
+            </g>
+          </svg>
+        </div>
       </div>
-      <div class="brf-hero-note">US-led. Global delivery. The same lead from your first call to go-live.</div>
+      <div class="bp-spec">
+        <div class="bp-spec-cell">US-led.</div>
+        <div class="bp-spec-cell">Global delivery.</div>
+        <div class="bp-spec-cell">The same lead from your first call to go-live.</div>
+      </div>
     </div>
   </section>
 
   <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">If this sounds familiar, it usually is.</h2>
-      <ul class="brf-list">
-        <li>Your CRM doesn't know what your accounting system knows.</li>
-        <li>The same customer record lives in three places, and two of them are out of date.</li>
-        <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
-        <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
-        <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
-      </ul>
-      <p class="brf-body">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
+  <section class="bp-sec bp-paper">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">01</span><span class="bp-rule-of">/ 05</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">If this sounds familiar, it usually is.</h2>
+        </div>
+        <div class="bp-split-body">
+          <ol class="bp-log">
+            <li>Your CRM doesn't know what your accounting system knows.</li>
+            <li>The same customer record lives in three places, and two of them are out of date.</li>
+            <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
+            <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
+            <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
+          </ol>
+          <p class="bp-callout">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <strong>That is the job we do.</strong></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── SECTION 3 · WHAT WE DO ── -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">Six ways we get your business onto one system.</h2>
-      <div class="brf-cards">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
-          <div class="brf-card-learn">Learn more →</div>
+  <section class="bp-sec">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">02</span><span class="bp-rule-of">/ 05</span></div>
+      <div class="bp-sec-head">
+        <h2 class="bp-h2">Six ways we get your business onto one system.</h2>
+      </div>
+      <div class="bp-svc">
+        <a class="bp-svc-card" href="/services/systems-integration" onclick="go('services/systems-integration')">
+          <div class="bp-svc-top"><div class="bp-svc-n">01</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect x="3" y="15" width="10" height="10"/><rect x="27" y="15" width="10" height="10"/><path d="M13 20h14"/><rect class="f" x="18" y="18" width="4" height="4"/></svg></div>
+          <div class="bp-svc-title">Systems Integration</div>
+          <p class="bp-svc-desc">Connect the software you already own so your data moves on its own.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="bp-svc-card" href="/services/data-migration" onclick="go('services/data-migration')">
+          <div class="bp-svc-top"><div class="bp-svc-n">02</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M3 10h10M3 16h10M3 22h10M3 28h10"/><path d="M16 19h8M21 16l3 3-3 3"/><rect x="27" y="8" width="10" height="22"/></svg></div>
+          <div class="bp-svc-title">Data Migration</div>
+          <p class="bp-svc-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="bp-svc-card" href="/services/erp-implementation" onclick="go('services/erp-implementation')">
+          <div class="bp-svc-top"><div class="bp-svc-n">03</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect class="f" x="15" y="15" width="10" height="10"/><path d="M20 15V8M20 25v7M15 20H8M25 20h7"/><rect x="17" y="2" width="6" height="6"/><rect x="17" y="32" width="6" height="6"/><rect x="2" y="17" width="6" height="6"/><rect x="32" y="17" width="6" height="6"/></svg></div>
+          <div class="bp-svc-title">ERP Implementation</div>
+          <p class="bp-svc-desc">Deploy the system your operation runs on, from planning through go-live.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="bp-svc-card" href="/services/custom-development" onclick="go('services/custom-development')">
+          <div class="bp-svc-top"><div class="bp-svc-n">04</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M12 11l-8 9 8 9M28 11l8 9-8 9M23 8l-6 24"/></svg></div>
+          <div class="bp-svc-title">Custom Development</div>
+          <p class="bp-svc-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="bp-svc-card is-featured" href="/services/ai-automation" onclick="go('services/ai-automation')">
+          <div class="bp-svc-top"><div class="bp-svc-n">05</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect class="f" x="15" y="15" width="10" height="10"/><path d="M20 3v8M20 29v8M3 20h8M29 20h8M8 8l5 5M27 27l5 5M32 8l-5 5M13 27l-5 5"/></svg></div>
+          <div class="bp-svc-title">AI &amp; Automation</div>
+          <p class="bp-svc-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="bp-svc-card" href="/services/zoho" onclick="go('services/zoho')">
+          <div class="bp-svc-top"><div class="bp-svc-n">06</div><svg class="bp-glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 5l15 7.5L20 20 5 12.5z"/><path d="M5 20l15 7.5L35 20"/><path d="M5 27.5L20 35l15-7.5"/></svg></div>
+          <div class="bp-svc-title">Zoho Consulting &amp; Support</div>
+          <p class="bp-svc-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
+          <div class="bp-svc-more">Learn more →</div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Every project starts with a Mirror Scope.</h2>
-      <div style="max-width:780px">
-        <p class="brf-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="brf-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
-      </div>
-      <div class="brf-steps">
-        <div class="brf-step">
-          <div class="brf-step-num">01</div>
-          <div class="brf-step-name">Mirror Scope</div>
-          <div class="brf-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
+  <section class="bp-sec bp-paper">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">03</span><span class="bp-rule-of">/ 05</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">Every project starts with a Mirror Scope.</h2>
         </div>
-        <div class="brf-step">
-          <div class="brf-step-num">02</div>
-          <div class="brf-step-name">Approval</div>
-          <div class="brf-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">03</div>
-          <div class="brf-step-name">Build</div>
-          <div class="brf-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">04</div>
-          <div class="brf-step-name">Training</div>
-          <div class="brf-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">05</div>
-          <div class="brf-step-name">Live and supported</div>
-          <div class="brf-step-desc">You go live, and we stay reachable.</div>
+        <div class="bp-split-body">
+          <p class="bp-body bp-body-lg">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+          <p class="bp-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
         </div>
       </div>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">More on how we work</a>
+      <ol class="bp-pipe">
+        <li class="bp-pipe-step">
+          <div class="bp-pipe-node">01</div>
+          <div class="bp-pipe-name">Mirror Scope</div>
+          <div class="bp-pipe-desc">We map your processes, define the requirements, and write the implementation plan.</div>
+        </li>
+        <li class="bp-pipe-step">
+          <div class="bp-pipe-node">02</div>
+          <div class="bp-pipe-name">Approval</div>
+          <div class="bp-pipe-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
+        </li>
+        <li class="bp-pipe-step">
+          <div class="bp-pipe-node">03</div>
+          <div class="bp-pipe-name">Build</div>
+          <div class="bp-pipe-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
+        </li>
+        <li class="bp-pipe-step">
+          <div class="bp-pipe-node">04</div>
+          <div class="bp-pipe-name">Training</div>
+          <div class="bp-pipe-desc">We train your team on what we built, not on generic software documentation.</div>
+        </li>
+        <li class="bp-pipe-step">
+          <div class="bp-pipe-node">05</div>
+          <div class="bp-pipe-name">Live and supported</div>
+          <div class="bp-pipe-desc">You go live, and we stay reachable.</div>
+        </li>
+      </ol>
+      <div class="bp-btns">
+        <a class="brf-cta-secondary" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Why companies choose us.</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">US-led from the first call.</div>
-        <p class="brf-why-block-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We scope before we build.</div>
-        <p class="brf-why-block-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We answer.</div>
-        <p class="brf-why-block-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">You can see the work.</div>
-        <p class="brf-why-block-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We build software, not just configure it.</div>
-        <p class="brf-why-block-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+  <section class="bp-sec">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">04</span><span class="bp-rule-of">/ 05</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">Why companies choose us.</h2>
+        </div>
+        <div class="bp-split-body">
+          <div class="bp-specs">
+            <div class="bp-specs-row">
+              <div class="bp-specs-t">US-led from the first call.</div>
+              <p class="bp-specs-b">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+            </div>
+            <div class="bp-specs-row">
+              <div class="bp-specs-t">We scope before we build.</div>
+              <p class="bp-specs-b">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+            </div>
+            <div class="bp-specs-row">
+              <div class="bp-specs-t">We answer.</div>
+              <p class="bp-specs-b">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+            </div>
+            <div class="bp-specs-row">
+              <div class="bp-specs-t">You can see the work.</div>
+              <p class="bp-specs-b">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+            </div>
+            <div class="bp-specs-row">
+              <div class="bp-specs-t">We build software, not just configure it.</div>
+              <p class="bp-specs-b">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -163,99 +256,159 @@ export const pages = {
   <!-- ── SECTION 7 · CLOSING CTA ── -->
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
+      <svg class="bp-cta-mark" viewBox="0 0 160 72" aria-hidden="true" focusable="false"><path class="m-l" d="M8 8H52V36H66M8 64H52V36M152 8H108V36H94M152 64H108V36"/><rect class="m-n" x="2" y="2" width="12" height="12"/><rect class="m-n" x="2" y="58" width="12" height="12"/><rect class="m-n" x="146" y="2" width="12" height="12"/><rect class="m-n" x="146" y="58" width="12" height="12"/><rect class="m-c" x="66" y="22" width="28" height="28"/></svg>
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'how-we-work': `<div class="brf-page">
+  'how-we-work': `<div class="brf-page bp-page bp-hww">
 
   <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">No surprises. That's the whole idea.</h1>
-      <p class="brf-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+  <section class="bp-hero bp-hero-route">
+    <div class="bp-wrap">
+      <div class="bp-hero-stack">
+        <h1 class="bp-h1 bp-h1-xl">No surprises. That's the whole idea.</h1>
+        <p class="bp-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+      </div>
+      <div class="bp-route" aria-hidden="true">
+        <svg class="bp-dia bp-dia-route" viewBox="0 0 1200 170" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <path class="r-ticks" d="M60 140V152M90 146V152M120 146V152M150 146V152M180 146V152M210 146V152M240 146V152M270 146V152M300 146V152M330 140V152M360 146V152M390 146V152M420 146V152M450 146V152M480 146V152M510 146V152M540 146V152M570 146V152M600 140V152M630 146V152M660 146V152M690 146V152M720 146V152M750 146V152M780 146V152M810 146V152M840 146V152M870 140V152M900 146V152M930 146V152M960 146V152M990 146V152M1020 146V152M1050 146V152M1080 146V152M1110 146V152M1140 140V152"/>
+          <path class="r-base" d="M60 152H1140"/>
+          <path class="r-ghost" d="M60 72C150 10 230 140 330 86S450 6 520 56 610 150 690 104C750 70 720 22 660 40 600 58 640 136 760 118S900 26 980 82 1080 140 1140 72"/>
+          <path class="ln" pathLength="1" style="--i:0" d="M60 72H1140"/>
+          <path class="pl" pathLength="1" style="--i:0" d="M60 72H1140"/>
+          <g class="r-st">
+            <rect class="st-on" x="53" y="65" width="14" height="14"/>
+            <rect x="323" y="65" width="14" height="14"/>
+            <rect x="593" y="65" width="14" height="14"/>
+            <rect x="863" y="65" width="14" height="14"/>
+            <rect x="1133" y="65" width="14" height="14"/>
+          </g>
+          <g class="r-num">
+            <text x="60" y="44">01</text><text x="330" y="44">02</text><text x="600" y="44">03</text><text x="870" y="44">04</text><text x="1140" y="44">05</text>
+          </g>
+          <g class="r-lbl">
+            <text x="60" y="110">SCOPE</text><text x="330" y="110">APPROVAL</text><text x="600" y="110">BUILD</text><text x="870" y="110">TRAINING</text><text x="1140" y="110">GO-LIVE</text>
+          </g>
+        </svg>
+      </div>
     </div>
   </section>
 
   <!-- MIRROR SCOPE -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">The Mirror Scope</h2>
-      <p class="brf-body">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
-      <p class="brf-body">It covers four things:</p>
-      <ul class="brf-list">
-        <li><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
-        <li><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
-        <li><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
-        <li><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
-      </ul>
-      <p class="brf-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
-      <p class="brf-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+  <section class="bp-sec bp-paper">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">01</span><span class="bp-rule-of">/ 04</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">The Mirror Scope</h2>
+        </div>
+        <div class="bp-split-body">
+          <p class="bp-body bp-body-lg">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
+        </div>
+      </div>
+      <div class="bp-sheet">
+        <p class="bp-sheet-label">It covers four things:</p>
+        <ol class="bp-quad">
+          <li><div class="bp-quad-t">Business requirements.</div><p class="bp-quad-b">What the system needs to do, in writing, agreed by you.</p></li>
+          <li><div class="bp-quad-t">Process capture.</div><p class="bp-quad-b">How your operation runs today, documented step by step, including the parts that only live in someone's head.</p></li>
+          <li><div class="bp-quad-t">Best practice recommendations.</div><p class="bp-quad-b">Where your current process should change, and where the software should bend to fit you instead.</p></li>
+          <li><div class="bp-quad-t">The implementation plan.</div><p class="bp-quad-b">Phases, sequence, timeline and cost.</p></li>
+        </ol>
+      </div>
+      <div class="bp-cols2">
+        <p class="bp-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
+        <p class="bp-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+      </div>
     </div>
   </section>
 
   <!-- HOW A PROJECT RUNS -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">How a project runs</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Scope.</div>
-        <p class="brf-why-block-body">We map, document and plan.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Presentation and approval.</div>
-        <p class="brf-why-block-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Build.</div>
-        <p class="brf-why-block-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Training.</div>
-        <p class="brf-why-block-body">We train your team on the system we built for you, using your data and your processes.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Go-live and support.</div>
-        <p class="brf-why-block-body">You go live with us alongside you, and we stay available afterward.</p>
+  <section class="bp-sec">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">02</span><span class="bp-rule-of">/ 04</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">How a project runs</h2>
+        </div>
+        <div class="bp-split-body">
+          <ol class="bp-rail">
+            <li><div class="bp-rail-t">Scope.</div><p class="bp-rail-b">We map, document and plan.</p></li>
+            <li><div class="bp-rail-t">Presentation and approval.</div><p class="bp-rail-b">We walk you through what we found and what we recommend. You approve it before anything gets built.</p></li>
+            <li><div class="bp-rail-t">Build.</div><p class="bp-rail-b">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p></li>
+            <li><div class="bp-rail-t">Training.</div><p class="bp-rail-b">We train your team on the system we built for you, using your data and your processes.</p></li>
+            <li><div class="bp-rail-t">Go-live and support.</div><p class="bp-rail-b">You go live with us alongside you, and we stay available afterward.</p></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- WHO DOES THE WORK -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who does the work</h2>
-      <p class="brf-body">We're a US-led firm with a global delivery team.</p>
-      <p class="brf-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
-      <p class="brf-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+  <section class="bp-sec bp-paper">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">03</span><span class="bp-rule-of">/ 04</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">Who does the work</h2>
+          <div class="bp-netfig" aria-hidden="true">
+            <svg class="bp-dia bp-dia-net" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <path class="n-ghost" d="M0 115H360M180 0V230"/>
+              <path class="ln" pathLength="1" style="--i:0" d="M110 115H180V58H222"/>
+              <path class="ln" pathLength="1" style="--i:1" d="M110 115H180V172H252"/>
+              <path class="pl" pathLength="1" style="--i:0" d="M110 115H180V58H222"/>
+              <path class="pl" pathLength="1" style="--i:2" d="M110 115H180V172H252"/>
+              <rect class="n-joint" x="177" y="112" width="6" height="6"/>
+              <g class="n-node n-lead"><rect x="22" y="95" width="88" height="40"/><text x="66" y="119.5">US</text></g>
+              <g class="n-node"><rect x="222" y="40" width="130" height="36"/><text x="287" y="62.5">PHILIPPINES</text></g>
+              <g class="n-node"><rect x="252" y="154" width="100" height="36"/><text x="302" y="176.5">INDIA</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="bp-split-body">
+          <p class="bp-statement">We're a US-led firm with a global delivery team.</p>
+          <div class="bp-cols2 bp-cols2-tight">
+            <p class="bp-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
+            <p class="bp-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHO WE WORK WITH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who we work with</h2>
-      <p class="brf-body">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
-      <p class="brf-body">In practice that means:</p>
-      <ul class="brf-list">
-        <li>An established team rather than a founder and a laptop</li>
-        <li>Executive involvement, because system decisions are business decisions</li>
-        <li>A real budget for the work, since the projects we take on run for months rather than days</li>
-      </ul>
-      <p class="brf-body">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+  <section class="bp-sec">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">04</span><span class="bp-rule-of">/ 04</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">Who we work with</h2>
+        </div>
+        <div class="bp-split-body">
+          <p class="bp-body bp-body-lg">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
+          <p class="bp-label">In practice that means:</p>
+          <ul class="bp-checks">
+            <li>An established team rather than a founder and a laptop</li>
+            <li>Executive involvement, because system decisions are business decisions</li>
+            <li>A real budget for the work, since the projects we take on run for months rather than days</li>
+          </ul>
+          <p class="bp-callout">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CLOSING CTA -->
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
+      <svg class="bp-cta-mark" viewBox="0 0 160 72" aria-hidden="true" focusable="false"><path class="m-l" d="M8 8H52V36H66M8 64H52V36M152 8H108V36H94M152 64H108V36"/><rect class="m-n" x="2" y="2" width="12" height="12"/><rect class="m-n" x="2" y="58" width="12" height="12"/><rect class="m-n" x="146" y="2" width="12" height="12"/><rect class="m-n" x="146" y="58" width="12" height="12"/><rect class="m-c" x="66" y="22" width="28" height="28"/></svg>
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -396,39 +549,91 @@ export const pages = {
 
 </div>`,
 
-  'systems-integration': `<div class="brf-page">
+  'systems-integration': `<div class="brf-page bp-page bp-si">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">Your software should talk to itself.</h1>
-      <p class="brf-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+  <section class="bp-hero">
+    <div class="bp-wrap">
+      <div class="bp-hero-grid">
+        <div class="bp-hero-copy">
+          <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+          <h1 class="bp-h1">Your software should talk to itself.</h1>
+          <p class="bp-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+        </div>
+        <div class="bp-hero-fig" aria-hidden="true">
+          <svg class="bp-dia bp-dia-bridge" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <g class="d-frame">
+              <rect x="0.5" y="0.5" width="519" height="379"/>
+              <path d="M0 24H12M24 0V12M496 0V12M520 24H508M0 356H12M24 380V368M496 380V368M520 356H508"/>
+            </g>
+            <path class="b-manual" d="M105 140V64H415V140"/>
+            <rect class="b-hand" x="254" y="58" width="12" height="12"/>
+            <path class="b-stub" d="M180 180H236M340 180H284"/>
+            <path class="ln" pathLength="1" style="--i:0" d="M180 172H340"/>
+            <path class="ln" pathLength="1" style="--i:1" d="M340 188H180"/>
+            <path class="ln" pathLength="1" style="--i:2" d="M260 188V286"/>
+            <path class="pl" pathLength="1" style="--i:0" d="M180 172H340"/>
+            <path class="pl" pathLength="1" style="--i:3" d="M340 188H180"/>
+            <path class="pl" pathLength="1" style="--i:5" d="M260 188V286"/>
+            <rect class="b-joint" x="255" y="175" width="10" height="10"/>
+            <g class="b-node">
+              <rect x="30" y="140" width="150" height="80"/>
+              <text x="105" y="168">CRM</text>
+              <path class="b-rows" d="M52 186H158M52 196H140M52 206H150"/>
+            </g>
+            <g class="b-node">
+              <rect x="340" y="140" width="150" height="80"/>
+              <text x="415" y="168">ACCOUNTING</text>
+              <path class="b-rows" d="M362 186H468M362 196H450M362 206H460"/>
+            </g>
+            <g class="b-node b-out">
+              <rect x="185" y="286" width="150" height="50"/>
+              <text x="260" y="315">REPORTING</text>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  <section class="bp-sec bp-paper">
+    <div class="bp-wrap">
+      <div class="bp-rule"><span class="bp-rule-n">01</span><span class="bp-rule-of">/ 03</span></div>
+      <p class="bp-statement bp-statement-lg">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
 
-      <h2 class="brf-h2">What this looks like in practice</h2>
-      <ul class="brf-list">
-        <li>Sales activity flows into accounting without re-entry</li>
-        <li>A record created in one system appears everywhere it's needed</li>
-        <li>Reporting pulls from one source instead of four exports</li>
-        <li>The manual handoffs between departments stop being manual</li>
-      </ul>
+      <div class="bp-rule bp-rule-gap"><span class="bp-rule-n">02</span><span class="bp-rule-of">/ 03</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">What this looks like in practice</h2>
+        </div>
+        <div class="bp-split-body">
+          <ul class="bp-flows">
+            <li>Sales activity flows into accounting without re-entry</li>
+            <li>A record created in one system appears everywhere it's needed</li>
+            <li>Reporting pulls from one source instead of four exports</li>
+            <li>The manual handoffs between departments stop being manual</li>
+          </ul>
+        </div>
+      </div>
 
-      <h2 class="brf-h2">How we approach it</h2>
-      <p class="brf-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
-      <p class="brf-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+      <div class="bp-rule bp-rule-gap"><span class="bp-rule-n">03</span><span class="bp-rule-of">/ 03</span></div>
+      <div class="bp-split">
+        <div class="bp-split-head">
+          <h2 class="bp-h2">How we approach it</h2>
+        </div>
+        <div class="bp-split-body">
+          <p class="bp-body bp-body-lg">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
+          <p class="bp-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
+      <svg class="bp-cta-mark" viewBox="0 0 160 72" aria-hidden="true" focusable="false"><path class="m-l" d="M8 8H52V36H66M8 64H52V36M152 8H108V36H94M152 64H108V36"/><rect class="m-n" x="2" y="2" width="12" height="12"/><rect class="m-n" x="2" y="58" width="12" height="12"/><rect class="m-n" x="146" y="2" width="12" height="12"/><rect class="m-n" x="146" y="58" width="12" height="12"/><rect class="m-c" x="66" y="22" width="28" height="28"/></svg>
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
