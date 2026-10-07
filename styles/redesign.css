@@ -8,28 +8,31 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── Colour tokens (Wise reference palette) ── */
-  --ws-forest: #163300;          /* Forest Ink — text, nav, dark sections   */
-  --ws-lime: #9fe870;            /* Lime Voltage — primary fills, accents   */
-  --ws-lime-hover: #80e142;      /* lime, pressed/hover                     */
-  --ws-spruce: #054d28;          /* Spruce — cards on dark sections         */
-  --ws-linen: #e2f6d5;           /* Linen Mist — tinted highlight surfaces  */
-  --ws-charcoal: #454745;        /* body copy                               */
-  --ws-obsidian: #0e0f0c;        /* display headlines on light              */
-  --ws-pebble: #868685;          /* input borders, placeholders             */
-  --ws-slate: #6a6c6a;           /* supporting text                         */
-  --ws-fog: #e8ebe6;             /* card + band surfaces                    */
+  /* ── Colour tokens (Mirror palette: navy / gold / cream / #333 / white) ──
+     Role map from the Wise reference: forest ink → navy, lime → gold,
+     spruce → lighter navy, linen mist → cream, fog → cream-grey,
+     charcoal → #333, obsidian → near-black navy. */
+  --ws-forest: #0d1233;          /* navy — text, nav, dark sections         */
+  --ws-lime: #eea720;            /* gold — primary fills, accents           */
+  --ws-lime-hover: #f4b947;      /* gold, hover (lighter tint)              */
+  --ws-spruce: #1f2858;          /* lighter navy — cards on dark sections   */
+  --ws-linen: #fff6ea;           /* cream — tinted highlight surfaces       */
+  --ws-charcoal: #333333;        /* dark grey — body copy                   */
+  --ws-obsidian: #070a1f;        /* near-black navy — display headlines     */
+  --ws-pebble: #7d8094;          /* navy-grey — input borders, placeholders */
+  --ws-slate: #565b6d;           /* navy-grey — supporting text             */
+  --ws-fog: #f0eee9;             /* cream-grey — card + band surfaces       */
   --ws-paper: #ffffff;           /* canvas                                  */
   --ws-on-dark: #ffffff;         /* body text on forest                     */
-  --ws-on-dark-muted: rgba(255, 255, 255, 0.8);
-  --ws-on-dark-soft: rgba(255, 255, 255, 0.62);
-  --ws-on-lime: #163300;         /* text on lime fills                      */
-  --ws-hairline: rgba(14, 15, 12, 0.12);
+  --ws-on-dark-muted: rgba(255, 246, 234, 0.82);
+  --ws-on-dark-soft: rgba(255, 246, 234, 0.64);
+  --ws-on-lime: #0d1233;         /* text on gold fills                      */
+  --ws-hairline: rgba(13, 18, 51, 0.12);
   --ws-hairline-dark: rgba(255, 255, 255, 0.16);
-  --ws-globe-line: rgba(159, 232, 112, 0.22);
+  --ws-globe-line: rgba(238, 167, 32, 0.24);
   --ws-glass-dark: rgba(255, 255, 255, 0.08);
-  --ws-error: #cb272f;
-  --ws-focus: #163300;
+  --ws-error: #b3261e;
+  --ws-focus: #0d1233;
 
   /* ── Type ── */
   --ws-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -41,7 +44,7 @@
   --ws-r-lg: 28px;
 
   /* ── Elevation ── */
-  --ws-shadow-subtle: 0 0 0 1px rgba(14, 15, 12, 0.12);
+  --ws-shadow-subtle: 0 0 0 1px rgba(13, 18, 51, 0.12);
   --ws-shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.08);
   --ws-shadow-xl: 0 10px 32px rgba(0, 0, 0, 0.15), 0 40px 40px rgba(0, 0, 0, 0.04);
 
