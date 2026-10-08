@@ -30,142 +30,187 @@ const _SYSTEM_CHIPS = SYSTEM_OPTIONS.map(function (v) {
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
-  'home': `<div class="brf-page">
+  'home': `<div class="brf-page ws-page">
 
   <!-- ── SECTION 1 · HERO ── -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
+  <section class="ws-hero">
+    <div class="ws-wrap ws-hero-in">
+      <h1 class="ws-display">One system your whole business runs on.</h1>
+      <p class="ws-hero-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+      <div class="ws-actions">
+        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+        <a class="ws-textlink" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
       </div>
-      <div class="brf-hero-note">US-led. Global delivery. The same lead from your first call to go-live.</div>
+      <div class="ws-tag">US-led. Global delivery. The same lead from your first call to go-live.</div>
+    </div>
+    <div class="ws-globe" aria-hidden="true">
+      <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMin slice" focusable="false">
+        <circle class="ws-g-dome" cx="600" cy="640" r="580"/>
+        <g class="ws-g-grid">
+          <ellipse cx="600" cy="640" rx="580" ry="170"/>
+          <ellipse cx="600" cy="640" rx="580" ry="360"/>
+          <ellipse cx="600" cy="640" rx="150" ry="580"/>
+          <ellipse cx="600" cy="640" rx="330" ry="580"/>
+          <ellipse cx="600" cy="640" rx="470" ry="580"/>
+        </g>
+        <g class="ws-g-links">
+          <path d="M600 214 L262 318"/><path d="M600 214 L396 150"/><path d="M600 214 L482 352"/>
+          <path d="M600 214 L718 352"/><path d="M600 214 L804 150"/><path d="M600 214 L938 318"/>
+        </g>
+        <g class="ws-g-coins">
+          <g class="ws-g-c1"><circle class="ws-g-coin" cx="262" cy="318" r="26"/><circle class="ws-g-ring" cx="262" cy="318" r="15"/></g>
+          <g class="ws-g-c2"><circle class="ws-g-coin" cx="396" cy="150" r="20"/><circle class="ws-g-ring" cx="396" cy="150" r="11"/></g>
+          <g class="ws-g-c3"><circle class="ws-g-coin" cx="482" cy="352" r="17"/><circle class="ws-g-ring" cx="482" cy="352" r="9"/></g>
+          <g class="ws-g-c3"><circle class="ws-g-coin" cx="718" cy="352" r="17"/><circle class="ws-g-ring" cx="718" cy="352" r="9"/></g>
+          <g class="ws-g-c2"><circle class="ws-g-coin" cx="804" cy="150" r="20"/><circle class="ws-g-ring" cx="804" cy="150" r="11"/></g>
+          <g class="ws-g-c1"><circle class="ws-g-coin" cx="938" cy="318" r="26"/><circle class="ws-g-ring" cx="938" cy="318" r="15"/></g>
+        </g>
+        <circle class="ws-g-halo" cx="600" cy="214" r="78"/>
+        <circle class="ws-g-hub" cx="600" cy="214" r="52"/>
+        <circle class="ws-g-ring" cx="600" cy="214" r="32"/>
+      </svg>
     </div>
   </section>
 
   <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">If this sounds familiar, it usually is.</h2>
-      <ul class="brf-list">
-        <li>Your CRM doesn't know what your accounting system knows.</li>
-        <li>The same customer record lives in three places, and two of them are out of date.</li>
-        <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
-        <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
-        <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
-      </ul>
-      <p class="brf-body">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. That is the job we do.</p>
+  <section class="ws-sec ws-sec-fog">
+    <div class="ws-wrap ws-split">
+      <div class="ws-split-head ws-sticky">
+        <h2 class="ws-h2">If this sounds familiar, it usually is.</h2>
+      </div>
+      <div class="ws-split-body">
+        <ol class="ws-numlist">
+          <li>Your CRM doesn't know what your accounting system knows.</li>
+          <li>The same customer record lives in three places, and two of them are out of date.</li>
+          <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
+          <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
+          <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
+        </ol>
+        <p class="ws-bodylg">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <strong>That is the job we do.</strong></p>
+      </div>
     </div>
   </section>
 
-  <!-- ── SECTION 3 · WHAT WE DO ── -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">What we build for you.</h2>
-      <div class="brf-cards">
-        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+  <!-- ── SECTION 3 · WHAT WE BUILD ── -->
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-center">What we build for you.</h2>
+      <div class="brf-cards ws-cards">
+        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
           <div class="brf-card-title">AI Custom Solutions</div>
           <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('solutions/zoho')">
+        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
           <div class="brf-card-title">Zoho Implementation</div>
           <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('solutions/ai-on-zoho')">
+        <a class="brf-card" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">
           <div class="brf-card-title">AI on Zoho</div>
           <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
       </div>
-      <p class="brf-body brf-soon-line">Coming soon: <a class="brf-inline-link" onclick="go('solutions/odoo')">Odoo implementation</a> and <a class="brf-inline-link" onclick="go('solutions/avalara')">Avalara sales tax</a>.</p>
-      <p class="brf-body">Every project is delivered through the same five services: <a class="brf-inline-link" onclick="go('services/software-implementation')">software implementation</a>, <a class="brf-inline-link" onclick="go('services/data-migration')">data migration</a>, <a class="brf-inline-link" onclick="go('services/systems-integration')">systems integration</a>, <a class="brf-inline-link" onclick="go('services/custom-development')">custom development</a> and <a class="brf-inline-link" onclick="go('services/consulting-support')">consulting &amp; support</a>.</p>
+      <p class="ws-note">Coming soon: <a class="ws-inline-link" href="/solutions/odoo" onclick="go('solutions/odoo')">Odoo implementation</a> and <a class="ws-inline-link" href="/solutions/avalara" onclick="go('solutions/avalara')">Avalara sales tax</a>.</p>
+      <p class="ws-note">Every project is delivered through the same five services.</p>
+      <ul class="ws-pills ws-center">
+        <li><a href="/services/software-implementation" onclick="go('services/software-implementation')">Software Implementation</a></li>
+        <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data Migration</a></li>
+        <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
+        <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
+        <li><a href="/services/consulting-support" onclick="go('services/consulting-support')">Consulting &amp; Support</a></li>
+      </ul>
     </div>
   </section>
 
   <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Every project starts with a Mirror Scope.</h2>
-      <div style="max-width:780px">
-        <p class="brf-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="brf-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-h2-xl ws-h2-wide">Every project starts with a Mirror Scope.</h2>
+      <div class="ws-cols2">
+        <p class="ws-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+        <p class="ws-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
       </div>
-      <div class="brf-steps">
-        <div class="brf-step">
-          <div class="brf-step-num">01</div>
-          <div class="brf-step-name">Mirror Scope</div>
-          <div class="brf-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">02</div>
-          <div class="brf-step-name">Approval</div>
-          <div class="brf-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">03</div>
-          <div class="brf-step-name">Build</div>
-          <div class="brf-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">04</div>
-          <div class="brf-step-name">Training</div>
-          <div class="brf-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </div>
-        <div class="brf-step">
-          <div class="brf-step-num">05</div>
-          <div class="brf-step-name">Live and supported</div>
-          <div class="brf-step-desc">You go live, and we stay reachable.</div>
-        </div>
-      </div>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">More on how we work</a>
+      <ol class="ws-steps">
+        <li class="ws-step">
+          <div class="ws-step-num">01</div>
+          <div class="ws-step-name">Mirror Scope</div>
+          <div class="ws-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
+        </li>
+        <li class="ws-step">
+          <div class="ws-step-num">02</div>
+          <div class="ws-step-name">Approval</div>
+          <div class="ws-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
+        </li>
+        <li class="ws-step">
+          <div class="ws-step-num">03</div>
+          <div class="ws-step-name">Build</div>
+          <div class="ws-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
+        </li>
+        <li class="ws-step">
+          <div class="ws-step-num">04</div>
+          <div class="ws-step-name">Training</div>
+          <div class="ws-step-desc">We train your team on what we built, not on generic software documentation.</div>
+        </li>
+        <li class="ws-step">
+          <div class="ws-step-num">05</div>
+          <div class="ws-step-name">Live and supported</div>
+          <div class="ws-step-desc">You go live, and we stay reachable.</div>
+        </li>
+      </ol>
+      <div class="ws-actions">
+        <a class="ws-pill-outline" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Why companies choose us.</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">US-led from the first call.</div>
-        <p class="brf-why-block-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We scope before we build.</div>
-        <p class="brf-why-block-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We answer.</div>
-        <p class="brf-why-block-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">You can see the work.</div>
-        <p class="brf-why-block-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">We build software, not just configure it.</div>
-        <p class="brf-why-block-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-center">Why companies choose us.</h2>
+      <div class="ws-features">
+        <div class="ws-feature">
+          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="ws-feature-title">US-led from the first call.</div>
+          <p class="ws-feature-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+        </div>
+        <div class="ws-feature">
+          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+          <div class="ws-feature-title">We scope before we build.</div>
+          <p class="ws-feature-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+        </div>
+        <div class="ws-feature">
+          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/></svg></div>
+          <div class="ws-feature-title">We answer.</div>
+          <p class="ws-feature-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
+        </div>
+        <div class="ws-feature">
+          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="ws-feature-title">You can see the work.</div>
+          <p class="ws-feature-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
+        </div>
+        <div class="ws-feature">
+          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></div>
+          <div class="ws-feature-title">We build software, not just configure it.</div>
+          <p class="ws-feature-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── SECTION 6 · PROOF ── -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">What this looks like in practice.</h2>
-      <a class="brf-case" onclick="go('case-studies/plastics-products-mfg')">
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-center">What this looks like in practice.</h2>
+      <a class="brf-case" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
         <div class="brf-case-text">
           <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
           <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
           <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
           <div class="brf-card-learn">Read the case study →</div>
         </div>
-        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" />
+        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" width="1600" height="1000" />
       </a>
     </div>
   </section>
@@ -175,88 +220,115 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'how-we-work': `<div class="brf-page">
+  'how-we-work': `<div class="brf-page ws-page">
 
   <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">No surprises. That's the whole idea.</h1>
-      <p class="brf-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <h1 class="ws-display">No surprises. That's the whole idea.</h1>
+      <p class="ws-hero-lead">Software projects fail in predictable ways. The requirements were never written down properly. The price was quoted before anyone understood the work. The team that sold it disappeared after the contract was signed. Everything about how we run projects is built to prevent those three things.</p>
+    </div>
+    <div class="ws-pillband" aria-hidden="true">
+      <span class="ws-pb ws-pb-1"></span><span class="ws-pb ws-pb-2"></span><span class="ws-pb ws-pb-3"></span><span class="ws-pb ws-pb-4"></span><span class="ws-pb ws-pb-5"></span>
     </div>
   </section>
 
   <!-- MIRROR SCOPE -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">The Mirror Scope</h2>
-      <p class="brf-body">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
-      <p class="brf-body">It covers four things:</p>
-      <ul class="brf-list">
-        <li><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
-        <li><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
-        <li><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
-        <li><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
-      </ul>
-      <p class="brf-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
-      <p class="brf-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head ws-sticky">
+        <h2 class="ws-h2 ws-h2-xl">The Mirror Scope</h2>
+        <p class="ws-bodylg">Every engagement begins here. The Mirror Scope is a paid discovery phase where we sit inside your business and work out what the system actually has to do.</p>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-label">It covers four things:</p>
+        <ul class="ws-tiles">
+          <li class="ws-tile"><strong>Business requirements.</strong> What the system needs to do, in writing, agreed by you.</li>
+          <li class="ws-tile"><strong>Process capture.</strong> How your operation runs today, documented step by step, including the parts that only live in someone's head.</li>
+          <li class="ws-tile"><strong>Best practice recommendations.</strong> Where your current process should change, and where the software should bend to fit you instead.</li>
+          <li class="ws-tile"><strong>The implementation plan.</strong> Phases, sequence, timeline and cost.</li>
+        </ul>
+        <p class="ws-body">At the end, you have a document you can act on. If you build with us, it becomes the project plan. If you decide to build with someone else, you take it with you.</p>
+        <div class="ws-callout">
+          <p class="ws-body">We charge for it because free discovery is shallow discovery. A scope that costs us nothing to produce is a scope that gets rushed, and rushed scopes are the single most reliable predictor of a failed implementation.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- HOW A PROJECT RUNS -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">How a project runs</h2>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Scope.</div>
-        <p class="brf-why-block-body">We map, document and plan.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Presentation and approval.</div>
-        <p class="brf-why-block-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Build.</div>
-        <p class="brf-why-block-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Training.</div>
-        <p class="brf-why-block-body">We train your team on the system we built for you, using your data and your processes.</p>
-      </div>
-      <div class="brf-why-block">
-        <div class="brf-why-block-title">Go-live and support.</div>
-        <p class="brf-why-block-body">You go live with us alongside you, and we stay available afterward.</p>
-      </div>
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-h2-xl">How a project runs</h2>
+      <ol class="ws-rows">
+        <li class="ws-row">
+          <div class="ws-row-title">Scope.</div>
+          <p class="ws-row-body">We map, document and plan.</p>
+        </li>
+        <li class="ws-row">
+          <div class="ws-row-title">Presentation and approval.</div>
+          <p class="ws-row-body">We walk you through what we found and what we recommend. You approve it before anything gets built.</p>
+        </li>
+        <li class="ws-row">
+          <div class="ws-row-title">Build.</div>
+          <p class="ws-row-body">Development happens in stages. You get a project meeting every week, and a client portal where you can see progress between meetings.</p>
+        </li>
+        <li class="ws-row">
+          <div class="ws-row-title">Training.</div>
+          <p class="ws-row-body">We train your team on the system we built for you, using your data and your processes.</p>
+        </li>
+        <li class="ws-row">
+          <div class="ws-row-title">Go-live and support.</div>
+          <p class="ws-row-body">You go live with us alongside you, and we stay available afterward.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- WHO DOES THE WORK -->
-  <section class="brf-section">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who does the work</h2>
-      <p class="brf-body">We're a US-led firm with a global delivery team.</p>
-      <p class="brf-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
-      <p class="brf-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2">Who does the work</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-statement">We're a US-led firm with a global delivery team.</p>
+        <div class="ws-duo">
+          <div class="ws-duo-card">
+            <p class="ws-body">Sales, consulting and the Mirror Scope are handled entirely by our US team. Paul Trinidad, our founder, is involved in every project from the first call through go-live. He was at Zoho before founding Mirror Advisors, and he is the person accountable for your project.</p>
+          </div>
+          <div class="ws-duo-card">
+            <p class="ws-body">Project management and development run across our teams in the Philippines and India. This is how we deliver senior US-led consulting at a price that makes sense for a company your size. It is also why our response times are what they are, since there is someone on your project across most of the working day.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHO WE WORK WITH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Who we work with</h2>
-      <p class="brf-body">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
-      <p class="brf-body">In practice that means:</p>
-      <ul class="brf-list">
+  <section class="ws-sec ws-sec-mist">
+    <div class="ws-wrap">
+      <div class="ws-split ws-split-top">
+        <div class="ws-split-head">
+          <h2 class="ws-h2">Who we work with</h2>
+        </div>
+        <div class="ws-split-body">
+          <p class="ws-bodylg">We do our best work with companies that have outgrown their current setup and have leadership ready to commit to fixing it.</p>
+          <p class="ws-label">In practice that means:</p>
+        </div>
+      </div>
+      <ul class="ws-checkcards">
         <li>An established team rather than a founder and a laptop</li>
         <li>Executive involvement, because system decisions are business decisions</li>
         <li>A real budget for the work, since the projects we take on run for months rather than days</li>
       </ul>
-      <p class="brf-body">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
+      <p class="ws-body ws-center ws-after">If that isn't you yet, tell us anyway. We'd rather point you somewhere useful than sell you something that won't work.</p>
     </div>
   </section>
 
@@ -265,7 +337,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -330,37 +402,73 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'systems-integration': `<div class="brf-page">
+  'systems-integration': `<div class="brf-page ws-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">Your software should talk to itself.</h1>
-      <p class="brf-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+  <section class="ws-hero ws-hero-split">
+    <div class="ws-wrap ws-hero-grid">
+      <div class="ws-hero-copy">
+        <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+        <h1 class="ws-display ws-display-md">Your software should talk to itself.</h1>
+        <p class="ws-hero-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
+      </div>
+      <div class="ws-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 480" focusable="false">
+          <circle class="ws-a-disc" cx="240" cy="240" r="232"/>
+          <g class="ws-a-lines">
+            <path d="M240 240 L120 120"/><path d="M240 240 L360 120"/><path d="M240 240 L120 360"/><path d="M240 240 L360 360"/>
+            <path d="M120 120 L360 120"/><path d="M120 360 L360 360"/><path d="M120 120 L120 360"/><path d="M360 120 L360 360"/>
+          </g>
+          <g class="ws-a-nodes">
+            <rect class="ws-a-node" x="72" y="96" width="96" height="48" rx="24"/>
+            <rect class="ws-a-node" x="312" y="96" width="96" height="48" rx="24"/>
+            <rect class="ws-a-node" x="72" y="336" width="96" height="48" rx="24"/>
+            <rect class="ws-a-node" x="312" y="336" width="96" height="48" rx="24"/>
+          </g>
+          <circle class="ws-a-hub" cx="240" cy="240" r="44"/>
+          <circle class="ws-a-hubring" cx="240" cy="240" r="24"/>
+          <g class="ws-a-pulses">
+            <circle class="ws-a-pulse" r="7"><animateMotion dur="3.2s" repeatCount="indefinite" path="M120 120 L240 240 L360 360"/></circle>
+            <circle class="ws-a-pulse" r="7"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M360 120 L240 240 L120 360"/></circle>
+            <circle class="ws-a-pulse" r="6"><animateMotion dur="4.4s" begin="0.8s" repeatCount="indefinite" path="M120 120 L360 120 L360 360 L120 360 Z"/></circle>
+          </g>
+        </svg>
+      </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+  <section class="ws-sec ws-sec-tight ws-sec-mist">
+    <div class="ws-wrap">
+      <p class="ws-statement ws-statement-wide">Systems integration ends that. We connect the tools you already own so information moves between them automatically, in the right direction, without anyone copying and pasting.</p>
+    </div>
+  </section>
 
-      <h2 class="brf-h2">What this looks like in practice</h2>
-      <ul class="brf-list">
-        <li>Sales activity flows into accounting without re-entry</li>
-        <li>A record created in one system appears everywhere it's needed</li>
-        <li>Reporting pulls from one source instead of four exports</li>
-        <li>The manual handoffs between departments stop being manual</li>
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">What this looks like in practice</h2>
+      <ul class="ws-flowcards">
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Sales activity flows into accounting without re-entry</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg></span><span>A record created in one system appears everywhere it's needed</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span>Reporting pulls from one source instead of four exports</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4M3 7h18M7 21l-4-4 4-4M21 17H3"/></svg></span><span>The manual handoffs between departments stop being manual</span></li>
       </ul>
+    </div>
+  </section>
 
-      <h2 class="brf-h2">How we approach it</h2>
-      <p class="brf-body">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
-      <p class="brf-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. We do both.</p>
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2 ws-h2-xl">How we approach it</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">We start by mapping where your data actually lives and how it moves today, including the spreadsheet workarounds nobody wants to admit to. Then we design the connections, build them, and test them against your real data before anything goes live.</p>
+        <p class="ws-body">Sometimes the answer is a straightforward connection between two platforms. Sometimes it means building a custom integration because no off-the-shelf connector does what you need. <strong>We do both.</strong></p>
+      </div>
     </div>
   </section>
 
@@ -368,7 +476,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -378,7 +486,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">Bring your history with you.</h1>
       <p class="brf-lead">The fastest way to lose faith in a new system is to open it on day one and find that half your records came across wrong. Migration is the least visible part of an implementation and the part most likely to sink it.</p>
     </div>
@@ -407,7 +515,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -417,7 +525,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">When the software doesn't do it, we build it.</h1>
       <p class="brf-lead">Every business has a process that no vendor has ever built for. A workflow specific to your industry. An approval chain that doesn't match anyone's template. A report your team needs that the platform simply doesn't produce.</p>
     </div>
@@ -447,7 +555,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -467,27 +575,27 @@ export const pages = {
   <section class="brf-section">
     <div class="brf-container">
       <div class="brf-cards brf-cards-lg">
-        <a class="brf-card" onclick="go('services/software-implementation')">
+        <a class="brf-card" href="/services/software-implementation" onclick="go('services/software-implementation')">
           <div class="brf-card-title">Software Implementation</div>
           <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
+        <a class="brf-card" href="/services/data-migration" onclick="go('services/data-migration')">
           <div class="brf-card-title">Data Migration</div>
           <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/systems-integration')">
+        <a class="brf-card" href="/services/systems-integration" onclick="go('services/systems-integration')">
           <div class="brf-card-title">Systems Integration</div>
           <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
+        <a class="brf-card" href="/services/custom-development" onclick="go('services/custom-development')">
           <div class="brf-card-title">Custom Development</div>
           <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/consulting-support')">
+        <a class="brf-card" href="/services/consulting-support" onclick="go('services/consulting-support')">
           <div class="brf-card-title">Consulting &amp; Support</div>
           <p class="brf-card-desc">Senior advice before you buy, and a team that stays reachable after you go live.</p>
           <div class="brf-card-learn">Learn more →</div>
@@ -502,8 +610,8 @@ export const pages = {
       <h2 class="brf-h2">Looking for a specific platform?</h2>
       <p class="brf-body">If you already know you want a custom AI application, a Zoho implementation or AI built on top of Zoho, start with our solutions. Each one lists the services it includes.</p>
       <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('solutions')">See our solutions</a>
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">How we work</a>
+        <a class="brf-cta-secondary" href="/solutions" onclick="go('solutions')">See our solutions</a>
+        <a class="brf-cta-secondary" href="/how-we-work" onclick="go('how-we-work')">How we work</a>
       </div>
     </div>
   </section>
@@ -513,7 +621,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -523,7 +631,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">The system your operation runs on.</h1>
       <p class="brf-lead">Implementing an ERP, a CRM or any core business system touches every part of a business, which is why it's the project companies most often get wrong. It's rarely a technology failure. It's a failure to understand the operation before configuring the software.</p>
     </div>
@@ -549,7 +657,7 @@ export const pages = {
       <p class="brf-body">From there we work in phases with a weekly project meeting, so the project never disappears into a black box between kickoff and launch.</p>
 
       <h2 class="brf-h2">Platforms we implement</h2>
-      <p class="brf-body">Zoho is our home ground, and Odoo and Avalara are coming soon. See <a class="brf-inline-link" onclick="go('platforms')">the platforms we work with</a>.</p>
+      <p class="brf-body">Zoho is our home ground, and Odoo and Avalara are coming soon. See <a class="brf-inline-link" href="/platforms" onclick="go('platforms')">the platforms we work with</a>.</p>
     </div>
   </section>
 
@@ -557,7 +665,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -567,7 +675,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
       <h1 class="brf-h1">Someone who picks up after go-live.</h1>
       <p class="brf-lead">Systems keep changing after launch. People leave, processes shift, and a vendor update breaks a workflow nobody remembers building. Consulting &amp; Support keeps a senior team on hand for the questions, fixes and improvements that come up once the project is over.</p>
     </div>
@@ -595,46 +703,51 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'solutions': `<div class="brf-page">
+  'solutions': `<div class="brf-page ws-page">
 
-  <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">What we build for you.</h1>
-      <p class="brf-lead">We sell a small number of things and do them well: custom AI applications built around your business, Zoho implementations, and AI that runs on top of Zoho. Odoo and Avalara are coming soon.</p>
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <h1 class="ws-display">What we build for you.</h1>
+      <p class="ws-hero-lead">We sell a small number of things and do them well: custom AI applications built around your business, Zoho implementations, and AI that runs on top of Zoho. Odoo and Avalara are coming soon.</p>
+      <div class="ws-actions">
+        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+        <a class="ws-textlink" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Read a case study</a>
+      </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-container">
-      <div class="brf-cards brf-cards-lg">
-        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap">
+      <div class="brf-cards ws-cards">
+        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
           <div class="brf-card-title">AI Custom Solutions</div>
           <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('solutions/zoho')">
+        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
           <div class="brf-card-title">Zoho Implementation</div>
           <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('solutions/ai-on-zoho')">
+        <a class="brf-card" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">
           <div class="brf-card-title">AI on Zoho</div>
           <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card brf-card-soon" onclick="go('solutions/odoo')">
+      </div>
+      <div class="brf-cards brf-cards-2 ws-cards-sub">
+        <a class="brf-card brf-card-soon" href="/solutions/odoo" onclick="go('solutions/odoo')">
           <div class="brf-card-title">Odoo Implementation</div>
           <p class="brf-card-desc">The same scope-first approach, on Odoo.</p>
           <div class="brf-card-learn">Find out more →</div>
         </a>
-        <a class="brf-card brf-card-soon" onclick="go('solutions/avalara')">
+        <a class="brf-card brf-card-soon" href="/solutions/avalara" onclick="go('solutions/avalara')">
           <div class="brf-card-title">Avalara Sales Tax</div>
           <p class="brf-card-desc">Sales tax calculated automatically inside the systems you sell through.</p>
           <div class="brf-card-learn">Find out more →</div>
@@ -643,13 +756,20 @@ export const pages = {
     </div>
   </section>
 
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Every solution uses the same five services.</h2>
-      <p class="brf-body">Software implementation, data migration, systems integration, custom development, and consulting &amp; support. A Zoho project might use all five. A custom application might use three. Either way, it's one team from the first call to go-live.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('services')">See the services</a>
-        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">Read a case study</a>
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2 ws-h2-xl">One team, five services.</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">Every solution is delivered through the same five services. A Zoho project might use all five. A custom application might use three. Either way, it's one team from the first call to go-live.</p>
+      <ul class="ws-pills">
+        <li><a href="/services/software-implementation" onclick="go('services/software-implementation')">Software Implementation</a></li>
+        <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data Migration</a></li>
+        <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
+        <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
+        <li><a href="/services/consulting-support" onclick="go('services/consulting-support')">Consulting &amp; Support</a></li>
+      </ul>
       </div>
     </div>
   </section>
@@ -658,68 +778,100 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'ai-custom-solutions': `<div class="brf-page">
+  'ai-custom-solutions': `<div class="brf-page ws-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
-      <div class="brf-eyebrow">Featured Solution</div>
-      <h1 class="brf-h1">Software built around your business.</h1>
-      <p class="brf-lead">Off-the-shelf software gets most companies eighty percent of the way. The other twenty percent is where your team loses hours every week. We build complete applications for that work, designed around how your operation actually runs, with AI where it genuinely saves time.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">See a real example</a>
+  <section class="ws-hero ws-hero-split">
+    <div class="ws-wrap ws-hero-grid">
+      <div class="ws-hero-copy">
+        <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
+        <div class="brf-eyebrow">Featured solution</div>
+        <h1 class="ws-display ws-display-md">Software built around your business.</h1>
+        <p class="ws-hero-lead">Off-the-shelf software gets most companies eighty percent of the way. The other twenty percent is where your team loses hours every week. We build complete applications for that work, designed around how your operation actually runs, with AI where it genuinely saves time.</p>
+        <div class="ws-actions" style="justify-content:flex-start">
+          <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+          <a class="ws-textlink" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">See a real example</a>
+        </div>
+      </div>
+      <div class="ws-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 480" focusable="false">
+          <circle class="ws-a-disc" cx="240" cy="240" r="232"/>
+          <circle class="ws-a-ring" cx="240" cy="240" r="186"/>
+          <rect class="ws-a-win" x="96" y="132" width="288" height="216" rx="22"/>
+          <circle class="ws-a-bar-gold" cx="124" cy="160" r="7"/>
+          <rect class="ws-a-bar" x="142" y="154" width="70" height="12" rx="6"/>
+          <rect class="ws-a-bar" x="124" y="196" width="120" height="16" rx="8"/>
+          <rect class="ws-a-bar" x="124" y="226" width="96" height="16" rx="8"/>
+          <rect class="ws-a-bar" x="124" y="256" width="132" height="16" rx="8"/>
+          <rect class="ws-a-bar-gold" x="124" y="300" width="96" height="24" rx="12"/>
+          <rect class="ws-a-bar" x="272" y="196" width="84" height="112" rx="14"/>
+          <g class="ws-g-c1"><circle class="ws-a-spark" cx="372" cy="128" r="30"/><path d="M372 110 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5z" fill="#0d1233"/></g>
+        </svg>
       </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <h2 class="brf-h2">What we build</h2>
-      <ul class="brf-list">
-        <li>Operational apps that sit on top of the systems you already run: quoting, shipping, scheduling, inventory</li>
-        <li>Client and vendor portals</li>
-        <li>Internal tools that replace the spreadsheets your team works around</li>
-        <li>AI that reads documents, invoices and forms so nobody types them in</li>
-        <li>AI that turns calls and meetings into records inside your system</li>
-        <li>Classification, routing and drafting for the repetitive work your team does constantly</li>
-      </ul>
-
-      <h2 class="brf-h2">Built with Claude</h2>
-      <p class="brf-body">We build with Claude, Anthropic's AI, both to write the software faster and, where it helps, inside the software itself. That's how a fully custom application now ships in weeks, at a price that used to buy a spreadsheet macro.</p>
-      <p class="brf-body">AI applied to disconnected, messy data produces confident nonsense. So every application we build connects properly to your systems of record first, and the AI works on clean data with a specific job to do. If AI isn't the right answer for what you're describing, we'll say so.</p>
+  <section class="ws-sec ws-sec-tight ws-sec-mist">
+    <div class="ws-wrap">
+      <p class="ws-statement ws-statement-wide">Built with Claude, Anthropic's AI, so a fully custom application now ships in weeks, at a price that used to buy a spreadsheet macro.</p>
     </div>
   </section>
 
-  <!-- CASE STUDY TEASER -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <a class="brf-case" onclick="go('case-studies/plastics-products-mfg')">
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">What we build</h2>
+      <ul class="ws-flowcards">
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span>Operational apps on top of the systems you already run: quoting, shipping, scheduling, inventory</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span><span>Client and vendor portals</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/></svg></span><span>Internal tools that replace the spreadsheets your team works around</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span>AI that reads documents, invoices and forms so nobody types them in</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span>AI that turns calls and meetings into records inside your system</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4M3 7h18M7 21l-4-4 4-4M21 17H3"/></svg></span><span>Classification, routing and drafting for the repetitive work your team does constantly</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2 ws-h2-xl">Clean data first, then AI</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">AI applied to disconnected, messy data produces confident nonsense. So every application we build connects properly to your systems of record first, and the AI works on clean data with a specific job to do.</p>
+        <p class="ws-body">We use Claude both to write the software faster and, where it helps, inside the software itself. If AI isn't the right answer for what you're describing, <strong>we'll say so.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <a class="brf-case" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
         <div class="brf-case-text">
           <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
           <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
           <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
           <div class="brf-card-learn">Read the case study →</div>
         </div>
-        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" />
+        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" width="1600" height="1000" />
       </a>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <h2 class="brf-h2">We run on our own software</h2>
-      <p class="brf-body">Mirror is the platform we designed and built to run this company. It handles our CRM, time tracking, resource allocation, client portals and billing in one place.</p>
-      <p class="brf-body">It also includes Mirror Intelligence, which turns our meeting recordings into summaries, action items and updated records automatically. We didn't buy that. We built it, and we use it every day.</p>
-
-      <h2 class="brf-h2">How it goes</h2>
-      <p class="brf-body">Custom work starts with a Mirror Scope, the same as everything else we do. You see exactly what will be built and what it costs before development starts, then we build in stages with a weekly check-in.</p>
+  <section class="ws-sec ws-sec-fog">
+    <div class="ws-wrap ws-split">
+      <div class="ws-split-head ws-sticky">
+        <h2 class="ws-h2">We run on our own software.</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">Mirror is the platform we designed and built to run this company: CRM, time tracking, resource allocation, client portals and billing in one place.</p>
+        <p class="ws-body">It includes Mirror Intelligence, which turns our meeting recordings into summaries, action items and updated records automatically. We didn't buy that. <strong>We built it, and we use it every day.</strong></p>
+        <p class="ws-body">Custom work starts with a Mirror Scope, the same as everything else we do. You see exactly what will be built and what it costs before development starts, then we build in stages with a weekly check-in.</p>
+      </div>
     </div>
   </section>
 
@@ -727,41 +879,85 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Tell us what your team does by hand.</h2>
       <p class="brf-body">Describe the work that eats your week and we'll tell you honestly whether a custom application is the right fix.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'ai-on-zoho': `<div class="brf-page">
+  'ai-on-zoho': `<div class="brf-page ws-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
-      <h1 class="brf-h1">Zoho, with the missing pieces built in.</h1>
-      <p class="brf-lead">Zoho covers a lot of ground. The work that's specific to your business, the step your team still does by hand or in a spreadsheet next to Zoho, is where we come in. We build applications and AI that sit on top of Zoho, read from it and write back to it, so Zoho stays your system of record.</p>
+  <section class="ws-hero ws-hero-split">
+    <div class="ws-wrap ws-hero-grid">
+      <div class="ws-hero-copy">
+        <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
+        <h1 class="ws-display ws-display-md">Zoho, with the missing pieces built in.</h1>
+        <p class="ws-hero-lead">Zoho covers a lot of ground. The work that's specific to your business, the step your team still does by hand or in a spreadsheet next to Zoho, is where we come in.</p>
+      </div>
+      <div class="ws-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 480" focusable="false">
+          <circle class="ws-a-disc" cx="240" cy="240" r="232"/>
+          <g class="ws-a-lines">
+            <path d="M240 290 L130 150"/><path d="M240 290 L240 120"/><path d="M240 290 L350 150"/>
+          </g>
+          <rect class="ws-a-node" x="78" y="124" width="104" height="52" rx="26"/>
+          <rect class="ws-a-node" x="188" y="94" width="104" height="52" rx="26"/>
+          <rect class="ws-a-node" x="298" y="124" width="104" height="52" rx="26"/>
+          <rect class="ws-a-hub" x="140" y="252" width="200" height="88" rx="44"/>
+          <text class="ws-a-label" x="240" y="307" text-anchor="middle">ZOHO</text>
+          <g class="ws-a-pulses">
+            <circle class="ws-a-pulse" r="7"><animateMotion dur="2.6s" repeatCount="indefinite" path="M240 290 L130 150"/></circle>
+            <circle class="ws-a-pulse" r="7"><animateMotion dur="2.6s" begin=".9s" repeatCount="indefinite" path="M240 120 L240 290"/></circle>
+            <circle class="ws-a-pulse" r="7"><animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite" path="M240 290 L350 150"/></circle>
+          </g>
+        </svg>
+      </div>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <h2 class="brf-h2">What that looks like</h2>
-      <ul class="brf-list">
-        <li>A purpose-built screen for one job, like shipping, quoting or receiving, that pulls orders, items and customers straight from Zoho</li>
-        <li>Records, documents and status updates written back to Zoho automatically, so nobody re-keys anything</li>
-        <li>AI that reads incoming documents and emails and files them against the right Zoho record</li>
-        <li>Bulk tools that fix data Zoho's own screens make slow to fix one record at a time</li>
-        <li>Connections from Zoho to the carriers, tax engines and other systems your process depends on</li>
+  <section class="ws-sec ws-sec-tight ws-sec-mist">
+    <div class="ws-wrap">
+      <p class="ws-statement ws-statement-wide">We build applications and AI that sit on top of Zoho, read from it and write back to it, so Zoho stays your system of record.</p>
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">What that looks like</h2>
+      <ul class="ws-flowcards">
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span>A purpose-built screen for one job, like shipping, quoting or receiving, that pulls orders, items and customers straight from Zoho</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5M3 20v-5h5"/></svg></span><span>Records, documents and status updates written back to Zoho automatically, so nobody re-keys anything</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span>AI that reads incoming documents and emails and files them against the right Zoho record</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><span>Bulk tools that fix data Zoho's own screens make slow to fix one record at a time</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span><span>Connections from Zoho to the carriers, tax engines and other systems your process depends on</span></li>
       </ul>
+    </div>
+  </section>
 
-      <h2 class="brf-h2">A real example</h2>
-      <p class="brf-body">For Plastics Products Mfg we built a shipping app on top of Zoho Inventory. Staff open a sales order, the app packs it into stock boxes, compares every FedEx rate on their account and prints the labels. Then it writes the packages, tracking numbers, shipping charge and packing slip back onto the Zoho order.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">Read the case study</a>
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2 ws-h2-xl">A real example</h2>
       </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">For Plastics Products Mfg we built a shipping app on top of Zoho Inventory. Staff open a sales order, the app packs it into stock boxes, compares every FedEx rate on their account and prints the labels.</p>
+        <p class="ws-body">Then it writes the packages, tracking numbers, shipping charge and packing slip back onto the Zoho order. It went live in 13 days, and <strong>87% of PPM's shipments now run through it.</strong></p>
+        <div class="ws-actions" style="justify-content:flex-start">
+          <a class="ws-pill-outline" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Read the case study</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h2 class="brf-h2">When this fits</h2>
-      <p class="brf-body">You already run Zoho, or you're implementing it with us, and there's a part of your process Zoho doesn't quite cover. If Zoho can do the job with configuration alone, we'll tell you that first.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap ws-split">
+      <div class="ws-split-head">
+        <h2 class="ws-h2">When this fits</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">You already run Zoho, or you're implementing it with us, and there's a part of your process Zoho doesn't quite cover.</p>
+        <p class="ws-body">If Zoho can do the job with configuration alone, <strong>we'll tell you that first.</strong> New to Zoho? Start with <a class="ws-inline-link" href="/solutions/zoho" onclick="go('solutions/zoho')">Zoho implementation</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -769,7 +965,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what your team does next to Zoho and we'll tell you honestly whether it's worth building.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -779,7 +975,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
       <h1 class="brf-h1">We know this platform inside out.</h1>
       <p class="brf-lead">Mirror Advisors was founded by a former Zoho employee, and Zoho remains the platform we've implemented more than any other. If you're evaluating it, running it, or struggling with an implementation someone else left behind, this is our home ground.</p>
     </div>
@@ -803,7 +999,7 @@ export const pages = {
            should be described. -->
 
       <h2 class="brf-h2">Go further with AI on Zoho</h2>
-      <p class="brf-body">When there's a part of your process Zoho doesn't cover, we build it on top: applications and AI that read from Zoho and write back to it. <a class="brf-inline-link" onclick="go('solutions/ai-on-zoho')">See AI on Zoho</a>.</p>
+      <p class="brf-body">When there's a part of your process Zoho doesn't cover, we build it on top: applications and AI that read from Zoho and write back to it. <a class="brf-inline-link" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">See AI on Zoho</a>.</p>
 
       <h2 class="brf-h2">Why clients come to us specifically</h2>
       <p class="brf-body">Our founder worked at Zoho before founding this firm, so we know how the platform is built, where it's strong, and where it will fight you. In our first year as a partner we reached Premium tier, the first partner to do so that fast.</p>
@@ -825,7 +1021,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -835,13 +1031,13 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
       <div class="brf-eyebrow">Coming soon</div>
       <h1 class="brf-h1">Odoo implementation.</h1>
       <p class="brf-lead">We're adding Odoo to the platforms we implement, with the same approach we use for everything else: understand the operation first, configure the software second. If you're evaluating Odoo now, tell us about your project and we'll tell you where we can help today.</p>
       <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Get in touch</a>
-        <a class="brf-cta-secondary" onclick="go('services/software-implementation')">How we implement</a>
+        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Get in touch</a>
+        <a class="brf-cta-secondary" href="/services/software-implementation" onclick="go('services/software-implementation')">How we implement</a>
       </div>
     </div>
   </section>
@@ -850,7 +1046,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -860,13 +1056,13 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
       <div class="brf-eyebrow">Coming soon</div>
       <h1 class="brf-h1">Avalara sales tax.</h1>
       <p class="brf-lead">We're adding Avalara implementation, connecting it to the systems you sell through so sales tax is calculated on every order instead of worked out by hand. If sales tax is a headache for you right now, tell us about it and we'll tell you where we can help today.</p>
       <div class="brf-btn-row">
-        <a class="brf-cta-primary" onclick="go('contact')">Get in touch</a>
-        <a class="brf-cta-secondary" onclick="go('services/systems-integration')">How we integrate</a>
+        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Get in touch</a>
+        <a class="brf-cta-secondary" href="/services/systems-integration" onclick="go('services/systems-integration')">How we integrate</a>
       </div>
     </div>
   </section>
@@ -875,41 +1071,41 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
 </div>`,
 
-  'platforms': `<div class="brf-page">
+  'platforms': `<div class="brf-page ws-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">The platforms we work with.</h1>
-      <p class="brf-lead">We implement a few platforms deeply, and we connect them to dozens more. Here's where we build, and a sample of the systems we've integrated along the way.</p>
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <h1 class="ws-display">The platforms we work with.</h1>
+      <p class="ws-hero-lead">We implement a few platforms deeply, and we connect them to dozens more. Here's where we build, and a sample of the systems we've integrated along the way.</p>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-container">
-      <h2 class="brf-h2">Where we build</h2>
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">Where we build</h2>
       <div class="brf-cards brf-cards-2">
-        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
           <div class="brf-card-title">Custom applications, built with Claude</div>
           <p class="brf-card-desc">Fully custom software for the work your other systems don't cover.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('solutions/zoho')">
+        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
           <div class="brf-card-title">Zoho</div>
           <p class="brf-card-desc">Zoho Authorized Partner. Implementation, migration, custom development and support across the suite.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card brf-card-soon" onclick="go('solutions/odoo')">
+        <a class="brf-card brf-card-soon" href="/solutions/odoo" onclick="go('solutions/odoo')">
           <div class="brf-card-title">Odoo</div>
           <p class="brf-card-desc">Odoo implementation, scope first.</p>
           <div class="brf-card-learn">Find out more →</div>
         </a>
-        <a class="brf-card brf-card-soon" onclick="go('solutions/avalara')">
+        <a class="brf-card brf-card-soon" href="/solutions/avalara" onclick="go('solutions/avalara')">
           <div class="brf-card-title">Avalara</div>
           <p class="brf-card-desc">Automated sales tax, connected to the systems you sell through.</p>
           <div class="brf-card-learn">Find out more →</div>
@@ -920,11 +1116,11 @@ export const pages = {
 
   <!-- WORKS WITH · PROVISIONAL LIST. Confirm every name with Paul before
        launch; he has the full list of systems we've integrated. -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container">
-      <h2 class="brf-h2">Works with</h2>
-      <p class="brf-body" style="max-width:680px">A sample of the systems we've connected, migrated from or built on top of.</p>
-      <ul class="brf-tiles" aria-label="Systems we work with">
+  <section class="ws-sec ws-sec-fog">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-center">Works with</h2>
+      <p class="ws-hero-lead ws-center">A sample of the systems we've connected, migrated from or built on top of.</p>
+      <ul class="ws-logos" aria-label="Systems we work with">
         <li>QuickBooks</li>
         <li>NetSuite</li>
         <li>Salesforce</li>
@@ -941,7 +1137,7 @@ export const pages = {
         <li>Supabase</li>
         <li>Claude</li>
       </ul>
-      <p class="brf-body" style="max-width:680px;margin-top:28px">Don't see yours? If it has an API, we can usually connect it. Ask us.</p>
+      <p class="ws-note">Don't see yours? If it has an API, we can usually connect it. <a class="ws-inline-link" href="/contact" onclick="go('contact')">Ask us.</a></p>
     </div>
   </section>
 
@@ -949,7 +1145,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what you run today and what isn't talking to what. We'll tell you honestly whether we can fix it.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -960,15 +1156,15 @@ export const pages = {
   // read 2026-10-08 (go-live 2026-09-22). Client approved naming, results
   // and screenshots. Screenshots have customer data replaced; pricing and
   // markup screens are deliberately not shown.
-  'case-ppm': `<div class="brf-page">
+  'case-ppm': `<div class="brf-page ws-page">
 
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('solutions/ai-on-zoho')">← AI on Zoho</a>
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <a class="brf-back-link" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')" style="display:table;margin-left:auto;margin-right:auto">← AI on Zoho</a>
       <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
-      <h1 class="brf-h1">Quote to label in one screen, on top of Zoho Inventory.</h1>
-      <p class="brf-lead">Plastics Products Mfg runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
-      <div class="brf-case-meta">
+      <h1 class="ws-display">Quote to label in one screen.</h1>
+      <p class="ws-hero-lead">Plastics Products Mfg runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
+      <div class="ws-meta">
         <span><strong>Solution:</strong> AI on Zoho</span>
         <span><strong>Built on:</strong> Zoho Inventory, EasyPost, FedEx</span>
         <span><strong>Live since:</strong> September 2026</span>
@@ -976,54 +1172,82 @@ export const pages = {
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-container">
-      <div class="brf-stats">
-        <div class="brf-stat"><div class="brf-stat-num">13 days</div><div class="brf-stat-label">from the first line of code to live FedEx labels</div></div>
-        <div class="brf-stat"><div class="brf-stat-num">199</div><div class="brf-stat-label">labels on 118 shipments in the first 11 shipping days</div></div>
-        <div class="brf-stat"><div class="brf-stat-num">87%</div><div class="brf-stat-label">of PPM's Zoho shipments now go through the app</div></div>
-        <div class="brf-stat"><div class="brf-stat-num">1 in 4</div><div class="brf-stat-label">shipments are multi-box, up to 10 boxes, on one screen</div></div>
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap">
+      <figure class="ws-shot">
+        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="An open Zoho sales order in the shipping app, with three lines auto-packed into a small stock box and a 3D packing preview" width="1600" height="1000" />
+        <figcaption>An open Zoho sales order, auto-packed into a stock box. Customer details replaced for this page.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-h2-xl ws-h2-wide">The first three weeks.</h2>
+      <ul class="ws-stats">
+        <li class="ws-stat"><div class="ws-stat-num">13 days</div><div class="ws-stat-label">from the first line of code to live FedEx labels</div></li>
+        <li class="ws-stat"><div class="ws-stat-num">199</div><div class="ws-stat-label">labels on 118 shipments in the first 11 shipping days</div></li>
+        <li class="ws-stat"><div class="ws-stat-num">87%</div><div class="ws-stat-label">of PPM's Zoho shipments now go through the app</div></li>
+        <li class="ws-stat"><div class="ws-stat-num">1 in 4</div><div class="ws-stat-label">shipments are multi-box, up to 10 boxes, on one screen</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-fog">
+    <div class="ws-wrap ws-split">
+      <div class="ws-split-head ws-sticky">
+        <h2 class="ws-h2">The problem</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">Every FedEx shipment meant working across separate tools: look up the order in Zoho, work out which box it fits in, price it on the carrier account, buy the label, then go back into Zoho to record the package, the tracking number and the shipping charge.</p>
+        <p class="ws-body">On a multi-box order, that's the same steps again for every box. And the catalogue made it harder: of 5,978 active items, 4,443 were missing at least one measurement, and Zoho won't save an item's weight until all three dimensions are filled in.</p>
       </div>
     </div>
   </section>
 
-  <section class="brf-section brf-section-cream">
-    <div class="brf-service-body">
-      <h2 class="brf-h2">The problem</h2>
-      <p class="brf-body">Every FedEx shipment meant working across separate tools: look up the order in Zoho, work out which box it fits in, price it on the carrier account, buy the label, then go back into Zoho to record the package, the tracking number and the shipping charge. On a multi-box order, that's the same steps again for every box.</p>
-      <p class="brf-body">The catalogue made it harder. Of 5,978 active items, 4,443 were missing at least one measurement, and Zoho won't save an item's weight until all three dimensions are filled in. So the data needed to pack and price a box often wasn't there.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">What we built</h2>
+      <ul class="ws-flowcards">
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span><strong>One screen from order to label.</strong> Open a Zoho sales order, choose what ships now, and the app packs it into stock boxes with a 3D preview of how it fits.</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span><strong>Every FedEx option, sorted by price.</strong> Rates from PPM's own FedEx account, with delivery dates and the cheapest and fastest marked.</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5M3 20v-5h5"/></svg></span><span><strong>Everything written back to Zoho.</strong> Packages, shipment, tracking, the FedEx charge and a packing slip land on the order, and it's marked delivered when FedEx delivers.</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></span><span><strong>Built for the warehouse floor.</strong> Labels print straight to the Zebra printer, in bulk if needed, in English or Spanish.</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span><strong>Safe to retry.</strong> If anything fails halfway, a retry picks up where it stopped. It never buys a second label or creates a duplicate order.</span></li>
+      </ul>
     </div>
   </section>
 
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <h2 class="brf-h2">What we built</h2>
-      <ul class="brf-list">
-        <li><strong>One screen from order to label.</strong> Staff open a Zoho sales order, choose what ships now, and the app packs the items into PPM's stock boxes, with a 3D preview of how they fit.</li>
-        <li><strong>Every FedEx option, sorted by price.</strong> Rates from PPM's own FedEx account for every service, with delivery dates and the cheapest and fastest marked.</li>
-        <li><strong>Everything written back to Zoho.</strong> Packages, shipment, tracking numbers, the FedEx charge and a packing slip PDF land on the sales order automatically, and the order is marked delivered when FedEx delivers it.</li>
-        <li><strong>Built for the warehouse floor.</strong> Labels print straight to the Zebra printer, in bulk if needed, and the whole app works in English and Spanish.</li>
-        <li><strong>Safe to retry.</strong> If anything fails halfway, a retry picks up where it stopped. It never buys a second label or creates a duplicate order, and a label can be refunded and undone in one click.</li>
-      </ul>
+  <section class="ws-sec ws-sec-fog">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2">Fixing the data along the way</h2>
+        <p class="ws-body">Zoho's own screens won't save a weight without all three dimensions, so fixing thousands of items one at a time wasn't realistic. We added a bulk editor: pick a gap and a product family, type one measurement, and the app writes it to every selected item in Zoho, then checks each one actually saved.</p>
+      </div>
+      <div class="ws-split-body">
+        <figure class="ws-shot">
+          <img src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
+          <figcaption>Gap filters across the whole catalogue, and one fill for a whole product family.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-      <figure class="brf-figure">
-        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="An open Zoho sales order in the shipping app, with three lines auto-packed into a small stock box and a 3D packing preview" loading="lazy" width="1600" height="1000" />
-        <figcaption>An open Zoho sales order, auto-packed into a stock box. Customer details replaced for this page.</figcaption>
-      </figure>
-
-      <h2 class="brf-h2">Fixing the data along the way</h2>
-      <p class="brf-body">Because Zoho's own screens won't save a weight without all three dimensions, fixing thousands of items one at a time wasn't realistic. We added a bulk editor: pick a gap and a product family, type one measurement, and the app writes it to every selected item in Zoho, then checks each one actually saved.</p>
-
-      <figure class="brf-figure">
-        <img src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
-        <figcaption>The item dimensions screen: gap filters across the whole catalogue, and one fill for a whole product family.</figcaption>
-      </figure>
-
-      <h2 class="brf-h2">The result</h2>
-      <p class="brf-body">PPM went live on September 22, 2026. In the first 11 shipping days the team shipped 118 FedEx shipments, 199 labels, through the app, and 87% of all shipments recorded in Zoho now come from it. Zoho stays the system of record. The app is simply the fastest way to get an order out of the door and back into Zoho.</p>
-
-      <h2 class="brf-h2">Services used</h2>
-      <p class="brf-body"><a class="brf-inline-link" onclick="go('services/custom-development')">Custom development</a>, <a class="brf-inline-link" onclick="go('services/systems-integration')">systems integration</a> with Zoho Inventory, EasyPost and FedEx, and catalogue data cleanup.</p>
+  <section class="ws-sec">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2">The result</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">PPM went live on September 22, 2026. In the first 11 shipping days the team shipped 118 FedEx shipments, 199 labels, through the app, and 87% of all shipments recorded in Zoho now come from it.</p>
+        <p class="ws-body">Zoho stays the system of record. <strong>The app is simply the fastest way to get an order out of the door and back into Zoho.</strong></p>
+        <p class="ws-label" style="margin-top:32px">Services used</p>
+        <ul class="ws-pills">
+          <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
+          <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
+          <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data cleanup</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -1031,7 +1255,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Is there a job your team does next to Zoho?</h2>
       <p class="brf-body">Tell us about it and we'll tell you honestly whether it's worth building.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
     </div>
   </section>
 
@@ -1146,7 +1370,7 @@ export const pages = {
               <div class="cf-turnstile"
                    data-sitekey="0x4AAAAAAES1viXZkZvIHoPY"
                    data-action="contact"
-                   data-theme="dark"></div>
+                   data-theme="light"></div>
               <div class="fg-err" data-for="cfTurnstile"></div>
             </div>
             <div class="privacy-note">

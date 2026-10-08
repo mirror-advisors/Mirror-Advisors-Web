@@ -1,4 +1,6 @@
 import '../styles/globals.css';
+import '../styles/redesign.css';
+import '../styles/restructure.css';
 import Layout from '../components/Layout';
 
 export default function MyApp({ Component, pageProps }) {
