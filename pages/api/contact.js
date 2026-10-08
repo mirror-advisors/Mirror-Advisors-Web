@@ -12,27 +12,53 @@
 // and email-template merges off these exact names):
 //   Name_First                ← payload.fname
 //   Name_Last                 ← payload.lname
-//   PhoneNumber_countrycode   ← payload.phone
+//   PhoneNumber_countrycode   ← payload.phone     (optional since 2026-10)
 //   Email                     ← payload.email
 //   SingleLine                ← payload.company
-//   Number                    ← payload.size      (numeric string)
-//   MultipleChoice            ← payload.services  (array, appended once per value)
-//   MultiLine                 ← payload.message
+//   MultipleChoice            ← payload.services  (mapped via lib/contact-options.js,
+//                                                   appended once per value)
+//   MultiLine                 ← payload.message, prefixed with a summary of
+//                               services / systems / team size, which the
+//                               Zoho form has no fields for
 //   Dropdown1                 ← payload.timeline
 //   zf_referrer_name          ← '' (required by Zoho even when empty)
 //   zf_redirect_url           ← ''
 //   zc_gad                    ← ''
 
+import {
+  SOLUTION_OPTIONS,
+  ZOHO_SERVICE_VALUES,
+  ZOHO_FALLBACK_SERVICE,
+} from '../../lib/contact-options';
+
 const ZOHO_ENDPOINT =
   'https://forms.zohopublic.com/mirroradvisors/form/ContactUs/formperma/G9JXv_MlP0JAapZcOhdggz8YY8CwbVxID13bkcXfxuQ/htmlRecords/submit';
 
-// Service options. Values MUST match the option list on the Zoho form
-// (forms.zohopublic.com/.../ContactUs) — Zoho's htmlRecords endpoint
-// validates MultipleChoice against the exact value strings.
-const ALLOWED_SERVICES = new Set([
-  'Zoho implementation',
-  'Custom AI Application',
-]);
+// What the visitor picked → what the Zoho form's MultipleChoice accepts.
+// Zoho's htmlRecords endpoint validates MultipleChoice against its exact
+// option strings, so only values from ZOHO_SERVICE_VALUES are ever sent.
+const SOLUTION_TO_ZOHO = new Map(SOLUTION_OPTIONS.map((o) => [o.value, o.zoho]));
+const ZOHO_VALUES = new Set(ZOHO_SERVICE_VALUES);
+
+function toZohoServices(services) {
+  const out = new Set();
+  services.forEach((s) => {
+    if (ZOHO_VALUES.has(s)) out.add(s);
+    (SOLUTION_TO_ZOHO.get(s) || []).forEach((z) => out.add(z));
+  });
+  if (!out.size) out.add(ZOHO_FALLBACK_SERVICE);
+  return Array.from(out);
+}
+
+// "What do you use today?" is free-ish text (quick picks + an Other box),
+// so cap it rather than validating against a list.
+function cleanSystems(raw) {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((v) => String(v || '').replace(/\s+/g, ' ').trim().slice(0, 120))
+    .filter(Boolean)
+    .slice(0, 20);
+}
 
 const ALLOWED_TIMELINES = new Set([
   'As soon as possible',
@@ -117,7 +143,8 @@ export default async function handler(req, res) {
   const size     = String(body.size     || '').trim();
   const message  = String(body.message  || '').trim();
   const timeline       = normaliseTimeline(body.timeline);
-  const services       = Array.isArray(body.services) ? body.services : [];
+  const services       = Array.isArray(body.services) ? body.services.map((v) => String(v)) : [];
+  const systems        = cleanSystems(body.systems);
   const turnstileToken = String(body.turnstileToken || '').trim();
 
   // Server-side validation mirrors the client. Keeps the API robust against
@@ -126,15 +153,16 @@ export default async function handler(req, res) {
   if (!fname)                                                  errors.fname = 'First name is required.';
   if (!lname)                                                  errors.lname = 'Last name is required.';
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))     errors.email = 'A valid email is required.';
-  if (!phone || phone.replace(/\D/g, '').length < 7)           errors.phone = 'A valid phone number is required.';
+  // Phone is OPTIONAL. If the visitor provides one it must look like a number.
+  if (phone && phone.replace(/\D/g, '').length < 7)            errors.phone = 'That phone number looks too short.';
   if (!company)                                                errors.company = 'Company is required.';
   // Company size is OPTIONAL. If the visitor leaves it blank we accept that.
   // If they provide a value it must be a positive integer.
   if (size && (!/^\d+$/.test(size) || Number(size) < 1))       errors.size = 'Company size must be a positive number.';
   if (!message)                                                errors.message = 'Please tell us how we can help.';
   if (!timeline || !ALLOWED_TIMELINES.has(timeline))           errors.timeline = 'Please pick a timeline.';
-  if (!services.length || !services.every(s => ALLOWED_SERVICES.has(s)))
-    errors.services = 'Please pick at least one service.';
+  if (!services.length || !services.every(s => SOLUTION_TO_ZOHO.has(s) || ZOHO_VALUES.has(s)))
+    errors.services = 'Please pick at least one option.';
   if (!turnstileToken)                                         errors.cfTurnstile = 'Verification challenge required.';
 
   if (Object.keys(errors).length) {
@@ -197,13 +225,20 @@ export default async function handler(req, res) {
   form.append('SingleLine',              company);
   // Note: the Number (Company Size) field was removed from the Zoho form
   // in Jun 2026 — Zoho's htmlRecords validator now rejects unknown fields.
-  // We still capture `size` client-side into Supabase for our own records,
-  // but do NOT forward it to Zoho. Keep this block omitted unless / until
-  // the Zoho form is reconfigured with a Number field again.
-  form.append('MultiLine',               message);
+  // We capture `size` client-side into Supabase, and it rides along in the
+  // MultiLine summary below. Do NOT forward it as Number unless / until the
+  // Zoho form is reconfigured with a Number field again.
+  // The Zoho form has no fields for the visitor's real choices, systems or
+  // team size, so lead with them in the message where sales will see them.
+  const summary = [
+    'Looking for: ' + services.join(', '),
+    systems.length ? 'Uses today: ' + systems.join(', ') : '',
+    size ? 'Team size: ' + size : '',
+  ].filter(Boolean).join('\n');
+  form.append('MultiLine',               summary + '\n\n' + message);
   form.append('Dropdown1',               timeline);
-  // MultipleChoice gets one entry per selected service — required by Zoho.
-  services.forEach(s => form.append('MultipleChoice', s));
+  // MultipleChoice gets one entry per mapped service — required by Zoho.
+  toZohoServices(services).forEach(s => form.append('MultipleChoice', s));
   // Hidden trackers Zoho still expects even when empty.
   form.append('zf_referrer_name', '');
   form.append('zf_redirect_url',  '');

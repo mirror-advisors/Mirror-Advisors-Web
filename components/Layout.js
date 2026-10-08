@@ -19,6 +19,64 @@ function pathToNavKey(pathname) {
   return pathname.replace(/^\//, '').split('/')[0];
 }
 
+// Dropdown groups for the server-rendered nav + mobile drawer. Keys match
+// window._NAV_PAGES (lib/site-runtime.js → _NAV_DEFAULTS) so the admin
+// visibility toggle can hide individual items. After Supabase hydration,
+// site-runtime's _renderNav() re-renders the desktop nav from _NAV_PAGES.
+const NAV_GROUPS = [
+  {
+    key: 'solutions', label: 'Solutions', href: '/solutions',
+    items: [
+      { key: 'sol-ai-custom',  href: '/solutions/ai-custom-solutions', label: 'AI Custom Solutions', featured: true },
+      { key: 'sol-zoho',       href: '/solutions/zoho',                label: 'Zoho Implementation' },
+      { key: 'sol-ai-on-zoho', href: '/solutions/ai-on-zoho',          label: 'AI on Zoho' },
+      { key: 'sol-odoo',       href: '/solutions/odoo',                label: 'Odoo', soon: true },
+      { key: 'sol-avalara',    href: '/solutions/avalara',             label: 'Avalara', soon: true },
+    ],
+  },
+  {
+    key: 'services', label: 'Services', href: '/services',
+    items: [
+      { key: 'software-implementation', href: '/services/software-implementation', label: 'Software Implementation' },
+      { key: 'data-migration',          href: '/services/data-migration',          label: 'Data Migration' },
+      { key: 'systems-integration',     href: '/services/systems-integration',     label: 'Systems Integration' },
+      { key: 'custom-development',      href: '/services/custom-development',      label: 'Custom Development' },
+      { key: 'consulting-support',      href: '/services/consulting-support',      label: 'Consulting & Support' },
+    ],
+  },
+];
+const NAV_LINKS = [
+  { key: 'platforms',   href: '/platforms',   label: 'Platforms' },
+  { key: 'how-we-work', href: '/how-we-work', label: 'How We Work' },
+  { key: 'about',       href: '/about',       label: 'About' },
+  { key: 'contact',     href: '/contact',     label: 'Contact' },
+];
+
+// Merge admin-saved nav config (Supabase) with the current defaults: keep
+// the saved order, labels and enabled flags for keys that still exist,
+// drop retired keys (e.g. the old 'erp-implementation'), take `parent`
+// from the defaults so restructures apply, and slot new default keys in
+// right after their predecessor in the default order.
+function mergeNavPages(stored, defaults) {
+  const defByKey = {};
+  defaults.forEach((p) => { defByKey[p.key] = p; });
+  const out = stored
+    .filter((p) => p && p.key && defByKey[p.key])
+    .map((p) => {
+      const d = defByKey[p.key];
+      const merged = Object.assign({}, d, { label: p.label || d.label, enabled: p.enabled !== false });
+      if (!d.parent) delete merged.parent;
+      return merged;
+    });
+  defaults.forEach((d, i) => {
+    if (out.some((p) => p.key === d.key)) return;
+    const prevKey = i > 0 ? defaults[i - 1].key : null;
+    const at = prevKey ? out.findIndex((p) => p.key === prevKey) + 1 : 0;
+    out.splice(at, 0, Object.assign({}, d));
+  });
+  return out;
+}
+
 export default function Layout({ children }) {
   const router = useRouter();
   const initialized = useRef(false);
@@ -76,18 +134,11 @@ export default function Layout({ children }) {
         }
 
         // Navigation pages — MERGE stored config with the current defaults
-        // so newly-added entries (e.g. the /services sub-pages introduced
-        // in a041143) surface for existing users whose stored config
-        // predates them. Any key present in the defaults but absent from
-        // the stored config gets appended at the end with its default
-        // enabled state.
+        // (see mergeNavPages above) so new entries surface and retired
+        // ones disappear for visitors whose stored config predates them.
         if (Array.isArray(cfg.nav_pages) && cfg.nav_pages.length > 0) {
-          var stored   = cfg.nav_pages;
-          var storedKeys = {};
-          stored.forEach(function (p) { if (p && p.key) storedKeys[p.key] = true; });
-          var defaults = window._NAV_PAGES || [];
-          var missing  = defaults.filter(function (p) { return p && p.key && !storedKeys[p.key]; });
-          window._NAV_PAGES = stored.concat(missing);
+          const defaults = typeof window._navDefaults === 'function' ? window._navDefaults() : (window._NAV_PAGES || []);
+          window._NAV_PAGES = mergeNavPages(cfg.nav_pages, defaults);
           if (typeof window._renderNav === 'function') window._renderNav();
           if (typeof window._navUpdateHomeLinks === 'function') window._navUpdateHomeLinks();
           // _renderNav already triggers _applyNavVisibility, but call it
@@ -207,25 +258,26 @@ export default function Layout({ children }) {
                 same class is applied by site-runtime.js's _highlightNav for
                 the JS-rendered nav (post-Supabase-hydration replacement),
                 so visually the two stay in sync. */}
-            {/* Services is a hover-dropdown. The parent link still routes
-                to /services (Overview) on click; the dropdown appears on
-                hover and holds Overview + the three sub-pages. Mobile
-                menu below expands all four as indented sub-items. */}
-            <div className="nav-drop">
-              <Link href="/services" className={currentNavKey === 'services' ? 'on' : ''}>Services</Link>
-              <div className="nav-drop-menu" role="menu" aria-label="Services">
-                <Link href="/services"                       className="nav-drop-link" role="menuitem">Overview</Link>
-                <Link href="/services/systems-integration"   className="nav-drop-link" role="menuitem">Systems Integration</Link>
-                <Link href="/services/data-migration"        className="nav-drop-link" role="menuitem">Data Migration</Link>
-                <Link href="/services/erp-implementation"    className="nav-drop-link" role="menuitem">ERP Implementation</Link>
-                <Link href="/services/custom-development"    className="nav-drop-link" role="menuitem">Custom Development</Link>
-                <Link href="/services/ai-automation"         className="nav-drop-link nav-drop-link-featured" role="menuitem">AI &amp; Automation</Link>
-                <Link href="/services/zoho"                  className="nav-drop-link" role="menuitem">Zoho Consulting &amp; Support</Link>
+            {/* Solutions and Services are hover-dropdowns. The parent link
+                routes to the overview page on click; the dropdown holds
+                Overview + the sub-pages. The mobile menu below expands them
+                as indented sub-items. */}
+            {NAV_GROUPS.map((g) => (
+              <div className="nav-drop" key={g.key}>
+                <Link href={g.href} className={currentNavKey === g.key ? 'on' : ''}>{g.label}</Link>
+                <div className="nav-drop-menu" role="menu" aria-label={g.label}>
+                  <Link href={g.href} className="nav-drop-link" role="menuitem">Overview</Link>
+                  {g.items.map((it) => (
+                    <Link key={it.key} href={it.href} className={'nav-drop-link' + (it.featured ? ' nav-drop-link-featured' : '')} role="menuitem">
+                      {it.label}{it.soon && <span className="nav-soon">Soon</span>}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-            <Link href="/how-we-work"    className={currentNavKey === 'how-we-work'    ? 'on' : ''}>How We Work</Link>
-            <Link href="/about"          className={currentNavKey === 'about'          ? 'on' : ''}>About</Link>
-            <Link href="/contact"        className={currentNavKey === 'contact'        ? 'on' : ''}>Contact</Link>
+            ))}
+            {NAV_LINKS.map((l) => (
+              <Link key={l.key} href={l.href} className={currentNavKey === l.key ? 'on' : ''}>{l.label}</Link>
+            ))}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <Link href="/contact" legacyBehavior>
@@ -258,24 +310,30 @@ export default function Layout({ children }) {
         {/* The data-page-key attributes let site-runtime.js's _applyNavVisibility()
             toggle these items based on window._NAV_PAGES[key].enabled, so the
             admin's hide toggle hides them here too. */}
-        {/* Services renders as a section header + four indented sub-links
-            so mobile visitors see the full sub-navigation without needing a
-            hover target. The data-page-key stays on the Overview link so
-            the admin's visibility toggle still hides the whole group when
-            services is disabled. */}
-        <div className="mm-svc-group" data-page-key="services">
-          <div className="mm-svc-header">Services</div>
-          <Link href="/services"                                                                    onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services' ? ' on' : '')}>Overview</Link>
-          <Link href="/services/systems-integration"  data-page-key="systems-integration"          onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/systems-integration' ? ' on' : '')}>Systems Integration</Link>
-          <Link href="/services/data-migration"       data-page-key="data-migration"               onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/data-migration' ? ' on' : '')}>Data Migration</Link>
-          <Link href="/services/erp-implementation"   data-page-key="erp-implementation"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/erp-implementation' ? ' on' : '')}>ERP Implementation</Link>
-          <Link href="/services/custom-development"   data-page-key="custom-development"           onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/custom-development' ? ' on' : '')}>Custom Development</Link>
-          <Link href="/services/ai-automation"        data-page-key="ai-automation"                onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub mm-sub-featured' + (router.pathname === '/services/ai-automation' ? ' on' : '')}>AI &amp; Automation</Link>
-          <Link href="/services/zoho"                 data-page-key="zoho"                         onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === '/services/zoho' ? ' on' : '')}>Zoho Consulting &amp; Support</Link>
-        </div>
-        <Link href="/how-we-work"            data-page-key="how-we-work"            onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'how-we-work'            ? ' on' : '')}>How We Work</Link>
-        <Link href="/about"                  data-page-key="about"                  onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'about'                  ? ' on' : '')}>About</Link>
-        <Link href="/contact"                data-page-key="contact"                onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === 'contact'                ? ' on' : '')}>Contact</Link>
+        {/* Each dropdown group renders as a section header + indented
+            sub-links so mobile visitors see the full sub-navigation without
+            needing a hover target. data-page-key on the group lets the
+            admin's visibility toggle hide the whole group. */}
+        {NAV_GROUPS.map((g) => (
+          <div className="mm-svc-group" data-page-key={g.key} key={g.key}>
+            <div className="mm-svc-header">{g.label}</div>
+            <Link href={g.href} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === g.href ? ' on' : '')}>Overview</Link>
+            {g.items.map((it) => (
+              <Link
+                key={it.key}
+                href={it.href}
+                data-page-key={it.key}
+                onClick={() => window.closeMobileMenu && window.closeMobileMenu()}
+                className={'mm-link mm-sub' + (it.featured ? ' mm-sub-featured' : '') + (router.pathname === it.href ? ' on' : '')}
+              >
+                {it.label}{it.soon && <span className="nav-soon">Soon</span>}
+              </Link>
+            ))}
+          </div>
+        ))}
+        {NAV_LINKS.map((l) => (
+          <Link key={l.key} href={l.href} data-page-key={l.key} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === l.key ? ' on' : '')}>{l.label}</Link>
+        ))}
         <div className="mm-cta-wrap">
           <a
             href="/contact"
@@ -351,6 +409,7 @@ function pathToInitKey(pathname, query) {
   // populators are guarded by if(el) so pages without those elements
   // simply skip.
   if (pathname.startsWith('/services/')) return 'services';
+  if (pathname.startsWith('/solutions/') || pathname.startsWith('/case-studies/')) return null;
   // strip leading slash, dashes to underscores
   return pathname.replace(/^\//, '').replace(/-/g, '_');
 }

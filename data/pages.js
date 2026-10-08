@@ -1,7 +1,10 @@
 // Auto-generated. Main page HTML fragments.
 // Rewritten 2026-09 to implement the Mirror Advisors messaging rebuild brief:
-//   - homepage: one-system positioning, six-service overview, Mirror Scope steps
-//   - services: overview + six dedicated service pages
+//   - homepage: one-system positioning, solutions overview, Mirror Scope steps
+//   - solutions (what we sell): AI Custom Solutions, Zoho, AI on Zoho,
+//     Odoo + Avalara (coming soon). Restructured 2026-10 per Paul.
+//   - services (how we deliver): overview + five service pages
+//   - platforms: where we build + "works with" list
 //   - how-we-work: dedicated page for the delivery model and Mirror Scope
 //   - about: US-led systems integrator, founded Dec 2023
 // All copy comes from the approved rebuild brief. Do not rewrite in place;
@@ -10,6 +13,19 @@
 // keeps working.
 
 import { FOOTER_HTML } from '../lib/footer';
+import { SOLUTION_OPTIONS, SYSTEM_OPTIONS } from '../lib/contact-options';
+
+function _escAttr(v) {
+  return String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+// Contact form chip rows. The checkbox values are what the submit handler
+// reads, so they must match lib/contact-options.js exactly.
+const _SOLUTION_CHIPS = SOLUTION_OPTIONS.map(function (o) {
+  return '<label class="cf-chip"><input type="checkbox" data-svc value="' + _escAttr(o.value) + '"><span>' + _escAttr(o.value) + '</span></label>';
+}).join('\n              ');
+const _SYSTEM_CHIPS = SYSTEM_OPTIONS.map(function (v) {
+  return '<label class="cf-chip cf-chip-sm"><input type="checkbox" data-sys value="' + _escAttr(v) + '"><span>' + _escAttr(v) + '</span></label>';
+}).join('\n              ');
 
 const _FOOTER_HTML = FOOTER_HTML;
 
@@ -20,7 +36,7 @@ export const pages = {
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
       <h1 class="brf-h1">One system your whole business runs on.</h1>
-      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, through integration, data migration, ERP implementation, custom development and AI. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+      <p class="brf-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
       <div class="brf-btn-row">
         <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
         <a class="brf-cta-secondary" onclick="go('how-we-work')">See how we work</a>
@@ -47,39 +63,26 @@ export const pages = {
   <!-- ── SECTION 3 · WHAT WE DO ── -->
   <section class="brf-section">
     <div class="brf-container">
-      <h2 class="brf-h2">Six ways we get your business onto one system.</h2>
+      <h2 class="brf-h2">What we build for you.</h2>
       <div class="brf-cards">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
+        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+          <div class="brf-card-title">AI Custom Solutions</div>
+          <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+        <a class="brf-card" onclick="go('solutions/zoho')">
+          <div class="brf-card-title">Zoho Implementation</div>
+          <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
+        <a class="brf-card" onclick="go('solutions/ai-on-zoho')">
+          <div class="brf-card-title">AI on Zoho</div>
+          <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
       </div>
+      <p class="brf-body brf-soon-line">Coming soon: <a class="brf-inline-link" onclick="go('solutions/odoo')">Odoo implementation</a> and <a class="brf-inline-link" onclick="go('solutions/avalara')">Avalara sales tax</a>.</p>
+      <p class="brf-body">Every project is delivered through the same five services: <a class="brf-inline-link" onclick="go('services/software-implementation')">software implementation</a>, <a class="brf-inline-link" onclick="go('services/data-migration')">data migration</a>, <a class="brf-inline-link" onclick="go('services/systems-integration')">systems integration</a>, <a class="brf-inline-link" onclick="go('services/custom-development')">custom development</a> and <a class="brf-inline-link" onclick="go('services/consulting-support')">consulting &amp; support</a>.</p>
     </div>
   </section>
 
@@ -151,14 +154,21 @@ export const pages = {
     </div>
   </section>
 
-  <!-- ── SECTION 6 · PROOF · PLACEHOLDER · do not fill; see rebuild brief §4.6 -->
-  <!--
+  <!-- ── SECTION 6 · PROOF ── -->
   <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      Proof section reserved. Client outcomes and logo row pending from Paul.
+    <div class="brf-container">
+      <h2 class="brf-h2">What this looks like in practice.</h2>
+      <a class="brf-case" onclick="go('case-studies/plastics-products-mfg')">
+        <div class="brf-case-text">
+          <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
+          <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
+          <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
+          <div class="brf-card-learn">Read the case study →</div>
+        </div>
+        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" />
+      </a>
     </div>
   </section>
-  -->
 
   <!-- ── SECTION 7 · CLOSING CTA ── -->
   <section class="brf-cta-block">
@@ -326,76 +336,6 @@ export const pages = {
 
 </div>`,
 
-  'services': `<div class="brf-page">
-
-  <!-- HERO -->
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <h1 class="brf-h1">What we do.</h1>
-      <p class="brf-lead">We get growing companies onto one connected system. That usually means several of these at once, which is why we do all of them under one roof rather than handing you between vendors.</p>
-    </div>
-  </section>
-
-  <!-- SIX SERVICE CARDS -->
-  <section class="brf-section">
-    <div class="brf-container">
-      <div class="brf-cards brf-cards-lg">
-        <a class="brf-card" onclick="go('services/systems-integration')">
-          <div class="brf-card-title">Systems Integration</div>
-          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/data-migration')">
-          <div class="brf-card-title">Data Migration</div>
-          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/erp-implementation')">
-          <div class="brf-card-title">ERP Implementation</div>
-          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/custom-development')">
-          <div class="brf-card-title">Custom Development</div>
-          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card brf-card-featured" onclick="go('services/ai-automation')">
-          <div class="brf-card-title">AI &amp; Automation</div>
-          <p class="brf-card-desc">Take the repetitive work off your team, and apply AI where it genuinely earns its place.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" onclick="go('services/zoho')">
-          <div class="brf-card-title">Zoho Consulting &amp; Support</div>
-          <p class="brf-card-desc">Deep expertise across the Zoho platform, from selection and implementation to long-term support.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOT SURE WHICH -->
-  <section class="brf-section brf-section-cream">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Not sure which of these you need?</h2>
-      <p class="brf-body">That's normal, and it's what the Mirror Scope is for. Most clients arrive describing a symptom rather than a solution. We work out the cause before recommending anything.</p>
-      <div class="brf-btn-row">
-        <a class="brf-cta-secondary" onclick="go('how-we-work')">How we work</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING CTA -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-    </div>
-  </section>
-
-</div>`,
-
   'systems-integration': `<div class="brf-page">
 
   <section class="brf-hero brf-hero-navy">
@@ -473,47 +413,6 @@ export const pages = {
 
 </div>`,
 
-  'erp-implementation': `<div class="brf-page">
-
-  <section class="brf-hero brf-hero-navy">
-    <div class="brf-container">
-      <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <h1 class="brf-h1">The system your operation runs on.</h1>
-      <p class="brf-lead">An ERP implementation touches every part of a business, which is why it's the project companies most often get wrong. It's rarely a technology failure. It's a failure to understand the operation before configuring the software.</p>
-    </div>
-  </section>
-
-  <section class="brf-section">
-    <div class="brf-service-body">
-      <p class="brf-body">We do it in the other order.</p>
-
-      <h2 class="brf-h2">What we do</h2>
-      <ul class="brf-list">
-        <li>Platform selection, if you haven't chosen yet</li>
-        <li>Process mapping across finance, sales, operations and inventory</li>
-        <li>Configuration built around how your business actually runs</li>
-        <li>Data migration from your existing systems</li>
-        <li>Integration with the tools you're keeping</li>
-        <li>Training for your team, on your data</li>
-        <li>Go-live support and beyond</li>
-      </ul>
-
-      <h2 class="brf-h2">How it goes</h2>
-      <p class="brf-body">Every ERP project starts with a Mirror Scope, because this is the type of work where a surprise in month four is expensive. The scope tells you what the implementation involves, how long it takes, and what it costs, before you commit to the build.</p>
-      <p class="brf-body">From there we work in phases with a weekly project meeting, so the project never disappears into a black box between kickoff and launch.</p>
-    </div>
-  </section>
-
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
-    </div>
-  </section>
-
-</div>`,
-
   'custom-development': `<div class="brf-page">
 
   <section class="brf-hero brf-hero-navy">
@@ -554,37 +453,103 @@ export const pages = {
 
 </div>`,
 
-  'ai-automation': `<div class="brf-page">
+  'services': `<div class="brf-page">
+
+  <!-- HERO -->
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <h1 class="brf-h1">How we deliver.</h1>
+      <p class="brf-lead">Every solution we sell is delivered through the same five services. Most projects use several of them at once, which is why we do all five under one roof rather than handing you between vendors.</p>
+    </div>
+  </section>
+
+  <!-- FIVE SERVICE CARDS -->
+  <section class="brf-section">
+    <div class="brf-container">
+      <div class="brf-cards brf-cards-lg">
+        <a class="brf-card" onclick="go('services/software-implementation')">
+          <div class="brf-card-title">Software Implementation</div>
+          <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('services/data-migration')">
+          <div class="brf-card-title">Data Migration</div>
+          <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('services/systems-integration')">
+          <div class="brf-card-title">Systems Integration</div>
+          <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('services/custom-development')">
+          <div class="brf-card-title">Custom Development</div>
+          <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('services/consulting-support')">
+          <div class="brf-card-title">Consulting &amp; Support</div>
+          <p class="brf-card-desc">Senior advice before you buy, and a team that stays reachable after you go live.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOKING FOR A PLATFORM -->
+  <section class="brf-section brf-section-cream">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Looking for a specific platform?</h2>
+      <p class="brf-body">If you already know you want a custom AI application, a Zoho implementation or AI built on top of Zoho, start with our solutions. Each one lists the services it includes.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-secondary" onclick="go('solutions')">See our solutions</a>
+        <a class="brf-cta-secondary" onclick="go('how-we-work')">How we work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'software-implementation': `<div class="brf-page">
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
       <a class="brf-back-link" onclick="go('services')">← All services</a>
-      <div class="brf-eyebrow">Featured Service</div>
-      <h1 class="brf-h1">AI that earns its place.</h1>
-      <p class="brf-lead">There is a lot of noise about AI in business software right now, and most of it is a feature list looking for a problem. We take a narrower view. AI is useful when it removes a specific piece of work a person is doing by hand today, inside a system that's already connected properly.</p>
+      <h1 class="brf-h1">The system your operation runs on.</h1>
+      <p class="brf-lead">Implementing an ERP, a CRM or any core business system touches every part of a business, which is why it's the project companies most often get wrong. It's rarely a technology failure. It's a failure to understand the operation before configuring the software.</p>
     </div>
   </section>
 
   <section class="brf-section">
     <div class="brf-service-body">
-      <p class="brf-body">That last part matters. AI applied to disconnected, messy data produces confident nonsense. Get the systems right first, and then it becomes genuinely powerful.</p>
+      <p class="brf-body">We do it in the other order.</p>
 
-      <h2 class="brf-h2">We built our own</h2>
-      <p class="brf-body">Mirror is the platform we designed and built to run this company. It handles our CRM, time tracking, resource allocation, client profiles and billing in one place.</p>
-      <p class="brf-body">It also includes Mirror Intelligence, which takes our meeting recordings and turns them into structured records automatically. Instead of someone writing up notes after every client call, the conversation becomes summaries, action items and updated records on its own.</p>
-      <p class="brf-body">We didn't buy that. We built it, and we use it every day.</p>
-
-      <h2 class="brf-h2">Where we apply this for clients</h2>
+      <h2 class="brf-h2">What we do</h2>
       <ul class="brf-list">
-        <li>Pulling information out of documents, invoices and forms so nobody types it in</li>
-        <li>Turning calls and meetings into records inside your system</li>
-        <li>Classifying and routing work automatically</li>
-        <li>Drafting the repetitive communications your team sends constantly</li>
-        <li>Automating approvals, notifications and handoffs across connected systems</li>
+        <li>Platform selection, if you haven't chosen yet</li>
+        <li>Process mapping across finance, sales, operations and inventory</li>
+        <li>Configuration built around how your business actually runs</li>
+        <li>Data migration from your existing systems</li>
+        <li>Integration with the tools you're keeping</li>
+        <li>Training for your team, on your data</li>
+        <li>Go-live support and beyond</li>
       </ul>
 
-      <h2 class="brf-h2">How we'd approach it with you</h2>
-      <p class="brf-body">We don't sell AI as a standalone project. We build it into systems that are already working, where it has clean data to operate on and a specific job to do. If AI isn't the right answer for what you're describing, we'll say so.</p>
+      <h2 class="brf-h2">How it goes</h2>
+      <p class="brf-body">Every implementation starts with a Mirror Scope, because this is the type of work where a surprise in month four is expensive. The scope tells you what the implementation involves, how long it takes, and what it costs, before you commit to the build.</p>
+      <p class="brf-body">From there we work in phases with a weekly project meeting, so the project never disappears into a black box between kickoff and launch.</p>
+
+      <h2 class="brf-h2">Platforms we implement</h2>
+      <p class="brf-body">Zoho is our home ground, and Odoo and Avalara are coming soon. See <a class="brf-inline-link" onclick="go('platforms')">the platforms we work with</a>.</p>
     </div>
   </section>
 
@@ -598,11 +563,223 @@ export const pages = {
 
 </div>`,
 
-  'zoho': `<div class="brf-page">
+  'consulting-support': `<div class="brf-page">
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
       <a class="brf-back-link" onclick="go('services')">← All services</a>
+      <h1 class="brf-h1">Someone who picks up after go-live.</h1>
+      <p class="brf-lead">Systems keep changing after launch. People leave, processes shift, and a vendor update breaks a workflow nobody remembers building. Consulting &amp; Support keeps a senior team on hand for the questions, fixes and improvements that come up once the project is over.</p>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">What we help with</h2>
+      <ul class="brf-list">
+        <li>Advice before you buy: which platform, which edition, and whether you need new software at all</li>
+        <li>Reviews of an existing setup, with a plain list of what to fix first</li>
+        <li>Fixes and troubleshooting when something stops working</li>
+        <li>Small enhancements: a new field, a report, an automation, a change to a workflow</li>
+        <li>Admin training for the people who look after the system day to day</li>
+        <li>Taking over implementations someone else left behind</li>
+      </ul>
+
+      <h2 class="brf-h2">Why it works</h2>
+      <p class="brf-body">You talk to people who know your system, not a ticket queue. Our teams cover most of the working day, so questions get answered quickly. Our clients tell us that responsiveness is the reason they stay.</p>
+      <p class="brf-body">Larger changes go through a short scope first, the same as everything else we do, so you know the cost before the work starts.</p>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'solutions': `<div class="brf-page">
+
+  <!-- HERO -->
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <h1 class="brf-h1">What we build for you.</h1>
+      <p class="brf-lead">We sell a small number of things and do them well: custom AI applications built around your business, Zoho implementations, and AI that runs on top of Zoho. Odoo and Avalara are coming soon.</p>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-container">
+      <div class="brf-cards brf-cards-lg">
+        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+          <div class="brf-card-title">AI Custom Solutions</div>
+          <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('solutions/zoho')">
+          <div class="brf-card-title">Zoho Implementation</div>
+          <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('solutions/ai-on-zoho')">
+          <div class="brf-card-title">AI on Zoho</div>
+          <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card brf-card-soon" onclick="go('solutions/odoo')">
+          <div class="brf-card-title">Odoo Implementation</div>
+          <p class="brf-card-desc">The same scope-first approach, on Odoo.</p>
+          <div class="brf-card-learn">Find out more →</div>
+        </a>
+        <a class="brf-card brf-card-soon" onclick="go('solutions/avalara')">
+          <div class="brf-card-title">Avalara Sales Tax</div>
+          <p class="brf-card-desc">Sales tax calculated automatically inside the systems you sell through.</p>
+          <div class="brf-card-learn">Find out more →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-section brf-section-cream">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Every solution uses the same five services.</h2>
+      <p class="brf-body">Software implementation, data migration, systems integration, custom development, and consulting &amp; support. A Zoho project might use all five. A custom application might use three. Either way, it's one team from the first call to go-live.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-secondary" onclick="go('services')">See the services</a>
+        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">Read a case study</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'ai-custom-solutions': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <div class="brf-eyebrow">Featured Solution</div>
+      <h1 class="brf-h1">Software built around your business.</h1>
+      <p class="brf-lead">Off-the-shelf software gets most companies eighty percent of the way. The other twenty percent is where your team loses hours every week. We build complete applications for that work, designed around how your operation actually runs, with AI where it genuinely saves time.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">See a real example</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">What we build</h2>
+      <ul class="brf-list">
+        <li>Operational apps that sit on top of the systems you already run: quoting, shipping, scheduling, inventory</li>
+        <li>Client and vendor portals</li>
+        <li>Internal tools that replace the spreadsheets your team works around</li>
+        <li>AI that reads documents, invoices and forms so nobody types them in</li>
+        <li>AI that turns calls and meetings into records inside your system</li>
+        <li>Classification, routing and drafting for the repetitive work your team does constantly</li>
+      </ul>
+
+      <h2 class="brf-h2">Built with Claude</h2>
+      <p class="brf-body">We build with Claude, Anthropic's AI, both to write the software faster and, where it helps, inside the software itself. That's how a fully custom application now ships in weeks, at a price that used to buy a spreadsheet macro.</p>
+      <p class="brf-body">AI applied to disconnected, messy data produces confident nonsense. So every application we build connects properly to your systems of record first, and the AI works on clean data with a specific job to do. If AI isn't the right answer for what you're describing, we'll say so.</p>
+    </div>
+  </section>
+
+  <!-- CASE STUDY TEASER -->
+  <section class="brf-section brf-section-cream">
+    <div class="brf-container">
+      <a class="brf-case" onclick="go('case-studies/plastics-products-mfg')">
+        <div class="brf-case-text">
+          <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
+          <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
+          <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
+          <div class="brf-card-learn">Read the case study →</div>
+        </div>
+        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">We run on our own software</h2>
+      <p class="brf-body">Mirror is the platform we designed and built to run this company. It handles our CRM, time tracking, resource allocation, client portals and billing in one place.</p>
+      <p class="brf-body">It also includes Mirror Intelligence, which turns our meeting recordings into summaries, action items and updated records automatically. We didn't buy that. We built it, and we use it every day.</p>
+
+      <h2 class="brf-h2">How it goes</h2>
+      <p class="brf-body">Custom work starts with a Mirror Scope, the same as everything else we do. You see exactly what will be built and what it costs before development starts, then we build in stages with a weekly check-in.</p>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Tell us what your team does by hand.</h2>
+      <p class="brf-body">Describe the work that eats your week and we'll tell you honestly whether a custom application is the right fix.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'ai-on-zoho': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <h1 class="brf-h1">Zoho, with the missing pieces built in.</h1>
+      <p class="brf-lead">Zoho covers a lot of ground. The work that's specific to your business, the step your team still does by hand or in a spreadsheet next to Zoho, is where we come in. We build applications and AI that sit on top of Zoho, read from it and write back to it, so Zoho stays your system of record.</p>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">What that looks like</h2>
+      <ul class="brf-list">
+        <li>A purpose-built screen for one job, like shipping, quoting or receiving, that pulls orders, items and customers straight from Zoho</li>
+        <li>Records, documents and status updates written back to Zoho automatically, so nobody re-keys anything</li>
+        <li>AI that reads incoming documents and emails and files them against the right Zoho record</li>
+        <li>Bulk tools that fix data Zoho's own screens make slow to fix one record at a time</li>
+        <li>Connections from Zoho to the carriers, tax engines and other systems your process depends on</li>
+      </ul>
+
+      <h2 class="brf-h2">A real example</h2>
+      <p class="brf-body">For Plastics Products Mfg we built a shipping app on top of Zoho Inventory. Staff open a sales order, the app packs it into stock boxes, compares every FedEx rate on their account and prints the labels. Then it writes the packages, tracking numbers, shipping charge and packing slip back onto the Zoho order.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-secondary" onclick="go('case-studies/plastics-products-mfg')">Read the case study</a>
+      </div>
+
+      <h2 class="brf-h2">When this fits</h2>
+      <p class="brf-body">You already run Zoho, or you're implementing it with us, and there's a part of your process Zoho doesn't quite cover. If Zoho can do the job with configuration alone, we'll tell you that first.</p>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what your team does next to Zoho and we'll tell you honestly whether it's worth building.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'zoho': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
       <h1 class="brf-h1">We know this platform inside out.</h1>
       <p class="brf-lead">Mirror Advisors was founded by a former Zoho employee, and Zoho remains the platform we've implemented more than any other. If you're evaluating it, running it, or struggling with an implementation someone else left behind, this is our home ground.</p>
     </div>
@@ -620,6 +797,13 @@ export const pages = {
         <li>Fixing implementations that didn't go well the first time</li>
         <li>Ongoing consulting and support</li>
       </ul>
+
+      <!-- PLACEHOLDER · HelloSend. Paul listed HelloSend as a sub-product
+           under Zoho. Add a short paragraph here once he confirms how it
+           should be described. -->
+
+      <h2 class="brf-h2">Go further with AI on Zoho</h2>
+      <p class="brf-body">When there's a part of your process Zoho doesn't cover, we build it on top: applications and AI that read from Zoho and write back to it. <a class="brf-inline-link" onclick="go('solutions/ai-on-zoho')">See AI on Zoho</a>.</p>
 
       <h2 class="brf-h2">Why clients come to us specifically</h2>
       <p class="brf-body">Our founder worked at Zoho before founding this firm, so we know how the platform is built, where it's strong, and where it will fight you. In our first year as a partner we reached Premium tier, the first partner to do so that fast.</p>
@@ -647,6 +831,213 @@ export const pages = {
 
 </div>`,
 
+  'odoo': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <div class="brf-eyebrow">Coming soon</div>
+      <h1 class="brf-h1">Odoo implementation.</h1>
+      <p class="brf-lead">We're adding Odoo to the platforms we implement, with the same approach we use for everything else: understand the operation first, configure the software second. If you're evaluating Odoo now, tell us about your project and we'll tell you where we can help today.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-primary" onclick="go('contact')">Get in touch</a>
+        <a class="brf-cta-secondary" onclick="go('services/software-implementation')">How we implement</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'avalara': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions')">← All solutions</a>
+      <div class="brf-eyebrow">Coming soon</div>
+      <h1 class="brf-h1">Avalara sales tax.</h1>
+      <p class="brf-lead">We're adding Avalara implementation, connecting it to the systems you sell through so sales tax is calculated on every order instead of worked out by hand. If sales tax is a headache for you right now, tell us about it and we'll tell you where we can help today.</p>
+      <div class="brf-btn-row">
+        <a class="brf-cta-primary" onclick="go('contact')">Get in touch</a>
+        <a class="brf-cta-secondary" onclick="go('services/systems-integration')">How we integrate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'platforms': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <h1 class="brf-h1">The platforms we work with.</h1>
+      <p class="brf-lead">We implement a few platforms deeply, and we connect them to dozens more. Here's where we build, and a sample of the systems we've integrated along the way.</p>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-container">
+      <h2 class="brf-h2">Where we build</h2>
+      <div class="brf-cards brf-cards-2">
+        <a class="brf-card brf-card-featured" onclick="go('solutions/ai-custom-solutions')">
+          <div class="brf-card-title">Custom applications, built with Claude</div>
+          <p class="brf-card-desc">Fully custom software for the work your other systems don't cover.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card" onclick="go('solutions/zoho')">
+          <div class="brf-card-title">Zoho</div>
+          <p class="brf-card-desc">Zoho Authorized Partner. Implementation, migration, custom development and support across the suite.</p>
+          <div class="brf-card-learn">Learn more →</div>
+        </a>
+        <a class="brf-card brf-card-soon" onclick="go('solutions/odoo')">
+          <div class="brf-card-title">Odoo</div>
+          <p class="brf-card-desc">Odoo implementation, scope first.</p>
+          <div class="brf-card-learn">Find out more →</div>
+        </a>
+        <a class="brf-card brf-card-soon" onclick="go('solutions/avalara')">
+          <div class="brf-card-title">Avalara</div>
+          <p class="brf-card-desc">Automated sales tax, connected to the systems you sell through.</p>
+          <div class="brf-card-learn">Find out more →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS WITH · PROVISIONAL LIST. Confirm every name with Paul before
+       launch; he has the full list of systems we've integrated. -->
+  <section class="brf-section brf-section-cream">
+    <div class="brf-container">
+      <h2 class="brf-h2">Works with</h2>
+      <p class="brf-body" style="max-width:680px">A sample of the systems we've connected, migrated from or built on top of.</p>
+      <ul class="brf-tiles" aria-label="Systems we work with">
+        <li>QuickBooks</li>
+        <li>NetSuite</li>
+        <li>Salesforce</li>
+        <li>HubSpot</li>
+        <li>Shopify</li>
+        <li>Xero</li>
+        <li>Microsoft 365</li>
+        <li>Google Workspace</li>
+        <li>Slack</li>
+        <li>DocuSign</li>
+        <li>FedEx</li>
+        <li>EasyPost</li>
+        <li>Zebra printers</li>
+        <li>Supabase</li>
+        <li>Claude</li>
+      </ul>
+      <p class="brf-body" style="max-width:680px;margin-top:28px">Don't see yours? If it has an API, we can usually connect it. Ask us.</p>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Start with a conversation.</h2>
+      <p class="brf-body">Tell us what you run today and what isn't talking to what. We'll tell you honestly whether we can fix it.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+
+  // Case study. Numbers come from PPM's EasyPost and Zoho Inventory data,
+  // read 2026-10-08 (go-live 2026-09-22). Client approved naming, results
+  // and screenshots. Screenshots have customer data replaced; pricing and
+  // markup screens are deliberately not shown.
+  'case-ppm': `<div class="brf-page">
+
+  <section class="brf-hero brf-hero-navy">
+    <div class="brf-container">
+      <a class="brf-back-link" onclick="go('solutions/ai-on-zoho')">← AI on Zoho</a>
+      <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
+      <h1 class="brf-h1">Quote to label in one screen, on top of Zoho Inventory.</h1>
+      <p class="brf-lead">Plastics Products Mfg runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
+      <div class="brf-case-meta">
+        <span><strong>Solution:</strong> AI on Zoho</span>
+        <span><strong>Built on:</strong> Zoho Inventory, EasyPost, FedEx</span>
+        <span><strong>Live since:</strong> September 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-container">
+      <div class="brf-stats">
+        <div class="brf-stat"><div class="brf-stat-num">13 days</div><div class="brf-stat-label">from the first line of code to live FedEx labels</div></div>
+        <div class="brf-stat"><div class="brf-stat-num">199</div><div class="brf-stat-label">labels on 118 shipments in the first 11 shipping days</div></div>
+        <div class="brf-stat"><div class="brf-stat-num">87%</div><div class="brf-stat-label">of PPM's Zoho shipments now go through the app</div></div>
+        <div class="brf-stat"><div class="brf-stat-num">1 in 4</div><div class="brf-stat-label">shipments are multi-box, up to 10 boxes, on one screen</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-section brf-section-cream">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">The problem</h2>
+      <p class="brf-body">Every FedEx shipment meant working across separate tools: look up the order in Zoho, work out which box it fits in, price it on the carrier account, buy the label, then go back into Zoho to record the package, the tracking number and the shipping charge. On a multi-box order, that's the same steps again for every box.</p>
+      <p class="brf-body">The catalogue made it harder. Of 5,978 active items, 4,443 were missing at least one measurement, and Zoho won't save an item's weight until all three dimensions are filled in. So the data needed to pack and price a box often wasn't there.</p>
+    </div>
+  </section>
+
+  <section class="brf-section">
+    <div class="brf-service-body">
+      <h2 class="brf-h2">What we built</h2>
+      <ul class="brf-list">
+        <li><strong>One screen from order to label.</strong> Staff open a Zoho sales order, choose what ships now, and the app packs the items into PPM's stock boxes, with a 3D preview of how they fit.</li>
+        <li><strong>Every FedEx option, sorted by price.</strong> Rates from PPM's own FedEx account for every service, with delivery dates and the cheapest and fastest marked.</li>
+        <li><strong>Everything written back to Zoho.</strong> Packages, shipment, tracking numbers, the FedEx charge and a packing slip PDF land on the sales order automatically, and the order is marked delivered when FedEx delivers it.</li>
+        <li><strong>Built for the warehouse floor.</strong> Labels print straight to the Zebra printer, in bulk if needed, and the whole app works in English and Spanish.</li>
+        <li><strong>Safe to retry.</strong> If anything fails halfway, a retry picks up where it stopped. It never buys a second label or creates a duplicate order, and a label can be refunded and undone in one click.</li>
+      </ul>
+
+      <figure class="brf-figure">
+        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="An open Zoho sales order in the shipping app, with three lines auto-packed into a small stock box and a 3D packing preview" loading="lazy" width="1600" height="1000" />
+        <figcaption>An open Zoho sales order, auto-packed into a stock box. Customer details replaced for this page.</figcaption>
+      </figure>
+
+      <h2 class="brf-h2">Fixing the data along the way</h2>
+      <p class="brf-body">Because Zoho's own screens won't save a weight without all three dimensions, fixing thousands of items one at a time wasn't realistic. We added a bulk editor: pick a gap and a product family, type one measurement, and the app writes it to every selected item in Zoho, then checks each one actually saved.</p>
+
+      <figure class="brf-figure">
+        <img src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
+        <figcaption>The item dimensions screen: gap filters across the whole catalogue, and one fill for a whole product family.</figcaption>
+      </figure>
+
+      <h2 class="brf-h2">The result</h2>
+      <p class="brf-body">PPM went live on September 22, 2026. In the first 11 shipping days the team shipped 118 FedEx shipments, 199 labels, through the app, and 87% of all shipments recorded in Zoho now come from it. Zoho stays the system of record. The app is simply the fastest way to get an order out of the door and back into Zoho.</p>
+
+      <h2 class="brf-h2">Services used</h2>
+      <p class="brf-body"><a class="brf-inline-link" onclick="go('services/custom-development')">Custom development</a>, <a class="brf-inline-link" onclick="go('services/systems-integration')">systems integration</a> with Zoho Inventory, EasyPost and FedEx, and catalogue data cleanup.</p>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Is there a job your team does next to Zoho?</h2>
+      <p class="brf-body">Tell us about it and we'll tell you honestly whether it's worth building.</p>
+      <a class="brf-cta-primary" onclick="go('contact')">Book a call</a>
+    </div>
+  </section>
+
+</div>`,
+
+
   'contact': `<div class="page-wrap">
   <div class="contact-left">
     <div class="cl-grid"></div>
@@ -666,106 +1057,125 @@ export const pages = {
   <div class="contact-right">
     <div class="cr-inner">
       <div id="formWrap">
-        <div class="form-title">Tell us about your situation</div>
-        <p class="form-sub">Takes about 2 minutes. The more detail you share, the more useful our first conversation will be.</p>
-        <form id="contactForm" onsubmit="submitForm(event)">
-          <div class="form-grid">
-            <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Alex" required><div class="fg-err" data-for="fname"></div></div>
-            <div class="fg"><label>Last Name *</label><input type="text" id="lname" placeholder="Johnson" required><div class="fg-err" data-for="lname"></div></div>
+        <div class="cf-steps" aria-hidden="true">
+          <span class="cf-step-dot is-on" data-step-dot="1">1</span><span class="cf-step-line"></span><span class="cf-step-dot" data-step-dot="2">2</span>
+          <span class="cf-step-label" id="cfStepLabel">Step 1 of 2 &middot; Your project</span>
+        </div>
+        <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+
+          <!-- ── STEP 1 · THE PROJECT ── -->
+          <div class="cf-step" data-step="1">
+            <div class="form-title">What are you looking for?</div>
+            <p class="form-sub">Two quick steps. The more you share, the more useful our first conversation will be.</p>
+            <div class="fg">
+              <label id="svcLabel">Pick any that apply *</label>
+              <!-- Values come from lib/contact-options.js. The server maps
+                   them onto the Zoho form's own option list. -->
+              <div class="cf-chips" id="svcChips" role="group" aria-labelledby="svcLabel">
+              ${_SOLUTION_CHIPS}
+              </div>
+              <div class="fg-err" data-for="svcChips"></div>
+            </div>
+            <div class="fg">
+              <label id="sysLabel">What do you use today? <span style="opacity:.55;font-weight:400">(optional)</span></label>
+              <div class="cf-chips" id="sysChips" role="group" aria-labelledby="sysLabel">
+              ${_SYSTEM_CHIPS}
+              </div>
+              <input type="text" id="sysOther" maxlength="120" placeholder="Anything else? e.g. Excel, Sage, a custom database" autocomplete="off" style="margin-top:10px">
+            </div>
+            <div class="fg">
+              <label for="message">What's going on? *</label>
+              <textarea id="message" placeholder="What you're trying to solve, what you've tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
+              <div class="char-count" id="charCount">0 / 1000</div>
+              <div class="fg-err" data-for="message"></div>
+            </div>
+            <div class="fg">
+              <label for="timeline">Timeline *</label>
+              <select id="timeline" required>
+                <option value="">When are you looking to start?</option>
+                <option>As soon as possible</option>
+                <option>Within 1 month</option>
+                <option>1&#8211;3 months</option>
+                <option>3&#8211;6 months</option>
+                <option>Just exploring</option>
+              </select>
+              <div class="fg-err" data-for="timeline"></div>
+            </div>
+            <button type="button" class="bp" id="cfNextBtn" onclick="contactNextStep()" style="width:100%;justify-content:center;margin-top:4px">
+              Next: your details <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
           </div>
-          <div class="fg"><label>Work Email *</label><input type="email" id="email" placeholder="alex@company.com" required><div class="fg-err" data-for="email"></div></div>
-          <div class="fg"><label>Phone *</label><input type="tel" id="phone" placeholder="555-123-4567" autocomplete="tel" required><div class="fg-err" data-for="phone"></div></div>
-          <div class="fg"><label>Company *</label><input type="text" id="company" placeholder="Acme Corp" required><div class="fg-err" data-for="company"></div></div>
-          <div class="fg">
-            <label for="size">Company Size <span style="opacity:.55;font-weight:400">(approximate, optional)</span></label>
-            <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off">
-            <div class="fg-err" data-for="size"></div>
-          </div>
-          <div class="fg">
-            <label for="svcTrigger">Which Services Are You Interested In? * <span style="opacity:.55;font-weight:400">(pick any that apply)</span></label>
-            <!-- Multi-select dropdown. Values MUST match the option strings
-                 in the Zoho form (forms.zohopublic.com/.../ContactUs).
-                 Zoho's htmlRecords endpoint validates MultipleChoice
-                 against the exact value list. Same casing as Zoho. -->
-            <div class="ms-dropdown" id="svcChips">
-              <button
-                type="button"
-                id="svcTrigger"
-                class="ms-trigger"
-                aria-haspopup="listbox"
-                aria-expanded="false"
-                aria-controls="svcPanel"
-              >
-                <span class="ms-trigger-text" id="svcTriggerText">Select services&hellip;</span>
-                <svg class="ms-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </button>
-              <div class="ms-panel" id="svcPanel" role="listbox" aria-multiselectable="true">
-                <label class="ms-option"><input type="checkbox" data-svc value="Zoho implementation"><span>Zoho implementation</span></label>
-                <label class="ms-option"><input type="checkbox" data-svc value="Custom AI Application"><span>Custom AI Application</span></label>
+
+          <!-- ── STEP 2 · CONTACT DETAILS ── -->
+          <div class="cf-step" data-step="2" style="display:none">
+            <div class="form-title">How do we reach you?</div>
+            <p class="form-sub">A real person reads every message. We reply by email to set up a call.</p>
+            <div class="form-grid">
+              <div class="fg"><label for="fname">First Name *</label><input type="text" id="fname" placeholder="Alex" autocomplete="given-name" required><div class="fg-err" data-for="fname"></div></div>
+              <div class="fg"><label for="lname">Last Name *</label><input type="text" id="lname" placeholder="Johnson" autocomplete="family-name" required><div class="fg-err" data-for="lname"></div></div>
+            </div>
+            <div class="fg"><label for="email">Work Email *</label><input type="email" id="email" placeholder="alex@company.com" autocomplete="email" required><div class="fg-err" data-for="email"></div></div>
+            <div class="fg"><label for="company">Company *</label><input type="text" id="company" placeholder="Acme Corp" autocomplete="organization" required><div class="fg-err" data-for="company"></div></div>
+            <div class="form-grid">
+              <div class="fg"><label for="phone">Phone <span style="opacity:.55;font-weight:400">(optional)</span></label><input type="tel" id="phone" placeholder="555-123-4567" autocomplete="tel"><div class="fg-err" data-for="phone"></div></div>
+              <div class="fg">
+                <label for="size">Team Size <span style="opacity:.55;font-weight:400">(optional)</span></label>
+                <input type="number" id="size" min="1" max="100000" step="1" inputmode="numeric" placeholder="e.g. 42" autocomplete="off">
+                <div class="fg-err" data-for="size"></div>
               </div>
             </div>
-            <div class="fg-err" data-for="svcChips"></div>
+            <!-- Honeypot. Hidden from real users via display:none and
+                 aria-hidden, tabindex="-1" so keyboard users skip it,
+                 autocomplete="off" so browsers don't autofill it. Bots
+                 that blindly scrape and fill every input will populate
+                 this. The API returns 200 OK silently on any submission
+                 with a value here, so the bot thinks it succeeded and
+                 doesn't retry with a smarter payload. -->
+            <div class="fg hp-fg" aria-hidden="true" style="display:none">
+              <label for="website_url">Website (leave blank)</label>
+              <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+            </div>
+            <!-- Cloudflare Turnstile widget. Turnstile's api.js (loaded via
+                 pages/contact.js) auto-renders every .cf-turnstile div on
+                 the page and, on success, populates a hidden input named
+                 cf-turnstile-response with the verification token. The
+                 submit handler reads that token and forwards it as
+                 payload.turnstileToken to /api/contact, which verifies it
+                 server-side before the Zoho forward. -->
+            <div class="fg cf-fg" style="align-items:center">
+              <div class="cf-turnstile"
+                   data-sitekey="0x4AAAAAAES1viXZkZvIHoPY"
+                   data-action="contact"
+                   data-theme="dark"></div>
+              <div class="fg-err" data-for="cfTurnstile"></div>
+            </div>
+            <div class="privacy-note">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Your information is never shared or sold. We use it only to prepare for our conversation with you.
+            </div>
+            <!-- Top-level submit status. Shown on send failure (server error or
+                 Zoho rejection). Hidden by default; populated by submitForm. -->
+            <div class="form-error" id="formErr" role="alert" aria-live="polite" style="display:none"></div>
+            <div class="cf-actions">
+              <button type="button" class="cf-back" onclick="contactPrevStep()">&larr; Back</button>
+              <button type="submit" class="bp" id="submitBtn" style="flex:1;justify-content:center">
+                Send <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
-          <div class="fg">
-            <label>How Can We Help? *</label>
-            <textarea id="message" placeholder="Tell us what you&#39;re trying to solve, what you&#39;ve tried, and what success looks like..." required oninput="updateChar(this)"></textarea>
-            <div class="char-count" id="charCount">0 / 1000</div>
-            <div class="fg-err" data-for="message"></div>
-          </div>
-          <div class="fg">
-            <label>Timeline *</label>
-            <select id="timeline" required>
-              <option value="">When are you looking to start?</option>
-              <option>As soon as possible</option>
-              <option>Within 1 month</option>
-              <option>1&#8211;3 months</option>
-              <option>3&#8211;6 months</option>
-              <option>Just exploring</option>
-            </select>
-            <div class="fg-err" data-for="timeline"></div>
-          </div>
-          <!-- Honeypot. Hidden from real users via display:none and
-               aria-hidden, tabindex="-1" so keyboard users skip it,
-               autocomplete="off" so browsers don't autofill it. Bots
-               that blindly scrape and fill every input will populate
-               this. The API returns 200 OK silently on any submission
-               with a value here, so the bot thinks it succeeded and
-               doesn't retry with a smarter payload. -->
-          <div class="fg hp-fg" aria-hidden="true" style="display:none">
-            <label for="website_url">Website (leave blank)</label>
-            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
-          </div>
-          <!-- Cloudflare Turnstile widget. Turnstile's api.js (loaded via
-               pages/contact.js) auto-renders every .cf-turnstile div on
-               the page and, on success, populates a hidden input named
-               cf-turnstile-response with the verification token. The
-               submit handler reads that token and forwards it as
-               payload.turnstileToken to /api/contact, which verifies it
-               server-side before the Zoho forward. -->
-          <div class="fg cf-fg" style="align-items:center">
-            <div class="cf-turnstile"
-                 data-sitekey="0x4AAAAAAES1viXZkZvIHoPY"
-                 data-action="contact"
-                 data-theme="dark"></div>
-            <div class="fg-err" data-for="cfTurnstile"></div>
-          </div>
-          <div class="privacy-note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(236,169,52,.6)" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Your information is never shared or sold. We use it only to prepare for our conversation with you.
-          </div>
-          <!-- Top-level submit status. Shown on send failure (server error or
-               Zoho rejection). Hidden by default; populated by submitForm. -->
-          <div class="form-error" id="formErr" role="alert" aria-live="polite" style="display:none"></div>
-          <button type="submit" class="bp" id="submitBtn" style="width:100%;justify-content:center;margin-top:4px">
-            Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
         </form>
       </div>
       <div class="success-state" id="successState" style="display:none">
         <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ECA934" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <div class="success-title">Message Sent &#127881;</div>
-        <p class="success-sub">Thanks for reaching out. We&#39;ll review your submission and reach out shortly to schedule a call.</p>
-        <div style="padding:14px 18px;border-radius:10px;background:rgba(236,169,52,.07);border:1px solid rgba(236,169,52,.2);font-size:13px;color:var(--mid)"><strong style="color:var(--t)">While you wait:</strong> Have a look at <a href="#" onclick="go('services')" style="color:var(--t)">what we do</a> or <a href="#" onclick="go('how-we-work')" style="color:var(--t)">how we work</a>.</div>
+        <div class="success-title" id="successTitle">Thanks, we've got it.</div>
+        <p class="success-sub">Here's what happens next:</p>
+        <ol class="cf-next">
+          <li><strong>We read it.</strong> A real person on our team reviews what you sent, not a bot.</li>
+          <li><strong>We reply by email</strong> to set up a short call, usually with a couple of questions so the call is useful.</li>
+          <li><strong>On the call,</strong> we'll tell you honestly whether we're the right firm, and what a Mirror Scope would cover.</li>
+        </ol>
+        <a class="bp" id="cfBookBtn" href="#" target="_blank" rel="noopener noreferrer" style="display:none;width:100%;justify-content:center;margin:6px 0 18px">Pick a time now</a>
+        <div style="padding:14px 18px;border-radius:10px;background:rgba(236,169,52,.07);border:1px solid rgba(236,169,52,.2);font-size:13px;color:var(--mid)"><strong style="color:var(--t)">While you wait:</strong> Read <a href="#" onclick="go('case-studies/plastics-products-mfg')" style="color:var(--t)">how we built a shipping app on Zoho</a> or see <a href="#" onclick="go('how-we-work')" style="color:var(--t)">how we work</a>.</div>
       </div>
     </div>
   </div>
