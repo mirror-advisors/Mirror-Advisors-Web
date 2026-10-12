@@ -6,8 +6,8 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Solutions | Mirror Advisors</title>
-        <meta name="description" content="Custom AI applications, Zoho implementation and AI built on top of Zoho. Odoo and Avalara coming soon. Scoped before built, by a US-led team." />
+        <title>Solutions | Case Studies | Mirror Advisors</title>
+        <meta name="description" content="What we have built for clients, by industry and by platform. Real projects, real numbers." />
       </Head>
       <HtmlPage html={pages['solutions']} />
     </>

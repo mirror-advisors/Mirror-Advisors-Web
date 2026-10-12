@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Implementation (Coming Soon) | Mirror Advisors</title>
+        <title>Odoo (Coming Soon) | Mirror Advisors</title>
         <meta name="description" content="Odoo implementation from Mirror Advisors is coming soon. Tell us about your project and we will tell you where we can help today." />
       </Head>
       <HtmlPage html={pages['odoo']} />

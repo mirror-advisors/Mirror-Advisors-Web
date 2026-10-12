@@ -219,3 +219,79 @@
 .page-wrap .cf-next { margin: 4px 0 24px; padding-left: 22px; text-align: left; color: var(--ws-charcoal); font-size: 16px; line-height: 1.55; }
 .page-wrap .cf-next li { margin-bottom: 10px; }
 .page-wrap .cf-next strong { color: var(--ws-obsidian); font-weight: 600; }
+
+/* ── Header actions: Client portal (outline) + Contact (lime) ── */
+#nav .nav-actions { display: flex; align-items: center; gap: 10px; }
+#nav .nav-portal {
+  font-family: var(--ws-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ws-forest);
+  background: var(--ws-paper);
+  box-shadow: inset 0 0 0 1px var(--ws-forest);
+  border-radius: var(--ws-r-pill);
+  padding: 10px 18px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color .15s ease;
+}
+#nav .nav-portal:hover { background: var(--ws-linen); }
+@media (max-width: 1023px) { #nav .nav-portal { display: none; } }
+/* Five top-level items + two buttons: tighten the link pills before the
+   hamburger takes over at 1023px. */
+@media (max-width: 1180px) {
+  #nav .nl a, #nav .nav-drop > a { padding: 8px 11px; font-size: 14.5px; }
+  #nav .logo-n { display: none; }
+}
+
+/* Footer: Solutions stacks under Trusted Platforms in the same column. */
+.pg-footer .pft-col-title-2 { margin-top: 28px; }
+
+/* ═══ RESTRUCTURE 2026-10-12 — Trusted Platforms / Solutions / Integrations ═══ */
+
+/* Solutions: industry filter row */
+.ws-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 32px; }
+.ws-filter {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--ws-r-pill);
+  background: var(--ws-paper);
+  box-shadow: inset 0 0 0 1px var(--ws-forest);
+  color: var(--ws-forest);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.ws-filter:hover { background: var(--ws-linen); }
+.ws-filter.on { background: var(--ws-forest); color: var(--ws-paper); }
+
+/* Solutions: stacked case study cards + empty state */
+.ws-case-list { display: grid; gap: 16px; }
+.ws-case-list .ws-note { margin-top: 24px; }
+.ws-empty { text-align: center; max-width: 720px; margin: 0 auto; padding: 56px 24px; border-radius: var(--ws-r-lg); background: var(--ws-fog); }
+.ws-empty .ws-bodylg { margin: 16px auto 0; }
+
+/* Trusted Platforms hub: three profile cards */
+.ws-platform-cards .brf-card { min-height: 260px; }
+.ws-platform-cards .brf-card-title { font-size: 32px; }
+
+/* Integrations: "Official partner" badge (mirrors .brf-card-soon) */
+.brf-card-partner::before {
+  content: 'Official partner';
+  position: absolute;
+  top: 28px; right: 28px;
+  padding: 4px 12px;
+  border-radius: var(--ws-r-pill);
+  background: var(--ws-lime);
+  color: var(--ws-on-lime);
+  font-family: var(--ws-font);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.brf-card-partner .brf-card-title { padding-right: 132px; }
+div.brf-card-partner { cursor: default; }

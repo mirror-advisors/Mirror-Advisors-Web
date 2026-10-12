@@ -8,6 +8,7 @@ import { ADMIN_CHAT_HTML } from '../lib/admin-chat-html';
 import { initSiteRuntime } from '../lib/site-runtime';
 import { fetchAllConfig } from '../lib/site-config';
 import SalesIQ from './SalesIQ';
+import { CLIENT_PORTAL_URL } from '../lib/site-links';
 
 // Map the current Next.js pathname to the nav key it should highlight.
 // First path segment wins:  /             → 'home'
@@ -16,6 +17,8 @@ import SalesIQ from './SalesIQ';
 //                           /zoho/crm     → 'zoho'  (no nav match → no highlight)
 function pathToNavKey(pathname) {
   if (!pathname || pathname === '/') return 'home';
+  if (pathname === '/how-we-work') return 'delivery';
+  if (pathname.startsWith('/case-studies/')) return 'solutions';
   return pathname.replace(/^\//, '').split('/')[0];
 }
 
@@ -23,56 +26,72 @@ function pathToNavKey(pathname) {
 // window._NAV_PAGES (lib/site-runtime.js → _NAV_DEFAULTS) so the admin
 // visibility toggle can hide individual items. After Supabase hydration,
 // site-runtime's _renderNav() re-renders the desktop nav from _NAV_PAGES.
+//   Trusted Platforms = what we build on. Solutions = case studies.
+//   Integrations = partners + systems we connect. Delivery = how we deliver.
+//   (Restructure 2026-10-12, per Paul.) `overview` labels the first
+//   dropdown link, which routes to the group's own page.
 const NAV_GROUPS = [
   {
-    key: 'solutions', label: 'Solutions', href: '/solutions',
+    key: 'trusted-platforms', label: 'Trusted Platforms', href: '/platforms', overview: 'Overview',
     items: [
-      { key: 'sol-ai-custom',  href: '/solutions/ai-custom-solutions', label: 'AI Custom Solutions', featured: true },
-      { key: 'sol-zoho',       href: '/solutions/zoho',                label: 'Zoho Implementation' },
-      { key: 'sol-ai-on-zoho', href: '/solutions/ai-on-zoho',          label: 'AI on Zoho' },
-      { key: 'sol-odoo',       href: '/solutions/odoo',                label: 'Odoo', soon: true },
-      { key: 'sol-avalara',    href: '/solutions/avalara',             label: 'Avalara', soon: true },
+      { key: 'plat-claude', href: '/platforms/claude', label: 'Claude', featured: true },
+      { key: 'plat-zoho',   href: '/platforms/zoho',   label: 'Zoho' },
+      { key: 'plat-odoo',   href: '/platforms/odoo',   label: 'Odoo', soon: true },
     ],
   },
   {
-    key: 'services', label: 'Services', href: '/services',
+    key: 'solutions', label: 'Solutions', href: '/solutions', overview: 'All Solutions',
     items: [
-      { key: 'software-implementation', href: '/services/software-implementation', label: 'Software Implementation' },
-      { key: 'data-migration',          href: '/services/data-migration',          label: 'Data Migration' },
-      { key: 'systems-integration',     href: '/services/systems-integration',     label: 'Systems Integration' },
-      { key: 'custom-development',      href: '/services/custom-development',      label: 'Custom Development' },
-      { key: 'consulting-support',      href: '/services/consulting-support',      label: 'Consulting & Support' },
+      { key: 'sol-erp-mfg',    href: '/solutions/erp-manufacturing', label: 'ERP & Manufacturing' },
+      { key: 'sol-healthcare', href: '/solutions/healthcare',        label: 'Healthcare' },
     ],
   },
 ];
-const NAV_LINKS = [
-  { key: 'platforms',   href: '/platforms',   label: 'Platforms' },
-  { key: 'how-we-work', href: '/how-we-work', label: 'How We Work' },
-  { key: 'about',       href: '/about',       label: 'About' },
-  { key: 'contact',     href: '/contact',     label: 'Contact' },
-];
+const NAV_INTEGRATIONS = { key: 'integrations', href: '/integrations', label: 'Integrations' };
+const NAV_DELIVERY = {
+  key: 'delivery', label: 'Delivery', href: '/delivery', overview: 'Overview',
+  items: [
+    { key: 'how-we-work',             href: '/how-we-work',                       label: 'How We Work' },
+    { key: 'software-implementation', href: '/delivery/software-implementation', label: 'Software Implementation' },
+    { key: 'data-migration',          href: '/delivery/data-migration',           label: 'Data Migration' },
+    { key: 'systems-integration',     href: '/delivery/systems-integration',      label: 'Systems Integration' },
+    { key: 'custom-development',      href: '/delivery/custom-development',       label: 'Custom Development' },
+    { key: 'consulting-support',      href: '/delivery/consulting-support',       label: 'Consulting & Support' },
+  ],
+};
+// Top-level order: Trusted Platforms, Solutions, Integrations, Delivery, About.
+// Contact lives in the header button, not the link row.
+const NAV_ITEMS = [...NAV_GROUPS, NAV_INTEGRATIONS, NAV_DELIVERY, { key: 'about', href: '/about', label: 'About' }];
+// Nav key a top-level item highlights for: its route's first segment
+// (matches pathToNavKey), which differs from the admin key for
+// 'trusted-platforms'.
+const navKeyOf = (g) => g.href.slice(1);
 
 // Merge admin-saved nav config (Supabase) with the current defaults: keep
 // the saved order, labels and enabled flags for keys that still exist,
 // drop retired keys (e.g. the old 'erp-implementation'), take `parent`
 // from the defaults so restructures apply, and slot new default keys in
-// right after their predecessor in the default order.
+// right after their predecessor in the default order. Keys whose parent
+// changed (moved into another dropdown) are slotted like new keys, so they
+// land in their default position, but keep their saved label/enabled flag.
 function mergeNavPages(stored, defaults) {
   const defByKey = {};
   defaults.forEach((p) => { defByKey[p.key] = p; });
-  const out = stored
-    .filter((p) => p && p.key && defByKey[p.key])
-    .map((p) => {
-      const d = defByKey[p.key];
-      const merged = Object.assign({}, d, { label: p.label || d.label, enabled: p.enabled !== false });
-      if (!d.parent) delete merged.parent;
-      return merged;
-    });
+  const savedByKey = {};
+  const out = [];
+  stored.forEach((p) => {
+    if (!p || !p.key || !defByKey[p.key]) return;
+    const d = defByKey[p.key];
+    const merged = Object.assign({}, d, { label: p.label || d.label, enabled: p.enabled !== false });
+    if (!d.parent) delete merged.parent;
+    savedByKey[p.key] = merged;
+    if ((p.parent || null) === (d.parent || null)) out.push(merged);
+  });
   defaults.forEach((d, i) => {
     if (out.some((p) => p.key === d.key)) return;
     const prevKey = i > 0 ? defaults[i - 1].key : null;
     const at = prevKey ? out.findIndex((p) => p.key === prevKey) + 1 : 0;
-    out.splice(at, 0, Object.assign({}, d));
+    out.splice(at, 0, savedByKey[d.key] || Object.assign({}, d));
   });
   return out;
 }
@@ -258,15 +277,16 @@ export default function Layout({ children }) {
                 same class is applied by site-runtime.js's _highlightNav for
                 the JS-rendered nav (post-Supabase-hydration replacement),
                 so visually the two stay in sync. */}
-            {/* Solutions and Services are hover-dropdowns. The parent link
-                routes to the overview page on click; the dropdown holds
-                Overview + the sub-pages. The mobile menu below expands them
-                as indented sub-items. */}
-            {NAV_GROUPS.map((g) => (
+            {/* Dropdown groups (Trusted Platforms, Solutions, Delivery) are
+                hover-dropdowns. The parent link routes to the group's own
+                page on click; the dropdown holds that page (labelled by
+                `overview`) + the sub-pages. The mobile menu below expands
+                them as indented sub-items. */}
+            {NAV_ITEMS.map((g) => g.items ? (
               <div className="nav-drop" key={g.key}>
-                <Link href={g.href} className={currentNavKey === g.key ? 'on' : ''}>{g.label}</Link>
+                <Link href={g.href} className={currentNavKey === navKeyOf(g) ? 'on' : ''}>{g.label}</Link>
                 <div className="nav-drop-menu" role="menu" aria-label={g.label}>
-                  <Link href={g.href} className="nav-drop-link" role="menuitem">Overview</Link>
+                  <Link href={g.href} className="nav-drop-link" role="menuitem">{g.overview}</Link>
                   {g.items.map((it) => (
                     <Link key={it.key} href={it.href} className={'nav-drop-link' + (it.featured ? ' nav-drop-link-featured' : '')} role="menuitem">
                       {it.label}{it.soon && <span className="nav-soon">Soon</span>}
@@ -274,14 +294,16 @@ export default function Layout({ children }) {
                   ))}
                 </div>
               </div>
-            ))}
-            {NAV_LINKS.map((l) => (
-              <Link key={l.key} href={l.href} className={currentNavKey === l.key ? 'on' : ''}>{l.label}</Link>
+            ) : (
+              <Link key={g.key} href={g.href} className={currentNavKey === navKeyOf(g) ? 'on' : ''}>{g.label}</Link>
             ))}
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div className="nav-actions">
+            {CLIENT_PORTAL_URL && (
+              <a href={CLIENT_PORTAL_URL} className="nav-portal">Client portal</a>
+            )}
             <Link href="/contact" legacyBehavior>
-              <a><button className="ncta">Book a call &rarr;</button></a>
+              <a><button className="ncta">Contact &rarr;</button></a>
             </Link>
             <button
               className="nav-hamburger"
@@ -314,10 +336,10 @@ export default function Layout({ children }) {
             sub-links so mobile visitors see the full sub-navigation without
             needing a hover target. data-page-key on the group lets the
             admin's visibility toggle hide the whole group. */}
-        {NAV_GROUPS.map((g) => (
+        {NAV_ITEMS.map((g) => g.items ? (
           <div className="mm-svc-group" data-page-key={g.key} key={g.key}>
             <div className="mm-svc-header">{g.label}</div>
-            <Link href={g.href} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === g.href ? ' on' : '')}>Overview</Link>
+            <Link href={g.href} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link mm-sub' + (router.pathname === g.href ? ' on' : '')}>{g.overview}</Link>
             {g.items.map((it) => (
               <Link
                 key={it.key}
@@ -330,21 +352,18 @@ export default function Layout({ children }) {
               </Link>
             ))}
           </div>
-        ))}
-        {NAV_LINKS.map((l) => (
-          <Link key={l.key} href={l.href} data-page-key={l.key} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === l.key ? ' on' : '')}>{l.label}</Link>
+        ) : (
+          <Link key={g.key} href={g.href} data-page-key={g.key} onClick={() => window.closeMobileMenu && window.closeMobileMenu()} className={'mm-link' + (currentNavKey === navKeyOf(g) ? ' on' : '')}>{g.label}</Link>
         ))}
         <div className="mm-cta-wrap">
-          <a
-            href="/contact"
-            className="portal-btn"
-            onClick={() => window.closeMobileMenu && window.closeMobileMenu()}
-          >
-            <span>Book a call</span>
-          </a>
+          {CLIENT_PORTAL_URL && (
+            <a href={CLIENT_PORTAL_URL} className="portal-btn">
+              <span>Client portal</span>
+            </a>
+          )}
           <Link href="/contact" legacyBehavior>
             <a onClick={() => window.closeMobileMenu && window.closeMobileMenu()}>
-              <button className="ncta">Book a Call &rarr;</button>
+              <button className="ncta">Contact &rarr;</button>
             </a>
           </Link>
         </div>
@@ -404,12 +423,13 @@ export default function Layout({ children }) {
 function pathToInitKey(pathname, query) {
   if (pathname === '/') return 'home';
   if (pathname.startsWith('/zoho/')) return 'zoho_' + (query.product || '');
-  // Services sub-pages share the same _INIT as the Overview — they can
+  // Delivery (formerly Services) pages share the same _INIT as the Overview — they can
   // include #pathsGrid and #faqList (populated by _INIT.services). The
   // populators are guarded by if(el) so pages without those elements
   // simply skip.
-  if (pathname.startsWith('/services/')) return 'services';
-  if (pathname.startsWith('/solutions/') || pathname.startsWith('/case-studies/')) return null;
+  if (pathname === '/delivery' || pathname.startsWith('/delivery/')) return 'services';
+  if (pathname === '/platforms' || pathname === '/integrations') return null;
+  if (/^\/(solutions|platforms|integrations|case-studies)\//.test(pathname)) return null;
   // strip leading slash, dashes to underscores
   return pathname.replace(/^\//, '').replace(/-/g, '_');
 }

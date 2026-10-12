@@ -1,14 +1,20 @@
 // Auto-generated. Main page HTML fragments.
 // Rewritten 2026-09 to implement the Mirror Advisors messaging rebuild brief:
 //   - homepage: one-system positioning, solutions overview, Mirror Scope steps
-//   - solutions (what we sell): AI Custom Solutions, Zoho, AI on Zoho,
-//     Odoo + Avalara (coming soon). Restructured 2026-10 per Paul.
-//   - services (how we deliver): overview + five service pages
-//   - platforms: where we build + "works with" list
+//   - platforms (Trusted Platforms, what we build on): Claude (AI Custom
+//     Solutions), Zoho (+ AI on Zoho), Odoo coming soon. Each profile ends
+//     in "See our solutions".
+//   - solutions: the case study library, all + by industry (ERP &
+//     Manufacturing, Healthcare)
+//   - integrations: official partners (Avalara, HelloSend) + "works with"
+//   - services (shown as Delivery, /delivery): overview + five service pages
+//   Restructured 2026-10-08 and again 2026-10-12, per Paul.
 //   - how-we-work: dedicated page for the delivery model and Mirror Scope
 //   - about: US-led systems integrator, founded Dec 2023
 // All copy comes from the approved rebuild brief. Do not rewrite in place;
-// any change to visible copy needs an updated brief from Paul.
+// any change to visible copy needs an updated brief from Paul. Copy on the
+// Trusted Platforms hub, Solutions library/industry pages and Integrations
+// was written for the 2026-10-12 restructure and is pending Paul's review.
 // Contact form + Turnstile + honeypot preserved verbatim so Zoho integration
 // keeps working.
 
@@ -27,6 +33,72 @@ const _SYSTEM_CHIPS = SYSTEM_OPTIONS.map(function (v) {
   return '<label class="cf-chip cf-chip-sm"><input type="checkbox" data-sys value="' + _escAttr(v) + '"><span>' + _escAttr(v) + '</span></label>';
 }).join('\n              ');
 
+// ── Solutions = the case study library ────────────────────────────────────
+// One entry per published case study. `industries` drives the industry
+// pages (/solutions/erp-manufacturing, /solutions/healthcare); add a new
+// case study here and it shows up on /solutions and its industry pages.
+const _CASE_STUDIES = [
+  {
+    href: 'case-studies/plastics-products-mfg',
+    industries: ['erp-manufacturing'],
+    eyebrow: 'Case study · Plastics Products Mfg',
+    title: 'Quote to label in one screen, on top of Zoho Inventory.',
+    desc: "A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.",
+    img: '/images/case-studies/ppm/order-boxes.jpg',
+    alt: 'The PPM shipping app with a Zoho sales order auto-packed into a stock box',
+  },
+];
+
+const _SOLUTION_FILTERS = [
+  { key: 'all',               label: 'All solutions',       route: 'solutions' },
+  { key: 'erp-manufacturing', label: 'ERP & Manufacturing', route: 'solutions/erp-manufacturing' },
+  { key: 'healthcare',        label: 'Healthcare',          route: 'solutions/healthcare' },
+];
+
+// Industry filter row shown at the top of every Solutions page.
+function _solutionFilters(active) {
+  return '<div class="ws-filters" role="navigation" aria-label="Filter solutions by industry">' + _SOLUTION_FILTERS.map(function (f) {
+    var on = f.key === active;
+    return '<a class="ws-filter' + (on ? ' on' : '') + '" href="/' + f.route + '" onclick="go(\'' + f.route + '\'); return false;"' + (on ? ' aria-current="page"' : '') + '>' + f.label + '</a>';
+  }).join('') + '</div>';
+}
+
+// Case study cards for one industry ('all' = every case study). Returns ''
+// when there are none, so the page can show its own empty state.
+function _caseCards(industry) {
+  return _CASE_STUDIES.filter(function (c) {
+    return industry === 'all' || c.industries.indexOf(industry) !== -1;
+  }).map(function (c) {
+    return '<a class="brf-case" href="/' + c.href + '" onclick="go(\'' + c.href + '\')">' +
+      '<div class="brf-case-text">' +
+        '<div class="brf-eyebrow">' + c.eyebrow + '</div>' +
+        '<div class="brf-case-title">' + c.title + '</div>' +
+        '<p class="brf-case-desc">' + c.desc + '</p>' +
+        '<div class="brf-card-learn">Read the case study →</div>' +
+      '</div>' +
+      '<img class="brf-case-img" src="' + c.img + '" alt="' + _escAttr(c.alt) + '" loading="lazy" width="1600" height="1000" />' +
+    '</a>';
+  }).join('\n      ');
+}
+
+// Closing band on each Trusted Platforms profile: the profile is about the
+// platform and how we work with it; the results live under Solutions.
+function _seeSolutions(heading, body) {
+  return `<section class="ws-sec ws-sec-mist">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2">${heading}</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">${body}</p>
+        <div class="ws-actions" style="justify-content:flex-start">
+          <a class="brf-cta-primary" href="/solutions" onclick="go('solutions')">See our solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
@@ -38,7 +110,7 @@ export const pages = {
       <h1 class="ws-display">One system your whole business runs on.</h1>
       <p class="ws-hero-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
       <div class="ws-actions">
-        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
         <a class="ws-textlink" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
       </div>
       <div class="ws-tag">US-led. Global delivery. The same lead from your first call to go-live.</div>
@@ -96,30 +168,30 @@ export const pages = {
     <div class="ws-wrap">
       <h2 class="ws-h2 ws-center">What we build for you.</h2>
       <div class="brf-cards ws-cards">
-        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
+        <a class="brf-card brf-card-featured" href="/platforms/claude" onclick="go('platforms/claude')">
           <div class="brf-card-title">AI Custom Solutions</div>
           <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
+        <a class="brf-card" href="/platforms/zoho" onclick="go('platforms/zoho')">
           <div class="brf-card-title">Zoho Implementation</div>
           <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">
+        <a class="brf-card" href="/platforms/ai-on-zoho" onclick="go('platforms/ai-on-zoho')">
           <div class="brf-card-title">AI on Zoho</div>
           <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
       </div>
-      <p class="ws-note">Coming soon: <a class="ws-inline-link" href="/solutions/odoo" onclick="go('solutions/odoo')">Odoo implementation</a> and <a class="ws-inline-link" href="/solutions/avalara" onclick="go('solutions/avalara')">Avalara sales tax</a>.</p>
+      <p class="ws-note">Coming soon: <a class="ws-inline-link" href="/platforms/odoo" onclick="go('platforms/odoo')">Odoo implementation</a>. Official partner of <a class="ws-inline-link" href="/integrations" onclick="go('integrations')">Avalara and HelloSend</a>.</p>
       <p class="ws-note">Every project is delivered through the same five services.</p>
       <ul class="ws-pills ws-center">
-        <li><a href="/services/software-implementation" onclick="go('services/software-implementation')">Software Implementation</a></li>
-        <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data Migration</a></li>
-        <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
-        <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
-        <li><a href="/services/consulting-support" onclick="go('services/consulting-support')">Consulting &amp; Support</a></li>
+        <li><a href="/delivery/software-implementation" onclick="go('delivery/software-implementation')">Software Implementation</a></li>
+        <li><a href="/delivery/data-migration" onclick="go('delivery/data-migration')">Data Migration</a></li>
+        <li><a href="/delivery/systems-integration" onclick="go('delivery/systems-integration')">Systems Integration</a></li>
+        <li><a href="/delivery/custom-development" onclick="go('delivery/custom-development')">Custom Development</a></li>
+        <li><a href="/delivery/consulting-support" onclick="go('delivery/consulting-support')">Consulting &amp; Support</a></li>
       </ul>
     </div>
   </section>
@@ -220,7 +292,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -337,7 +409,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -402,7 +474,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -413,7 +485,7 @@ export const pages = {
   <section class="ws-hero ws-hero-split">
     <div class="ws-wrap ws-hero-grid">
       <div class="ws-hero-copy">
-        <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+        <a class="brf-back-link" href="/delivery" onclick="go('delivery')">← Delivery</a>
         <h1 class="ws-display ws-display-md">Your software should talk to itself.</h1>
         <p class="ws-hero-lead">Most businesses don't have a software problem. They have a connection problem. The CRM is fine. The accounting system is fine. The issue is that they have never been introduced, so your team does the introducing by hand, every day, forever.</p>
       </div>
@@ -476,7 +548,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -486,7 +558,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/delivery" onclick="go('delivery')">← Delivery</a>
       <h1 class="brf-h1">Bring your history with you.</h1>
       <p class="brf-lead">The fastest way to lose faith in a new system is to open it on day one and find that half your records came across wrong. Migration is the least visible part of an implementation and the part most likely to sink it.</p>
     </div>
@@ -515,7 +587,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -525,7 +597,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/delivery" onclick="go('delivery')">← Delivery</a>
       <h1 class="brf-h1">When the software doesn't do it, we build it.</h1>
       <p class="brf-lead">Every business has a process that no vendor has ever built for. A workflow specific to your industry. An approval chain that doesn't match anyone's template. A report your team needs that the platform simply doesn't produce.</p>
     </div>
@@ -555,7 +627,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -575,27 +647,27 @@ export const pages = {
   <section class="brf-section">
     <div class="brf-container">
       <div class="brf-cards brf-cards-lg">
-        <a class="brf-card" href="/services/software-implementation" onclick="go('services/software-implementation')">
+        <a class="brf-card" href="/delivery/software-implementation" onclick="go('delivery/software-implementation')">
           <div class="brf-card-title">Software Implementation</div>
           <p class="brf-card-desc">Deploy the system your operation runs on, from planning through go-live.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/services/data-migration" onclick="go('services/data-migration')">
+        <a class="brf-card" href="/delivery/data-migration" onclick="go('delivery/data-migration')">
           <div class="brf-card-title">Data Migration</div>
           <p class="brf-card-desc">Move your history into the new system cleanly, with nothing lost and nothing duplicated.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/services/systems-integration" onclick="go('services/systems-integration')">
+        <a class="brf-card" href="/delivery/systems-integration" onclick="go('delivery/systems-integration')">
           <div class="brf-card-title">Systems Integration</div>
           <p class="brf-card-desc">Connect the software you already own so your data moves on its own.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/services/custom-development" onclick="go('services/custom-development')">
+        <a class="brf-card" href="/delivery/custom-development" onclick="go('delivery/custom-development')">
           <div class="brf-card-title">Custom Development</div>
           <p class="brf-card-desc">Build the parts your business needs that no vendor sells off the shelf.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card" href="/services/consulting-support" onclick="go('services/consulting-support')">
+        <a class="brf-card" href="/delivery/consulting-support" onclick="go('delivery/consulting-support')">
           <div class="brf-card-title">Consulting &amp; Support</div>
           <p class="brf-card-desc">Senior advice before you buy, and a team that stays reachable after you go live.</p>
           <div class="brf-card-learn">Learn more →</div>
@@ -608,8 +680,9 @@ export const pages = {
   <section class="brf-section brf-section-cream">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Looking for a specific platform?</h2>
-      <p class="brf-body">If you already know you want a custom AI application, a Zoho implementation or AI built on top of Zoho, start with our solutions. Each one lists the services it includes.</p>
+      <p class="brf-body">If you already know you want a custom AI application, a Zoho implementation or AI built on top of Zoho, start with our trusted platforms. To see the services in action, browse our solutions.</p>
       <div class="brf-btn-row">
+        <a class="brf-cta-secondary" href="/platforms" onclick="go('platforms')">Trusted platforms</a>
         <a class="brf-cta-secondary" href="/solutions" onclick="go('solutions')">See our solutions</a>
         <a class="brf-cta-secondary" href="/how-we-work" onclick="go('how-we-work')">How we work</a>
       </div>
@@ -621,7 +694,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -631,7 +704,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/delivery" onclick="go('delivery')">← Delivery</a>
       <h1 class="brf-h1">The system your operation runs on.</h1>
       <p class="brf-lead">Implementing an ERP, a CRM or any core business system touches every part of a business, which is why it's the project companies most often get wrong. It's rarely a technology failure. It's a failure to understand the operation before configuring the software.</p>
     </div>
@@ -657,7 +730,7 @@ export const pages = {
       <p class="brf-body">From there we work in phases with a weekly project meeting, so the project never disappears into a black box between kickoff and launch.</p>
 
       <h2 class="brf-h2">Platforms we implement</h2>
-      <p class="brf-body">Zoho is our home ground, and Odoo and Avalara are coming soon. See <a class="brf-inline-link" href="/platforms" onclick="go('platforms')">the platforms we work with</a>.</p>
+      <p class="brf-body">Zoho is our home ground, and Odoo is coming soon. See <a class="brf-inline-link" href="/platforms" onclick="go('platforms')">our trusted platforms</a>.</p>
     </div>
   </section>
 
@@ -665,7 +738,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -675,7 +748,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/services" onclick="go('services')">← All services</a>
+      <a class="brf-back-link" href="/delivery" onclick="go('delivery')">← Delivery</a>
       <h1 class="brf-h1">Someone who picks up after go-live.</h1>
       <p class="brf-lead">Systems keep changing after launch. People leave, processes shift, and a vendor update breaks a workflow nobody remembers building. Consulting &amp; Support keeps a senior team on hand for the questions, fixes and improvements that come up once the project is over.</p>
     </div>
@@ -703,7 +776,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -713,63 +786,31 @@ export const pages = {
 
   <section class="ws-hero ws-hero-plain">
     <div class="ws-wrap ws-hero-in">
-      <h1 class="ws-display">What we build for you.</h1>
-      <p class="ws-hero-lead">We sell a small number of things and do them well: custom AI applications built around your business, Zoho implementations, and AI that runs on top of Zoho. Odoo and Avalara are coming soon.</p>
-      <div class="ws-actions">
-        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
-        <a class="ws-textlink" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Read a case study</a>
-      </div>
+      <h1 class="ws-display">Solutions.</h1>
+      <p class="ws-hero-lead">What we've built for clients, and what it changed for them. Browse every project, or start with your industry.</p>
+      ${_solutionFilters('all')}
     </div>
   </section>
 
   <section class="ws-sec ws-sec-tight">
-    <div class="ws-wrap">
-      <div class="brf-cards ws-cards">
-        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
-          <div class="brf-card-title">AI Custom Solutions</div>
-          <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
-          <div class="brf-card-title">Zoho Implementation</div>
-          <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-        <a class="brf-card" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">
-          <div class="brf-card-title">AI on Zoho</div>
-          <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
-          <div class="brf-card-learn">Learn more →</div>
-        </a>
-      </div>
-      <div class="brf-cards brf-cards-2 ws-cards-sub">
-        <a class="brf-card brf-card-soon" href="/solutions/odoo" onclick="go('solutions/odoo')">
-          <div class="brf-card-title">Odoo Implementation</div>
-          <p class="brf-card-desc">The same scope-first approach, on Odoo.</p>
-          <div class="brf-card-learn">Find out more →</div>
-        </a>
-        <a class="brf-card brf-card-soon" href="/solutions/avalara" onclick="go('solutions/avalara')">
-          <div class="brf-card-title">Avalara Sales Tax</div>
-          <p class="brf-card-desc">Sales tax calculated automatically inside the systems you sell through.</p>
-          <div class="brf-card-learn">Find out more →</div>
-        </a>
-      </div>
+    <div class="ws-wrap ws-case-list">
+      ${_caseCards('all')}
+      <p class="ws-note">More write-ups are on the way. Want to hear about a project like yours? <a class="ws-inline-link" href="/contact" onclick="go('contact')">Ask us.</a></p>
     </div>
   </section>
 
   <section class="ws-sec ws-sec-dark">
     <div class="ws-wrap ws-split ws-split-top">
       <div class="ws-split-head">
-        <h2 class="ws-h2 ws-h2-xl">One team, five services.</h2>
+        <h2 class="ws-h2 ws-h2-xl">Built on platforms we trust.</h2>
       </div>
       <div class="ws-split-body">
-        <p class="ws-bodylg">Every solution is delivered through the same five services. A Zoho project might use all five. A custom application might use three. Either way, it's one team from the first call to go-live.</p>
-      <ul class="ws-pills">
-        <li><a href="/services/software-implementation" onclick="go('services/software-implementation')">Software Implementation</a></li>
-        <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data Migration</a></li>
-        <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
-        <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
-        <li><a href="/services/consulting-support" onclick="go('services/consulting-support')">Consulting &amp; Support</a></li>
-      </ul>
+        <p class="ws-bodylg">Every solution runs on one of our trusted platforms, and is delivered through the same five services by one team from the first call to go-live.</p>
+        <ul class="ws-pills">
+          <li><a href="/platforms/claude" onclick="go('platforms/claude')">Claude</a></li>
+          <li><a href="/platforms/zoho" onclick="go('platforms/zoho')">Zoho</a></li>
+          <li><a href="/delivery" onclick="go('delivery')">How we deliver</a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -778,7 +819,61 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'solutions-erp': `<div class="brf-page ws-page">
+
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <div class="brf-eyebrow">Solutions</div>
+      <h1 class="ws-display">ERP &amp; manufacturing.</h1>
+      <p class="ws-hero-lead">Orders, inventory, production, shipping and the accounting behind them, on one system your whole operation runs on, instead of six that don't talk to each other.</p>
+      ${_solutionFilters('erp-manufacturing')}
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap ws-case-list">
+      ${_caseCards('erp-manufacturing')}
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Running a plant or a warehouse?</h2>
+      <p class="brf-body">Tell us what's slowing your operation down and we'll tell you honestly whether we can fix it.</p>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
+    </div>
+  </section>
+
+</div>`,
+
+  // PLACEHOLDER · no healthcare case study is published yet. Paul: this is
+  // one of the two areas we get referred for most (it's on our Zoho partner
+  // page). Add the write-up to _CASE_STUDIES with industries:['healthcare']
+  // and the empty state below disappears.
+  'solutions-healthcare': `<div class="brf-page ws-page">
+
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <div class="brf-eyebrow">Solutions</div>
+      <h1 class="ws-display">Healthcare.</h1>
+      <p class="ws-hero-lead">Healthcare and medical technology companies are among the businesses that come to us most often. They need sales, operations and support on one system, set up around how they actually work.</p>
+      ${_solutionFilters('healthcare')}
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap ws-case-list">
+      ${_caseCards('healthcare') || `<div class="ws-empty">
+        <h2 class="ws-h2">Case studies coming soon.</h2>
+        <p class="ws-bodylg">We're writing up our healthcare projects now. In the meantime, tell us what you're working on and we'll walk you through relevant work on a call.</p>
+        <div class="ws-actions"><a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a></div>
+      </div>`}
     </div>
   </section>
 
@@ -789,13 +884,13 @@ export const pages = {
   <section class="ws-hero ws-hero-split">
     <div class="ws-wrap ws-hero-grid">
       <div class="ws-hero-copy">
-        <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
-        <div class="brf-eyebrow">Featured solution</div>
+        <a class="brf-back-link" href="/platforms" onclick="go('platforms')">← Trusted platforms</a>
+        <div class="brf-eyebrow">Trusted platform · Claude</div>
         <h1 class="ws-display ws-display-md">Software built around your business.</h1>
         <p class="ws-hero-lead">Off-the-shelf software gets most companies eighty percent of the way. The other twenty percent is where your team loses hours every week. We build complete applications for that work, designed around how your operation actually runs, with AI where it genuinely saves time.</p>
         <div class="ws-actions" style="justify-content:flex-start">
-          <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
-          <a class="ws-textlink" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">See a real example</a>
+          <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
+          <a class="ws-textlink" href="/solutions" onclick="go('solutions')">See our solutions</a>
         </div>
       </div>
       <div class="ws-hero-art" aria-hidden="true">
@@ -875,11 +970,13 @@ export const pages = {
     </div>
   </section>
 
+  ${_seeSolutions("See what we've built with Claude.", "Real applications for real clients, with the numbers to show for it.")}
+
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Tell us what your team does by hand.</h2>
       <p class="brf-body">Describe the work that eats your week and we'll tell you honestly whether a custom application is the right fix.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -890,7 +987,7 @@ export const pages = {
   <section class="ws-hero ws-hero-split">
     <div class="ws-wrap ws-hero-grid">
       <div class="ws-hero-copy">
-        <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
+        <a class="brf-back-link" href="/platforms/zoho" onclick="go('platforms/zoho')">← Zoho</a>
         <h1 class="ws-display ws-display-md">Zoho, with the missing pieces built in.</h1>
         <p class="ws-hero-lead">Zoho covers a lot of ground. The work that's specific to your business, the step your team still does by hand or in a spreadsheet next to Zoho, is where we come in.</p>
       </div>
@@ -956,16 +1053,18 @@ export const pages = {
       </div>
       <div class="ws-split-body">
         <p class="ws-bodylg">You already run Zoho, or you're implementing it with us, and there's a part of your process Zoho doesn't quite cover.</p>
-        <p class="ws-body">If Zoho can do the job with configuration alone, <strong>we'll tell you that first.</strong> New to Zoho? Start with <a class="ws-inline-link" href="/solutions/zoho" onclick="go('solutions/zoho')">Zoho implementation</a>.</p>
+        <p class="ws-body">If Zoho can do the job with configuration alone, <strong>we'll tell you that first.</strong> New to Zoho? Start with <a class="ws-inline-link" href="/platforms/zoho" onclick="go('platforms/zoho')">Zoho implementation</a>.</p>
       </div>
     </div>
   </section>
+
+  ${_seeSolutions("See what we've built on Zoho.", "Real projects on Zoho for real clients, with the numbers to show for it.")}
 
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what your team does next to Zoho and we'll tell you honestly whether it's worth building.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -975,7 +1074,7 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
+      <a class="brf-back-link" href="/platforms" onclick="go('platforms')">← Trusted platforms</a>
       <h1 class="brf-h1">We know this platform inside out.</h1>
       <p class="brf-lead">Mirror Advisors was founded by a former Zoho employee, and Zoho remains the platform we've implemented more than any other. If you're evaluating it, running it, or struggling with an implementation someone else left behind, this is our home ground.</p>
     </div>
@@ -994,12 +1093,8 @@ export const pages = {
         <li>Ongoing consulting and support</li>
       </ul>
 
-      <!-- PLACEHOLDER · HelloSend. Paul listed HelloSend as a sub-product
-           under Zoho. Add a short paragraph here once he confirms how it
-           should be described. -->
-
       <h2 class="brf-h2">Go further with AI on Zoho</h2>
-      <p class="brf-body">When there's a part of your process Zoho doesn't cover, we build it on top: applications and AI that read from Zoho and write back to it. <a class="brf-inline-link" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')">See AI on Zoho</a>.</p>
+      <p class="brf-body">When there's a part of your process Zoho doesn't cover, we build it on top: applications and AI that read from Zoho and write back to it. <a class="brf-inline-link" href="/platforms/ai-on-zoho" onclick="go('platforms/ai-on-zoho')">See AI on Zoho</a>.</p>
 
       <h2 class="brf-h2">Why clients come to us specifically</h2>
       <p class="brf-body">Our founder worked at Zoho before founding this firm, so we know how the platform is built, where it's strong, and where it will fight you. In our first year as a partner we reached Premium tier, the first partner to do so that fast.</p>
@@ -1017,11 +1112,13 @@ export const pages = {
     </div>
   </section>
 
+  ${_seeSolutions("See what we've built on Zoho.", "Real projects on Zoho for real clients, with the numbers to show for it.")}
+
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -1031,22 +1128,24 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
+      <a class="brf-back-link" href="/platforms" onclick="go('platforms')">← Trusted platforms</a>
       <div class="brf-eyebrow">Coming soon</div>
       <h1 class="brf-h1">Odoo implementation.</h1>
       <p class="brf-lead">We're adding Odoo to the platforms we implement, with the same approach we use for everything else: understand the operation first, configure the software second. If you're evaluating Odoo now, tell us about your project and we'll tell you where we can help today.</p>
       <div class="brf-btn-row">
         <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Get in touch</a>
-        <a class="brf-cta-secondary" href="/services/software-implementation" onclick="go('services/software-implementation')">How we implement</a>
+        <a class="brf-cta-secondary" href="/delivery/software-implementation" onclick="go('delivery/software-implementation')">How we implement</a>
       </div>
     </div>
   </section>
+
+  ${_seeSolutions("See how we work on our other platforms.", "Odoo projects will follow the same approach as everything we've already built on Claude and Zoho.")}
 
   <section class="brf-cta-block">
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -1056,13 +1155,13 @@ export const pages = {
 
   <section class="brf-hero brf-hero-navy">
     <div class="brf-container">
-      <a class="brf-back-link" href="/solutions" onclick="go('solutions')">← All solutions</a>
-      <div class="brf-eyebrow">Coming soon</div>
+      <a class="brf-back-link" href="/integrations" onclick="go('integrations')">← Integrations</a>
+      <div class="brf-eyebrow">Official partner</div>
       <h1 class="brf-h1">Avalara sales tax.</h1>
-      <p class="brf-lead">We're adding Avalara implementation, connecting it to the systems you sell through so sales tax is calculated on every order instead of worked out by hand. If sales tax is a headache for you right now, tell us about it and we'll tell you where we can help today.</p>
+      <p class="brf-lead">We're an Avalara partner. We connect Avalara to the systems you sell through, so sales tax is calculated on every order instead of worked out by hand. If sales tax is a headache for you right now, tell us about it and we'll tell you where we can help.</p>
       <div class="brf-btn-row">
         <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Get in touch</a>
-        <a class="brf-cta-secondary" href="/services/systems-integration" onclick="go('services/systems-integration')">How we integrate</a>
+        <a class="brf-cta-secondary" href="/delivery/systems-integration" onclick="go('delivery/systems-integration')">How we integrate</a>
       </div>
     </div>
   </section>
@@ -1071,7 +1170,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -1081,35 +1180,89 @@ export const pages = {
 
   <section class="ws-hero ws-hero-plain">
     <div class="ws-wrap ws-hero-in">
-      <h1 class="ws-display">The platforms we work with.</h1>
-      <p class="ws-hero-lead">We implement a few platforms deeply, and we connect them to dozens more. Here's where we build, and a sample of the systems we've integrated along the way.</p>
+      <h1 class="ws-display">Trusted platforms.</h1>
+      <p class="ws-hero-lead">We build on a small number of platforms and know them inside out. These are the ones we trust with our clients' businesses, and with our own. Meet each one, then see what we've built with it.</p>
     </div>
   </section>
 
   <section class="ws-sec ws-sec-tight">
     <div class="ws-wrap">
-      <h2 class="ws-h2">Where we build</h2>
-      <div class="brf-cards brf-cards-2">
-        <a class="brf-card brf-card-featured" href="/solutions/ai-custom-solutions" onclick="go('solutions/ai-custom-solutions')">
-          <div class="brf-card-title">Custom applications, built with Claude</div>
-          <p class="brf-card-desc">Fully custom software for the work your other systems don't cover.</p>
-          <div class="brf-card-learn">Learn more →</div>
+      <div class="brf-cards ws-cards ws-platform-cards">
+        <a class="brf-card brf-card-featured" href="/platforms/claude" onclick="go('platforms/claude')">
+          <div class="brf-card-title">Claude</div>
+          <p class="brf-card-desc">Anthropic's AI. We use it to build fully custom applications in weeks, and inside those applications wherever AI saves real time.</p>
+          <div class="brf-card-learn">Meet Claude →</div>
         </a>
-        <a class="brf-card" href="/solutions/zoho" onclick="go('solutions/zoho')">
+        <a class="brf-card" href="/platforms/zoho" onclick="go('platforms/zoho')">
           <div class="brf-card-title">Zoho</div>
-          <p class="brf-card-desc">Zoho Authorized Partner. Implementation, migration, custom development and support across the suite.</p>
+          <p class="brf-card-desc">Zoho Authorized Partner, founded by a former Zoho employee. Implementation, migration, custom development and AI on top of Zoho.</p>
+          <div class="brf-card-learn">Meet Zoho →</div>
+        </a>
+        <a class="brf-card brf-card-soon" href="/platforms/odoo" onclick="go('platforms/odoo')">
+          <div class="brf-card-title">Odoo</div>
+          <p class="brf-card-desc">The same scope-first approach, on Odoo.</p>
+          <div class="brf-card-learn">Find out more →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ws-sec ws-sec-dark">
+    <div class="ws-wrap ws-split ws-split-top">
+      <div class="ws-split-head">
+        <h2 class="ws-h2 ws-h2-xl">A few platforms, known deeply.</h2>
+      </div>
+      <div class="ws-split-body">
+        <p class="ws-bodylg">Every platform we add is one more our team has to know inside out. So we implement a few deeply, and connect them to the rest of your systems.</p>
+        <p class="ws-body">Already running something else? <a class="ws-inline-link" href="/integrations" onclick="go('integrations')">See our integrations.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-wrap">
+      <h2 class="ws-h2 ws-center">What we've built with them.</h2>
+      ${_caseCards('all')}
+      <div class="ws-actions">
+        <a class="ws-pill-outline" href="/solutions" onclick="go('solutions')">See all solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brf-cta-block">
+    <div class="brf-container-narrow">
+      <h2 class="brf-h2">Not sure which platform fits?</h2>
+      <p class="brf-body">Tell us how your business runs today. We'll tell you honestly which platform suits it, including when it's not one of ours.</p>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
+    </div>
+  </section>
+
+</div>`,
+
+  'integrations': `<div class="brf-page ws-page">
+
+  <section class="ws-hero ws-hero-plain">
+    <div class="ws-wrap ws-hero-in">
+      <h1 class="ws-display">Integrations.</h1>
+      <p class="ws-hero-lead">We're official partners of two platforms, and we've connected dozens more. If a system has an API, we can usually make it talk to the rest of your business.</p>
+    </div>
+  </section>
+
+  <!-- PARTNERS · confirmed by Paul 2026-10-12: Avalara and HelloSend.
+       HelloSend description pending his wording. -->
+  <section class="ws-sec ws-sec-tight">
+    <div class="ws-wrap">
+      <h2 class="ws-h2">Official partners</h2>
+      <div class="brf-cards brf-cards-2">
+        <a class="brf-card brf-card-partner" href="/integrations/avalara" onclick="go('integrations/avalara')">
+          <div class="brf-card-title">Avalara</div>
+          <p class="brf-card-desc">Sales tax calculated automatically inside the systems you sell through.</p>
           <div class="brf-card-learn">Learn more →</div>
         </a>
-        <a class="brf-card brf-card-soon" href="/solutions/odoo" onclick="go('solutions/odoo')">
-          <div class="brf-card-title">Odoo</div>
-          <p class="brf-card-desc">Odoo implementation, scope first.</p>
-          <div class="brf-card-learn">Find out more →</div>
-        </a>
-        <a class="brf-card brf-card-soon" href="/solutions/avalara" onclick="go('solutions/avalara')">
-          <div class="brf-card-title">Avalara</div>
-          <p class="brf-card-desc">Automated sales tax, connected to the systems you sell through.</p>
-          <div class="brf-card-learn">Find out more →</div>
-        </a>
+        <div class="brf-card brf-card-partner">
+          <div class="brf-card-title">HelloSend</div>
+          <p class="brf-card-desc">Texting and messaging with your customers, straight from Zoho CRM.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1118,7 +1271,7 @@ export const pages = {
        launch; he has the full list of systems we've integrated. -->
   <section class="ws-sec ws-sec-fog">
     <div class="ws-wrap">
-      <h2 class="ws-h2 ws-center">Works with</h2>
+      <h2 class="ws-h2 ws-center">Also works with</h2>
       <p class="ws-hero-lead ws-center">A sample of the systems we've connected, migrated from or built on top of.</p>
       <ul class="ws-logos" aria-label="Systems we work with">
         <li>QuickBooks</li>
@@ -1135,7 +1288,6 @@ export const pages = {
         <li>EasyPost</li>
         <li>Zebra printers</li>
         <li>Supabase</li>
-        <li>Claude</li>
       </ul>
       <p class="ws-note">Don't see yours? If it has an API, we can usually connect it. <a class="ws-inline-link" href="/contact" onclick="go('contact')">Ask us.</a></p>
     </div>
@@ -1145,7 +1297,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Start with a conversation.</h2>
       <p class="brf-body">Tell us what you run today and what isn't talking to what. We'll tell you honestly whether we can fix it.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 
@@ -1160,7 +1312,7 @@ export const pages = {
 
   <section class="ws-hero ws-hero-plain">
     <div class="ws-wrap ws-hero-in">
-      <a class="brf-back-link" href="/solutions/ai-on-zoho" onclick="go('solutions/ai-on-zoho')" style="display:table;margin-left:auto;margin-right:auto">← AI on Zoho</a>
+      <a class="brf-back-link" href="/solutions" onclick="go('solutions')" style="display:table;margin-left:auto;margin-right:auto">← All solutions</a>
       <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
       <h1 class="ws-display">Quote to label in one screen.</h1>
       <p class="ws-hero-lead">Plastics Products Mfg runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
@@ -1243,9 +1395,9 @@ export const pages = {
         <p class="ws-body">Zoho stays the system of record. <strong>The app is simply the fastest way to get an order out of the door and back into Zoho.</strong></p>
         <p class="ws-label" style="margin-top:32px">Services used</p>
         <ul class="ws-pills">
-          <li><a href="/services/custom-development" onclick="go('services/custom-development')">Custom Development</a></li>
-          <li><a href="/services/systems-integration" onclick="go('services/systems-integration')">Systems Integration</a></li>
-          <li><a href="/services/data-migration" onclick="go('services/data-migration')">Data cleanup</a></li>
+          <li><a href="/delivery/custom-development" onclick="go('delivery/custom-development')">Custom Development</a></li>
+          <li><a href="/delivery/systems-integration" onclick="go('delivery/systems-integration')">Systems Integration</a></li>
+          <li><a href="/delivery/data-migration" onclick="go('delivery/data-migration')">Data cleanup</a></li>
         </ul>
       </div>
     </div>
@@ -1255,7 +1407,7 @@ export const pages = {
     <div class="brf-container-narrow">
       <h2 class="brf-h2">Is there a job your team does next to Zoho?</h2>
       <p class="brf-body">Tell us about it and we'll tell you honestly whether it's worth building.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Book a call</a>
+      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
     </div>
   </section>
 

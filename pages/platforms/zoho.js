@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Zoho Implementation | Mirror Advisors</title>
+        <title>Zoho | Mirror Advisors</title>
         <meta name="description" content="Zoho implementation, migration, custom development and support from a firm founded by a former Zoho employee. Zoho Authorized Partner." />
       </Head>
       <HtmlPage html={pages['zoho']} />
