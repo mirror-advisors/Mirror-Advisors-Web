@@ -29,6 +29,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   overflow-x: hidden;
+  overflow-x: clip;
   line-height: 1.6;
 }
 
@@ -5268,8 +5269,11 @@ a.pft-contact-item:hover svg{color:var(--t);}
      - Desktop : 1024px+
 ============================================================ */
 
-/* ---- Global safety: prevent horizontal scroll on every page ---- */
-html, body { max-width: 100%; overflow-x: hidden; }
+/* ---- Global safety: prevent horizontal scroll on every page ----
+   `clip`, not `hidden`: hidden made <body> its own scroll container,
+   which silently broke every position: sticky on the site. Browsers
+   without `clip` fall back to hidden. */
+html, body { max-width: 100%; overflow-x: hidden; overflow-x: clip; }
 img, svg, video, canvas { max-width: 100%; height: auto; }
 
 /* ---- Hamburger button (hidden on desktop, shown on tablet/mobile) ---- */

@@ -110,32 +110,61 @@ export const pages = {
   // Mirror Scope strip and the Client portal button.
   'home': `<div class="st-page">
 
-  <section class="st-hero">
-    <div class="st-wrap">
-      <h1 class="st-display">One system your <em>whole business</em> runs on.</h1>
-      <p class="st-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="st-actions">
-        <a class="st-btn" href="/contact" onclick="go('contact')">Contact us</a>
-        <a class="st-btn st-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
-      </div>
-      <p class="st-tagline">US-led. Global delivery. The same lead from your first call to go-live.</p>
-    </div>
+  <!-- HERO · pinned, scroll-scrubbed on desktop (lib/home-motion.js):
+       the headline shrinks away while the four product cards glide in and
+       dock onto the PPM app window, which then switches to its second
+       screen. On phones / reduced motion it is a normal stacked layout. -->
+  <section class="st-hero" id="stHero">
+    <div class="st-hero-sticky">
+      <div class="st-hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <div class="st-wrap st-stage" aria-label="From our work: the Plastics Products Mfg shipping app">
-      <figure class="st-artifact st-shot">
-        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" width="1600" height="1000" />
-        <figcaption>Plastics Products Mfg · shipping app on Zoho Inventory</figcaption>
-      </figure>
-      <div class="st-artifact st-stat st-stat-a">
-        <div class="st-stat-num">13 days</div>
-        <div class="st-stat-label">from the first line of code to live FedEx labels</div>
-        <div class="st-days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="st-day-done"></i></div>
+      <div class="st-hero-copy">
+        <a class="st-pill" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Case study: Plastics Products Mfg <span aria-hidden="true">→</span></a>
+        <h1 class="st-display"><span class="st-w" style="--i:0">One</span> <span class="st-w" style="--i:1">system</span> <span class="st-w" style="--i:2">your</span> <em><span class="st-w" style="--i:3">whole</span> <span class="st-w" style="--i:4">business</span></em> <span class="st-w" style="--i:5">runs</span> <span class="st-w" style="--i:6">on.</span></h1>
+        <p class="st-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+        <div class="st-actions">
+          <a class="st-btn" href="/contact" onclick="go('contact')">Contact us</a>
+          <a class="st-btn st-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
+        </div>
+        <p class="st-tagline">US-led. Global delivery. The same lead from your first call to go-live.</p>
       </div>
-      <div class="st-artifact st-stat st-stat-b">
-        <svg class="st-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="st-ring-val" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="87 100"/></svg>
-        <div>
-          <div class="st-stat-num">87%</div>
-          <div class="st-stat-label">of PPM's Zoho shipments now go through the app</div>
+
+      <div class="st-stage" aria-label="From our work: the Plastics Products Mfg shipping app on Zoho Inventory">
+        <figure class="st-artifact st-window">
+          <div class="st-window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="st-window-screens">
+            <img class="st-screen st-screen-1" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" width="1600" height="1000" />
+            <img class="st-screen st-screen-2" src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen with gap filters and a bulk fill panel" width="1600" height="1000" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="st-cap st-cap-1">Plastics Products Mfg · shipping app on Zoho Inventory</span>
+            <span class="st-cap st-cap-2">Gap filters across the whole catalogue, and one fill for a whole product family.</span>
+          </figcaption>
+        </figure>
+        <div class="st-artifact st-stat st-float st-f1">
+          <div class="st-stat-num">13 days</div>
+          <div class="st-stat-label">from the first line of code to live FedEx labels</div>
+          <div class="st-days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="st-day-done"></i></div>
+        </div>
+        <div class="st-artifact st-stat st-float st-f2 st-stat-ring">
+          <svg class="st-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="st-ring-val" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="87 100"/></svg>
+          <div>
+            <div class="st-stat-num">87%</div>
+            <div class="st-stat-label">of PPM's Zoho shipments now go through the app</div>
+          </div>
+        </div>
+        <div class="st-artifact st-stat st-float st-f3">
+          <div class="st-stat-title">Written back to Zoho</div>
+          <ul class="st-checks">
+            <li>Packages</li>
+            <li>Tracking numbers</li>
+            <li>Shipping charge</li>
+            <li>Packing slip</li>
+          </ul>
+        </div>
+        <div class="st-artifact st-stat st-float st-f4">
+          <div class="st-stat-num">199 labels</div>
+          <div class="st-stat-label">on 118 shipments in the first 11 shipping days</div>
         </div>
       </div>
     </div>
