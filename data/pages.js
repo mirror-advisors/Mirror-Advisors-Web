@@ -39,13 +39,13 @@ const _SYSTEM_CHIPS = SYSTEM_OPTIONS.map(function (v) {
 // case study here and it shows up on /solutions and its industry pages.
 const _CASE_STUDIES = [
   {
-    href: 'case-studies/plastics-products-mfg',
+    href: 'case-studies/manufacturing-shipping-app',
     industries: ['erp-manufacturing'],
-    eyebrow: 'Case study · Plastics Products Mfg',
+    eyebrow: 'Case study · Manufacturing',
     title: 'Quote to label in one screen, on top of Zoho Inventory.',
-    desc: "A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.",
-    img: '/images/case-studies/ppm/order-boxes.jpg',
-    alt: 'The PPM shipping app with a Zoho sales order auto-packed into a stock box',
+    desc: "A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of the client's shipments now run through it.",
+    img: '/images/case-studies/shipping-app/order-boxes.jpg',
+    alt: 'The shipping app with a Zoho sales order auto-packed into a stock box',
   },
 ];
 
@@ -112,14 +112,14 @@ export const pages = {
 
   <!-- HERO · pinned, scroll-scrubbed on desktop (lib/home-motion.js):
        the headline shrinks away while the four product cards glide in and
-       dock onto the PPM app window, which then switches to its second
+       dock onto the app window, which then switches to its second
        screen. On phones / reduced motion it is a normal stacked layout. -->
   <section class="st-hero" id="stHero">
     <div class="st-hero-sticky">
       <div class="st-hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
       <div class="st-hero-copy">
-        <a class="st-pill" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Case study: Plastics Products Mfg <span aria-hidden="true">→</span></a>
+        <a class="st-pill" href="/case-studies/manufacturing-shipping-app" onclick="go('case-studies/manufacturing-shipping-app')">Case study: a manufacturer's shipping app <span aria-hidden="true">→</span></a>
         <h1 class="st-display"><span class="st-w" style="--i:0">One</span> <span class="st-w" style="--i:1">system</span> <span class="st-w" style="--i:2">your</span> <em><span class="st-w" style="--i:3">whole</span> <span class="st-w" style="--i:4">business</span></em> <span class="st-w" style="--i:5">runs</span> <span class="st-w" style="--i:6">on.</span></h1>
         <p class="st-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
         <div class="st-actions">
@@ -129,15 +129,15 @@ export const pages = {
         <p class="st-tagline">US-led. Global delivery. The same lead from your first call to go-live.</p>
       </div>
 
-      <div class="st-stage" aria-label="From our work: the Plastics Products Mfg shipping app on Zoho Inventory">
+      <div class="st-stage" aria-label="From our work: a manufacturer's shipping app on Zoho Inventory">
         <figure class="st-artifact st-window">
           <div class="st-window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="st-window-screens">
-            <img class="st-screen st-screen-1" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" width="1600" height="1000" />
-            <img class="st-screen st-screen-2" src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen with gap filters and a bulk fill panel" width="1600" height="1000" loading="lazy" />
+            <img class="st-screen st-screen-1" src="/images/case-studies/shipping-app/order-boxes.jpg" alt="The shipping app with a Zoho sales order auto-packed into a stock box" width="1600" height="1000" />
+            <img class="st-screen st-screen-2" src="/images/case-studies/shipping-app/item-dimensions.jpg" alt="The item dimensions screen with gap filters and a bulk fill panel" width="1600" height="1000" loading="lazy" />
           </div>
           <figcaption>
-            <span class="st-cap st-cap-1">Plastics Products Mfg · shipping app on Zoho Inventory</span>
+            <span class="st-cap st-cap-1">A manufacturer's shipping app on Zoho Inventory</span>
             <span class="st-cap st-cap-2">Gap filters across the whole catalogue, and one fill for a whole product family.</span>
           </figcaption>
         </figure>
@@ -150,7 +150,7 @@ export const pages = {
           <svg class="st-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="st-ring-val" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="87 100"/></svg>
           <div>
             <div class="st-stat-num">87%</div>
-            <div class="st-stat-label">of PPM's Zoho shipments now go through the app</div>
+            <div class="st-stat-label">of the client's Zoho shipments now go through the app</div>
           </div>
         </div>
         <div class="st-artifact st-stat st-float st-f3">
@@ -252,14 +252,14 @@ export const pages = {
 
   <section class="st-sec st-sec-tight">
     <div class="st-wrap">
-      <a class="st-accent" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
+      <a class="st-accent" href="/case-studies/manufacturing-shipping-app" onclick="go('case-studies/manufacturing-shipping-app')">
         <div class="st-accent-text">
-          <div class="st-tag">Case study · Plastics Products Mfg</div>
+          <div class="st-tag">Case study · Manufacturing</div>
           <h2 class="st-h3">Quote to label in one screen, on top of Zoho Inventory.</h2>
-          <p class="st-body">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
+          <p class="st-body">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of the client's shipments now run through it.</p>
           <span class="st-link">Read the case study →</span>
         </div>
-        <img class="st-artifact st-accent-img" src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
+        <img class="st-artifact st-accent-img" src="/images/case-studies/shipping-app/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
       </a>
     </div>
   </section>
@@ -924,14 +924,14 @@ export const pages = {
 
   <section class="ws-sec">
     <div class="ws-wrap">
-      <a class="brf-case" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
+      <a class="brf-case" href="/case-studies/manufacturing-shipping-app" onclick="go('case-studies/manufacturing-shipping-app')">
         <div class="brf-case-text">
-          <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
+          <div class="brf-eyebrow">Case study · Manufacturing</div>
           <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
-          <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
+          <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of the client's shipments now run through it.</p>
           <div class="brf-card-learn">Read the case study →</div>
         </div>
-        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" width="1600" height="1000" />
+        <img class="brf-case-img" src="/images/case-studies/shipping-app/order-boxes.jpg" alt="The shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" width="1600" height="1000" />
       </a>
     </div>
   </section>
@@ -1016,10 +1016,10 @@ export const pages = {
         <h2 class="ws-h2 ws-h2-xl">A real example</h2>
       </div>
       <div class="ws-split-body">
-        <p class="ws-bodylg">For Plastics Products Mfg we built a shipping app on top of Zoho Inventory. Staff open a sales order, the app packs it into stock boxes, compares every FedEx rate on their account and prints the labels.</p>
-        <p class="ws-body">Then it writes the packages, tracking numbers, shipping charge and packing slip back onto the Zoho order. It went live in 13 days, and <strong>87% of PPM's shipments now run through it.</strong></p>
+        <p class="ws-bodylg">For a manufacturer running Zoho Inventory, we built a shipping app on top of it. Staff open a sales order, the app packs it into stock boxes, compares every FedEx rate on their account and prints the labels.</p>
+        <p class="ws-body">Then it writes the packages, tracking numbers, shipping charge and packing slip back onto the Zoho order. It went live in 13 days, and <strong>87% of the client's shipments now run through it.</strong></p>
         <div class="ws-actions" style="justify-content:flex-start">
-          <a class="ws-pill-outline" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">Read the case study</a>
+          <a class="ws-pill-outline" href="/case-studies/manufacturing-shipping-app" onclick="go('case-studies/manufacturing-shipping-app')">Read the case study</a>
         </div>
       </div>
     </div>
@@ -1283,18 +1283,20 @@ export const pages = {
 </div>`,
 
 
-  // Case study. Numbers come from PPM's EasyPost and Zoho Inventory data,
-  // read 2026-10-08 (go-live 2026-09-22). Client approved naming, results
-  // and screenshots. Screenshots have customer data replaced; pricing and
-  // markup screens are deliberately not shown.
-  'case-ppm': `<div class="brf-page ws-page">
+  // Case study, client anonymised until they approve being named (don't
+  // add the company name, logo or location back without that). Numbers
+  // come from the client's EasyPost and Zoho Inventory data, read
+  // 2026-10-08 (go-live 2026-09-22). Screenshots have customer data
+  // replaced and the client's logo and address masked; pricing and markup
+  // screens are deliberately not shown.
+  'case-shipping-app': `<div class="brf-page ws-page">
 
   <section class="ws-hero ws-hero-plain">
     <div class="ws-wrap ws-hero-in">
       <a class="brf-back-link" href="/solutions" onclick="go('solutions')" style="display:table;margin-left:auto;margin-right:auto">← All solutions</a>
-      <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
+      <div class="brf-eyebrow">Case study · Manufacturing</div>
       <h1 class="ws-display">Quote to label in one screen.</h1>
-      <p class="ws-hero-lead">Plastics Products Mfg runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
+      <p class="ws-hero-lead">Our client, a manufacturer, runs its orders and inventory in Zoho Inventory. Shipping was the gap. We built them a shipping app that sits on top of Zoho, prices every FedEx option, prints the labels and writes the whole shipment back onto the order.</p>
       <div class="ws-meta">
         <span><strong>Solution:</strong> AI on Zoho</span>
         <span><strong>Built on:</strong> Zoho Inventory, EasyPost, FedEx</span>
@@ -1306,7 +1308,7 @@ export const pages = {
   <section class="ws-sec ws-sec-tight">
     <div class="ws-wrap">
       <figure class="ws-shot">
-        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="An open Zoho sales order in the shipping app, with three lines auto-packed into a small stock box and a 3D packing preview" width="1600" height="1000" />
+        <img src="/images/case-studies/shipping-app/order-boxes.jpg" alt="An open Zoho sales order in the shipping app, with three lines auto-packed into a small stock box and a 3D packing preview" width="1600" height="1000" />
         <figcaption>An open Zoho sales order, auto-packed into a stock box. Customer details replaced for this page.</figcaption>
       </figure>
     </div>
@@ -1318,7 +1320,7 @@ export const pages = {
       <ul class="ws-stats">
         <li class="ws-stat"><div class="ws-stat-num">13 days</div><div class="ws-stat-label">from the first line of code to live FedEx labels</div></li>
         <li class="ws-stat"><div class="ws-stat-num">199</div><div class="ws-stat-label">labels on 118 shipments in the first 11 shipping days</div></li>
-        <li class="ws-stat"><div class="ws-stat-num">87%</div><div class="ws-stat-label">of PPM's Zoho shipments now go through the app</div></li>
+        <li class="ws-stat"><div class="ws-stat-num">87%</div><div class="ws-stat-label">of the client's Zoho shipments now go through the app</div></li>
         <li class="ws-stat"><div class="ws-stat-num">1 in 4</div><div class="ws-stat-label">shipments are multi-box, up to 10 boxes, on one screen</div></li>
       </ul>
     </div>
@@ -1341,7 +1343,7 @@ export const pages = {
       <h2 class="ws-h2">What we built</h2>
       <ul class="ws-flowcards">
         <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span><strong>One screen from order to label.</strong> Open a Zoho sales order, choose what ships now, and the app packs it into stock boxes with a 3D preview of how it fits.</span></li>
-        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span><strong>Every FedEx option, sorted by price.</strong> Rates from PPM's own FedEx account, with delivery dates and the cheapest and fastest marked.</span></li>
+        <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span><strong>Every FedEx option, sorted by price.</strong> Rates from the client's own FedEx account, with delivery dates and the cheapest and fastest marked.</span></li>
         <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5M3 20v-5h5"/></svg></span><span><strong>Everything written back to Zoho.</strong> Packages, shipment, tracking, the FedEx charge and a packing slip land on the order, and it's marked delivered when FedEx delivers.</span></li>
         <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></span><span><strong>Built for the warehouse floor.</strong> Labels print straight to the Zebra printer, in bulk if needed, in English or Spanish.</span></li>
         <li class="ws-flowcard"><span class="ws-flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span><strong>Safe to retry.</strong> If anything fails halfway, a retry picks up where it stopped. It never buys a second label or creates a duplicate order.</span></li>
@@ -1357,7 +1359,7 @@ export const pages = {
       </div>
       <div class="ws-split-body">
         <figure class="ws-shot">
-          <img src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
+          <img src="/images/case-studies/shipping-app/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
           <figcaption>Gap filters across the whole catalogue, and one fill for a whole product family.</figcaption>
         </figure>
       </div>
@@ -1370,7 +1372,7 @@ export const pages = {
         <h2 class="ws-h2">The result</h2>
       </div>
       <div class="ws-split-body">
-        <p class="ws-bodylg">PPM went live on September 22, 2026. In the first 11 shipping days the team shipped 118 FedEx shipments, 199 labels, through the app, and 87% of all shipments recorded in Zoho now come from it.</p>
+        <p class="ws-bodylg">The client went live on September 22, 2026. In the first 11 shipping days the team shipped 118 FedEx shipments, 199 labels, through the app, and 87% of all shipments recorded in Zoho now come from it.</p>
         <p class="ws-body">Zoho stays the system of record. <strong>The app is simply the fastest way to get an order out of the door and back into Zoho.</strong></p>
         <p class="ws-label" style="margin-top:32px">Services used</p>
         <ul class="ws-pills">
@@ -1530,7 +1532,7 @@ export const pages = {
           <li><strong>On the call,</strong> we'll tell you honestly whether we're the right firm, and what a Mirror Scope would cover.</li>
         </ol>
         <a class="bp" id="cfBookBtn" href="#" target="_blank" rel="noopener noreferrer" style="display:none;width:100%;justify-content:center;margin:6px 0 18px">Pick a time now</a>
-        <div style="padding:14px 18px;border-radius:10px;background:rgba(236,169,52,.07);border:1px solid rgba(236,169,52,.2);font-size:13px;color:var(--mid)"><strong style="color:var(--t)">While you wait:</strong> Read <a href="#" onclick="go('case-studies/plastics-products-mfg')" style="color:var(--t)">how we built a shipping app on Zoho</a> or see <a href="#" onclick="go('how-we-work')" style="color:var(--t)">how we work</a>.</div>
+        <div style="padding:14px 18px;border-radius:10px;background:rgba(236,169,52,.07);border:1px solid rgba(236,169,52,.2);font-size:13px;color:var(--mid)"><strong style="color:var(--t)">While you wait:</strong> Read <a href="#" onclick="go('case-studies/manufacturing-shipping-app')" style="color:var(--t)">how we built a shipping app on Zoho</a> or see <a href="#" onclick="go('how-we-work')" style="color:var(--t)">how we work</a>.</div>
       </div>
     </div>
   </div>

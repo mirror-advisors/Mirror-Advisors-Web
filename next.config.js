@@ -36,6 +36,8 @@ const nextConfig = {
       { source: '/services/digital-marketing',       destination: '/delivery',                        permanent: true },
       { source: '/services',                         destination: '/delivery',                        permanent: true },
       { source: '/services/:slug',                   destination: '/delivery/:slug',                  permanent: true },
+      // Case study anonymised 2026-10-13 (old slug named the client).
+      { source: '/case-studies/plastics-products-mfg', destination: '/case-studies/manufacturing-shipping-app', permanent: false },
     ];
   },
 };
