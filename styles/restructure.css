@@ -295,3 +295,16 @@
 }
 .brf-card-partner .brf-card-title { padding-right: 132px; }
 div.brf-card-partner { cursor: default; }
+
+/* ── Page transitions (View Transitions API, see components/Layout.js) ──
+   The page body cross-fades; the header is its own layer so it never
+   moves or flickers between the homepage and the Wise pages. */
+#nav { view-transition-name: site-nav; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 260ms; animation-timing-function: cubic-bezier(.2, 0, 0, 1); }
+::view-transition-group(site-nav) { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}

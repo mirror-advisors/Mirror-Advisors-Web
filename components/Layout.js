@@ -226,6 +226,57 @@ export default function Layout({ children }) {
     }
   }, [router.pathname, router.asPath, router.query]);
 
+  // Cross-fade between pages with the View Transitions API, so moving
+  // between the editorial homepage and the Wise pages doesn't hard-cut.
+  // The browser snapshots the old page when a route change starts and
+  // holds it until the transition's update promise resolves; we resolve it
+  // once the new route has rendered (router.asPath effect below). The
+  // header has its own view-transition-name, so it stays put. Browsers
+  // without the API, and reduced-motion users, swap instantly as before.
+  // Why not routeChangeComplete: in-page links push twice (inline go() +
+  // HtmlPage's click handler) and Next then reports both pushes as
+  // cancelled and never fires routeChangeComplete, even though the page
+  // renders fine. The 1.5s timer is a safety net for stalled routes.
+  const vt = useRef({ active: false, finish: null, rendered: false, timer: null });
+  const endTransition = () => {
+    const s = vt.current;
+    if (!s.active) return;
+    s.rendered = true;
+    if (s.finish) {
+      clearTimeout(s.timer);
+      const f = s.finish;
+      Object.assign(s, { active: false, finish: null, rendered: false, timer: null });
+      f();
+    }
+  };
+  useEffect(() => {
+    if (typeof document === 'undefined' || typeof document.startViewTransition !== 'function') return;
+    const onStart = (url, { shallow }) => {
+      const s = vt.current;
+      if (shallow || s.active) return;
+      if (url === router.asPath) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      s.active = true;
+      s.rendered = false;
+      try {
+        const t = document.startViewTransition(() => new Promise((resolve) => {
+          s.finish = resolve;
+          // The new route may already have rendered before the browser
+          // asked for the update (the callback runs asynchronously).
+          if (s.rendered) endTransition();
+        }));
+        // A skipped transition rejects these; nothing to handle.
+        [t.ready, t.updateCallbackDone, t.finished].forEach((p) => p && p.catch(() => {}));
+        s.timer = setTimeout(endTransition, 1500);
+      } catch (e) {
+        Object.assign(s, { active: false, finish: null, rendered: false, timer: null });
+      }
+    };
+    router.events.on('routeChangeStart', onStart);
+    return () => router.events.off('routeChangeStart', onStart);
+  }, [router.events, router.asPath]);
+  useEffect(() => { endTransition(); }, [router.asPath]);
+
   // Click delegation: any `<a onclick="go('xxx')">` inside dangerouslySetInnerHTML
   // content will fire `window.go('xxx')` — which we already shim to use router.push.
   // Nothing else needed here, the shim in site-runtime handles it.

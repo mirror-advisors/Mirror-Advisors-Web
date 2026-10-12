@@ -102,197 +102,147 @@ function _seeSolutions(heading, body) {
 const _FOOTER_HTML = FOOTER_HTML;
 
 export const pages = {
-  'home': `<div class="brf-page ws-page">
+  // Homepage in the "Steep" editorial style (serif headlines, quiet cards,
+  // floating product artifacts), Mirror-tuned: navy ink, cream accent.
+  // Scoped to .st-page in styles/home-steep.css; every other page keeps
+  // the Wise design. Copy is the approved brief, shortened: the "We scope
+  // before we build" and "You can see the work" points are covered by the
+  // Mirror Scope strip and the Client portal button.
+  'home': `<div class="st-page">
 
-  <!-- ── SECTION 1 · HERO ── -->
-  <section class="ws-hero">
-    <div class="ws-wrap ws-hero-in">
-      <h1 class="ws-display">One system your whole business runs on.</h1>
-      <p class="ws-hero-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
-      <div class="ws-actions">
-        <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
-        <a class="ws-textlink" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
+  <section class="st-hero">
+    <div class="st-wrap">
+      <h1 class="st-display">One system your <em>whole business</em> runs on.</h1>
+      <p class="st-lead">Most growing companies end up with six tools that don't talk to each other and the same data entered three times. We consolidate them, with custom AI applications, Zoho, integration and data migration. Every project starts with a Mirror Scope, delivered by our US team, so you know exactly what you're getting before anyone builds.</p>
+      <div class="st-actions">
+        <a class="st-btn" href="/contact" onclick="go('contact')">Contact us</a>
+        <a class="st-btn st-btn-ghost" href="/how-we-work" onclick="go('how-we-work')">See how we work</a>
       </div>
-      <div class="ws-tag">US-led. Global delivery. The same lead from your first call to go-live.</div>
+      <p class="st-tagline">US-led. Global delivery. The same lead from your first call to go-live.</p>
     </div>
-    <div class="ws-globe" aria-hidden="true">
-      <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMin slice" focusable="false">
-        <circle class="ws-g-dome" cx="600" cy="640" r="580"/>
-        <g class="ws-g-grid">
-          <ellipse cx="600" cy="640" rx="580" ry="170"/>
-          <ellipse cx="600" cy="640" rx="580" ry="360"/>
-          <ellipse cx="600" cy="640" rx="150" ry="580"/>
-          <ellipse cx="600" cy="640" rx="330" ry="580"/>
-          <ellipse cx="600" cy="640" rx="470" ry="580"/>
-        </g>
-        <g class="ws-g-links">
-          <path d="M600 214 L262 318"/><path d="M600 214 L396 150"/><path d="M600 214 L482 352"/>
-          <path d="M600 214 L718 352"/><path d="M600 214 L804 150"/><path d="M600 214 L938 318"/>
-        </g>
-        <g class="ws-g-coins">
-          <g class="ws-g-c1"><circle class="ws-g-coin" cx="262" cy="318" r="26"/><circle class="ws-g-ring" cx="262" cy="318" r="15"/></g>
-          <g class="ws-g-c2"><circle class="ws-g-coin" cx="396" cy="150" r="20"/><circle class="ws-g-ring" cx="396" cy="150" r="11"/></g>
-          <g class="ws-g-c3"><circle class="ws-g-coin" cx="482" cy="352" r="17"/><circle class="ws-g-ring" cx="482" cy="352" r="9"/></g>
-          <g class="ws-g-c3"><circle class="ws-g-coin" cx="718" cy="352" r="17"/><circle class="ws-g-ring" cx="718" cy="352" r="9"/></g>
-          <g class="ws-g-c2"><circle class="ws-g-coin" cx="804" cy="150" r="20"/><circle class="ws-g-ring" cx="804" cy="150" r="11"/></g>
-          <g class="ws-g-c1"><circle class="ws-g-coin" cx="938" cy="318" r="26"/><circle class="ws-g-ring" cx="938" cy="318" r="15"/></g>
-        </g>
-        <circle class="ws-g-halo" cx="600" cy="214" r="78"/>
-        <circle class="ws-g-hub" cx="600" cy="214" r="52"/>
-        <circle class="ws-g-ring" cx="600" cy="214" r="32"/>
-      </svg>
+
+    <div class="st-wrap st-stage" aria-label="From our work: the Plastics Products Mfg shipping app">
+      <figure class="st-artifact st-shot">
+        <img src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" width="1600" height="1000" />
+        <figcaption>Plastics Products Mfg · shipping app on Zoho Inventory</figcaption>
+      </figure>
+      <div class="st-artifact st-stat st-stat-a">
+        <div class="st-stat-num">13 days</div>
+        <div class="st-stat-label">from the first line of code to live FedEx labels</div>
+        <div class="st-days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="st-day-done"></i></div>
+      </div>
+      <div class="st-artifact st-stat st-stat-b">
+        <svg class="st-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="st-ring-val" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="87 100"/></svg>
+        <div>
+          <div class="st-stat-num">87%</div>
+          <div class="st-stat-label">of PPM's Zoho shipments now go through the app</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ── SECTION 2 · THE PROBLEM ── -->
-  <section class="ws-sec ws-sec-fog">
-    <div class="ws-wrap ws-split">
-      <div class="ws-split-head ws-sticky">
-        <h2 class="ws-h2">If this sounds familiar, it usually is.</h2>
-      </div>
-      <div class="ws-split-body">
-        <ol class="ws-numlist">
+  <section class="st-sec st-sec-fog">
+    <div class="st-wrap st-split">
+      <h2 class="st-h2">If this sounds <em>familiar</em>, it usually is.</h2>
+      <div>
+        <ol class="st-numlist">
           <li>Your CRM doesn't know what your accounting system knows.</li>
           <li>The same customer record lives in three places, and two of them are out of date.</li>
           <li>Someone on your team spends half a day every week moving data between tools by hand.</li>
           <li>You bought software that does eighty percent of what you need, and nobody ever built the other twenty.</li>
           <li>Getting a straight answer about the business means exporting to a spreadsheet first.</li>
         </ol>
-        <p class="ws-bodylg">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <strong>That is the job we do.</strong></p>
+        <p class="st-body-lg">None of this comes from bad decisions. It comes from growth. Companies buy the tool they need at the moment they need it, and nobody is ever responsible for how the whole thing fits together. <strong>That is the job we do.</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 3 · WHAT WE BUILD ── -->
-  <section class="ws-sec">
-    <div class="ws-wrap">
-      <h2 class="ws-h2 ws-center">What we build for you.</h2>
-      <div class="brf-cards ws-cards">
-        <a class="brf-card brf-card-featured" href="/platforms/claude" onclick="go('platforms/claude')">
-          <div class="brf-card-title">AI Custom Solutions</div>
-          <p class="brf-card-desc">Fully built applications designed around how your team works, with AI where it saves real time.</p>
-          <div class="brf-card-learn">Learn more →</div>
+  <section class="st-sec">
+    <div class="st-wrap">
+      <h2 class="st-h2 st-center">What we build for you.</h2>
+      <div class="st-cards">
+        <a class="st-card" href="/platforms/claude" onclick="go('platforms/claude')">
+          <div class="st-tag">Built with Claude</div>
+          <div class="st-card-title">AI Custom Solutions</div>
+          <p class="st-card-body">Fully built applications designed around how your team works, with AI where it saves real time.</p>
+          <span class="st-link">Learn more →</span>
         </a>
-        <a class="brf-card" href="/platforms/zoho" onclick="go('platforms/zoho')">
-          <div class="brf-card-title">Zoho Implementation</div>
-          <p class="brf-card-desc">Zoho set up properly, from selection and migration through go-live and support.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="st-card" href="/platforms/zoho" onclick="go('platforms/zoho')">
+          <div class="st-tag">Zoho</div>
+          <div class="st-card-title">Zoho Implementation</div>
+          <p class="st-card-body">Zoho set up properly, from selection and migration through go-live and support.</p>
+          <span class="st-link">Learn more →</span>
         </a>
-        <a class="brf-card" href="/platforms/ai-on-zoho" onclick="go('platforms/ai-on-zoho')">
-          <div class="brf-card-title">AI on Zoho</div>
-          <p class="brf-card-desc">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
-          <div class="brf-card-learn">Learn more →</div>
+        <a class="st-card" href="/platforms/ai-on-zoho" onclick="go('platforms/ai-on-zoho')">
+          <div class="st-tag">Zoho + AI</div>
+          <div class="st-card-title">AI on Zoho</div>
+          <p class="st-card-body">Applications and AI that sit on top of Zoho, read from it and write back to it.</p>
+          <span class="st-link">Learn more →</span>
         </a>
       </div>
-      <p class="ws-note">Coming soon: <a class="ws-inline-link" href="/platforms/odoo" onclick="go('platforms/odoo')">Odoo implementation</a>. Official partner of <a class="ws-inline-link" href="/integrations" onclick="go('integrations')">Avalara and HelloSend</a>.</p>
-      <p class="ws-note">Every project is delivered through the same five services.</p>
-      <ul class="ws-pills ws-center">
-        <li><a href="/delivery/software-implementation" onclick="go('delivery/software-implementation')">Software Implementation</a></li>
-        <li><a href="/delivery/data-migration" onclick="go('delivery/data-migration')">Data Migration</a></li>
-        <li><a href="/delivery/systems-integration" onclick="go('delivery/systems-integration')">Systems Integration</a></li>
-        <li><a href="/delivery/custom-development" onclick="go('delivery/custom-development')">Custom Development</a></li>
-        <li><a href="/delivery/consulting-support" onclick="go('delivery/consulting-support')">Consulting &amp; Support</a></li>
-      </ul>
+      <p class="st-note">Coming soon: <a href="/platforms/odoo" onclick="go('platforms/odoo')">Odoo implementation</a>. Official partner of <a href="/integrations" onclick="go('integrations')">Avalara and HelloSend</a>. Every project is delivered through <a href="/delivery" onclick="go('delivery')">the same five services</a>.</p>
     </div>
   </section>
 
-  <!-- ── SECTION 4 · HOW WE WORK ── -->
-  <section class="ws-sec ws-sec-dark">
-    <div class="ws-wrap">
-      <h2 class="ws-h2 ws-h2-xl ws-h2-wide">Every project starts with a Mirror Scope.</h2>
-      <div class="ws-cols2">
-        <p class="ws-body">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
-        <p class="ws-body">It is a paid phase, and that is deliberate. Discovery done for free is discovery done quickly, and quick discovery is where implementations go wrong. By the time you approve a build with us, there are no surprises left to find.</p>
+  <section class="st-sec st-sec-fog">
+    <div class="st-wrap st-split">
+      <div>
+        <h2 class="st-h2">Every project starts with a <em>Mirror Scope.</em></h2>
+        <p class="st-body-lg">Before we build anything, we spend time inside your business. We map how your processes actually run today, document what the new system has to do, and produce an implementation plan with timelines and costs attached. That document is the Mirror Scope, and it is yours.</p>
+        <a class="st-link" href="/how-we-work" onclick="go('how-we-work')">More on how we work →</a>
       </div>
-      <ol class="ws-steps">
-        <li class="ws-step">
-          <div class="ws-step-num">01</div>
-          <div class="ws-step-name">Mirror Scope</div>
-          <div class="ws-step-desc">We map your processes, define the requirements, and write the implementation plan.</div>
-        </li>
-        <li class="ws-step">
-          <div class="ws-step-num">02</div>
-          <div class="ws-step-name">Approval</div>
-          <div class="ws-step-desc">We walk you through the scope. You decide whether to build, and with whom.</div>
-        </li>
-        <li class="ws-step">
-          <div class="ws-step-num">03</div>
-          <div class="ws-step-name">Build</div>
-          <div class="ws-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</div>
-        </li>
-        <li class="ws-step">
-          <div class="ws-step-num">04</div>
-          <div class="ws-step-name">Training</div>
-          <div class="ws-step-desc">We train your team on what we built, not on generic software documentation.</div>
-        </li>
-        <li class="ws-step">
-          <div class="ws-step-num">05</div>
-          <div class="ws-step-name">Live and supported</div>
-          <div class="ws-step-desc">You go live, and we stay reachable.</div>
-        </li>
+      <ol class="st-steps">
+        <li><span class="st-step-num">01</span><span class="st-step-name">Mirror Scope</span><span class="st-step-desc">We map your processes, define the requirements, and write the implementation plan.</span></li>
+        <li><span class="st-step-num">02</span><span class="st-step-name">Approval</span><span class="st-step-desc">We walk you through the scope. You decide whether to build, and with whom.</span></li>
+        <li><span class="st-step-num">03</span><span class="st-step-name">Build</span><span class="st-step-desc">Development runs in stages, with a project meeting every week so you always know where things stand.</span></li>
+        <li><span class="st-step-num">04</span><span class="st-step-name">Training</span><span class="st-step-desc">We train your team on what we built, not on generic software documentation.</span></li>
+        <li><span class="st-step-num">05</span><span class="st-step-name">Live and supported</span><span class="st-step-desc">You go live, and we stay reachable.</span></li>
       </ol>
-      <div class="ws-actions">
-        <a class="ws-pill-outline" href="/how-we-work" onclick="go('how-we-work')">More on how we work</a>
-      </div>
     </div>
   </section>
 
-  <!-- ── SECTION 5 · WHY COMPANIES CHOOSE US ── -->
-  <section class="ws-sec">
-    <div class="ws-wrap">
-      <h2 class="ws-h2 ws-center">Why companies choose us.</h2>
-      <div class="ws-features">
-        <div class="ws-feature">
-          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="ws-feature-title">US-led from the first call.</div>
-          <p class="ws-feature-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
+  <section class="st-sec">
+    <div class="st-wrap">
+      <h2 class="st-h2 st-center">Why companies choose us.</h2>
+      <div class="st-cards">
+        <div class="st-card st-card-static">
+          <div class="st-card-title">US-led from the first call.</div>
+          <p class="st-card-body">Your sales conversation, your consulting and your Mirror Scope are handled by our US team. Paul Trinidad, our founder, stays on your project from the first call through go-live. Development and day-to-day project management run across our teams in the Philippines and India, so you get senior US ownership without paying for a fully US build team.</p>
         </div>
-        <div class="ws-feature">
-          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
-          <div class="ws-feature-title">We scope before we build.</div>
-          <p class="ws-feature-body">Most firms will quote you a price on a thirty minute call. We won't, because nobody can price a system they haven't seen.</p>
+        <div class="st-card st-card-static">
+          <div class="st-card-title">We answer.</div>
+          <p class="st-card-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
         </div>
-        <div class="ws-feature">
-          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/></svg></div>
-          <div class="ws-feature-title">We answer.</div>
-          <p class="ws-feature-body">Our clients tell us the reason they stayed was that we picked up, replied quickly, and answered every question they had. That is not a feature. It is just how we work.</p>
-        </div>
-        <div class="ws-feature">
-          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <div class="ws-feature-title">You can see the work.</div>
-          <p class="ws-feature-body">Every client gets a portal where they can track progress, see what's in flight, and know what's coming next.</p>
-        </div>
-        <div class="ws-feature">
-          <div class="ws-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></div>
-          <div class="ws-feature-title">We build software, not just configure it.</div>
-          <p class="ws-feature-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
+        <div class="st-card st-card-static">
+          <div class="st-card-title">We build software, not just configure it.</div>
+          <p class="st-card-body">We run our own platform, Mirror, which we designed and built ourselves to run this company. When a client needs something that doesn't exist off the shelf, we're not guessing at whether it can be done.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 6 · PROOF ── -->
-  <section class="ws-sec">
-    <div class="ws-wrap">
-      <h2 class="ws-h2 ws-center">What this looks like in practice.</h2>
-      <a class="brf-case" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
-        <div class="brf-case-text">
-          <div class="brf-eyebrow">Case study · Plastics Products Mfg</div>
-          <div class="brf-case-title">Quote to label in one screen, on top of Zoho Inventory.</div>
-          <p class="brf-case-desc">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
-          <div class="brf-card-learn">Read the case study →</div>
+  <section class="st-sec st-sec-tight">
+    <div class="st-wrap">
+      <a class="st-accent" href="/case-studies/plastics-products-mfg" onclick="go('case-studies/plastics-products-mfg')">
+        <div class="st-accent-text">
+          <div class="st-tag">Case study · Plastics Products Mfg</div>
+          <h2 class="st-h3">Quote to label in one screen, on top of Zoho Inventory.</h2>
+          <p class="st-body">A custom shipping app that packs orders into stock boxes, compares every FedEx rate, prints labels to the warehouse Zebra and writes everything back to Zoho. Live in 13 days; 87% of PPM's shipments now run through it.</p>
+          <span class="st-link">Read the case study →</span>
         </div>
-        <img class="brf-case-img" src="/images/case-studies/ppm/order-boxes.jpg" alt="The PPM shipping app with a Zoho sales order auto-packed into a stock box" loading="lazy" width="1600" height="1000" />
+        <img class="st-artifact st-accent-img" src="/images/case-studies/ppm/item-dimensions.jpg" alt="The item dimensions screen showing gap filters such as Missing length and No dimensions, with a bulk fill panel" loading="lazy" width="1600" height="1000" />
       </a>
     </div>
   </section>
 
-  <!-- ── SECTION 7 · CLOSING CTA ── -->
-  <section class="brf-cta-block">
-    <div class="brf-container-narrow">
-      <h2 class="brf-h2">Start with a conversation.</h2>
-      <p class="brf-body">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
-      <a class="brf-cta-primary" href="/contact" onclick="go('contact')">Contact us</a>
+  <section class="st-sec st-cta">
+    <div class="st-wrap st-center">
+      <h2 class="st-h2">Start with a <em>conversation.</em></h2>
+      <p class="st-lead">Tell us what's broken and we'll tell you honestly whether we're the right firm to fix it. If we're not, we'll say so.</p>
+      <div class="st-actions">
+        <a class="st-btn" href="/contact" onclick="go('contact')">Contact us</a>
+        <a class="st-btn st-btn-ghost" href="/solutions" onclick="go('solutions')">See our solutions</a>
+      </div>
     </div>
   </section>
 
