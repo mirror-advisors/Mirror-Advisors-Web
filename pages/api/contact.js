@@ -1,9 +1,14 @@
 // POST /api/contact
 //
-// Server-side proxy that receives a JSON payload from the contact form and
-// forwards it to Zoho Forms as multipart/form-data. We do this server-side
-// to avoid the browser's CORS preflight (Zoho's htmlRecords endpoint doesn't
-// return CORS headers for cross-origin POST).
+// Server-side proxy that receives a JSON payload from the contact form,
+// verifies it (honeypot, timing, link limiter, Turnstile) and sends it to:
+//   - the Mirror CRM (sendToCrm, below): company + contact + an Unqualified
+//     "Website" deal with a note, owned by WEBSITE_LEAD_OWNER_EMAIL on the
+//     Mirror side
+//   - Zoho Forms as multipart/form-data (kept during the move off Zoho)
+// in parallel. Server-side to keep the CRM secret private and avoid the
+// browser's CORS preflight (Zoho's htmlRecords endpoint doesn't return CORS
+// headers for cross-origin POST).
 //
 // The visible form on /contact stays exactly as it was; only the submit
 // handler (lib/site-runtime.js → submitForm) was rewired to POST here.
@@ -217,67 +222,92 @@ export default async function handler(req, res) {
   // Build multipart/form-data using Zoho's exact field names. The native
   // FormData ↔ fetch path automatically negotiates the multipart boundary +
   // Content-Type header. No 'form-data' npm dep required.
+  const summary = [
+    'Looking for: ' + services.join(', '),
+    systems.length ? 'Uses today: ' + systems.join(', ') : '',
+    size ? 'Team size: ' + size : '',
+  ].filter(Boolean).join('\n');
+
   const form = new FormData();
   form.append('Name_First',              fname);
   form.append('Name_Last',               lname);
   form.append('PhoneNumber_countrycode', phone);
   form.append('Email',                   email);
   form.append('SingleLine',              company);
-  // Note: the Number (Company Size) field was removed from the Zoho form
-  // in Jun 2026 — Zoho's htmlRecords validator now rejects unknown fields.
-  // We capture `size` client-side into Supabase, and it rides along in the
-  // MultiLine summary below. Do NOT forward it as Number unless / until the
-  // Zoho form is reconfigured with a Number field again.
-  // The Zoho form has no fields for the visitor's real choices, systems or
-  // team size, so lead with them in the message where sales will see them.
-  const summary = [
-    'Looking for: ' + services.join(', '),
-    systems.length ? 'Uses today: ' + systems.join(', ') : '',
-    size ? 'Team size: ' + size : '',
-  ].filter(Boolean).join('\n');
   form.append('MultiLine',               summary + '\n\n' + message);
   form.append('Dropdown1',               timeline);
-  // MultipleChoice gets one entry per mapped service — required by Zoho.
   toZohoServices(services).forEach(s => form.append('MultipleChoice', s));
-  // Hidden trackers Zoho still expects even when empty.
   form.append('zf_referrer_name', '');
   form.append('zf_redirect_url',  '');
   form.append('zc_gad',           '');
 
-  // POST to Zoho with a hard timeout so a hung upstream can't lock the route.
+  // Send to the Mirror CRM and Zoho Forms in parallel. The visitor sees
+  // success if either one took it; a failure on the other is logged.
+  const [crm, zoho] = await Promise.all([
+    sendToCrm({
+      firstName: fname,
+      lastName:  lname,
+      email,
+      phone,
+      company,
+      teamSize:  size,
+      timeline,
+      message,
+      interests: services,
+      systems,
+      pageUrl:   String(req.headers.referer || '').slice(0, 500),
+    }),
+    sendToZoho(form),
+  ]);
+  if (!crm.ok && !crm.skipped) console.error(`[/api/contact] CRM failed: ${crm.error}`);
+  if (!zoho.ok) console.error(`[/api/contact] Zoho failed: ${zoho.error}`);
+
+  if (crm.ok || zoho.ok) return res.status(200).json({ ok: true });
+  return res.status(zoho.status || 502).json({
+    ok:       false,
+    error:    zoho.error,
+    friendly: 'Sorry — the submission failed on our end. Please try again, or email info@mirroradvisors.com.',
+  });
+}
+
+// POST with a timeout. Resolves to { ok, status, error } and never throws.
+async function post(url, init, timeoutMs) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 15_000);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const zr = await fetch(ZOHO_ENDPOINT, {
-      method: 'POST',
-      body:   form,
-      signal: controller.signal,
-      // Zoho will set its own cookies on the response; we don't forward them
-      // to the browser since the submission is server-to-server.
-    });
-    if (!zr.ok) {
-      const txt = await zr.text().catch(() => '');
-      console.error(`[/api/contact] Zoho HTTP ${zr.status}: ${String(txt).slice(0, 500)}`);
-      return res.status(502).json({
-        ok:       false,
-        error:    `zoho_http_${zr.status}`,
-        friendly: 'Sorry — the submission failed on our end. Please try again, or email info@mirroradvisors.com.',
-      });
-    }
-    // Zoho returns a JSON-ish or HTML body on success — we don't need the
-    // payload, just the status. A 2xx is the contract.
-    return res.status(200).json({ ok: true });
+    const r = await fetch(url, { method: 'POST', ...init, signal: controller.signal });
+    if (r.ok) return { ok: true, status: r.status };
+    const txt = await r.text().catch(() => '');
+    return { ok: false, status: 502, error: `http_${r.status}: ${String(txt).slice(0, 300)}` };
   } catch (e) {
     const aborted = e && e.name === 'AbortError';
-    console.error(`[/api/contact] ${aborted ? 'timeout' : 'fetch error'}: ${e && e.message ? e.message : e}`);
-    return res.status(aborted ? 504 : 502).json({
-      ok:       false,
-      error:    aborted ? 'timeout' : 'fetch_error',
-      friendly: 'Sorry — the submission failed. Please try again or email info@mirroradvisors.com.',
-    });
+    return { ok: false, status: aborted ? 504 : 502, error: aborted ? 'timeout' : `fetch_error: ${e && e.message ? e.message : e}` };
   } finally {
     clearTimeout(timer);
   }
+}
+
+// Mirror CRM (app.mirroradvisors.com /api/crm/website-lead): creates or
+// matches the company and contact and opens an Unqualified "Website" deal
+// for the owner set on that side. Skipped when the env vars aren't set.
+//   MIRROR_CRM_LEAD_URL     full endpoint URL
+//   MIRROR_CRM_LEAD_SECRET  shared with WEBSITE_LEAD_SECRET in the Mirror app
+async function sendToCrm(payload) {
+  const url = process.env.MIRROR_CRM_LEAD_URL;
+  const secret = process.env.MIRROR_CRM_LEAD_SECRET;
+  if (!url || !secret) return { ok: false, skipped: true };
+  return post(url, {
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${secret}` },
+    body: JSON.stringify(payload),
+  }, 10_000);
+}
+
+// Zoho Forms. Zoho returns a JSON-ish or HTML body on success; we only need
+// the status. A 2xx is the contract.
+async function sendToZoho(form) {
+  const r = await post(ZOHO_ENDPOINT, { body: form }, 15_000);
+  if (!r.ok && r.error && r.error.startsWith('http_')) r.error = 'zoho_' + r.error.split(':')[0];
+  return r;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
