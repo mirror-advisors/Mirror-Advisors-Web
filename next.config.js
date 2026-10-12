@@ -36,6 +36,9 @@ const nextConfig = {
       { source: '/services/digital-marketing',       destination: '/delivery',                        permanent: true },
       { source: '/services',                         destination: '/delivery',                        permanent: true },
       { source: '/services/:slug',                   destination: '/delivery/:slug',                  permanent: true },
+      // Case studies waiting on client permission: temporary, so search
+      // engines don't drop the URL for good.
+      { source: '/case-studies/:slug*',              destination: '/solutions',                       permanent: false },
     ];
   },
 };
