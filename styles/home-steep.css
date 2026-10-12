@@ -198,3 +198,21 @@ a.st-card:hover { background: #eaeaee; }
 @media (prefers-reduced-motion: reduce) {
   .st-page * { transition: none !important; }
 }
+
+/* ── Scroll motion (lib/home-motion.js) ──
+   Blocks start hidden only while <html>.st-motion is set (added before
+   first paint by pages/_document.js, never for reduced motion). The
+   selector list must match REVEAL in lib/home-motion.js. */
+html.st-motion .st-page :is(.st-display, .st-lead, .st-actions, .st-tagline, .st-stage, .st-h2, .st-body-lg, .st-numlist li, .st-card, .st-note, .st-steps li, .st-sec .st-split > div > .st-link, .st-accent) {
+  transition:
+    opacity .7s cubic-bezier(.2, .7, .2, 1) var(--st-d, 0ms),
+    transform .7s cubic-bezier(.2, .7, .2, 1) var(--st-d, 0ms),
+    background-color .15s ease;
+}
+html.st-motion .st-page :is(.st-display, .st-lead, .st-actions, .st-tagline, .st-stage, .st-h2, .st-body-lg, .st-numlist li, .st-card, .st-note, .st-steps li, .st-sec .st-split > div > .st-link, .st-accent):not(.st-in) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+/* Hero float: the stat cards drift against the screenshot (desktop). */
+.st-stat { transform: translate3d(0, var(--st-float, 0px), 0); will-change: transform; }
+@media (max-width: 900px) { .st-stat { transform: none; will-change: auto; } }

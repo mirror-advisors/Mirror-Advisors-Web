@@ -9,6 +9,7 @@ import { initSiteRuntime } from '../lib/site-runtime';
 import { fetchAllConfig } from '../lib/site-config';
 import SalesIQ from './SalesIQ';
 import { CLIENT_PORTAL_URL } from '../lib/site-links';
+import { initHomeMotion } from '../lib/home-motion';
 
 // Map the current Next.js pathname to the nav key it should highlight.
 // First path segment wins:  /             → 'home'
@@ -225,6 +226,14 @@ export default function Layout({ children }) {
       }, 0);
     }
   }, [router.pathname, router.asPath, router.query]);
+
+  // Homepage scroll motion. __stMotion tells the inline failsafe in
+  // _document.js that the bundle is running.
+  useEffect(() => { window.__stMotion = true; }, []);
+  useEffect(() => {
+    if (router.pathname !== '/') return undefined;
+    return initHomeMotion(document.querySelector('.st-page'));
+  }, [router.pathname]);
 
   // Cross-fade between pages with the View Transitions API, so moving
   // between the editorial homepage and the Wise pages doesn't hard-cut.
